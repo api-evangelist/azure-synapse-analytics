@@ -1,0 +1,145 @@
+name: Azure Synapse Analytics
+description: Azure Synapse Analytics is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems. It brings together the best of SQL technologies used in enterprise data warehousing, Spark technologies for big data, and Pipelines for data integration and ETL/ELT.
+image: https://azure.microsoft.com/svghandler/synapse-analytics/
+tags:
+- Analytics
+- Data Warehouse
+- Big Data
+- SQL
+- Apache Spark
+- ETL
+- Data Integration
+created: '2024-01-01'
+modified: '2024-01-01'
+url: https://azure.microsoft.com/en-us/services/synapse-analytics/
+apis:
+- name: Synapse Workspace API
+  description: Manage Synapse workspaces, create and configure analytics environments
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/
+  baseURL: https://management.azure.com
+  tags:
+  - Workspace
+  - Management
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/synapse/workspace
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-06-01/workspace.json
+  - type: Swagger
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-06-01/workspace.json
+- name: Synapse SQL Pools API
+  description: Manage dedicated SQL pools for data warehousing workloads
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/sqlpools
+  baseURL: https://management.azure.com
+  tags:
+  - SQL Pool
+  - Data Warehouse
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/synapse/sqlpools
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-06-01/sqlPool.json
+- name: Synapse Spark Pools API
+  description: Manage Apache Spark pools for big data processing
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/bigdatapool
+  baseURL: https://management.azure.com
+  tags:
+  - Spark
+  - Big Data
+  - Apache Spark
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/synapse/bigdatapool
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/resource-manager/Microsoft.Synapse/stable/2021-06-01/bigDataPool.json
+- name: Synapse Pipeline API
+  description: Create and manage data integration pipelines for ETL/ELT workflows
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/pipeline
+  baseURL: https://{workspaceName}.dev.azuresynapse.net
+  tags:
+  - Pipeline
+  - ETL
+  - Data Integration
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/pipeline
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/data-plane/Microsoft.Synapse/stable/2020-12-01/artifacts.json
+- name: Synapse Spark Job API
+  description: Submit and manage Spark jobs and applications
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/spark
+  baseURL: https://{workspaceName}.dev.azuresynapse.net
+  tags:
+  - Spark Jobs
+  - Batch Processing
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/spark
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/data-plane/Microsoft.Synapse/stable/2019-11-01-preview/sparkJob.json
+- name: Synapse Monitoring API
+  description: Monitor pipeline runs, Spark jobs, and SQL requests
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/monitoring
+  baseURL: https://{workspaceName}.dev.azuresynapse.net
+  tags:
+  - Monitoring
+  - Analytics
+  - Observability
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/monitoring
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/data-plane/Microsoft.Synapse/stable/2020-12-01/monitoring.json
+- name: Synapse Link API
+  description: Manage Azure Synapse Link for real-time analytics over operational data
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/
+  baseURL: https://management.azure.com
+  tags:
+  - Synapse Link
+  - Real-time Analytics
+  - Hybrid Transactional Analytical Processing
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/synapse-analytics/synapse-link/
+- name: Synapse Access Control API
+  description: Manage role assignments and access control for Synapse resources
+  image: https://azure.microsoft.com/svghandler/synapse-analytics/
+  humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/role-assignments
+  baseURL: https://{workspaceName}.dev.azuresynapse.net
+  tags:
+  - Access Control
+  - Security
+  - RBAC
+  properties:
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/role-assignments
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/Azure/azure-rest-api-specs/main/specification/synapse/data-plane/Microsoft.Synapse/stable/2020-12-01/roleAssignments.json
+common:
+- type: Portal
+  url: https://portal.azure.com/
+- type: Status
+  url: https://status.azure.com/
+- type: Pricing
+  url: https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/
+- type: Getting Started
+  url: https://learn.microsoft.com/en-us/azure/synapse-analytics/get-started
+- type: Best Practices
+  url: https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-best-practices
+- type: Security
+  url: https://learn.microsoft.com/en-us/azure/synapse-analytics/security/synapse-workspace-security-overview
+- type: Support
+  url: https://azure.microsoft.com/en-us/support/
+- type: Terms of Service
+  url: https://azure.microsoft.com/en-us/support/legal/
+maintainers:
+- FN: Microsoft Azure
+  email: support@azure.com
+  url: https://azure.microsoft.com/
