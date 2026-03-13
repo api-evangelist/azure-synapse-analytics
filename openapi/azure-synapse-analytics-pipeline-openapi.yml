@@ -1,0 +1,382 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Pipeline API
+  description: >-
+    Create and manage data integration pipelines for ETL/ELT workflows. Supports
+    orchestrating data movement and transformation activities across diverse
+    data stores.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        description: The workspace name.
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /pipelines:
+    get:
+      operationId: Pipeline_GetPipelinesByWorkspace
+      summary: List pipelines
+      description: Lists pipelines in the workspace.
+      tags:
+        - Pipeline
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of pipelines.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /pipelines/{pipelineName}:
+    get:
+      operationId: Pipeline_GetPipeline
+      summary: Get a pipeline
+      description: Gets a pipeline.
+      tags:
+        - Pipeline
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/PipelineNameParameter'
+        - name: If-None-Match
+          in: header
+          description: >-
+            ETag of the pipeline entity. Should only be specified for get. If the
+            ETag matches the existing entity tag, or if * was provided, then no
+            content will be returned.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the pipeline.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineResource'
+        '304':
+          description: Not modified.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: Pipeline_CreateOrUpdatePipeline
+      summary: Create or update a pipeline
+      description: Creates or updates a pipeline.
+      tags:
+        - Pipeline
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/PipelineNameParameter'
+        - name: If-Match
+          in: header
+          description: >-
+            ETag of the pipeline entity. Should only be specified for update, for
+            which it should match existing entity or can be * for unconditional
+            update.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PipelineResource'
+      responses:
+        '200':
+          description: Successfully updated the pipeline.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PipelineResource'
+        '202':
+          description: Pipeline creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: Pipeline_DeletePipeline
+      summary: Delete a pipeline
+      description: Deletes a pipeline.
+      tags:
+        - Pipeline
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/PipelineNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the pipeline.
+        '202':
+          description: Pipeline deletion accepted.
+        '204':
+          description: Pipeline not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /pipelines/{pipelineName}/rename:
+    post:
+      operationId: Pipeline_RenamePipeline
+      summary: Rename a pipeline
+      description: Renames a pipeline.
+      tags:
+        - Pipeline
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/PipelineNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArtifactRenameRequest'
+      responses:
+        '200':
+          description: Successfully renamed the pipeline.
+        '202':
+          description: Pipeline rename accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /pipelines/{pipelineName}/createRun:
+    post:
+      operationId: Pipeline_CreatePipelineRun
+      summary: Create a pipeline run
+      description: Creates a run of a pipeline.
+      tags:
+        - Pipeline
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/PipelineNameParameter'
+        - name: referencePipelineRunId
+          in: query
+          description: The pipeline run identifier. If specified, the new run will be grouped with the specified run.
+          schema:
+            type: string
+        - name: isRecovery
+          in: query
+          description: Recovery mode flag. If true, the specified referenced pipeline run will be used for recovery.
+          schema:
+            type: boolean
+        - name: startActivityName
+          in: query
+          description: In recovery mode, the rerun will start from this activity.
+          schema:
+            type: string
+      requestBody:
+        description: Pipeline parameters for the run. These are optional.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '202':
+          description: Pipeline run created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRunResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+    PipelineNameParameter:
+      name: pipelineName
+      in: path
+      required: true
+      description: The pipeline name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    PipelineListResponse:
+      type: object
+      description: A list of pipeline resources.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/PipelineResource'
+        nextLink:
+          type: string
+    PipelineResource:
+      type: object
+      description: Pipeline resource.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/Pipeline'
+    Pipeline:
+      type: object
+      description: A pipeline definition.
+      properties:
+        description:
+          type: string
+          description: The description of the pipeline.
+        activities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Activity'
+          description: List of activities in the pipeline.
+        parameters:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ParameterSpecification'
+          description: Pipeline parameters.
+        variables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/VariableSpecification'
+          description: Pipeline variables.
+        concurrency:
+          type: integer
+          description: The max number of concurrent runs for the pipeline.
+        annotations:
+          type: array
+          items:
+            type: string
+          description: List of tags that can be used for describing the pipeline.
+        folder:
+          type: object
+          properties:
+            name:
+              type: string
+              description: The name of the folder that this pipeline is in.
+    Activity:
+      type: object
+      description: A pipeline activity.
+      required:
+        - name
+        - type
+      properties:
+        name:
+          type: string
+          description: Activity name.
+        type:
+          type: string
+          description: Type of activity.
+        description:
+          type: string
+          description: Activity description.
+        dependsOn:
+          type: array
+          items:
+            type: object
+            properties:
+              activity:
+                type: string
+              dependencyConditions:
+                type: array
+                items:
+                  type: string
+                  enum:
+                    - Succeeded
+                    - Failed
+                    - Skipped
+                    - Completed
+    ParameterSpecification:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - Object
+            - String
+            - Int
+            - Float
+            - Bool
+            - Array
+            - SecureString
+        defaultValue:
+          description: Default value of the parameter.
+    VariableSpecification:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - String
+            - Bool
+            - Array
+        defaultValue:
+          description: Default value of the variable.
+    ArtifactRenameRequest:
+      type: object
+      properties:
+        newName:
+          type: string
+          description: New name of the artifact.
+    CreateRunResponse:
+      type: object
+      description: Response body with a run identifier.
+      properties:
+        runId:
+          type: string
+          description: Identifier of the created run.

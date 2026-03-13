@@ -1,0 +1,244 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control API
+  description: >-
+    Manage role assignments, role definitions, and access control for Synapse
+    workspace resources. Supports Synapse role-based access control for
+    fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        description: The workspace name.
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /roleAssignments:
+    get:
+      operationId: RoleAssignments_ListRoleAssignments
+      summary: List role assignments
+      description: List role assignments.
+      tags:
+        - RoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - name: roleId
+          in: query
+          description: Synapse Built-In Role Id.
+          schema:
+            type: string
+        - name: principalId
+          in: query
+          description: Object ID of the AAD principal or security-group.
+          schema:
+            type: string
+        - name: scope
+          in: query
+          description: Scope of the Synapse Built-In Role.
+          schema:
+            type: string
+        - name: x-ms-continuation
+          in: header
+          description: Continuation token.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the role assignments.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleAssignmentDetailsList'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /roleAssignments/{roleAssignmentId}:
+    get:
+      operationId: RoleAssignments_GetRoleAssignmentById
+      summary: Get role assignment
+      description: Get role assignment by role assignment Id.
+      tags:
+        - RoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - name: roleAssignmentId
+          in: path
+          required: true
+          description: The ID of the role assignment.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the role assignment.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleAssignmentDetails'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: RoleAssignments_CreateRoleAssignment
+      summary: Create role assignment
+      description: Create role assignment.
+      tags:
+        - RoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - name: roleAssignmentId
+          in: path
+          required: true
+          description: The ID of the role assignment.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleAssignmentRequest'
+      responses:
+        '200':
+          description: Successfully created the role assignment.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RoleAssignmentDetails'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: RoleAssignments_DeleteRoleAssignmentById
+      summary: Delete role assignment
+      description: Delete role assignment by role assignment Id.
+      tags:
+        - RoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - name: roleAssignmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: scope
+          in: query
+          description: Scope of the Synapse Built-In Role.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully deleted the role assignment.
+        '204':
+          description: Role assignment not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    RoleAssignmentDetailsList:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Number of role assignments.
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/RoleAssignmentDetails'
+    RoleAssignmentDetails:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Role Assignment ID.
+        roleDefinitionId:
+          type: string
+          format: uuid
+          description: Role Definition ID.
+        principalId:
+          type: string
+          format: uuid
+          description: Object ID of the AAD principal or security-group.
+        scope:
+          type: string
+          description: Scope at which the role assignment is created.
+        principalType:
+          type: string
+          description: Type of the principal.
+          enum:
+            - User
+            - Group
+            - ServicePrincipal
+    RoleAssignmentRequest:
+      type: object
+      required:
+        - roleId
+        - principalId
+        - scope
+      properties:
+        roleId:
+          type: string
+          format: uuid
+          description: Role ID of the Synapse Built-In Role.
+        principalId:
+          type: string
+          format: uuid
+          description: Object ID of the AAD principal or security-group.
+        scope:
+          type: string
+          description: Scope at which the role assignment is created.
+        principalType:
+          type: string
+          description: Type of the principal.
+          enum:
+            - User
+            - Group
+            - ServicePrincipal

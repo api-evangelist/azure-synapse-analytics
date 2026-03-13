@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-sql-pool-schema.json",
+  "title": "Azure Synapse Analytics SQL Pool",
+  "description": "A dedicated SQL pool resource for enterprise data warehousing workloads within a Synapse workspace.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Fully qualified resource ID.",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the SQL pool."
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the resource.",
+      "readOnly": true
+    },
+    "location": {
+      "type": "string",
+      "description": "The geo-location where the resource lives."
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "sku": {
+      "$ref": "#/$defs/Sku"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "maxSizeBytes": {
+          "type": "integer",
+          "description": "Maximum size in bytes."
+        },
+        "collation": {
+          "type": "string",
+          "description": "Collation mode for the SQL pool."
+        },
+        "sourceDatabaseId": {
+          "type": "string",
+          "description": "Source database ID to create from."
+        },
+        "recoverableDatabaseId": {
+          "type": "string",
+          "description": "Recoverable database ID for geo-restore."
+        },
+        "provisioningState": {
+          "type": "string",
+          "description": "Resource provisioning state.",
+          "readOnly": true
+        },
+        "status": {
+          "type": "string",
+          "description": "Resource status.",
+          "readOnly": true
+        },
+        "restorePointInTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Snapshot time to restore from."
+        },
+        "createMode": {
+          "type": "string",
+          "description": "Specifies the mode of SQL pool creation.",
+          "enum": ["Default", "PointInTimeRestore", "Recovery", "Restore"]
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "storageAccountType": {
+          "type": "string",
+          "description": "The storage account type for backup.",
+          "enum": ["GRS", "LRS"]
+        }
+      }
+    }
+  },
+  "required": ["location"],
+  "$defs": {
+    "Sku": {
+      "type": "object",
+      "description": "SQL pool SKU defining the performance tier.",
+      "properties": {
+        "tier": {
+          "type": "string",
+          "description": "The service tier."
+        },
+        "name": {
+          "type": "string",
+          "description": "The SKU name (e.g., DW100c, DW200c)."
+        },
+        "capacity": {
+          "type": "integer",
+          "description": "The SKU capacity."
+        }
+      }
+    }
+  }
+}

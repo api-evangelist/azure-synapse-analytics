@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-spark-batch-job-schema.json",
+  "title": "Azure Synapse Analytics Spark Batch Job",
+  "description": "A Spark batch job submission resource for running big data processing workloads.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "The batch job ID."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the batch job."
+    },
+    "workspaceName": {
+      "type": "string"
+    },
+    "sparkPoolName": {
+      "type": "string"
+    },
+    "submitterName": {
+      "type": "string"
+    },
+    "submitterId": {
+      "type": "string"
+    },
+    "artifactId": {
+      "type": "string"
+    },
+    "jobType": {
+      "type": "string",
+      "enum": ["SparkBatch", "SparkSession"]
+    },
+    "result": {
+      "type": "string",
+      "enum": ["Uncertain", "Succeeded", "Failed", "Cancelled"]
+    },
+    "state": {
+      "type": "string",
+      "description": "The batch state."
+    },
+    "appId": {
+      "type": "string",
+      "description": "The Spark application ID."
+    },
+    "appInfo": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "log": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Log lines for the batch job."
+    },
+    "livyInfo": {
+      "type": "object",
+      "properties": {
+        "currentState": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

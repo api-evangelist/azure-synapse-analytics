@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-dataset-schema.json",
+  "title": "Azure Synapse Analytics Dataset",
+  "description": "A dataset resource that represents data structures within linked data stores used in pipelines and data flows.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "etag": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "required": ["type", "linkedServiceName"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of dataset."
+        },
+        "description": {
+          "type": "string"
+        },
+        "linkedServiceName": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "LinkedServiceReference"
+            },
+            "referenceName": {
+              "type": "string"
+            }
+          }
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "folder": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

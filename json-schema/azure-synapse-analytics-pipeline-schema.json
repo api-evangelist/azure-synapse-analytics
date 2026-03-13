@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-pipeline-schema.json",
+  "title": "Azure Synapse Analytics Pipeline",
+  "description": "A data integration pipeline resource that orchestrates data movement and transformation activities.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "etag": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "The description of the pipeline."
+        },
+        "activities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Activity"
+          },
+          "description": "List of activities in the pipeline."
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/ParameterSpecification"
+          },
+          "description": "List of parameters for pipeline."
+        },
+        "variables": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/VariableSpecification"
+          },
+          "description": "List of variables for pipeline."
+        },
+        "concurrency": {
+          "type": "integer",
+          "description": "The max number of concurrent runs for the pipeline."
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "folder": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the folder that this Pipeline is in."
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "Activity": {
+      "type": "object",
+      "description": "A pipeline activity.",
+      "required": ["name", "type"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Activity name."
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of activity."
+        },
+        "description": {
+          "type": "string"
+        },
+        "dependsOn": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "activity": {
+                "type": "string"
+              },
+              "dependencyConditions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["Succeeded", "Failed", "Skipped", "Completed"]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ParameterSpecification": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["Object", "String", "Int", "Float", "Bool", "Array", "SecureString"]
+        },
+        "defaultValue": {
+          "description": "Default value of the parameter."
+        }
+      }
+    },
+    "VariableSpecification": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["String", "Bool", "Array"]
+        },
+        "defaultValue": {
+          "description": "Default value of the variable."
+        }
+      }
+    }
+  }
+}

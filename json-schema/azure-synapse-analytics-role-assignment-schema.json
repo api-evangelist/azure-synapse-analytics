@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-role-assignment-schema.json",
+  "title": "Azure Synapse Analytics Role Assignment",
+  "description": "A role assignment that grants access to Synapse workspace resources through role-based access control.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Role Assignment ID."
+    },
+    "roleDefinitionId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Role Definition ID."
+    },
+    "principalId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Object ID of the AAD principal or security-group."
+    },
+    "scope": {
+      "type": "string",
+      "description": "Scope at which the role assignment is created."
+    },
+    "principalType": {
+      "type": "string",
+      "description": "Type of the principal.",
+      "enum": ["User", "Group", "ServicePrincipal"]
+    }
+  },
+  "required": ["roleDefinitionId", "principalId", "scope"]
+}

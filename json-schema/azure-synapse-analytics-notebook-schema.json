@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-notebook-schema.json",
+  "title": "Azure Synapse Analytics Notebook",
+  "description": "A notebook resource for interactive data exploration supporting Python, Scala, SQL, and .NET languages.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "etag": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "nbformat": {
+          "type": "integer",
+          "description": "Notebook format major version number."
+        },
+        "nbformat_minor": {
+          "type": "integer",
+          "description": "Notebook format minor version number."
+        },
+        "bigDataPool": {
+          "type": "object",
+          "properties": {
+            "referenceName": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "sessionProperties": {
+          "type": "object",
+          "properties": {
+            "driverMemory": {
+              "type": "string"
+            },
+            "driverCores": {
+              "type": "integer"
+            },
+            "executorMemory": {
+              "type": "string"
+            },
+            "executorCores": {
+              "type": "integer"
+            },
+            "numExecutors": {
+              "type": "integer"
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "kernelspec": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                }
+              }
+            },
+            "language_info": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/NotebookCell"
+          }
+        },
+        "folder": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "NotebookCell": {
+      "type": "object",
+      "description": "A notebook cell.",
+      "properties": {
+        "cell_type": {
+          "type": "string",
+          "description": "The type of cell (code, markdown)."
+        },
+        "source": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Contents of the cell."
+        },
+        "metadata": {
+          "type": "object"
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

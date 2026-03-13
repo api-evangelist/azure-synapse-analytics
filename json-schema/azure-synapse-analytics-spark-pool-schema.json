@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-spark-pool-schema.json",
+  "title": "Azure Synapse Analytics Spark Pool",
+  "description": "An Apache Spark pool (Big Data pool) resource for big data processing workloads within a Synapse workspace.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "location": {
+      "type": "string",
+      "description": "The geo-location where the resource lives."
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true
+        },
+        "autoScale": {
+          "$ref": "#/$defs/AutoScaleProperties"
+        },
+        "autoPause": {
+          "$ref": "#/$defs/AutoPauseProperties"
+        },
+        "sparkVersion": {
+          "type": "string",
+          "description": "The Apache Spark version."
+        },
+        "nodeCount": {
+          "type": "integer",
+          "description": "The number of nodes in the Spark pool."
+        },
+        "nodeSize": {
+          "type": "string",
+          "description": "The level of compute power.",
+          "enum": ["None", "Small", "Medium", "Large", "XLarge", "XXLarge", "XXXLarge"]
+        },
+        "nodeSizeFamily": {
+          "type": "string",
+          "description": "The kind of nodes that the Spark pool provides.",
+          "enum": ["None", "MemoryOptimized", "HardwareAcceleratedFPGA", "HardwareAcceleratedGPU"]
+        },
+        "sparkEventsFolder": {
+          "type": "string",
+          "description": "The Spark events folder."
+        },
+        "defaultSparkLogFolder": {
+          "type": "string",
+          "description": "The default folder where Spark logs will be written."
+        },
+        "isComputeIsolationEnabled": {
+          "type": "boolean"
+        },
+        "sessionLevelPackagesEnabled": {
+          "type": "boolean"
+        },
+        "dynamicExecutorAllocation": {
+          "$ref": "#/$defs/DynamicExecutorAllocation"
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    }
+  },
+  "required": ["location"],
+  "$defs": {
+    "AutoScaleProperties": {
+      "type": "object",
+      "description": "Auto-scale configuration for the Spark pool.",
+      "properties": {
+        "minNodeCount": {
+          "type": "integer",
+          "description": "The minimum number of nodes the pool can scale to."
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether auto-scale is enabled."
+        },
+        "maxNodeCount": {
+          "type": "integer",
+          "description": "The maximum number of nodes the pool can scale to."
+        }
+      }
+    },
+    "AutoPauseProperties": {
+      "type": "object",
+      "description": "Auto-pause configuration for the Spark pool.",
+      "properties": {
+        "delayInMinutes": {
+          "type": "integer",
+          "description": "Number of minutes of idle time before the pool is automatically paused."
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Whether auto-pause is enabled."
+        }
+      }
+    },
+    "DynamicExecutorAllocation": {
+      "type": "object",
+      "description": "Dynamic executor allocation settings.",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "minExecutors": {
+          "type": "integer"
+        },
+        "maxExecutors": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

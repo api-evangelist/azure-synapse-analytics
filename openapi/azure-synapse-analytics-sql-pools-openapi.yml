@@ -1,0 +1,594 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - SQL Pools API
+  description: >-
+    Manage dedicated SQL pools for enterprise data warehousing workloads
+    including provisioning, scaling, pausing, and resuming compute resources.
+  version: '2021-06-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://management.azure.com
+    description: Azure Resource Manager
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools:
+    get:
+      operationId: SqlPools_ListByWorkspace
+      summary: List SQL pools by workspace
+      description: List all SQL pools within a workspace.
+      tags:
+        - SqlPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of SQL pools.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlPoolInfoListResult'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}:
+    get:
+      operationId: SqlPools_Get
+      summary: Get a SQL pool
+      description: Get SQL pool properties.
+      tags:
+        - SqlPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the SQL pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlPool'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: SqlPools_Create
+      summary: Create a SQL pool
+      description: Create a SQL pool.
+      tags:
+        - SqlPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SqlPool'
+      responses:
+        '200':
+          description: Successfully updated the SQL pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlPool'
+        '202':
+          description: SQL pool creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    patch:
+      operationId: SqlPools_Update
+      summary: Update a SQL pool
+      description: Apply partial modifications to a SQL pool.
+      tags:
+        - SqlPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SqlPoolPatchInfo'
+      responses:
+        '200':
+          description: Successfully updated the SQL pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlPool'
+        '202':
+          description: SQL pool update accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: SqlPools_Delete
+      summary: Delete a SQL pool
+      description: Delete a SQL pool.
+      tags:
+        - SqlPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the SQL pool.
+        '202':
+          description: SQL pool deletion accepted.
+        '204':
+          description: SQL pool not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/pause:
+    post:
+      operationId: SqlPools_Pause
+      summary: Pause a SQL pool
+      description: Pause a SQL pool to suspend compute operations.
+      tags:
+        - SqlPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully paused the SQL pool.
+        '202':
+          description: SQL pool pause accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/resume:
+    post:
+      operationId: SqlPools_Resume
+      summary: Resume a SQL pool
+      description: Resume a SQL pool to reactivate compute operations.
+      tags:
+        - SqlPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully resumed the SQL pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlPool'
+        '202':
+          description: SQL pool resume accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/restorePoints:
+    get:
+      operationId: SqlPoolRestorePoints_List
+      summary: List SQL pool restore points
+      description: Get a list of available restore points for a SQL pool.
+      tags:
+        - SqlPoolRestorePoints
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved restore points.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestorePointListResult'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      operationId: SqlPoolRestorePoints_Create
+      summary: Create a SQL pool restore point
+      description: Creates a restore point for a SQL pool.
+      tags:
+        - SqlPoolRestorePoints
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSqlPoolRestorePointDefinition'
+      responses:
+        '200':
+          description: Successfully created restore point.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestorePoint'
+        '202':
+          description: Restore point creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/transparentDataEncryption/{transparentDataEncryptionName}:
+    get:
+      operationId: SqlPoolTransparentDataEncryptions_Get
+      summary: Get SQL pool transparent data encryption
+      description: Get a SQL pool transparent data encryption configuration.
+      tags:
+        - SqlPoolTransparentDataEncryption
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+        - name: transparentDataEncryptionName
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - current
+      responses:
+        '200':
+          description: Successfully retrieved TDE configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransparentDataEncryption'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: SqlPoolTransparentDataEncryptions_CreateOrUpdate
+      summary: Create or update SQL pool transparent data encryption
+      description: Creates or updates a SQL pool transparent data encryption configuration.
+      tags:
+        - SqlPoolTransparentDataEncryption
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/SqlPoolNameParameter'
+        - name: transparentDataEncryptionName
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - current
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransparentDataEncryption'
+      responses:
+        '200':
+          description: Successfully updated TDE configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransparentDataEncryption'
+        '201':
+          description: Created TDE configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransparentDataEncryption'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+    SqlPoolNameParameter:
+      name: sqlPoolName
+      in: path
+      required: true
+      description: SQL pool name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      description: Error response.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    SqlPoolInfoListResult:
+      type: object
+      description: List of SQL pools.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/SqlPool'
+        nextLink:
+          type: string
+    SqlPool:
+      type: object
+      description: A SQL pool resource.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        location:
+          type: string
+          description: The geo-location where the resource lives.
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+        sku:
+          $ref: '#/components/schemas/Sku'
+        properties:
+          $ref: '#/components/schemas/SqlPoolProperties'
+    SqlPoolProperties:
+      type: object
+      description: SQL pool properties.
+      properties:
+        maxSizeBytes:
+          type: integer
+          format: int64
+          description: Maximum size in bytes.
+        collation:
+          type: string
+          description: Collation mode.
+        sourceDatabaseId:
+          type: string
+          description: Source database ID for restore.
+        recoverableDatabaseId:
+          type: string
+          description: Recoverable database ID for geo-restore.
+        provisioningState:
+          type: string
+          description: Resource provisioning state.
+          readOnly: true
+        status:
+          type: string
+          description: Resource status.
+          readOnly: true
+        restorePointInTime:
+          type: string
+          format: date-time
+          description: Snapshot time to restore.
+        createMode:
+          type: string
+          description: The create mode.
+          enum:
+            - Default
+            - PointInTimeRestore
+            - Recovery
+            - Restore
+        creationDate:
+          type: string
+          format: date-time
+          readOnly: true
+        storageAccountType:
+          type: string
+          description: The storage account type.
+          enum:
+            - GRS
+            - LRS
+    SqlPoolPatchInfo:
+      type: object
+      description: SQL pool patch info.
+      properties:
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+        location:
+          type: string
+        sku:
+          $ref: '#/components/schemas/Sku'
+        properties:
+          type: object
+          properties:
+            maxSizeBytes:
+              type: integer
+              format: int64
+            collation:
+              type: string
+            createMode:
+              type: string
+    Sku:
+      type: object
+      description: SQL pool SKU.
+      properties:
+        tier:
+          type: string
+        name:
+          type: string
+        capacity:
+          type: integer
+    RestorePointListResult:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestorePoint'
+        nextLink:
+          type: string
+          readOnly: true
+    RestorePoint:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        location:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            restorePointType:
+              type: string
+              enum:
+                - CONTINUOUS
+                - DISCRETE
+              readOnly: true
+            earliestRestoreDate:
+              type: string
+              format: date-time
+              readOnly: true
+            restorePointCreationDate:
+              type: string
+              format: date-time
+              readOnly: true
+            restorePointLabel:
+              type: string
+              readOnly: true
+    CreateSqlPoolRestorePointDefinition:
+      type: object
+      required:
+        - restorePointLabel
+      properties:
+        restorePointLabel:
+          type: string
+          description: The restore point label.
+    TransparentDataEncryption:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        location:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            status:
+              type: string
+              description: The status of the TDE.
+              enum:
+                - Enabled
+                - Disabled

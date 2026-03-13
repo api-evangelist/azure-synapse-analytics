@@ -1,0 +1,288 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Data Flow API
+  description: >-
+    Create and manage data flows for visual data transformation logic. Data flows
+    enable code-free data transformation at scale within Synapse pipelines.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /dataflows:
+    get:
+      operationId: DataFlow_GetDataFlowsByWorkspace
+      summary: List data flows
+      description: Lists data flows in the workspace.
+      tags:
+        - DataFlow
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of data flows.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataFlowListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /dataflows/{dataFlowName}:
+    get:
+      operationId: DataFlow_GetDataFlow
+      summary: Get a data flow
+      description: Gets a data flow.
+      tags:
+        - DataFlow
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/DataFlowNameParameter'
+        - name: If-None-Match
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the data flow.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataFlowResource'
+        '304':
+          description: Not modified.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: DataFlow_CreateOrUpdateDataFlow
+      summary: Create or update a data flow
+      description: Creates or updates a data flow.
+      tags:
+        - DataFlow
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/DataFlowNameParameter'
+        - name: If-Match
+          in: header
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataFlowResource'
+      responses:
+        '200':
+          description: Successfully updated the data flow.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataFlowResource'
+        '202':
+          description: Data flow creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: DataFlow_DeleteDataFlow
+      summary: Delete a data flow
+      description: Deletes a data flow.
+      tags:
+        - DataFlow
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/DataFlowNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the data flow.
+        '202':
+          description: Data flow deletion accepted.
+        '204':
+          description: Data flow not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /dataflows/{dataFlowName}/rename:
+    post:
+      operationId: DataFlow_RenameDataFlow
+      summary: Rename a data flow
+      description: Renames a data flow.
+      tags:
+        - DataFlow
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/DataFlowNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArtifactRenameRequest'
+      responses:
+        '200':
+          description: Successfully renamed.
+        '202':
+          description: Rename accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+    DataFlowNameParameter:
+      name: dataFlowName
+      in: path
+      required: true
+      description: The data flow name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    DataFlowListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataFlowResource'
+        nextLink:
+          type: string
+    DataFlowResource:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/DataFlow'
+    DataFlow:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          description: Type of data flow.
+          enum:
+            - MappingDataFlow
+            - Flowlet
+        description:
+          type: string
+        annotations:
+          type: array
+          items:
+            type: string
+        folder:
+          type: object
+          properties:
+            name:
+              type: string
+        typeProperties:
+          type: object
+          properties:
+            sources:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  dataset:
+                    type: object
+                    properties:
+                      referenceName:
+                        type: string
+                      type:
+                        type: string
+            sinks:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  dataset:
+                    type: object
+                    properties:
+                      referenceName:
+                        type: string
+                      type:
+                        type: string
+            transformations:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  description:
+                    type: string
+            script:
+              type: string
+              description: DataFlow script.
+    ArtifactRenameRequest:
+      type: object
+      properties:
+        newName:
+          type: string

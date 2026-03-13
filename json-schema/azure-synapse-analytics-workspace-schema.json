@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-workspace-schema.json",
+  "title": "Azure Synapse Analytics Workspace",
+  "description": "A Synapse workspace resource that provides an enterprise analytics environment combining SQL, Spark, and data integration capabilities.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Fully qualified resource ID for the workspace.",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the workspace resource."
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the resource (Microsoft.Synapse/workspaces).",
+      "readOnly": true
+    },
+    "location": {
+      "type": "string",
+      "description": "The geo-location where the workspace resource lives."
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Resource tags for categorization and billing."
+    },
+    "identity": {
+      "$ref": "#/$defs/ManagedIdentity"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "defaultDataLakeStorage": {
+          "$ref": "#/$defs/DataLakeStorageAccountDetails"
+        },
+        "sqlAdministratorLogin": {
+          "type": "string",
+          "description": "Login name for the workspace SQL active directory administrator."
+        },
+        "sqlAdministratorLoginPassword": {
+          "type": "string",
+          "description": "SQL administrator login password."
+        },
+        "managedResourceGroupName": {
+          "type": "string",
+          "description": "Workspace managed resource group name."
+        },
+        "provisioningState": {
+          "type": "string",
+          "description": "Resource provisioning state.",
+          "readOnly": true
+        },
+        "connectivityEndpoints": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Connectivity endpoints (SQL, SQL on-demand, dev, web).",
+          "readOnly": true
+        },
+        "managedVirtualNetwork": {
+          "type": "string",
+          "description": "Setting this to 'default' ensures all compute is in a managed virtual network."
+        },
+        "managedVirtualNetworkSettings": {
+          "$ref": "#/$defs/ManagedVirtualNetworkSettings"
+        },
+        "encryption": {
+          "$ref": "#/$defs/EncryptionDetails"
+        },
+        "publicNetworkAccess": {
+          "type": "string",
+          "description": "Enable or disable public network access to the workspace.",
+          "enum": ["Enabled", "Disabled"]
+        },
+        "workspaceUID": {
+          "type": "string",
+          "description": "The workspace unique identifier.",
+          "readOnly": true
+        }
+      }
+    }
+  },
+  "required": ["location"],
+  "$defs": {
+    "ManagedIdentity": {
+      "type": "object",
+      "description": "The workspace managed identity configuration.",
+      "properties": {
+        "principalId": {
+          "type": "string",
+          "description": "The principal ID of the workspace managed identity.",
+          "readOnly": true
+        },
+        "tenantId": {
+          "type": "string",
+          "description": "The tenant ID of the workspace managed identity.",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of managed identity.",
+          "enum": ["None", "SystemAssigned", "SystemAssigned,UserAssigned"]
+        }
+      }
+    },
+    "DataLakeStorageAccountDetails": {
+      "type": "object",
+      "description": "Details of the default data lake storage account associated with the workspace.",
+      "properties": {
+        "accountUrl": {
+          "type": "string",
+          "description": "Account URL of the data lake storage."
+        },
+        "filesystem": {
+          "type": "string",
+          "description": "Filesystem name in the data lake storage."
+        },
+        "resourceId": {
+          "type": "string",
+          "description": "ARM resource ID of the storage account."
+        },
+        "createManagedPrivateEndpoint": {
+          "type": "boolean",
+          "description": "Create managed private endpoint to this storage account."
+        }
+      }
+    },
+    "ManagedVirtualNetworkSettings": {
+      "type": "object",
+      "description": "Managed virtual network settings for the workspace.",
+      "properties": {
+        "preventDataExfiltration": {
+          "type": "boolean",
+          "description": "Prevent data exfiltration from the workspace."
+        },
+        "linkedAccessCheckOnTargetResource": {
+          "type": "boolean",
+          "description": "Check linked access on target resource."
+        },
+        "allowedAadTenantIdsForLinking": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Allowed AAD Tenant IDs for linking."
+        }
+      }
+    },
+    "EncryptionDetails": {
+      "type": "object",
+      "description": "Workspace encryption configuration details.",
+      "properties": {
+        "cmk": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Workspace key name."
+                },
+                "keyVaultUrl": {
+                  "type": "string",
+                  "description": "Workspace key sub-resource key vault URL."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

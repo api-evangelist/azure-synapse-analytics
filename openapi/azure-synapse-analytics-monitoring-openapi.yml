@@ -1,0 +1,174 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Monitoring API
+  description: >-
+    Monitor pipeline runs, Spark jobs, and SQL requests within a Synapse
+    workspace. Provides visibility into execution status, performance metrics,
+    and operational health.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        description: The workspace name.
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /monitoring/workloadTypes/spark/Applications:
+    get:
+      operationId: Monitoring_GetSparkJobList
+      summary: Get Spark job list
+      description: Get list of Spark applications for the workspace.
+      tags:
+        - Monitoring
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the Spark job list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkJobListViewResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /monitoring/workloadTypes/sql/querystring:
+    get:
+      operationId: Monitoring_GetSqlJobQueryString
+      summary: Get SQL job query string
+      description: Get SQL OD/DW Query for the workspace.
+      tags:
+        - Monitoring
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - name: filter
+          in: query
+          description: The filter to apply on the operation.
+          schema:
+            type: string
+        - name: $orderby
+          in: query
+          description: The order by operation.
+          schema:
+            type: string
+        - name: skip
+          in: query
+          description: The number of items to skip.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the SQL query string.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlQueryStringDataModel'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    SparkJobListViewResponse:
+      type: object
+      description: List of Spark jobs response.
+      properties:
+        nJobs:
+          type: integer
+          description: Number of Spark jobs.
+        sparkJobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/SparkJob'
+    SparkJob:
+      type: object
+      properties:
+        state:
+          type: string
+        name:
+          type: string
+        submitter:
+          type: string
+        compute:
+          type: string
+        sparkApplicationId:
+          type: string
+        livyId:
+          type: string
+        timing:
+          type: array
+          items:
+            type: string
+        sparkPoolName:
+          type: string
+        submitTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        queuedDuration:
+          type: string
+        runningDuration:
+          type: string
+        totalDuration:
+          type: string
+        jobType:
+          type: string
+        pipeline:
+          type: array
+          items:
+            type: object
+            properties:
+              runId:
+                type: string
+              name:
+                type: string
+    SqlQueryStringDataModel:
+      type: object
+      description: SQL query string data model.
+      properties:
+        query:
+          type: string
+          description: The SQL query string.

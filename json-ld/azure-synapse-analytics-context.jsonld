@@ -1,0 +1,252 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "synapse": "https://learn.microsoft.com/en-us/azure/synapse-analytics/",
+    "azure": "https://azure.microsoft.com/en-us/services/",
+    "arm": "https://management.azure.com/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Workspace": {
+      "@id": "synapse:overview-what-is",
+      "@type": "SoftwareApplication",
+      "name": "schema:name",
+      "description": "schema:description",
+      "location": "schema:locationCreated",
+      "provisioningState": "schema:status",
+      "managedVirtualNetwork": "synapse:security/synapse-workspace-managed-vnet",
+      "defaultDataLakeStorage": "synapse:sql/data-access-overview",
+      "sqlAdministratorLogin": "schema:accountId",
+      "publicNetworkAccess": "schema:permissionType"
+    },
+
+    "SqlPool": {
+      "@id": "synapse:sql-data-warehouse/sql-data-warehouse-overview-what-is",
+      "@type": "Dataset",
+      "name": "schema:name",
+      "description": "schema:description",
+      "location": "schema:locationCreated",
+      "maxSizeBytes": "schema:contentSize",
+      "collation": "schema:inLanguage",
+      "sku": "schema:additionalType",
+      "status": "schema:status",
+      "createMode": "schema:potentialAction"
+    },
+
+    "SparkPool": {
+      "@id": "synapse:spark/apache-spark-overview",
+      "@type": "SoftwareApplication",
+      "name": "schema:name",
+      "description": "schema:description",
+      "sparkVersion": "schema:softwareVersion",
+      "nodeCount": "schema:numberOfItems",
+      "nodeSize": "schema:size",
+      "nodeSizeFamily": "schema:category",
+      "autoScale": "schema:variableMeasured",
+      "autoPause": "schema:expires"
+    },
+
+    "Pipeline": {
+      "@id": "synapse:data-integration/pipeline-overview",
+      "@type": "CreativeWork",
+      "name": "schema:name",
+      "description": "schema:description",
+      "activities": "schema:hasPart",
+      "parameters": "schema:variableMeasured",
+      "concurrency": "schema:maxValue",
+      "folder": "schema:isPartOf"
+    },
+
+    "Activity": {
+      "@id": "synapse:data-integration/pipeline-overview",
+      "@type": "Action",
+      "name": "schema:name",
+      "type": "schema:additionalType",
+      "description": "schema:description",
+      "dependsOn": "schema:isBasedOn"
+    },
+
+    "Notebook": {
+      "@id": "synapse:spark/apache-spark-notebook-concept",
+      "@type": "CreativeWork",
+      "name": "schema:name",
+      "description": "schema:description",
+      "cells": "schema:hasPart",
+      "bigDataPool": "schema:isBasedOn",
+      "metadata": "schema:additionalProperty"
+    },
+
+    "Dataset": {
+      "@id": "dcat:Dataset",
+      "@type": "dcat:Dataset",
+      "name": "dcterms:title",
+      "description": "dcterms:description",
+      "type": "dcterms:type",
+      "linkedServiceName": "dcterms:source",
+      "schema": "schema:schemaVersion",
+      "folder": "dcterms:isPartOf"
+    },
+
+    "LinkedService": {
+      "@id": "synapse:data-integration/linked-services",
+      "@type": "EntryPoint",
+      "name": "schema:name",
+      "description": "schema:description",
+      "type": "schema:additionalType",
+      "connectVia": "schema:targetPlatform"
+    },
+
+    "DataFlow": {
+      "@id": "synapse:data-integration/data-flows-overview",
+      "@type": "SoftwareSourceCode",
+      "name": "schema:name",
+      "description": "schema:description",
+      "type": "schema:programmingLanguage",
+      "sources": "schema:isBasedOn",
+      "sinks": "schema:result",
+      "transformations": "schema:hasPart"
+    },
+
+    "Trigger": {
+      "@id": "synapse:data-integration/pipeline-trigger",
+      "@type": "ScheduleAction",
+      "name": "schema:name",
+      "description": "schema:description",
+      "type": "schema:additionalType",
+      "runtimeState": "schema:status",
+      "pipelines": "schema:target"
+    },
+
+    "SparkBatchJob": {
+      "@id": "synapse:spark/apache-spark-job-definitions",
+      "@type": "Action",
+      "name": "schema:name",
+      "state": "schema:status",
+      "result": "schema:result",
+      "appId": "schema:identifier",
+      "submitterName": "schema:agent"
+    },
+
+    "SparkSession": {
+      "@id": "synapse:spark/apache-spark-overview",
+      "@type": "InteractiveSession",
+      "name": "schema:name",
+      "state": "schema:status",
+      "appId": "schema:identifier"
+    },
+
+    "RoleAssignment": {
+      "@id": "synapse:security/synapse-workspace-access-control-overview",
+      "@type": "DigitalDocument",
+      "roleDefinitionId": "schema:identifier",
+      "principalId": "schema:accountId",
+      "scope": "schema:position",
+      "principalType": "schema:additionalType"
+    },
+
+    "FirewallRule": {
+      "@id": "synapse:security/synapse-workspace-ip-firewall",
+      "@type": "DigitalDocument",
+      "name": "schema:name",
+      "startIpAddress": "schema:value",
+      "endIpAddress": "schema:maxValue"
+    },
+
+    "ManagedPrivateEndpoint": {
+      "@id": "synapse:security/synapse-workspace-managed-private-endpoints",
+      "@type": "EntryPoint",
+      "name": "schema:name",
+      "privateLinkResourceId": "schema:target",
+      "groupId": "schema:category",
+      "connectionState": "schema:status"
+    },
+
+    "Key": {
+      "@id": "synapse:security/workspaces-encryption",
+      "@type": "DigitalDocument",
+      "name": "schema:name",
+      "isActiveCMK": "schema:status",
+      "keyVaultUrl": "schema:url"
+    },
+
+    "KustoPool": {
+      "@id": "synapse:data-explorer/data-explorer-overview",
+      "@type": "SoftwareApplication",
+      "name": "schema:name",
+      "location": "schema:locationCreated",
+      "sku": "schema:additionalType",
+      "state": "schema:status"
+    },
+
+    "SqlScript": {
+      "@id": "synapse:sql/author-sql-script",
+      "@type": "SoftwareSourceCode",
+      "name": "schema:name",
+      "description": "schema:description",
+      "query": "schema:text",
+      "currentConnection": "schema:target"
+    },
+
+    "SparkJobDefinition": {
+      "@id": "synapse:spark/apache-spark-job-definitions",
+      "@type": "SoftwareSourceCode",
+      "name": "schema:name",
+      "description": "schema:description",
+      "targetBigDataPool": "schema:target",
+      "language": "schema:programmingLanguage"
+    },
+
+    "Library": {
+      "@id": "synapse:spark/apache-spark-manage-pool-packages",
+      "@type": "SoftwareSourceCode",
+      "name": "schema:name",
+      "path": "schema:url",
+      "type": "schema:additionalType"
+    },
+
+    "Credential": {
+      "@id": "synapse:security/credentials",
+      "@type": "DigitalDocument",
+      "name": "schema:name",
+      "type": "schema:additionalType",
+      "description": "schema:description"
+    },
+
+    "KqlScript": {
+      "@id": "synapse:data-explorer/data-explorer-overview",
+      "@type": "SoftwareSourceCode",
+      "name": "schema:name",
+      "query": "schema:text",
+      "description": "schema:description"
+    },
+
+    "LinkConnection": {
+      "@id": "synapse:synapse-link/",
+      "@type": "DataFeed",
+      "name": "schema:name",
+      "sourceDatabase": "schema:isBasedOn",
+      "targetDatabase": "schema:result",
+      "status": "schema:status"
+    },
+
+    "IntegrationRuntime": {
+      "@id": "synapse:data-integration/integration-runtime",
+      "@type": "SoftwareApplication",
+      "name": "schema:name",
+      "type": "schema:additionalType",
+      "description": "schema:description"
+    },
+
+    "PrivateLinkHub": {
+      "@id": "synapse:security/synapse-private-link-hubs",
+      "@type": "EntryPoint",
+      "name": "schema:name",
+      "location": "schema:locationCreated"
+    }
+  }
+}

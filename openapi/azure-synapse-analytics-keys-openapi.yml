@@ -1,0 +1,219 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Keys API
+  description: >-
+    Manage workspace encryption keys for data protection at rest. Supports
+    customer-managed key configuration for dedicated SQL pools and
+    workspace-level encryption.
+  version: '2021-06-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://management.azure.com
+    description: Azure Resource Manager
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/keys:
+    get:
+      operationId: Keys_ListByWorkspace
+      summary: List workspace keys
+      description: Returns a list of keys in a workspace.
+      tags:
+        - Keys
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KeyInfoListResult'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/keys/{keyName}:
+    get:
+      operationId: Keys_Get
+      summary: Get a workspace key
+      description: Gets a workspace key.
+      tags:
+        - Keys
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - name: keyName
+          in: path
+          required: true
+          description: The name of the workspace key.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Key'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: Keys_CreateOrUpdate
+      summary: Create or update a workspace key
+      description: Creates or updates a workspace key.
+      tags:
+        - Keys
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - name: keyName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Key'
+      responses:
+        '200':
+          description: Successfully updated the key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Key'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: Keys_Delete
+      summary: Delete a workspace key
+      description: Deletes a workspace key.
+      tags:
+        - Keys
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - name: keyName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully deleted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Key'
+        '204':
+          description: Not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    KeyInfoListResult:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Key'
+        nextLink:
+          type: string
+    Key:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            isActiveCMK:
+              type: boolean
+              description: Used to activate the workspace after a customer managed key is provided.
+            keyVaultUrl:
+              type: string
+              description: The Key Vault Url of the workspace key.

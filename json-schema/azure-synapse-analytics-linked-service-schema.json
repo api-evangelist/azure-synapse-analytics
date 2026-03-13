@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-linked-service-schema.json",
+  "title": "Azure Synapse Analytics Linked Service",
+  "description": "A linked service resource that defines connection information to an external data source.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "etag": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of linked service (e.g., AzureBlobStorage, AzureSqlDatabase, AzureDataLakeStore)."
+        },
+        "description": {
+          "type": "string"
+        },
+        "connectVia": {
+          "type": "object",
+          "description": "The integration runtime reference.",
+          "properties": {
+            "referenceName": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "typeProperties": {
+          "type": "object",
+          "description": "Type-specific connection properties."
+        }
+      }
+    }
+  }
+}

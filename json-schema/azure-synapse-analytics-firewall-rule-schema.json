@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/api-search/azure-synapse-analytics/json-schema/azure-synapse-analytics-firewall-rule-schema.json",
+  "title": "Azure Synapse Analytics Firewall Rule",
+  "description": "An IP firewall rule that controls network access to a Synapse workspace.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "startIpAddress": {
+          "type": "string",
+          "description": "The start IP address of the firewall rule (IPv4 format)."
+        },
+        "endIpAddress": {
+          "type": "string",
+          "description": "The end IP address of the firewall rule (IPv4 format)."
+        },
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true,
+          "enum": ["Provisioning", "Succeeded", "Deleting", "Failed", "DeleteError"]
+        }
+      }
+    }
+  }
+}

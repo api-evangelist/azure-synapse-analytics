@@ -1,0 +1,638 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Workspace API
+  description: >-
+    Manage Synapse workspaces including creation, configuration, and lifecycle
+    management of analytics environments through Azure Resource Manager.
+  version: '2021-06-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://management.azure.com
+    description: Azure Resource Manager
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /subscriptions/{subscriptionId}/providers/Microsoft.Synapse/workspaces:
+    get:
+      operationId: Workspaces_List
+      summary: List workspaces by subscription
+      description: Returns a list of workspaces in a subscription.
+      tags:
+        - Workspaces
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of workspaces.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceInfoListResult'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces:
+    get:
+      operationId: Workspaces_ListByResourceGroup
+      summary: List workspaces by resource group
+      description: Returns a list of workspaces in a resource group.
+      tags:
+        - Workspaces
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of workspaces.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceInfoListResult'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}:
+    get:
+      operationId: Workspaces_Get
+      summary: Get a workspace
+      description: Gets a workspace.
+      tags:
+        - Workspaces
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the workspace.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workspace'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: Workspaces_CreateOrUpdate
+      summary: Create or update a workspace
+      description: Creates or updates a workspace.
+      tags:
+        - Workspaces
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workspace'
+      responses:
+        '200':
+          description: Successfully updated the workspace.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workspace'
+        '201':
+          description: Successfully created the workspace.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workspace'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    patch:
+      operationId: Workspaces_Update
+      summary: Update a workspace
+      description: Updates a workspace.
+      tags:
+        - Workspaces
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkspacePatchInfo'
+      responses:
+        '200':
+          description: Successfully updated the workspace.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workspace'
+        '201':
+          description: Workspace update accepted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workspace'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: Workspaces_Delete
+      summary: Delete a workspace
+      description: Deletes a workspace.
+      tags:
+        - Workspaces
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the workspace.
+        '202':
+          description: Workspace deletion accepted.
+        '204':
+          description: Workspace not found.
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory:
+    get:
+      operationId: WorkspaceAadAdmins_Get
+      summary: Get workspace Active Directory admin
+      description: Gets a workspace active directory admin.
+      tags:
+        - WorkspaceAadAdmins
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the workspace AAD admin.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceAadAdminInfo'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: WorkspaceAadAdmins_CreateOrUpdate
+      summary: Create or update workspace Active Directory admin
+      description: Creates or updates a workspace active directory admin.
+      tags:
+        - WorkspaceAadAdmins
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceAadAdminInfo'
+      responses:
+        '200':
+          description: Successfully updated the workspace AAD admin.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceAadAdminInfo'
+        '202':
+          description: Accepted.
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: WorkspaceAadAdmins_Delete
+      summary: Delete workspace Active Directory admin
+      description: Deletes a workspace active directory admin.
+      tags:
+        - WorkspaceAadAdmins
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the workspace AAD admin.
+        '202':
+          description: Accepted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/managedIdentitySqlControlSettings/default:
+    get:
+      operationId: WorkspaceManagedIdentitySqlControlSettings_Get
+      summary: Get managed identity SQL control settings
+      description: Get Managed Identity Sql Control Settings.
+      tags:
+        - WorkspaceManagedIdentity
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the managed identity SQL control settings.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedIdentitySqlControlSettingsModel'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: WorkspaceManagedIdentitySqlControlSettings_CreateOrUpdate
+      summary: Create or update managed identity SQL control settings
+      description: Create or update Managed Identity Sql Control Settings.
+      tags:
+        - WorkspaceManagedIdentity
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagedIdentitySqlControlSettingsModel'
+      responses:
+        '200':
+          description: Successfully updated the settings.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedIdentitySqlControlSettingsModel'
+        '201':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedIdentitySqlControlSettingsModel'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
+        default: '2021-06-01'
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The ID of the target subscription.
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      description: The name of the workspace.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      description: Error response from the Azure Synapse service.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Error message.
+    WorkspaceInfoListResult:
+      type: object
+      description: List of workspaces.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workspace'
+          description: List of workspaces.
+        nextLink:
+          type: string
+          description: Link to the next page of results.
+    Workspace:
+      type: object
+      description: A workspace resource.
+      properties:
+        id:
+          type: string
+          description: Fully qualified resource ID.
+          readOnly: true
+        name:
+          type: string
+          description: The name of the resource.
+          readOnly: true
+        type:
+          type: string
+          description: The type of the resource.
+          readOnly: true
+        location:
+          type: string
+          description: The geo-location where the resource lives.
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+          description: Resource tags.
+        identity:
+          $ref: '#/components/schemas/ManagedIdentity'
+        properties:
+          $ref: '#/components/schemas/WorkspaceProperties'
+    WorkspaceProperties:
+      type: object
+      description: Workspace properties.
+      properties:
+        defaultDataLakeStorage:
+          $ref: '#/components/schemas/DataLakeStorageAccountDetails'
+        sqlAdministratorLoginPassword:
+          type: string
+          description: SQL administrator login password.
+        managedResourceGroupName:
+          type: string
+          description: Workspace managed resource group name.
+        provisioningState:
+          type: string
+          description: Resource provisioning state.
+          readOnly: true
+        sqlAdministratorLogin:
+          type: string
+          description: Login for workspace SQL active directory administrator.
+        virtualNetworkProfile:
+          type: object
+          properties:
+            computeSubnetId:
+              type: string
+              description: Subnet ID used for computes in workspace.
+        connectivityEndpoints:
+          type: object
+          additionalProperties:
+            type: string
+          description: Connectivity endpoints.
+          readOnly: true
+        managedVirtualNetwork:
+          type: string
+          description: Setting this to 'default' will ensure that all compute is in a managed virtual network.
+        managedVirtualNetworkSettings:
+          type: object
+          properties:
+            preventDataExfiltration:
+              type: boolean
+              description: Prevent data exfiltration.
+            linkedAccessCheckOnTargetResource:
+              type: boolean
+              description: Linked access check on target resource.
+            allowedAadTenantIdsForLinking:
+              type: array
+              items:
+                type: string
+              description: Allowed AAD Tenant IDs for linking.
+        encryption:
+          type: object
+          properties:
+            cmk:
+              type: object
+              properties:
+                key:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: Workspace Key Name.
+                    keyVaultUrl:
+                      type: string
+                      description: Workspace Key sub-resource key vault URL.
+        publicNetworkAccess:
+          type: string
+          description: Enable or disable public network access.
+          enum:
+            - Enabled
+            - Disabled
+        workspaceUID:
+          type: string
+          description: The workspace unique identifier.
+          readOnly: true
+    WorkspacePatchInfo:
+      type: object
+      description: Workspace patch details.
+      properties:
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+          description: Resource tags.
+        identity:
+          $ref: '#/components/schemas/ManagedIdentity'
+        properties:
+          type: object
+          properties:
+            sqlAdministratorLoginPassword:
+              type: string
+              description: SQL administrator login password.
+            managedVirtualNetworkSettings:
+              type: object
+              properties:
+                preventDataExfiltration:
+                  type: boolean
+                allowedAadTenantIdsForLinking:
+                  type: array
+                  items:
+                    type: string
+            encryption:
+              type: object
+              properties:
+                cmk:
+                  type: object
+                  properties:
+                    key:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        keyVaultUrl:
+                          type: string
+            publicNetworkAccess:
+              type: string
+              enum:
+                - Enabled
+                - Disabled
+    ManagedIdentity:
+      type: object
+      description: The workspace managed identity.
+      properties:
+        principalId:
+          type: string
+          description: The principal ID of the workspace managed identity.
+          readOnly: true
+        tenantId:
+          type: string
+          description: The tenant ID of the workspace managed identity.
+          readOnly: true
+        type:
+          type: string
+          description: The type of managed identity.
+          enum:
+            - None
+            - SystemAssigned
+            - SystemAssigned,UserAssigned
+    DataLakeStorageAccountDetails:
+      type: object
+      description: Details of the default data lake storage account.
+      properties:
+        accountUrl:
+          type: string
+          description: Account URL.
+        filesystem:
+          type: string
+          description: Filesystem name.
+        resourceId:
+          type: string
+          description: ARM resource ID of the storage account.
+        createManagedPrivateEndpoint:
+          type: boolean
+          description: Create managed private endpoint to the storage account.
+    WorkspaceAadAdminInfo:
+      type: object
+      description: Workspace active directory admin.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            tenantId:
+              type: string
+              description: Tenant ID of the workspace active directory administrator.
+            login:
+              type: string
+              description: Login name of the workspace active directory administrator.
+            administratorType:
+              type: string
+              description: Workspace active directory administrator type.
+            sid:
+              type: string
+              description: Object ID of the workspace active directory administrator.
+    ManagedIdentitySqlControlSettingsModel:
+      type: object
+      description: SQL control settings for the workspace managed identity.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            grantSqlControlToManagedIdentity:
+              type: object
+              properties:
+                desiredState:
+                  type: string
+                  description: Desired state.
+                  enum:
+                    - Enabled
+                    - Disabled
+                actualState:
+                  type: string
+                  description: Actual state.
+                  readOnly: true
+                  enum:
+                    - Enabling
+                    - Enabled
+                    - Disabling
+                    - Disabled
+                    - Unknown
