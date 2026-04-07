@@ -359,3 +359,5 @@ components:
       properties:
         newName:
           type: string
+tags:
+  - name: SparkJobDefinition

@@ -344,3 +344,5 @@ components:
                     type: string
                   distributionOptions:
                     type: object
+tags:
+  - name: LinkConnection

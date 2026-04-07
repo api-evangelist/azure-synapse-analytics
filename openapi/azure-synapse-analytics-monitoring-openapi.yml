@@ -172,3 +172,5 @@ components:
         query:
           type: string
           description: The SQL query string.
+tags:
+  - name: Monitoring

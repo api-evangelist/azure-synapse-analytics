@@ -141,3 +141,5 @@ components:
             - SelfHosted
         description:
           type: string
+tags:
+  - name: IntegrationRuntimes

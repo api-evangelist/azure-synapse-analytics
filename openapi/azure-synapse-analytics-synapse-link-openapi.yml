@@ -130,3 +130,5 @@ components:
               properties:
                 sqlPoolName:
                   type: string
+tags:
+  - name: SynapseLink

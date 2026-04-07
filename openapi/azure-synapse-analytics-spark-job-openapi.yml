@@ -598,3 +598,6 @@ components:
         msg:
           type: string
           description: The cancellation message.
+tags:
+  - name: SparkBatch
+  - name: SparkSession

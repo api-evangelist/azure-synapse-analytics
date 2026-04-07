@@ -352,3 +352,5 @@ components:
             - Deprovisioning
             - Disabled
             - Unknown
+tags:
+  - name: Trigger

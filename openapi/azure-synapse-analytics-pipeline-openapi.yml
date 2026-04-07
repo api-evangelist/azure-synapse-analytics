@@ -380,3 +380,5 @@ components:
         runId:
           type: string
           description: Identifier of the created run.
+tags:
+  - name: Pipeline

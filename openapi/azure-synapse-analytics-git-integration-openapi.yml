@@ -100,3 +100,5 @@ components:
         gitHubAccessToken:
           type: string
           description: The GitHub access token.
+tags:
+  - name: GitIntegration

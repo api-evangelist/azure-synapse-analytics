@@ -636,3 +636,7 @@ components:
                     - Disabling
                     - Disabled
                     - Unknown
+tags:
+  - name: WorkspaceAadAdmins
+  - name: WorkspaceManagedIdentity
+  - name: Workspaces

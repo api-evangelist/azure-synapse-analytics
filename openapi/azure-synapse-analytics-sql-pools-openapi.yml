@@ -592,3 +592,7 @@ components:
               enum:
                 - Enabled
                 - Disabled
+tags:
+  - name: SqlPoolRestorePoints
+  - name: SqlPools
+  - name: SqlPoolTransparentDataEncryption

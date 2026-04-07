@@ -360,3 +360,5 @@ components:
               type: boolean
             enablePurge:
               type: boolean
+tags:
+  - name: KustoPools

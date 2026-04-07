@@ -286,3 +286,5 @@ components:
           type: object
           additionalProperties:
             type: string
+tags:
+  - name: PrivateLinkHubs

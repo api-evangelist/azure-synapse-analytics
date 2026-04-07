@@ -240,3 +240,5 @@ components:
             provisioningState:
               type: string
               readOnly: true
+tags:
+  - name: PrivateEndpointConnections

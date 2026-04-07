@@ -322,3 +322,5 @@ components:
       properties:
         newName:
           type: string
+tags:
+  - name: Notebook

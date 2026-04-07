@@ -206,3 +206,5 @@ components:
               type: string
               format: date-time
               readOnly: true
+tags:
+  - name: AzureADOnlyAuthentications

@@ -286,3 +286,5 @@ components:
       properties:
         newName:
           type: string
+tags:
+  - name: DataFlow

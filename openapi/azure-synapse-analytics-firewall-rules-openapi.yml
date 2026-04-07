@@ -286,3 +286,5 @@ components:
       properties:
         operationId:
           type: string
+tags:
+  - name: IpFirewallRules

@@ -227,3 +227,5 @@ components:
             creatorId:
               type: string
               readOnly: true
+tags:
+  - name: Library

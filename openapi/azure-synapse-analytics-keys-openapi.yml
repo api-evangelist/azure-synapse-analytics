@@ -217,3 +217,5 @@ components:
             keyVaultUrl:
               type: string
               description: The Key Vault Url of the workspace key.
+tags:
+  - name: Keys

@@ -392,3 +392,5 @@ components:
           enum:
             - File
             - Artifact
+tags:
+  - name: BigDataPools

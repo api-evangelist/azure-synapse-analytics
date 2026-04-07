@@ -300,3 +300,5 @@ components:
           type: string
         data:
           type: string
+tags:
+  - name: DataFlowDebugSession

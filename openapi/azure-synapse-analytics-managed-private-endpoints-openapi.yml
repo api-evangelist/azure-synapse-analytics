@@ -210,3 +210,5 @@ components:
             isReserved:
               type: boolean
               readOnly: true
+tags:
+  - name: ManagedPrivateEndpoints
