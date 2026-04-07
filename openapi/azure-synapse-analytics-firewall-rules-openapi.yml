@@ -19,10 +19,10 @@ security:
   - azure_auth:
       - user_impersonation
 paths:
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules
+  : get:
       operationId: IpFirewallRules_ListByWorkspace
-      summary: List firewall rules
+      summary: Azure Synapse Analytics List firewall rules
       description: Returns a list of firewall rules.
       tags:
         - IpFirewallRules
@@ -44,10 +44,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules/{ruleName}:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules/{ruleName}
+  : get:
       operationId: IpFirewallRules_Get
-      summary: Get a firewall rule
+      summary: Azure Synapse Analytics Get a firewall rule
       description: Get a firewall rule.
       tags:
         - IpFirewallRules
@@ -77,7 +77,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: IpFirewallRules_CreateOrUpdate
-      summary: Create or update a firewall rule
+      summary: Azure Synapse Analytics Create or update a firewall rule
       description: Creates or updates a firewall rule.
       tags:
         - IpFirewallRules
@@ -120,7 +120,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: IpFirewallRules_Delete
-      summary: Delete a firewall rule
+      summary: Azure Synapse Analytics Delete a firewall rule
       description: Deletes a firewall rule.
       tags:
         - IpFirewallRules
@@ -151,10 +151,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/replaceAllIpFirewallRules:
-    post:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/replaceAllIpFirewallRules
+  : post:
       operationId: IpFirewallRules_ReplaceAll
-      summary: Replace all firewall rules
+      summary: Azure Synapse Analytics Replace all firewall rules
       description: Replaces firewall rules.
       tags:
         - IpFirewallRules

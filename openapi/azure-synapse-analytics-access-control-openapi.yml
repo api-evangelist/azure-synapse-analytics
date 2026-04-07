@@ -26,7 +26,7 @@ paths:
   /roleAssignments:
     get:
       operationId: RoleAssignments_ListRoleAssignments
-      summary: List role assignments
+      summary: Azure Synapse Analytics List role assignments
       description: List role assignments.
       tags:
         - RoleAssignments
@@ -68,7 +68,7 @@ paths:
   /roleAssignments/{roleAssignmentId}:
     get:
       operationId: RoleAssignments_GetRoleAssignmentById
-      summary: Get role assignment
+      summary: Azure Synapse Analytics Get role assignment
       description: Get role assignment by role assignment Id.
       tags:
         - RoleAssignments
@@ -95,7 +95,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: RoleAssignments_CreateRoleAssignment
-      summary: Create role assignment
+      summary: Azure Synapse Analytics Create role assignment
       description: Create role assignment.
       tags:
         - RoleAssignments
@@ -128,7 +128,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: RoleAssignments_DeleteRoleAssignmentById
-      summary: Delete role assignment
+      summary: Azure Synapse Analytics Delete role assignment
       description: Delete role assignment by role assignment Id.
       tags:
         - RoleAssignments

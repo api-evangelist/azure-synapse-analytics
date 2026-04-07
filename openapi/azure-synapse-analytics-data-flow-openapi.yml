@@ -24,7 +24,7 @@ paths:
   /dataflows:
     get:
       operationId: DataFlow_GetDataFlowsByWorkspace
-      summary: List data flows
+      summary: Azure Synapse Analytics List data flows
       description: Lists data flows in the workspace.
       tags:
         - DataFlow
@@ -46,7 +46,7 @@ paths:
   /dataflows/{dataFlowName}:
     get:
       operationId: DataFlow_GetDataFlow
-      summary: Get a data flow
+      summary: Azure Synapse Analytics Get a data flow
       description: Gets a data flow.
       tags:
         - DataFlow
@@ -74,7 +74,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: DataFlow_CreateOrUpdateDataFlow
-      summary: Create or update a data flow
+      summary: Azure Synapse Analytics Create or update a data flow
       description: Creates or updates a data flow.
       tags:
         - DataFlow
@@ -108,7 +108,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: DataFlow_DeleteDataFlow
-      summary: Delete a data flow
+      summary: Azure Synapse Analytics Delete a data flow
       description: Deletes a data flow.
       tags:
         - DataFlow
@@ -131,7 +131,7 @@ paths:
   /dataflows/{dataFlowName}/rename:
     post:
       operationId: DataFlow_RenameDataFlow
-      summary: Rename a data flow
+      summary: Azure Synapse Analytics Rename a data flow
       description: Renames a data flow.
       tags:
         - DataFlow

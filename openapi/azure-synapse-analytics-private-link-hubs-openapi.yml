@@ -22,7 +22,7 @@ paths:
   /subscriptions/{subscriptionId}/providers/Microsoft.Synapse/privateLinkHubs:
     get:
       operationId: PrivateLinkHubs_List
-      summary: List private link hubs by subscription
+      summary: Azure Synapse Analytics List private link hubs by subscription
       description: Returns a list of privateLinkHubs in a subscription.
       tags:
         - PrivateLinkHubs
@@ -45,7 +45,7 @@ paths:
   /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/privateLinkHubs:
     get:
       operationId: PrivateLinkHubs_ListByResourceGroup
-      summary: List private link hubs by resource group
+      summary: Azure Synapse Analytics List private link hubs by resource group
       description: Returns a list of privateLinkHubs in a resource group.
       tags:
         - PrivateLinkHubs
@@ -66,10 +66,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/privateLinkHubs/{privateLinkHubName}:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/privateLinkHubs/{privateLinkHubName}
+  : get:
       operationId: PrivateLinkHubs_Get
-      summary: Get a private link hub
+      summary: Azure Synapse Analytics Get a private link hub
       description: Gets a privateLinkHub.
       tags:
         - PrivateLinkHubs
@@ -98,7 +98,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: PrivateLinkHubs_CreateOrUpdate
-      summary: Create or update a private link hub
+      summary: Azure Synapse Analytics Create or update a private link hub
       description: Creates or updates a privateLinkHub.
       tags:
         - PrivateLinkHubs
@@ -138,7 +138,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     patch:
       operationId: PrivateLinkHubs_Update
-      summary: Update a private link hub
+      summary: Azure Synapse Analytics Update a private link hub
       description: Updates a privateLinkHub.
       tags:
         - PrivateLinkHubs
@@ -172,7 +172,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: PrivateLinkHubs_Delete
-      summary: Delete a private link hub
+      summary: Azure Synapse Analytics Delete a private link hub
       description: Deletes a privateLinkHub.
       tags:
         - PrivateLinkHubs

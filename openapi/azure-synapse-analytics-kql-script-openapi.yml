@@ -25,7 +25,7 @@ paths:
   /kqlScripts:
     get:
       operationId: KqlScripts_GetAll
-      summary: List KQL scripts
+      summary: Azure Synapse Analytics List KQL scripts
       description: Get all KQL scripts in the workspace.
       tags:
         - KqlScripts
@@ -47,7 +47,7 @@ paths:
   /kqlScripts/{kqlScriptName}:
     get:
       operationId: KqlScript_GetByName
-      summary: Get a KQL script
+      summary: Azure Synapse Analytics Get a KQL script
       description: Get KQL script by name.
       tags:
         - KqlScripts
@@ -69,7 +69,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: KqlScript_CreateOrUpdate
-      summary: Create or update a KQL script
+      summary: Azure Synapse Analytics Create or update a KQL script
       description: Creates or updates a KQL Script.
       tags:
         - KqlScripts
@@ -99,7 +99,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: KqlScript_DeleteByName
-      summary: Delete a KQL script
+      summary: Azure Synapse Analytics Delete a KQL script
       description: Delete KQL script by name.
       tags:
         - KqlScripts
@@ -122,7 +122,7 @@ paths:
   /kqlScripts/{kqlScriptName}/rename:
     post:
       operationId: KqlScript_Rename
-      summary: Rename a KQL script
+      summary: Azure Synapse Analytics Rename a KQL script
       description: Rename a KQL script.
       tags:
         - KqlScripts

@@ -25,7 +25,7 @@ paths:
   /datasets:
     get:
       operationId: Dataset_GetDatasetsByWorkspace
-      summary: List datasets
+      summary: Azure Synapse Analytics List datasets
       description: Lists datasets in the workspace.
       tags:
         - Dataset
@@ -47,7 +47,7 @@ paths:
   /datasets/{datasetName}:
     get:
       operationId: Dataset_GetDataset
-      summary: Get a dataset
+      summary: Azure Synapse Analytics Get a dataset
       description: Gets a dataset.
       tags:
         - Dataset
@@ -75,7 +75,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: Dataset_CreateOrUpdateDataset
-      summary: Create or update a dataset
+      summary: Azure Synapse Analytics Create or update a dataset
       description: Creates or updates a dataset.
       tags:
         - Dataset
@@ -109,7 +109,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: Dataset_DeleteDataset
-      summary: Delete a dataset
+      summary: Azure Synapse Analytics Delete a dataset
       description: Deletes a dataset.
       tags:
         - Dataset
@@ -132,7 +132,7 @@ paths:
   /datasets/{datasetName}/rename:
     post:
       operationId: Dataset_RenameDataset
-      summary: Rename a dataset
+      summary: Azure Synapse Analytics Rename a dataset
       description: Renames a dataset.
       tags:
         - Dataset

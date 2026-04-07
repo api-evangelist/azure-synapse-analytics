@@ -26,7 +26,7 @@ paths:
   /pipelines:
     get:
       operationId: Pipeline_GetPipelinesByWorkspace
-      summary: List pipelines
+      summary: Azure Synapse Analytics List pipelines
       description: Lists pipelines in the workspace.
       tags:
         - Pipeline
@@ -48,7 +48,7 @@ paths:
   /pipelines/{pipelineName}:
     get:
       operationId: Pipeline_GetPipeline
-      summary: Get a pipeline
+      summary: Azure Synapse Analytics Get a pipeline
       description: Gets a pipeline.
       tags:
         - Pipeline
@@ -80,7 +80,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: Pipeline_CreateOrUpdatePipeline
-      summary: Create or update a pipeline
+      summary: Azure Synapse Analytics Create or update a pipeline
       description: Creates or updates a pipeline.
       tags:
         - Pipeline
@@ -118,7 +118,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: Pipeline_DeletePipeline
-      summary: Delete a pipeline
+      summary: Azure Synapse Analytics Delete a pipeline
       description: Deletes a pipeline.
       tags:
         - Pipeline
@@ -141,7 +141,7 @@ paths:
   /pipelines/{pipelineName}/rename:
     post:
       operationId: Pipeline_RenamePipeline
-      summary: Rename a pipeline
+      summary: Azure Synapse Analytics Rename a pipeline
       description: Renames a pipeline.
       tags:
         - Pipeline
@@ -168,7 +168,7 @@ paths:
   /pipelines/{pipelineName}/createRun:
     post:
       operationId: Pipeline_CreatePipelineRun
-      summary: Create a pipeline run
+      summary: Azure Synapse Analytics Create a pipeline run
       description: Creates a run of a pipeline.
       tags:
         - Pipeline

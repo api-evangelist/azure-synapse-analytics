@@ -25,7 +25,7 @@ paths:
   /managedVirtualNetworks/{managedVirtualNetworkName}/managedPrivateEndpoints:
     get:
       operationId: ManagedPrivateEndpoints_List
-      summary: List managed private endpoints
+      summary: Azure Synapse Analytics List managed private endpoints
       description: List managed private endpoints in a managed virtual network.
       tags:
         - ManagedPrivateEndpoints
@@ -48,7 +48,7 @@ paths:
   /managedVirtualNetworks/{managedVirtualNetworkName}/managedPrivateEndpoints/{managedPrivateEndpointName}:
     get:
       operationId: ManagedPrivateEndpoints_Get
-      summary: Get a managed private endpoint
+      summary: Azure Synapse Analytics Get a managed private endpoint
       description: Get a managed private endpoint.
       tags:
         - ManagedPrivateEndpoints
@@ -71,7 +71,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: ManagedPrivateEndpoints_Create
-      summary: Create a managed private endpoint
+      summary: Azure Synapse Analytics Create a managed private endpoint
       description: Create a managed private endpoint.
       tags:
         - ManagedPrivateEndpoints
@@ -100,7 +100,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: ManagedPrivateEndpoints_Delete
-      summary: Delete a managed private endpoint
+      summary: Azure Synapse Analytics Delete a managed private endpoint
       description: Delete a managed private endpoint.
       tags:
         - ManagedPrivateEndpoints

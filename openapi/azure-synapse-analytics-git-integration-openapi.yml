@@ -25,7 +25,7 @@ paths:
   /getGitHubAccessToken:
     post:
       operationId: WorkspaceGitRepoManagement_GetGitHubAccessToken
-      summary: Get GitHub access token
+      summary: Azure Synapse Analytics Get GitHub access token
       description: Get the GitHub access token for the workspace Git integration.
       tags:
         - GitIntegration

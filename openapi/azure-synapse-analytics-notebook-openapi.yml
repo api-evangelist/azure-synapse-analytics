@@ -26,7 +26,7 @@ paths:
   /notebooks:
     get:
       operationId: Notebook_GetNotebooksByWorkspace
-      summary: List notebooks
+      summary: Azure Synapse Analytics List notebooks
       description: Lists notebooks in the workspace.
       tags:
         - Notebook
@@ -48,7 +48,7 @@ paths:
   /notebooks/summary:
     get:
       operationId: Notebook_GetNotebookSummaryByWorkSpace
-      summary: List notebook summaries
+      summary: Azure Synapse Analytics List notebook summaries
       description: Lists a summary of notebooks in the workspace.
       tags:
         - Notebook
@@ -70,7 +70,7 @@ paths:
   /notebooks/{notebookName}:
     get:
       operationId: Notebook_GetNotebook
-      summary: Get a notebook
+      summary: Azure Synapse Analytics Get a notebook
       description: Gets a notebook.
       tags:
         - Notebook
@@ -98,7 +98,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: Notebook_CreateOrUpdateNotebook
-      summary: Create or update a notebook
+      summary: Azure Synapse Analytics Create or update a notebook
       description: Creates or updates a notebook.
       tags:
         - Notebook
@@ -132,7 +132,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: Notebook_DeleteNotebook
-      summary: Delete a notebook
+      summary: Azure Synapse Analytics Delete a notebook
       description: Deletes a notebook.
       tags:
         - Notebook
@@ -155,7 +155,7 @@ paths:
   /notebooks/{notebookName}/rename:
     post:
       operationId: Notebook_RenameNotebook
-      summary: Rename a notebook
+      summary: Azure Synapse Analytics Rename a notebook
       description: Renames a notebook.
       tags:
         - Notebook

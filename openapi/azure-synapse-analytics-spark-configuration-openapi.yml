@@ -25,7 +25,7 @@ paths:
   /sparkconfigurations:
     get:
       operationId: SparkConfiguration_GetSparkConfigurationsByWorkspace
-      summary: List Spark configurations
+      summary: Azure Synapse Analytics List Spark configurations
       description: Lists Spark configurations in the workspace.
       tags:
         - SparkConfiguration
@@ -47,7 +47,7 @@ paths:
   /sparkconfigurations/{sparkConfigurationName}:
     get:
       operationId: SparkConfiguration_GetSparkConfiguration
-      summary: Get a Spark configuration
+      summary: Azure Synapse Analytics Get a Spark configuration
       description: Gets a Spark configuration.
       tags:
         - SparkConfiguration
@@ -75,7 +75,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: SparkConfiguration_CreateOrUpdateSparkConfiguration
-      summary: Create or update a Spark configuration
+      summary: Azure Synapse Analytics Create or update a Spark configuration
       description: Creates or updates a Spark configuration.
       tags:
         - SparkConfiguration
@@ -109,7 +109,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: SparkConfiguration_DeleteSparkConfiguration
-      summary: Delete a Spark configuration
+      summary: Azure Synapse Analytics Delete a Spark configuration
       description: Deletes a Spark configuration.
       tags:
         - SparkConfiguration
@@ -132,7 +132,7 @@ paths:
   /sparkconfigurations/{sparkConfigurationName}/rename:
     post:
       operationId: SparkConfiguration_RenameSparkConfiguration
-      summary: Rename a Spark configuration
+      summary: Azure Synapse Analytics Rename a Spark configuration
       description: Renames a Spark configuration.
       tags:
         - SparkConfiguration

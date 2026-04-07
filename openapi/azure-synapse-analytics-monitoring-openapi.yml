@@ -26,7 +26,7 @@ paths:
   /monitoring/workloadTypes/spark/Applications:
     get:
       operationId: Monitoring_GetSparkJobList
-      summary: Get Spark job list
+      summary: Azure Synapse Analytics Get Spark job list
       description: Get list of Spark applications for the workspace.
       tags:
         - Monitoring
@@ -48,7 +48,7 @@ paths:
   /monitoring/workloadTypes/sql/querystring:
     get:
       operationId: Monitoring_GetSqlJobQueryString
-      summary: Get SQL job query string
+      summary: Azure Synapse Analytics Get SQL job query string
       description: Get SQL OD/DW Query for the workspace.
       tags:
         - Monitoring

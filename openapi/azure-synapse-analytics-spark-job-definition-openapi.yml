@@ -25,7 +25,7 @@ paths:
   /sparkJobDefinitions:
     get:
       operationId: SparkJobDefinition_GetSparkJobDefinitionsByWorkspace
-      summary: List Spark job definitions
+      summary: Azure Synapse Analytics List Spark job definitions
       description: Lists Spark job definitions in the workspace.
       tags:
         - SparkJobDefinition
@@ -47,7 +47,7 @@ paths:
   /sparkJobDefinitions/{sparkJobDefinitionName}:
     get:
       operationId: SparkJobDefinition_GetSparkJobDefinition
-      summary: Get a Spark job definition
+      summary: Azure Synapse Analytics Get a Spark job definition
       description: Gets a Spark job definition.
       tags:
         - SparkJobDefinition
@@ -75,7 +75,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: SparkJobDefinition_CreateOrUpdateSparkJobDefinition
-      summary: Create or update a Spark job definition
+      summary: Azure Synapse Analytics Create or update a Spark job definition
       description: Creates or updates a Spark job definition.
       tags:
         - SparkJobDefinition
@@ -109,7 +109,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: SparkJobDefinition_DeleteSparkJobDefinition
-      summary: Delete a Spark job definition
+      summary: Azure Synapse Analytics Delete a Spark job definition
       description: Deletes a Spark job definition.
       tags:
         - SparkJobDefinition
@@ -132,7 +132,7 @@ paths:
   /sparkJobDefinitions/{sparkJobDefinitionName}/rename:
     post:
       operationId: SparkJobDefinition_RenameSparkJobDefinition
-      summary: Rename a Spark job definition
+      summary: Azure Synapse Analytics Rename a Spark job definition
       description: Renames a Spark job definition.
       tags:
         - SparkJobDefinition
@@ -159,7 +159,7 @@ paths:
   /sparkJobDefinitions/{sparkJobDefinitionName}/execute:
     post:
       operationId: SparkJobDefinition_ExecuteSparkJobDefinition
-      summary: Execute a Spark job definition
+      summary: Azure Synapse Analytics Execute a Spark job definition
       description: Executes the Spark job definition.
       tags:
         - SparkJobDefinition
@@ -184,7 +184,7 @@ paths:
   /sparkJobDefinitions/{sparkJobDefinitionName}/debug:
     post:
       operationId: SparkJobDefinition_DebugSparkJobDefinition
-      summary: Debug a Spark job definition
+      summary: Azure Synapse Analytics Debug a Spark job definition
       description: Debug the Spark job definition.
       tags:
         - SparkJobDefinition

@@ -19,10 +19,10 @@ security:
   - azure_auth:
       - user_impersonation
 paths:
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/synapseLinks:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/synapseLinks
+  : get:
       operationId: SynapseLinks_ListByWorkspace
-      summary: List Synapse Link configurations
+      summary: Azure Synapse Analytics List Synapse Link configurations
       description: Returns a list of Synapse Link configurations in the workspace.
       tags:
         - SynapseLink

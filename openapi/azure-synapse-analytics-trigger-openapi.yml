@@ -25,7 +25,7 @@ paths:
   /triggers:
     get:
       operationId: Trigger_GetTriggersByWorkspace
-      summary: List triggers
+      summary: Azure Synapse Analytics List triggers
       description: Lists triggers in the workspace.
       tags:
         - Trigger
@@ -47,7 +47,7 @@ paths:
   /triggers/{triggerName}:
     get:
       operationId: Trigger_GetTrigger
-      summary: Get a trigger
+      summary: Azure Synapse Analytics Get a trigger
       description: Gets a trigger.
       tags:
         - Trigger
@@ -75,7 +75,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: Trigger_CreateOrUpdateTrigger
-      summary: Create or update a trigger
+      summary: Azure Synapse Analytics Create or update a trigger
       description: Creates or updates a trigger.
       tags:
         - Trigger
@@ -109,7 +109,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: Trigger_DeleteTrigger
-      summary: Delete a trigger
+      summary: Azure Synapse Analytics Delete a trigger
       description: Deletes a trigger.
       tags:
         - Trigger
@@ -132,7 +132,7 @@ paths:
   /triggers/{triggerName}/subscribeToEvents:
     post:
       operationId: Trigger_SubscribeTriggerToEvents
-      summary: Subscribe trigger to events
+      summary: Azure Synapse Analytics Subscribe trigger to events
       description: Subscribe event trigger to events.
       tags:
         - Trigger
@@ -157,7 +157,7 @@ paths:
   /triggers/{triggerName}/getEventSubscriptionStatus:
     post:
       operationId: Trigger_GetEventSubscriptionStatus
-      summary: Get trigger event subscription status
+      summary: Azure Synapse Analytics Get trigger event subscription status
       description: Get a trigger event subscription status.
       tags:
         - Trigger
@@ -180,7 +180,7 @@ paths:
   /triggers/{triggerName}/unsubscribeFromEvents:
     post:
       operationId: Trigger_UnsubscribeTriggerFromEvents
-      summary: Unsubscribe trigger from events
+      summary: Azure Synapse Analytics Unsubscribe trigger from events
       description: Unsubscribe event trigger from events.
       tags:
         - Trigger
@@ -205,7 +205,7 @@ paths:
   /triggers/{triggerName}/start:
     post:
       operationId: Trigger_StartTrigger
-      summary: Start a trigger
+      summary: Azure Synapse Analytics Start a trigger
       description: Starts a trigger.
       tags:
         - Trigger
@@ -224,7 +224,7 @@ paths:
   /triggers/{triggerName}/stop:
     post:
       operationId: Trigger_StopTrigger
-      summary: Stop a trigger
+      summary: Azure Synapse Analytics Stop a trigger
       description: Stops a trigger.
       tags:
         - Trigger

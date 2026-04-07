@@ -25,7 +25,7 @@ paths:
   /queryDataFlowDebugSessions:
     post:
       operationId: DataFlowDebugSession_QueryDataFlowDebugSessionsByWorkspace
-      summary: List data flow debug sessions
+      summary: Azure Synapse Analytics List data flow debug sessions
       description: Query all active data flow debug sessions.
       tags:
         - DataFlowDebugSession
@@ -47,7 +47,7 @@ paths:
   /createDataFlowDebugSession:
     post:
       operationId: DataFlowDebugSession_CreateDataFlowDebugSession
-      summary: Create a data flow debug session
+      summary: Azure Synapse Analytics Create a data flow debug session
       description: Creates a data flow debug session.
       tags:
         - DataFlowDebugSession
@@ -77,7 +77,7 @@ paths:
   /addDataFlowToDebugSession:
     post:
       operationId: DataFlowDebugSession_AddDataFlow
-      summary: Add a data flow to debug session
+      summary: Azure Synapse Analytics Add a data flow to debug session
       description: Add a data flow into debug session.
       tags:
         - DataFlowDebugSession
@@ -105,7 +105,7 @@ paths:
   /deleteDataFlowDebugSession:
     post:
       operationId: DataFlowDebugSession_DeleteDataFlowDebugSession
-      summary: Delete a data flow debug session
+      summary: Azure Synapse Analytics Delete a data flow debug session
       description: Deletes a data flow debug session.
       tags:
         - DataFlowDebugSession
@@ -129,7 +129,7 @@ paths:
   /executeDataFlowDebugCommand:
     post:
       operationId: DataFlowDebugSession_ExecuteCommand
-      summary: Execute a data flow debug command
+      summary: Azure Synapse Analytics Execute a data flow debug command
       description: Execute a data flow debug command.
       tags:
         - DataFlowDebugSession

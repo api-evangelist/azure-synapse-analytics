@@ -21,7 +21,7 @@ paths:
   /subscriptions/{subscriptionId}/providers/Microsoft.Synapse/workspaces:
     get:
       operationId: Workspaces_List
-      summary: List workspaces by subscription
+      summary: Azure Synapse Analytics List workspaces by subscription
       description: Returns a list of workspaces in a subscription.
       tags:
         - Workspaces
@@ -44,7 +44,7 @@ paths:
   /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces:
     get:
       operationId: Workspaces_ListByResourceGroup
-      summary: List workspaces by resource group
+      summary: Azure Synapse Analytics List workspaces by resource group
       description: Returns a list of workspaces in a resource group.
       tags:
         - Workspaces
@@ -68,7 +68,7 @@ paths:
   /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}:
     get:
       operationId: Workspaces_Get
-      summary: Get a workspace
+      summary: Azure Synapse Analytics Get a workspace
       description: Gets a workspace.
       tags:
         - Workspaces
@@ -92,7 +92,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: Workspaces_CreateOrUpdate
-      summary: Create or update a workspace
+      summary: Azure Synapse Analytics Create or update a workspace
       description: Creates or updates a workspace.
       tags:
         - Workspaces
@@ -128,7 +128,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     patch:
       operationId: Workspaces_Update
-      summary: Update a workspace
+      summary: Azure Synapse Analytics Update a workspace
       description: Updates a workspace.
       tags:
         - Workspaces
@@ -164,7 +164,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: Workspaces_Delete
-      summary: Delete a workspace
+      summary: Azure Synapse Analytics Delete a workspace
       description: Deletes a workspace.
       tags:
         - Workspaces
@@ -186,10 +186,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory
+  : get:
       operationId: WorkspaceAadAdmins_Get
-      summary: Get workspace Active Directory admin
+      summary: Azure Synapse Analytics Get workspace Active Directory admin
       description: Gets a workspace active directory admin.
       tags:
         - WorkspaceAadAdmins
@@ -213,7 +213,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: WorkspaceAadAdmins_CreateOrUpdate
-      summary: Create or update workspace Active Directory admin
+      summary: Azure Synapse Analytics Create or update workspace Active Directory admin
       description: Creates or updates a workspace active directory admin.
       tags:
         - WorkspaceAadAdmins
@@ -245,7 +245,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: WorkspaceAadAdmins_Delete
-      summary: Delete workspace Active Directory admin
+      summary: Azure Synapse Analytics Delete workspace Active Directory admin
       description: Deletes a workspace active directory admin.
       tags:
         - WorkspaceAadAdmins
@@ -267,10 +267,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/managedIdentitySqlControlSettings/default:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/managedIdentitySqlControlSettings/default
+  : get:
       operationId: WorkspaceManagedIdentitySqlControlSettings_Get
-      summary: Get managed identity SQL control settings
+      summary: Azure Synapse Analytics Get managed identity SQL control settings
       description: Get Managed Identity Sql Control Settings.
       tags:
         - WorkspaceManagedIdentity
@@ -294,7 +294,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: WorkspaceManagedIdentitySqlControlSettings_CreateOrUpdate
-      summary: Create or update managed identity SQL control settings
+      summary: Azure Synapse Analytics Create or update managed identity SQL control settings
       description: Create or update Managed Identity Sql Control Settings.
       tags:
         - WorkspaceManagedIdentity

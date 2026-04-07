@@ -25,7 +25,7 @@ paths:
   /linkconnections:
     get:
       operationId: LinkConnection_ListByWorkspace
-      summary: List link connections
+      summary: Azure Synapse Analytics List link connections
       description: List link connections in the workspace.
       tags:
         - LinkConnection
@@ -47,7 +47,7 @@ paths:
   /linkconnections/{linkConnectionName}:
     get:
       operationId: LinkConnection_Get
-      summary: Get a link connection
+      summary: Azure Synapse Analytics Get a link connection
       description: Get a link connection.
       tags:
         - LinkConnection
@@ -69,7 +69,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: LinkConnection_CreateOrUpdate
-      summary: Create or update a link connection
+      summary: Azure Synapse Analytics Create or update a link connection
       description: Creates or updates a link connection.
       tags:
         - LinkConnection
@@ -97,7 +97,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: LinkConnection_Delete
-      summary: Delete a link connection
+      summary: Azure Synapse Analytics Delete a link connection
       description: Delete a link connection.
       tags:
         - LinkConnection
@@ -118,7 +118,7 @@ paths:
   /linkconnections/{linkConnectionName}/start:
     post:
       operationId: LinkConnection_Start
-      summary: Start a link connection
+      summary: Azure Synapse Analytics Start a link connection
       description: Start a link connection to begin data replication.
       tags:
         - LinkConnection
@@ -137,7 +137,7 @@ paths:
   /linkconnections/{linkConnectionName}/stop:
     post:
       operationId: LinkConnection_Stop
-      summary: Stop a link connection
+      summary: Azure Synapse Analytics Stop a link connection
       description: Stop a link connection.
       tags:
         - LinkConnection
@@ -156,7 +156,7 @@ paths:
   /linkconnections/{linkConnectionName}/detailedstatus:
     get:
       operationId: LinkConnection_GetDetailedStatus
-      summary: Get link connection detailed status
+      summary: Azure Synapse Analytics Get link connection detailed status
       description: Get the detailed status of a link connection.
       tags:
         - LinkConnection
@@ -179,7 +179,7 @@ paths:
   /linkconnections/{linkConnectionName}/linktables:
     get:
       operationId: LinkConnection_ListLinkTables
-      summary: List link tables
+      summary: Azure Synapse Analytics List link tables
       description: List the link tables of a link connection.
       tags:
         - LinkConnection

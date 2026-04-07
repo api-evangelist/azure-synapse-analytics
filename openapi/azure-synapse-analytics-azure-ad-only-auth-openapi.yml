@@ -19,10 +19,10 @@ security:
   - azure_auth:
       - user_impersonation
 paths:
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/azureADOnlyAuthentications:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/azureADOnlyAuthentications
+  : get:
       operationId: AzureADOnlyAuthentications_List
-      summary: List Azure AD only authentications
+      summary: Azure Synapse Analytics List Azure AD only authentications
       description: Gets a list of Azure Active Directory only authentication property for a workspace.
       tags:
         - AzureADOnlyAuthentications
@@ -44,10 +44,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/azureADOnlyAuthentications/{azureADOnlyAuthenticationName}:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/azureADOnlyAuthentications/{azureADOnlyAuthenticationName}
+  : get:
       operationId: AzureADOnlyAuthentications_Get
-      summary: Get Azure AD only authentication
+      summary: Azure Synapse Analytics Get Azure AD only authentication
       description: Gets a Azure Active Directory only authentication property.
       tags:
         - AzureADOnlyAuthentications
@@ -79,7 +79,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: AzureADOnlyAuthentications_Create
-      summary: Create or update Azure AD only authentication
+      summary: Azure Synapse Analytics Create or update Azure AD only authentication
       description: Create or Update a Azure Active Directory only authentication property for the workspaces.
       tags:
         - AzureADOnlyAuthentications

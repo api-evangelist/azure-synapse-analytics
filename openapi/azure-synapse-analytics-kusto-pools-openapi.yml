@@ -19,10 +19,10 @@ security:
   - azure_auth:
       - user_impersonation
 paths:
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/kustoPools:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/kustoPools
+  : get:
       operationId: KustoPools_ListByWorkspace
-      summary: List Kusto pools
+      summary: Azure Synapse Analytics List Kusto pools
       description: List all Kusto pools in a workspace.
       tags:
         - KustoPools
@@ -44,10 +44,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/kustoPools/{kustoPoolName}:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/kustoPools/{kustoPoolName}
+  : get:
       operationId: KustoPools_Get
-      summary: Get a Kusto pool
+      summary: Azure Synapse Analytics Get a Kusto pool
       description: Gets a Kusto pool.
       tags:
         - KustoPools
@@ -72,7 +72,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: KustoPools_CreateOrUpdate
-      summary: Create or update a Kusto pool
+      summary: Azure Synapse Analytics Create or update a Kusto pool
       description: Create or update a Kusto pool.
       tags:
         - KustoPools
@@ -117,7 +117,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     patch:
       operationId: KustoPools_Update
-      summary: Update a Kusto pool
+      summary: Azure Synapse Analytics Update a Kusto pool
       description: Update a Kusto pool.
       tags:
         - KustoPools
@@ -154,7 +154,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: KustoPools_Delete
-      summary: Delete a Kusto pool
+      summary: Azure Synapse Analytics Delete a Kusto pool
       description: Deletes a Kusto pool.
       tags:
         - KustoPools

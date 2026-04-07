@@ -25,7 +25,7 @@ paths:
   /linkedservices:
     get:
       operationId: LinkedService_GetLinkedServicesByWorkspace
-      summary: List linked services
+      summary: Azure Synapse Analytics List linked services
       description: Lists linked services in the workspace.
       tags:
         - LinkedService
@@ -47,7 +47,7 @@ paths:
   /linkedservices/{linkedServiceName}:
     get:
       operationId: LinkedService_GetLinkedService
-      summary: Get a linked service
+      summary: Azure Synapse Analytics Get a linked service
       description: Gets a linked service.
       tags:
         - LinkedService
@@ -75,7 +75,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: LinkedService_CreateOrUpdateLinkedService
-      summary: Create or update a linked service
+      summary: Azure Synapse Analytics Create or update a linked service
       description: Creates or updates a linked service.
       tags:
         - LinkedService
@@ -109,7 +109,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: LinkedService_DeleteLinkedService
-      summary: Delete a linked service
+      summary: Azure Synapse Analytics Delete a linked service
       description: Deletes a linked service.
       tags:
         - LinkedService
@@ -132,7 +132,7 @@ paths:
   /linkedservices/{linkedServiceName}/rename:
     post:
       operationId: LinkedService_RenameLinkedService
-      summary: Rename a linked service
+      summary: Azure Synapse Analytics Rename a linked service
       description: Renames a linked service.
       tags:
         - LinkedService

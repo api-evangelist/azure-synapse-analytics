@@ -25,7 +25,7 @@ paths:
   /integrationRuntimes:
     get:
       operationId: IntegrationRuntimes_List
-      summary: List integration runtimes
+      summary: Azure Synapse Analytics List integration runtimes
       description: List integration runtimes in the workspace.
       tags:
         - IntegrationRuntimes
@@ -47,7 +47,7 @@ paths:
   /integrationRuntimes/{integrationRuntimeName}:
     get:
       operationId: IntegrationRuntimes_Get
-      summary: Get an integration runtime
+      summary: Azure Synapse Analytics Get an integration runtime
       description: Get an integration runtime.
       tags:
         - IntegrationRuntimes

@@ -18,10 +18,10 @@ security:
   - azure_auth:
       - user_impersonation
 paths:
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools
+  : get:
       operationId: SqlPools_ListByWorkspace
-      summary: List SQL pools by workspace
+      summary: Azure Synapse Analytics List SQL pools by workspace
       description: List all SQL pools within a workspace.
       tags:
         - SqlPools
@@ -43,10 +43,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}
+  : get:
       operationId: SqlPools_Get
-      summary: Get a SQL pool
+      summary: Azure Synapse Analytics Get a SQL pool
       description: Get SQL pool properties.
       tags:
         - SqlPools
@@ -71,7 +71,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: SqlPools_Create
-      summary: Create a SQL pool
+      summary: Azure Synapse Analytics Create a SQL pool
       description: Create a SQL pool.
       tags:
         - SqlPools
@@ -104,7 +104,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     patch:
       operationId: SqlPools_Update
-      summary: Update a SQL pool
+      summary: Azure Synapse Analytics Update a SQL pool
       description: Apply partial modifications to a SQL pool.
       tags:
         - SqlPools
@@ -137,7 +137,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: SqlPools_Delete
-      summary: Delete a SQL pool
+      summary: Azure Synapse Analytics Delete a SQL pool
       description: Delete a SQL pool.
       tags:
         - SqlPools
@@ -160,10 +160,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/pause:
-    post:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/pause
+  : post:
       operationId: SqlPools_Pause
-      summary: Pause a SQL pool
+      summary: Azure Synapse Analytics Pause a SQL pool
       description: Pause a SQL pool to suspend compute operations.
       tags:
         - SqlPools
@@ -184,10 +184,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/resume:
-    post:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/resume
+  : post:
       operationId: SqlPools_Resume
-      summary: Resume a SQL pool
+      summary: Azure Synapse Analytics Resume a SQL pool
       description: Resume a SQL pool to reactivate compute operations.
       tags:
         - SqlPools
@@ -212,10 +212,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/restorePoints:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/restorePoints
+  : get:
       operationId: SqlPoolRestorePoints_List
-      summary: List SQL pool restore points
+      summary: Azure Synapse Analytics List SQL pool restore points
       description: Get a list of available restore points for a SQL pool.
       tags:
         - SqlPoolRestorePoints
@@ -240,7 +240,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     post:
       operationId: SqlPoolRestorePoints_Create
-      summary: Create a SQL pool restore point
+      summary: Azure Synapse Analytics Create a SQL pool restore point
       description: Creates a restore point for a SQL pool.
       tags:
         - SqlPoolRestorePoints
@@ -271,10 +271,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/transparentDataEncryption/{transparentDataEncryptionName}:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/transparentDataEncryption/{transparentDataEncryptionName}
+  : get:
       operationId: SqlPoolTransparentDataEncryptions_Get
-      summary: Get SQL pool transparent data encryption
+      summary: Azure Synapse Analytics Get SQL pool transparent data encryption
       description: Get a SQL pool transparent data encryption configuration.
       tags:
         - SqlPoolTransparentDataEncryption
@@ -306,7 +306,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: SqlPoolTransparentDataEncryptions_CreateOrUpdate
-      summary: Create or update SQL pool transparent data encryption
+      summary: Azure Synapse Analytics Create or update SQL pool transparent data encryption
       description: Creates or updates a SQL pool transparent data encryption configuration.
       tags:
         - SqlPoolTransparentDataEncryption

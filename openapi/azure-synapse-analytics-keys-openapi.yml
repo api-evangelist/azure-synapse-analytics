@@ -19,10 +19,10 @@ security:
   - azure_auth:
       - user_impersonation
 paths:
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/keys:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/keys
+  : get:
       operationId: Keys_ListByWorkspace
-      summary: List workspace keys
+      summary: Azure Synapse Analytics List workspace keys
       description: Returns a list of keys in a workspace.
       tags:
         - Keys
@@ -44,10 +44,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/keys/{keyName}:
-    get:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/keys/{keyName}
+  : get:
       operationId: Keys_Get
-      summary: Get a workspace key
+      summary: Azure Synapse Analytics Get a workspace key
       description: Gets a workspace key.
       tags:
         - Keys
@@ -77,7 +77,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: Keys_CreateOrUpdate
-      summary: Create or update a workspace key
+      summary: Azure Synapse Analytics Create or update a workspace key
       description: Creates or updates a workspace key.
       tags:
         - Keys
@@ -112,7 +112,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: Keys_Delete
-      summary: Delete a workspace key
+      summary: Azure Synapse Analytics Delete a workspace key
       description: Deletes a workspace key.
       tags:
         - Keys

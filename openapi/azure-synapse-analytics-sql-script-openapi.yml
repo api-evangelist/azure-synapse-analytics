@@ -25,7 +25,7 @@ paths:
   /sqlScripts:
     get:
       operationId: SqlScript_GetSqlScriptsByWorkspace
-      summary: List SQL scripts
+      summary: Azure Synapse Analytics List SQL scripts
       description: Lists SQL scripts in the workspace.
       tags:
         - SqlScript
@@ -47,7 +47,7 @@ paths:
   /sqlScripts/{sqlScriptName}:
     get:
       operationId: SqlScript_GetSqlScript
-      summary: Get a SQL script
+      summary: Azure Synapse Analytics Get a SQL script
       description: Gets a SQL script.
       tags:
         - SqlScript
@@ -75,7 +75,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: SqlScript_CreateOrUpdateSqlScript
-      summary: Create or update a SQL script
+      summary: Azure Synapse Analytics Create or update a SQL script
       description: Creates or updates a SQL script.
       tags:
         - SqlScript
@@ -109,7 +109,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: SqlScript_DeleteSqlScript
-      summary: Delete a SQL script
+      summary: Azure Synapse Analytics Delete a SQL script
       description: Deletes a SQL script.
       tags:
         - SqlScript
@@ -132,7 +132,7 @@ paths:
   /sqlScripts/{sqlScriptName}/rename:
     post:
       operationId: SqlScript_RenameSqlScript
-      summary: Rename a SQL script
+      summary: Azure Synapse Analytics Rename a SQL script
       description: Renames a SQL script.
       tags:
         - SqlScript

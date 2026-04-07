@@ -25,7 +25,7 @@ paths:
   /libraries:
     get:
       operationId: Library_List
-      summary: List libraries
+      summary: Azure Synapse Analytics List libraries
       description: Lists library resources in the workspace.
       tags:
         - Library
@@ -47,7 +47,7 @@ paths:
   /libraries/{libraryName}:
     get:
       operationId: Library_Get
-      summary: Get a library
+      summary: Azure Synapse Analytics Get a library
       description: Get a library resource.
       tags:
         - Library
@@ -71,7 +71,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     put:
       operationId: Library_Append
-      summary: Upload a library
+      summary: Azure Synapse Analytics Upload a library
       description: Creates or appends to a library resource.
       tags:
         - Library
@@ -102,7 +102,7 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
     delete:
       operationId: Library_Delete
-      summary: Delete a library
+      summary: Azure Synapse Analytics Delete a library
       description: Delete a library resource.
       tags:
         - Library
@@ -125,7 +125,7 @@ paths:
   /libraries/{libraryName}/flush:
     post:
       operationId: Library_Flush
-      summary: Flush a library
+      summary: Azure Synapse Analytics Flush a library
       description: Flush a library resource.
       tags:
         - Library
