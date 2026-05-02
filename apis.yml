@@ -11,7 +11,7 @@ tags:
   - ETL
   - SQL
 created: '2024-01-01'
-modified: '2026-03-16'
+modified: '2026-04-28'
 url: https://azure.microsoft.com/en-us/services/synapse-analytics/
 apis:
   - name: Synapse Workspace API
