@@ -1,0 +1,390 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: Azure Synapse Analytics
+providerId: microsoft-azure-synapse-analytics
+publisherName: Azure Synapse Analytics
+serviceCategory: API
+created: '2026-05-04'
+modified: '2026-05-04'
+tags:
+  - Analytics
+  - Apache Spark
+  - Big Data
+  - Data Integration
+  - Data Warehouse
+  - ETL
+  - SQL
+  - FinOps
+  - Cost Management
+  - FOCUS
+description: FinOps framework definition for the Azure Synapse Analytics API surface. Provides a FOCUS-aligned
+  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+principles:
+  - name: Visibility
+    description: Make API consumption costs visible to engineering, product, and finance teams in near
+      real-time.
+  - name: Allocation
+    description: Tag every chargeable API call with the consuming team, environment, application, and
+      feature so cost can be allocated.
+  - name: Optimization
+    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
+      cost per useful unit of work.
+  - name: Accountability
+    description: Establish budget owners and chargeback or showback flows for each consuming team.
+domains:
+  - name: Understand Usage and Cost
+    capabilities:
+      - Data Ingestion
+      - Allocation
+      - Reporting and Analytics
+      - Anomaly Management
+  - name: Quantify Business Value
+    capabilities:
+      - Planning and Estimating
+      - Forecasting
+      - Budgeting
+      - Benchmarking
+      - Unit Economics
+  - name: Optimize Usage and Cost
+    capabilities:
+      - Architecting for Cloud
+      - Rate Optimization
+      - Workload Optimization
+      - Cloud Sustainability
+      - Licensing and SaaS
+  - name: Manage the FinOps Practice
+    capabilities:
+      - FinOps Practice Operations
+      - FinOps Education and Enablement
+      - Invoicing and Chargeback
+      - Onboarding Workloads
+      - Intersecting Disciplines
+billingModel:
+  pricingCategory: Usage-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Tax
+    - Credit
+    - Adjustment
+  chargeFrequency: Recurring
+focusColumns:
+  ServiceName: Azure Synapse Analytics
+  ServiceCategory: Developer Tools / API
+  ProviderName: Azure Synapse Analytics
+  PublisherName: Azure Synapse Analytics
+  InvoiceIssuerName: Azure Synapse Analytics
+  PricingCategory: Usage-Based
+  PricingUnit: request
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: api_requests
+    description: Count of billable API requests
+    unit: request
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+      - region
+      - consumer
+  - name: data_egress
+    description: Bytes returned over the network in API responses
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - api
+      - region
+      - consumer
+  - name: compute_seconds
+    description: Server-side compute consumed by the request, where applicable
+    unit: second
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+apis:
+  - name: Synapse Workspace API
+    baseURL: https://management.azure.com
+    tags:
+      - Management
+      - Resource Manager
+      - Workspace
+    serviceName: Synapse Workspace API
+    serviceCategory: API
+  - name: Synapse SQL Pools API
+    baseURL: https://management.azure.com
+    tags:
+      - Data Warehouse
+      - Resource Manager
+      - SQL Pool
+    serviceName: Synapse SQL Pools API
+    serviceCategory: API
+  - name: Synapse Spark Pools API
+    baseURL: https://management.azure.com
+    tags:
+      - Apache Spark
+      - Big Data
+      - Resource Manager
+      - Spark
+    serviceName: Synapse Spark Pools API
+    serviceCategory: API
+  - name: Synapse Pipeline API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Integration
+      - Data Plane
+      - ETL
+      - Pipeline
+    serviceName: Synapse Pipeline API
+    serviceCategory: API
+  - name: Synapse Spark Job API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Batch Processing
+      - Data Plane
+      - Spark Jobs
+    serviceName: Synapse Spark Job API
+    serviceCategory: API
+  - name: Synapse Monitoring API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Plane
+      - Monitoring
+      - Observability
+    serviceName: Synapse Monitoring API
+    serviceCategory: API
+  - name: Synapse Link API
+    baseURL: https://management.azure.com
+    tags:
+      - HTAP
+      - Real-Time Analytics
+      - Synapse Link
+    serviceName: Synapse Link API
+    serviceCategory: API
+  - name: Synapse Access Control API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Access Control
+      - Data Plane
+      - RBAC
+      - Security
+    serviceName: Synapse Access Control API
+    serviceCategory: API
+  - name: Synapse Notebook API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Artifacts
+      - Data Exploration
+      - Data Plane
+      - Notebook
+    serviceName: Synapse Notebook API
+    serviceCategory: API
+  - name: Synapse Dataset API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Artifacts
+      - Data Management
+      - Data Plane
+      - Dataset
+    serviceName: Synapse Dataset API
+    serviceCategory: API
+  - name: Synapse Linked Service API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Connectivity
+      - Data Integration
+      - Data Plane
+      - Linked Service
+    serviceName: Synapse Linked Service API
+    serviceCategory: API
+  - name: Synapse Data Flow API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Flow
+      - Data Plane
+      - Data Transformation
+      - ETL
+    serviceName: Synapse Data Flow API
+    serviceCategory: API
+  - name: Synapse SQL Script API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Artifacts
+      - Data Plane
+      - SQL
+      - SQL Script
+    serviceName: Synapse SQL Script API
+    serviceCategory: API
+  - name: Synapse Trigger API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Automation
+      - Data Plane
+      - Scheduling
+      - Trigger
+    serviceName: Synapse Trigger API
+    serviceCategory: API
+  - name: Synapse Spark Job Definition API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Artifacts
+      - Batch Processing
+      - Data Plane
+      - Spark Job Definition
+    serviceName: Synapse Spark Job Definition API
+    serviceCategory: API
+  - name: Synapse Managed Private Endpoints API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Plane
+      - Networking
+      - Private Endpoints
+      - Security
+    serviceName: Synapse Managed Private Endpoints API
+    serviceCategory: API
+  - name: Synapse Integration Runtimes API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Compute
+      - Data Integration
+      - Data Plane
+      - Integration Runtime
+    serviceName: Synapse Integration Runtimes API
+    serviceCategory: API
+  - name: Synapse Library API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Plane
+      - Library
+      - Package Management
+      - Spark
+    serviceName: Synapse Library API
+    serviceCategory: API
+  - name: Synapse Git Integration API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Plane
+      - DevOps
+      - Git Integration
+      - Source Control
+    serviceName: Synapse Git Integration API
+    serviceCategory: API
+  - name: Synapse Firewall Rules API
+    baseURL: https://management.azure.com
+    tags:
+      - Firewall Rules
+      - Network Security
+      - Resource Manager
+    serviceName: Synapse Firewall Rules API
+    serviceCategory: API
+  - name: Synapse Keys API
+    baseURL: https://management.azure.com
+    tags:
+      - Encryption Keys
+      - Resource Manager
+      - Security
+    serviceName: Synapse Keys API
+    serviceCategory: API
+  - name: Synapse Private Endpoint Connections API
+    baseURL: https://management.azure.com
+    tags:
+      - Networking
+      - Private Endpoint
+      - Resource Manager
+      - Security
+    serviceName: Synapse Private Endpoint Connections API
+    serviceCategory: API
+  - name: Synapse Private Link Hubs API
+    baseURL: https://management.azure.com
+    tags:
+      - Networking
+      - Private Link Hub
+      - Resource Manager
+      - Security
+    serviceName: Synapse Private Link Hubs API
+    serviceCategory: API
+  - name: Synapse Kusto Pools API
+    baseURL: https://management.azure.com
+    tags:
+      - Data Explorer
+      - Kusto Pool
+      - Real-Time Analytics
+      - Resource Manager
+    serviceName: Synapse Kusto Pools API
+    serviceCategory: API
+  - name: Synapse Azure AD Only Authentication API
+    baseURL: https://management.azure.com
+    tags:
+      - Authentication
+      - Azure Active Directory
+      - Resource Manager
+      - Security
+    serviceName: Synapse Azure AD Only Authentication API
+    serviceCategory: API
+  - name: Synapse Spark Configuration API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Configuration
+      - Data Plane
+      - Spark
+      - Spark Configuration
+    serviceName: Synapse Spark Configuration API
+    serviceCategory: API
+  - name: Synapse Data Flow Debug Session API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Flow Debug
+      - Data Plane
+      - Data Transformation
+      - Debugging
+    serviceName: Synapse Data Flow Debug Session API
+    serviceCategory: API
+  - name: Synapse Credential API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Authentication
+      - Credential
+      - Data Plane
+      - Security
+    serviceName: Synapse Credential API
+    serviceCategory: API
+  - name: Synapse KQL Script API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Explorer
+      - Data Plane
+      - KQL Script
+      - Kusto
+    serviceName: Synapse KQL Script API
+    serviceCategory: API
+  - name: Synapse Link Connection API
+    baseURL: https://{workspaceName}.dev.azuresynapse.net
+    tags:
+      - Data Plane
+      - Data Replication
+      - Link Connection
+      - Real-Time Analytics
+    serviceName: Synapse Link Connection API
+    serviceCategory: API
+unitEconomics:
+  - name: Cost per 1K Requests
+    metric: billed_cost / (api_requests / 1000)
+    target: TBD
+  - name: Cost per Active Consumer
+    metric: billed_cost / active_consumers
+    target: TBD
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+    url: https://apievangelist.com/
