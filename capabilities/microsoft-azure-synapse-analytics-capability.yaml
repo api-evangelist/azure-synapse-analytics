@@ -1,0 +1,240 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Access Control API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse
+    role-based access control for fine-grained permissions.
+  tags:
+  - Microsoft
+  - Azure
+  - Synapse
+  - Analytics
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-azure-synapse-analytics
+    baseUri: https://myworkspace.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Access Control API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{MICROSOFT_AZURE_SYNAPSE_ANALYTICS_TOKEN}}'
+    resources:
+    - name: roleassignments
+      path: /roleAssignments
+      operations:
+      - name: roleassignments-listroleassignments
+        method: GET
+        description: Azure Synapse Analytics List role assignments
+        inputParameters:
+        - name: roleId
+          in: query
+          type: string
+          description: Synapse Built-In Role Id.
+        - name: principalId
+          in: query
+          type: string
+          description: Object ID of the AAD principal or security-group.
+        - name: scope
+          in: query
+          type: string
+          description: Scope of the Synapse Built-In Role.
+        - name: x-ms-continuation
+          in: header
+          type: string
+          description: Continuation token.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: roleassignments-roleassignmentid
+      path: /roleAssignments/{roleAssignmentId}
+      operations:
+      - name: roleassignments-getroleassignmentbyid
+        method: GET
+        description: Azure Synapse Analytics Get role assignment
+        inputParameters:
+        - name: roleAssignmentId
+          in: path
+          type: string
+          required: true
+          description: The ID of the role assignment.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: roleassignments-createroleassignment
+        method: PUT
+        description: Azure Synapse Analytics Create role assignment
+        inputParameters:
+        - name: roleAssignmentId
+          in: path
+          type: string
+          required: true
+          description: The ID of the role assignment.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: roleassignments-deleteroleassignmentbyid
+        method: DELETE
+        description: Azure Synapse Analytics Delete role assignment
+        inputParameters:
+        - name: roleAssignmentId
+          in: path
+          type: string
+          required: true
+        - name: scope
+          in: query
+          type: string
+          description: Scope of the Synapse Built-In Role.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: microsoft-azure-synapse-analytics-rest
+    description: REST adapter for Azure Synapse Analytics - Access Control API.
+    resources:
+    - path: /roleAssignments
+      name: roleassignments-listroleassignments
+      operations:
+      - method: GET
+        name: roleassignments-listroleassignments
+        description: Azure Synapse Analytics List role assignments
+        call: microsoft-azure-synapse-analytics.roleassignments-listroleassignments
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roleAssignments/{roleAssignmentId}
+      name: roleassignments-getroleassignmentbyid
+      operations:
+      - method: GET
+        name: roleassignments-getroleassignmentbyid
+        description: Azure Synapse Analytics Get role assignment
+        call: microsoft-azure-synapse-analytics.roleassignments-getroleassignmentbyid
+        with:
+          roleAssignmentId: rest.roleAssignmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roleAssignments/{roleAssignmentId}
+      name: roleassignments-createroleassignment
+      operations:
+      - method: PUT
+        name: roleassignments-createroleassignment
+        description: Azure Synapse Analytics Create role assignment
+        call: microsoft-azure-synapse-analytics.roleassignments-createroleassignment
+        with:
+          roleAssignmentId: rest.roleAssignmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roleAssignments/{roleAssignmentId}
+      name: roleassignments-deleteroleassignmentbyid
+      operations:
+      - method: DELETE
+        name: roleassignments-deleteroleassignmentbyid
+        description: Azure Synapse Analytics Delete role assignment
+        call: microsoft-azure-synapse-analytics.roleassignments-deleteroleassignmentbyid
+        with:
+          roleAssignmentId: rest.roleAssignmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: microsoft-azure-synapse-analytics-mcp
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Access Control API for AI agent use.
+    tools:
+    - name: roleassignments-listroleassignments
+      description: Azure Synapse Analytics List role assignments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-synapse-analytics.roleassignments-listroleassignments
+      with:
+        roleId: tools.roleId
+        principalId: tools.principalId
+        scope: tools.scope
+      inputParameters:
+      - name: roleId
+        type: string
+        description: Synapse Built-In Role Id.
+      - name: principalId
+        type: string
+        description: Object ID of the AAD principal or security-group.
+      - name: scope
+        type: string
+        description: Scope of the Synapse Built-In Role.
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: roleassignments-getroleassignmentbyid
+      description: Azure Synapse Analytics Get role assignment
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-synapse-analytics.roleassignments-getroleassignmentbyid
+      with:
+        roleAssignmentId: tools.roleAssignmentId
+      inputParameters:
+      - name: roleAssignmentId
+        type: string
+        description: The ID of the role assignment.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: roleassignments-createroleassignment
+      description: Azure Synapse Analytics Create role assignment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-synapse-analytics.roleassignments-createroleassignment
+      with:
+        roleAssignmentId: tools.roleAssignmentId
+      inputParameters:
+      - name: roleAssignmentId
+        type: string
+        description: The ID of the role assignment.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: roleassignments-deleteroleassignmentbyid
+      description: Azure Synapse Analytics Delete role assignment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-azure-synapse-analytics.roleassignments-deleteroleassignmentbyid
+      with:
+        roleAssignmentId: tools.roleAssignmentId
+        scope: tools.scope
+      inputParameters:
+      - name: roleAssignmentId
+        type: string
+        description: roleAssignmentId
+        required: true
+      - name: scope
+        type: string
+        description: Scope of the Synapse Built-In Role.
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_TOKEN: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_TOKEN
