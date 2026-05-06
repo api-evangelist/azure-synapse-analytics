@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Azure Synapse Analytics
 providerId: microsoft-azure-synapse-analytics
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Analytics
   - Apache Spark
@@ -14,224 +15,81 @@ tags:
   - ETL
   - SQL
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Azure Synapse Analytics API surface. Captures
-  per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values
-  to be replaced with published provider limits.
+description: Azure Synapse Analytics has two layers of limits. (1) The management/control plane
+  flows through Azure Resource Manager (ARM) and is throttled via the standard ARM token-bucket
+  algorithm (250-token read bucket / 25 per sec; 200-token write bucket / 10 per sec per
+  subscription per region). (2) The data plane has workload-specific limits — Dedicated SQL
+  Pool concurrency by DWU (e.g., DW100c = 4 concurrent queries; DW30000c = 128 concurrent
+  queries), Serverless SQL Pool query duration cap, Apache Spark Pool node cap per workspace,
+  and Pipelines concurrency caps. Many limits can be raised by support request.
+sources:
+  - https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/memory-concurrency-limits
+  - https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits
+  - https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/request-limits-and-throttling
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
   retryAfter: Retry-After
-  policy: RateLimit-Policy
+  remainingSubscriptionReads: x-ms-ratelimit-remaining-subscription-reads
+  remainingSubscriptionWrites: x-ms-ratelimit-remaining-subscription-writes
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
   serviceUnavailable: 503
+  resourceGovernance: 10928
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
+  - name: ARM management plane reads (token bucket)
+    scope: subscription/region
+    metric: requests_per_second
+    limit: 25
+    timeFrame: second
+    notes: 250-token bucket; 25/sec refill.
+  - name: ARM management plane writes (token bucket)
+    scope: subscription/region
+    metric: requests_per_second
     limit: 10
-    burst: 20
+    timeFrame: second
+    notes: 200-token bucket; 10/sec refill.
+  - name: Dedicated SQL Pool concurrent queries (DW100c)
+    scope: dedicated-sql-pool
+    metric: concurrent_queries
+    limit: 4
+    notes: Concurrency scales with DWU. DW100c=4, DW1000c=32, DW30000c=128.
+  - name: Dedicated SQL Pool concurrency slots
+    scope: dedicated-sql-pool
+    metric: concurrency_slots
+    limit: 4
+    notes: DW100c=4 slots; DW1000c=40; DW30000c=1200. Each query consumes slots based on resource
+      class.
+  - name: Serverless SQL Pool query duration
+    scope: workspace
+    metric: minutes_per_query
+    limit: 30
     timeFrame: minute
-    applies:
-      - Synapse Workspace API
-      - Synapse SQL Pools API
-      - Synapse Spark Pools API
-      - Synapse Pipeline API
-      - Synapse Spark Job API
-      - Synapse Monitoring API
-      - Synapse Link API
-      - Synapse Access Control API
-      - Synapse Notebook API
-      - Synapse Dataset API
-      - Synapse Linked Service API
-      - Synapse Data Flow API
-      - Synapse SQL Script API
-      - Synapse Trigger API
-      - Synapse Spark Job Definition API
-      - Synapse Managed Private Endpoints API
-      - Synapse Integration Runtimes API
-      - Synapse Library API
-      - Synapse Git Integration API
-      - Synapse Firewall Rules API
-      - Synapse Keys API
-      - Synapse Private Endpoint Connections API
-      - Synapse Private Link Hubs API
-      - Synapse Kusto Pools API
-      - Synapse Azure AD Only Authentication API
-      - Synapse Spark Configuration API
-      - Synapse Data Flow Debug Session API
-      - Synapse Credential API
-      - Synapse KQL Script API
-      - Synapse Link Connection API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
+    notes: Maximum query duration is 30 minutes; long-running queries are auto-killed.
+  - name: Apache Spark Pool node count
+    scope: workspace
+    metric: nodes_per_pool
+    limit: 200
+    notes: Default cap of 200 nodes per Spark pool; raise via support request.
+  - name: Synapse Pipelines concurrent activities
+    scope: workspace
+    metric: concurrent_activities
     limit: 1000
-    timeFrame: month
-    applies:
-      - Synapse Workspace API
-      - Synapse SQL Pools API
-      - Synapse Spark Pools API
-      - Synapse Pipeline API
-      - Synapse Spark Job API
-      - Synapse Monitoring API
-      - Synapse Link API
-      - Synapse Access Control API
-      - Synapse Notebook API
-      - Synapse Dataset API
-      - Synapse Linked Service API
-      - Synapse Data Flow API
-      - Synapse SQL Script API
-      - Synapse Trigger API
-      - Synapse Spark Job Definition API
-      - Synapse Managed Private Endpoints API
-      - Synapse Integration Runtimes API
-      - Synapse Library API
-      - Synapse Git Integration API
-      - Synapse Firewall Rules API
-      - Synapse Keys API
-      - Synapse Private Endpoint Connections API
-      - Synapse Private Link Hubs API
-      - Synapse Kusto Pools API
-      - Synapse Azure AD Only Authentication API
-      - Synapse Spark Configuration API
-      - Synapse Data Flow Debug Session API
-      - Synapse Credential API
-      - Synapse KQL Script API
-      - Synapse Link Connection API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Synapse Workspace API
-      - Synapse SQL Pools API
-      - Synapse Spark Pools API
-      - Synapse Pipeline API
-      - Synapse Spark Job API
-      - Synapse Monitoring API
-      - Synapse Link API
-      - Synapse Access Control API
-      - Synapse Notebook API
-      - Synapse Dataset API
-      - Synapse Linked Service API
-      - Synapse Data Flow API
-      - Synapse SQL Script API
-      - Synapse Trigger API
-      - Synapse Spark Job Definition API
-      - Synapse Managed Private Endpoints API
-      - Synapse Integration Runtimes API
-      - Synapse Library API
-      - Synapse Git Integration API
-      - Synapse Firewall Rules API
-      - Synapse Keys API
-      - Synapse Private Endpoint Connections API
-      - Synapse Private Link Hubs API
-      - Synapse Kusto Pools API
-      - Synapse Azure AD Only Authentication API
-      - Synapse Spark Configuration API
-      - Synapse Data Flow Debug Session API
-      - Synapse Credential API
-      - Synapse KQL Script API
-      - Synapse Link Connection API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Synapse Workspace API
-      - Synapse SQL Pools API
-      - Synapse Spark Pools API
-      - Synapse Pipeline API
-      - Synapse Spark Job API
-      - Synapse Monitoring API
-      - Synapse Link API
-      - Synapse Access Control API
-      - Synapse Notebook API
-      - Synapse Dataset API
-      - Synapse Linked Service API
-      - Synapse Data Flow API
-      - Synapse SQL Script API
-      - Synapse Trigger API
-      - Synapse Spark Job Definition API
-      - Synapse Managed Private Endpoints API
-      - Synapse Integration Runtimes API
-      - Synapse Library API
-      - Synapse Git Integration API
-      - Synapse Firewall Rules API
-      - Synapse Keys API
-      - Synapse Private Endpoint Connections API
-      - Synapse Private Link Hubs API
-      - Synapse Kusto Pools API
-      - Synapse Azure AD Only Authentication API
-      - Synapse Spark Configuration API
-      - Synapse Data Flow Debug Session API
-      - Synapse Credential API
-      - Synapse KQL Script API
-      - Synapse Link Connection API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Synapse Workspace API
-      - Synapse SQL Pools API
-      - Synapse Spark Pools API
-      - Synapse Pipeline API
-      - Synapse Spark Job API
-      - Synapse Monitoring API
-      - Synapse Link API
-      - Synapse Access Control API
-      - Synapse Notebook API
-      - Synapse Dataset API
-      - Synapse Linked Service API
-      - Synapse Data Flow API
-      - Synapse SQL Script API
-      - Synapse Trigger API
-      - Synapse Spark Job Definition API
-      - Synapse Managed Private Endpoints API
-      - Synapse Integration Runtimes API
-      - Synapse Library API
-      - Synapse Git Integration API
-      - Synapse Firewall Rules API
-      - Synapse Keys API
-      - Synapse Private Endpoint Connections API
-      - Synapse Private Link Hubs API
-      - Synapse Kusto Pools API
-      - Synapse Azure AD Only Authentication API
-      - Synapse Spark Configuration API
-      - Synapse Data Flow Debug Session API
-      - Synapse Credential API
-      - Synapse KQL Script API
-      - Synapse Link Connection API
+    notes: Default integration-runtime concurrent-activity cap; raise via support.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Pause to control concurrency cost
+    description: Dedicated SQL Pools billed by DWU-hour can be paused; metadata is preserved
+      and storage continues to bill, but compute charges stop.
+  - name: Resource class governance (10928 / 10936)
+    description: SQL Pools enforce concurrency via static or dynamic resource classes (smallrc,
+      mediumrc, largerc, xlargerc). Exceeding limits returns SQL error 10928.
+  - name: ARM token-bucket retry
+    description: For management-plane 429s, honor Retry-After and use SDK auto-retry.
+  - name: Serverless query result-set size
+    description: Serverless SQL Pool returns a result-set up to ~200 GB or 30-minute duration,
+      whichever first. Use CETAS / external tables for larger output.
+  - name: Limit increase via support
+    description: Workspace, pool, and concurrent-activity caps are soft and can be raised via
+      Azure support tickets.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
-    url: https://apievangelist.com/
+    url: https://azure.microsoft.com/services/synapse-analytics/

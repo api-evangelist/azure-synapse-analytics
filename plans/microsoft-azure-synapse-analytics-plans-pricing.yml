@@ -4,7 +4,8 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Azure Synapse Analytics
 providerId: microsoft-azure-synapse-analytics
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Analytics
   - Apache Spark
@@ -13,212 +14,167 @@ tags:
   - Data Warehouse
   - ETL
   - SQL
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: Azure Synapse Analytics is consumption-priced per compute resource family —
+  Dedicated SQL Pool (DWU-hour, hourly), Serverless SQL Pool (per TB processed), Apache Spark
+  Pool (vCore-hour), and Data Integration / Pipelines (per orchestration activity-run +
+  per-DIU-hour). Storage is billed separately via Azure Data Lake Storage Gen2. Reserved
+  capacity discounts of up to ~65% available for 1-year and 3-year commitments on Dedicated
+  SQL Pools. Microsoft is steering new workloads to Microsoft Fabric.
+sources:
+  - https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/
+  - https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is
 plans:
-  - id: microsoft-azure-synapse-analytics-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Azure Synapse Analytics API surface. Intended for evaluation,
-      prototyping, and low-volume integrations. Real limits and pricing must be reconciled with the provider's
-      published plan documentation.
+  - id: microsoft-azure-synapse-dedicated-sql
+    name: Dedicated SQL Pool (DWU)
+    type: usage-based
+    description: Provisioned data warehouse compute billed per DWU-hour. Sizes from DW100c to
+      DW30000c. Storage billed separately at $122.88 per TB per month.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://management.azure.com
-          - https://{workspaceName}.dev.azuresynapse.net
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://management.azure.com
-          - https://{workspaceName}.dev.azuresynapse.net
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Synapse Workspace API
-      - name: Synapse SQL Pools API
-      - name: Synapse Spark Pools API
-      - name: Synapse Pipeline API
-      - name: Synapse Spark Job API
-      - name: Synapse Monitoring API
-      - name: Synapse Link API
-      - name: Synapse Access Control API
-  - id: microsoft-azure-synapse-analytics-pro
-    name: Professional
-    type: paid
-    description: Production tier for Azure Synapse Analytics. Provides higher quotas, priority support,
-      and access to the broader API portfolio. Pricing placeholder; align with the provider's pricing
-      page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://management.azure.com
-          - https://{workspaceName}.dev.azuresynapse.net
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://management.azure.com
-          - https://{workspaceName}.dev.azuresynapse.net
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
+      - label: DW100c (100 DWU)
+        name: dw100c_hour
         type: metered
-        metric: requests
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '$1.51 per hour'
+        userMultiplied: false
+      - label: DW1000c (1000 DWU)
+        name: dw1000c_hour
+        type: metered
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '$15.10 per hour'
+        userMultiplied: false
+      - label: DW30000c (30000 DWU)
+        name: dw30000c_hour
+        type: metered
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '$453.06 per hour'
+        userMultiplied: false
+      - label: Storage
+        name: dwh_storage
+        type: metered
+        metric: TB-month
         limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://management.azure.com
-          - https://{workspaceName}.dev.azuresynapse.net
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: '$122.88 per TB per month'
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Synapse Workspace API
-      - name: Synapse SQL Pools API
-      - name: Synapse Spark Pools API
-      - name: Synapse Pipeline API
-      - name: Synapse Spark Job API
-      - name: Synapse Monitoring API
-      - name: Synapse Link API
-      - name: Synapse Access Control API
-      - name: Synapse Notebook API
-      - name: Synapse Dataset API
-      - name: Synapse Linked Service API
-      - name: Synapse Data Flow API
-      - name: Synapse SQL Script API
-      - name: Synapse Trigger API
-      - name: Synapse Spark Job Definition API
-      - name: Synapse Managed Private Endpoints API
-      - name: Synapse Integration Runtimes API
-      - name: Synapse Library API
-      - name: Synapse Git Integration API
-      - name: Synapse Firewall Rules API
-      - name: Synapse Keys API
-      - name: Synapse Private Endpoint Connections API
-      - name: Synapse Private Link Hubs API
-      - name: Synapse Kusto Pools API
-      - name: Synapse Azure AD Only Authentication API
-      - name: Synapse Spark Configuration API
-      - name: Synapse Data Flow Debug Session API
-      - name: Synapse Credential API
-      - name: Synapse KQL Script API
-      - name: Synapse Link Connection API
-  - id: microsoft-azure-synapse-analytics-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Azure Synapse Analytics. Includes dedicated capacity, contractual
-      SLAs, security review, data residency options, and named technical account management.
+      - name: Pause / resume to save cost
+      - name: 1-year and 3-year reserved capacity
+      - name: Geo-redundant backups
+  - id: microsoft-azure-synapse-serverless-sql
+    name: Serverless SQL Pool
+    type: usage-based
+    description: Pay per TB of data processed by ad-hoc queries on data lake. No provisioning;
+      fully managed.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Per TB processed
+        name: serverless_tb
+        type: metered
+        metric: TB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '$5.00 per TB processed'
+        userMultiplied: false
+    elements:
+      - name: Query data lake without ETL
+      - name: T-SQL syntax over Parquet/CSV/JSON
+      - name: No infrastructure to manage
+  - id: microsoft-azure-synapse-spark
+    name: Apache Spark Pool
+    type: usage-based
+    description: Apache Spark compute billed per vCore-hour. Memory-optimized node sizes from
+      Small (4 vCore) to XXLarge (64 vCore). Auto-pause idle pools to control cost.
+    entries:
+      - label: Memory-optimized vCore-hour
+        name: spark_memory_vcore_hour
+        type: metered
+        metric: vcore-hour
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '$0.143 per vCore per hour'
+        userMultiplied: false
+    elements:
+      - name: Auto-pause to stop billing
+      - name: Auto-scale executors
+      - name: Optimized for memory-intensive workloads
+  - id: microsoft-azure-synapse-pipelines
+    name: Data Integration / Pipelines
+    type: usage-based
+    description: Mirrors Azure Data Factory pricing. Billed per orchestration activity-run, per
+      data integration unit (DIU)-hour for data movement, and per Spark execution hour.
+    entries:
+      - label: Orchestration activity run (Azure IR)
+        name: pipeline_activity_run
+        type: metered
+        metric: 1000-runs
         limit: -1
         timeFrame: month
-        geo: configurable
-        domains:
-          - https://management.azure.com
-          - https://{workspaceName}.dev.azuresynapse.net
-        unit: 1
-        price: custom
+        geo: global
+        unit: 1000
+        price: '$1.00 per 1,000 runs'
         userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://management.azure.com
-          - https://{workspaceName}.dev.azuresynapse.net
+      - label: Data movement (per DIU-hour)
+        name: pipeline_diu_hour
+        type: metered
+        metric: diu-hour
+        limit: -1
+        timeFrame: usage
+        geo: global
         unit: 1
-        price: custom
+        price: '$0.25 per DIU-hour'
+        userMultiplied: false
+      - label: Pipeline activity execution (per hour)
+        name: pipeline_execution_hour
+        type: metered
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '$0.005 per hour'
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Synapse Workspace API
-      - name: Synapse SQL Pools API
-      - name: Synapse Spark Pools API
-      - name: Synapse Pipeline API
-      - name: Synapse Spark Job API
-      - name: Synapse Monitoring API
-      - name: Synapse Link API
-      - name: Synapse Access Control API
-      - name: Synapse Notebook API
-      - name: Synapse Dataset API
-      - name: Synapse Linked Service API
-      - name: Synapse Data Flow API
-      - name: Synapse SQL Script API
-      - name: Synapse Trigger API
-      - name: Synapse Spark Job Definition API
-      - name: Synapse Managed Private Endpoints API
-      - name: Synapse Integration Runtimes API
-      - name: Synapse Library API
-      - name: Synapse Git Integration API
-      - name: Synapse Firewall Rules API
-      - name: Synapse Keys API
-      - name: Synapse Private Endpoint Connections API
-      - name: Synapse Private Link Hubs API
-      - name: Synapse Kusto Pools API
-      - name: Synapse Azure AD Only Authentication API
-      - name: Synapse Spark Configuration API
-      - name: Synapse Data Flow Debug Session API
-      - name: Synapse Credential API
-      - name: Synapse KQL Script API
-      - name: Synapse Link Connection API
+      - name: Visual pipeline designer
+      - name: 90+ source/sink connectors
+      - name: Mapping and wrangling data flows
+  - id: microsoft-azure-synapse-reserved
+    name: Reserved Capacity (1y / 3y)
+    type: enterprise
+    description: Pre-commit to dedicated SQL pool DWU capacity for 1-year or 3-year terms;
+      ~37% / ~65% off pay-as-you-go.
+    entries:
+      - label: Reserved DWU (negotiated)
+        name: reserved_dwu
+        type: subscription
+        metric: contract
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: custom (1y ~37% off, 3y ~65% off)
+        userMultiplied: false
+    elements:
+      - name: Discount up to 65%
+      - name: Auto-renew option
+      - name: Enterprise Agreement bundling
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
-    url: https://apievangelist.com/
+    url: https://azure.microsoft.com/services/synapse-analytics/
