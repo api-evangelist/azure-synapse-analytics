@@ -604,15 +604,15 @@ common:
     url: https://portal.azure.com/
   - type: Documentation
     url: https://learn.microsoft.com/en-us/azure/synapse-analytics/
-  - type: Getting Started
+  - type: GettingStarted
     url: https://learn.microsoft.com/en-us/azure/synapse-analytics/get-started
   - type: Authentication
     url: https://learn.microsoft.com/en-us/azure/synapse-analytics/security/synapse-workspace-security-overview
-  - type: Change Log
+  - type: ChangeLog
     url: https://learn.microsoft.com/en-us/azure/synapse-analytics/whats-new
   - type: Blog
     url: https://techcommunity.microsoft.com/category/azuredatabases/blog/azuresynapseanalyticsblog
-  - type: Status
+  - type: StatusPage
     url: https://status.azure.com/
   - type: Pricing
     url: https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/
@@ -622,11 +622,11 @@ common:
     url: https://learn.microsoft.com/en-us/azure/synapse-analytics/security/synapse-workspace-security-overview
   - type: Support
     url: https://azure.microsoft.com/en-us/support/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://azure.microsoft.com/en-us/support/legal/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://privacy.microsoft.com/en-us/privacystatement
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/Azure
   - type: SDKs
     url: https://learn.microsoft.com/en-us/azure/synapse-analytics/
@@ -644,7 +644,7 @@ common:
     url: https://azure.microsoft.com/en-us/products/synapse-analytics
   - type: Login
     url: https://portal.azure.com/
-  - type: Sign Up
+  - type: SignUp
     url: https://azure.microsoft.com/en-us/free/
 maintainers:
   - FN: Kin Lane
