@@ -1,0 +1,212 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Spark Job API — SparkBatch
+  description: 'Azure Synapse Analytics - Spark Job API — SparkBatch. 4 operations. Lead operation: Azure Synapse Analytics
+    List Spark batch jobs. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - SparkBatch
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-spark-job-sparkbatch
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Spark Job API — SparkBatch business capability. Self-contained, no shared references.
+    resources:
+    - name: livyApi-versions-sparkPoolName-batches
+      path: /livyApi/versions/{sparkPoolName}/batches
+      operations:
+      - name: sparkbatchgetsparkbatchjobs
+        method: GET
+        description: Azure Synapse Analytics List Spark batch jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: from
+          in: query
+          type: integer
+          description: Optional param specifying which index the list should begin from.
+        - name: size
+          in: query
+          type: integer
+          description: Optional param specifying the size of the returned list.
+        - name: detailed
+          in: query
+          type: boolean
+          description: Optional query param specifying whether detailed response is returned beyond plain livy.
+      - name: sparkbatchcreatesparkbatchjob
+        method: POST
+        description: Azure Synapse Analytics Create a Spark batch job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: detailed
+          in: query
+          type: boolean
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: livyApi-versions-sparkPoolName-batches-batchId
+      path: /livyApi/versions/{sparkPoolName}/batches/{batchId}
+      operations:
+      - name: sparkbatchgetsparkbatchjob
+        method: GET
+        description: Azure Synapse Analytics Get a Spark batch job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: batchId
+          in: path
+          type: integer
+          description: Identifier for the batch job.
+          required: true
+        - name: detailed
+          in: query
+          type: boolean
+      - name: sparkbatchcancelsparkbatchjob
+        method: DELETE
+        description: Azure Synapse Analytics Cancel a Spark batch job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: batchId
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-spark-job-sparkbatch-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Spark Job API — SparkBatch. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/livyapi/versions/{sparkpoolname}/batches
+      name: livyapi-versions-sparkpoolname-batches
+      description: REST surface for livyApi-versions-sparkPoolName-batches.
+      operations:
+      - method: GET
+        name: sparkbatchgetsparkbatchjobs
+        description: Azure Synapse Analytics List Spark batch jobs
+        call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchgetsparkbatchjobs
+        with:
+          from: rest.from
+          size: rest.size
+          detailed: rest.detailed
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: sparkbatchcreatesparkbatchjob
+        description: Azure Synapse Analytics Create a Spark batch job
+        call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchcreatesparkbatchjob
+        with:
+          detailed: rest.detailed
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/livyapi/versions/{sparkpoolname}/batches/{batchid}
+      name: livyapi-versions-sparkpoolname-batches-batchid
+      description: REST surface for livyApi-versions-sparkPoolName-batches-batchId.
+      operations:
+      - method: GET
+        name: sparkbatchgetsparkbatchjob
+        description: Azure Synapse Analytics Get a Spark batch job
+        call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchgetsparkbatchjob
+        with:
+          batchId: rest.batchId
+          detailed: rest.detailed
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: sparkbatchcancelsparkbatchjob
+        description: Azure Synapse Analytics Cancel a Spark batch job
+        call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchcancelsparkbatchjob
+        with:
+          batchId: rest.batchId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-spark-job-sparkbatch-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Spark Job API — SparkBatch. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-spark
+      description: Azure Synapse Analytics List Spark batch jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchgetsparkbatchjobs
+      with:
+        from: tools.from
+        size: tools.size
+        detailed: tools.detailed
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-spark
+      description: Azure Synapse Analytics Create a Spark batch job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchcreatesparkbatchjob
+      with:
+        detailed: tools.detailed
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-spark
+      description: Azure Synapse Analytics Get a Spark batch job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchgetsparkbatchjob
+      with:
+        batchId: tools.batchId
+        detailed: tools.detailed
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-cancel-spark
+      description: Azure Synapse Analytics Cancel a Spark batch job
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-spark-job-sparkbatch.sparkbatchcancelsparkbatchjob
+      with:
+        batchId: tools.batchId
+      outputParameters:
+      - type: object
+        mapping: $.

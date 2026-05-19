@@ -1,0 +1,217 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Data Flow API — DataFlow
+  description: 'Azure Synapse Analytics - Data Flow API — DataFlow. 5 operations. Lead operation: Azure Synapse Analytics
+    List data flows. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - DataFlow
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-data-flow-dataflow
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Data Flow API — DataFlow business capability. Self-contained, no shared references.
+    resources:
+    - name: dataflows
+      path: /dataflows
+      operations:
+      - name: dataflowgetdataflowsbyworkspace
+        method: GET
+        description: Azure Synapse Analytics List data flows
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: dataflows-dataFlowName
+      path: /dataflows/{dataFlowName}
+      operations:
+      - name: dataflowgetdataflow
+        method: GET
+        description: Azure Synapse Analytics Get a data flow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-None-Match
+          in: header
+          type: string
+      - name: dataflowcreateorupdatedataflow
+        method: PUT
+        description: Azure Synapse Analytics Create or update a data flow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-Match
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: dataflowdeletedataflow
+        method: DELETE
+        description: Azure Synapse Analytics Delete a data flow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: dataflows-dataFlowName-rename
+      path: /dataflows/{dataFlowName}/rename
+      operations:
+      - name: dataflowrenamedataflow
+        method: POST
+        description: Azure Synapse Analytics Rename a data flow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-data-flow-dataflow-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Data Flow API — DataFlow. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/dataflows
+      name: dataflows
+      description: REST surface for dataflows.
+      operations:
+      - method: GET
+        name: dataflowgetdataflowsbyworkspace
+        description: Azure Synapse Analytics List data flows
+        call: azure-synapse-analytics-data-flow-dataflow.dataflowgetdataflowsbyworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/dataflows/{dataflowname}
+      name: dataflows-dataflowname
+      description: REST surface for dataflows-dataFlowName.
+      operations:
+      - method: GET
+        name: dataflowgetdataflow
+        description: Azure Synapse Analytics Get a data flow
+        call: azure-synapse-analytics-data-flow-dataflow.dataflowgetdataflow
+        with:
+          If-None-Match: rest.If-None-Match
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: dataflowcreateorupdatedataflow
+        description: Azure Synapse Analytics Create or update a data flow
+        call: azure-synapse-analytics-data-flow-dataflow.dataflowcreateorupdatedataflow
+        with:
+          If-Match: rest.If-Match
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: dataflowdeletedataflow
+        description: Azure Synapse Analytics Delete a data flow
+        call: azure-synapse-analytics-data-flow-dataflow.dataflowdeletedataflow
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/dataflows/{dataflowname}/rename
+      name: dataflows-dataflowname-rename
+      description: REST surface for dataflows-dataFlowName-rename.
+      operations:
+      - method: POST
+        name: dataflowrenamedataflow
+        description: Azure Synapse Analytics Rename a data flow
+        call: azure-synapse-analytics-data-flow-dataflow.dataflowrenamedataflow
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-data-flow-dataflow-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Data Flow API — DataFlow. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-data
+      description: Azure Synapse Analytics List data flows
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-data-flow-dataflow.dataflowgetdataflowsbyworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-data
+      description: Azure Synapse Analytics Get a data flow
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-data-flow-dataflow.dataflowgetdataflow
+      with:
+        If-None-Match: tools.If-None-Match
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a data flow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-data-flow-dataflow.dataflowcreateorupdatedataflow
+      with:
+        If-Match: tools.If-Match
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-data
+      description: Azure Synapse Analytics Delete a data flow
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-data-flow-dataflow.dataflowdeletedataflow
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-rename-data
+      description: Azure Synapse Analytics Rename a data flow
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-data-flow-dataflow.dataflowrenamedataflow
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

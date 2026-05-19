@@ -1,0 +1,217 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Dataset API — Dataset
+  description: 'Azure Synapse Analytics - Dataset API — Dataset. 5 operations. Lead operation: Azure Synapse Analytics List
+    datasets. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - Dataset
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-dataset-dataset
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Dataset API — Dataset business capability. Self-contained, no shared references.
+    resources:
+    - name: datasets
+      path: /datasets
+      operations:
+      - name: datasetgetdatasetsbyworkspace
+        method: GET
+        description: Azure Synapse Analytics List datasets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: datasets-datasetName
+      path: /datasets/{datasetName}
+      operations:
+      - name: datasetgetdataset
+        method: GET
+        description: Azure Synapse Analytics Get a dataset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-None-Match
+          in: header
+          type: string
+      - name: datasetcreateorupdatedataset
+        method: PUT
+        description: Azure Synapse Analytics Create or update a dataset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-Match
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: datasetdeletedataset
+        method: DELETE
+        description: Azure Synapse Analytics Delete a dataset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: datasets-datasetName-rename
+      path: /datasets/{datasetName}/rename
+      operations:
+      - name: datasetrenamedataset
+        method: POST
+        description: Azure Synapse Analytics Rename a dataset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-dataset-dataset-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Dataset API — Dataset. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/datasets
+      name: datasets
+      description: REST surface for datasets.
+      operations:
+      - method: GET
+        name: datasetgetdatasetsbyworkspace
+        description: Azure Synapse Analytics List datasets
+        call: azure-synapse-analytics-dataset-dataset.datasetgetdatasetsbyworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/datasets/{datasetname}
+      name: datasets-datasetname
+      description: REST surface for datasets-datasetName.
+      operations:
+      - method: GET
+        name: datasetgetdataset
+        description: Azure Synapse Analytics Get a dataset
+        call: azure-synapse-analytics-dataset-dataset.datasetgetdataset
+        with:
+          If-None-Match: rest.If-None-Match
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: datasetcreateorupdatedataset
+        description: Azure Synapse Analytics Create or update a dataset
+        call: azure-synapse-analytics-dataset-dataset.datasetcreateorupdatedataset
+        with:
+          If-Match: rest.If-Match
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: datasetdeletedataset
+        description: Azure Synapse Analytics Delete a dataset
+        call: azure-synapse-analytics-dataset-dataset.datasetdeletedataset
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/datasets/{datasetname}/rename
+      name: datasets-datasetname-rename
+      description: REST surface for datasets-datasetName-rename.
+      operations:
+      - method: POST
+        name: datasetrenamedataset
+        description: Azure Synapse Analytics Rename a dataset
+        call: azure-synapse-analytics-dataset-dataset.datasetrenamedataset
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-dataset-dataset-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Dataset API — Dataset. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-datasets
+      description: Azure Synapse Analytics List datasets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-dataset-dataset.datasetgetdatasetsbyworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-dataset
+      description: Azure Synapse Analytics Get a dataset
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-dataset-dataset.datasetgetdataset
+      with:
+        If-None-Match: tools.If-None-Match
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a dataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-dataset-dataset.datasetcreateorupdatedataset
+      with:
+        If-Match: tools.If-Match
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-dataset
+      description: Azure Synapse Analytics Delete a dataset
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-dataset-dataset.datasetdeletedataset
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-rename-dataset
+      description: Azure Synapse Analytics Rename a dataset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-dataset-dataset.datasetrenamedataset
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

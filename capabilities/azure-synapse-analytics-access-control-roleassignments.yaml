@@ -1,0 +1,223 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Access Control API — RoleAssignments
+  description: 'Azure Synapse Analytics - Access Control API — RoleAssignments. 4 operations. Lead operation: Azure Synapse
+    Analytics List role assignments. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business
+    surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - RoleAssignments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-access-control-roleassignments
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Access Control API — RoleAssignments business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: roleAssignments
+      path: /roleAssignments
+      operations:
+      - name: roleassignmentslistroleassignments
+        method: GET
+        description: Azure Synapse Analytics List role assignments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: roleId
+          in: query
+          type: string
+          description: Synapse Built-In Role Id.
+        - name: principalId
+          in: query
+          type: string
+          description: Object ID of the AAD principal or security-group.
+        - name: scope
+          in: query
+          type: string
+          description: Scope of the Synapse Built-In Role.
+        - name: x-ms-continuation
+          in: header
+          type: string
+          description: Continuation token.
+    - name: roleAssignments-roleAssignmentId
+      path: /roleAssignments/{roleAssignmentId}
+      operations:
+      - name: roleassignmentsgetroleassignmentbyid
+        method: GET
+        description: Azure Synapse Analytics Get role assignment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: roleAssignmentId
+          in: path
+          type: string
+          description: The ID of the role assignment.
+          required: true
+      - name: roleassignmentscreateroleassignment
+        method: PUT
+        description: Azure Synapse Analytics Create role assignment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: roleAssignmentId
+          in: path
+          type: string
+          description: The ID of the role assignment.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: roleassignmentsdeleteroleassignmentbyid
+        method: DELETE
+        description: Azure Synapse Analytics Delete role assignment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: roleAssignmentId
+          in: path
+          type: string
+          required: true
+        - name: scope
+          in: query
+          type: string
+          description: Scope of the Synapse Built-In Role.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-access-control-roleassignments-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Access Control API — RoleAssignments. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/roleassignments
+      name: roleassignments
+      description: REST surface for roleAssignments.
+      operations:
+      - method: GET
+        name: roleassignmentslistroleassignments
+        description: Azure Synapse Analytics List role assignments
+        call: azure-synapse-analytics-access-control-roleassignments.roleassignmentslistroleassignments
+        with:
+          roleId: rest.roleId
+          principalId: rest.principalId
+          scope: rest.scope
+          x-ms-continuation: rest.x-ms-continuation
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/roleassignments/{roleassignmentid}
+      name: roleassignments-roleassignmentid
+      description: REST surface for roleAssignments-roleAssignmentId.
+      operations:
+      - method: GET
+        name: roleassignmentsgetroleassignmentbyid
+        description: Azure Synapse Analytics Get role assignment
+        call: azure-synapse-analytics-access-control-roleassignments.roleassignmentsgetroleassignmentbyid
+        with:
+          roleAssignmentId: rest.roleAssignmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: roleassignmentscreateroleassignment
+        description: Azure Synapse Analytics Create role assignment
+        call: azure-synapse-analytics-access-control-roleassignments.roleassignmentscreateroleassignment
+        with:
+          roleAssignmentId: rest.roleAssignmentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: roleassignmentsdeleteroleassignmentbyid
+        description: Azure Synapse Analytics Delete role assignment
+        call: azure-synapse-analytics-access-control-roleassignments.roleassignmentsdeleteroleassignmentbyid
+        with:
+          roleAssignmentId: rest.roleAssignmentId
+          scope: rest.scope
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-access-control-roleassignments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Access Control API — RoleAssignments. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-role
+      description: Azure Synapse Analytics List role assignments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-access-control-roleassignments.roleassignmentslistroleassignments
+      with:
+        roleId: tools.roleId
+        principalId: tools.principalId
+        scope: tools.scope
+        x-ms-continuation: tools.x-ms-continuation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-role
+      description: Azure Synapse Analytics Get role assignment
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-access-control-roleassignments.roleassignmentsgetroleassignmentbyid
+      with:
+        roleAssignmentId: tools.roleAssignmentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-role
+      description: Azure Synapse Analytics Create role assignment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-access-control-roleassignments.roleassignmentscreateroleassignment
+      with:
+        roleAssignmentId: tools.roleAssignmentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-role
+      description: Azure Synapse Analytics Delete role assignment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-access-control-roleassignments.roleassignmentsdeleteroleassignmentbyid
+      with:
+        roleAssignmentId: tools.roleAssignmentId
+        scope: tools.scope
+      outputParameters:
+      - type: object
+        mapping: $.

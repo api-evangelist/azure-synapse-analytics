@@ -1,0 +1,231 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Firewall Rules API — IpFirewallRules
+  description: 'Azure Synapse Analytics - Firewall Rules API — IpFirewallRules. 5 operations. Lead operation: Azure Synapse
+    Analytics List firewall rules. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business
+    surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - IpFirewallRules
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-firewall-rules-ipfirewallrules
+    baseUri: https://management.azure.com
+    description: Azure Synapse Analytics - Firewall Rules API — IpFirewallRules business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules
+      operations:
+      - name: ipfirewallruleslistbyworkspace
+        method: GET
+        description: Azure Synapse Analytics List firewall rules
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules/{ruleName}
+      operations:
+      - name: ipfirewallrulesget
+        method: GET
+        description: Azure Synapse Analytics Get a firewall rule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ruleName
+          in: path
+          type: string
+          description: The IP firewall rule name.
+          required: true
+      - name: ipfirewallrulescreateorupdate
+        method: PUT
+        description: Azure Synapse Analytics Create or update a firewall rule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ruleName
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: ipfirewallrulesdelete
+        method: DELETE
+        description: Azure Synapse Analytics Delete a firewall rule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ruleName
+          in: path
+          type: string
+          required: true
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/replaceAllIpFirewallRules
+      operations:
+      - name: ipfirewallrulesreplaceall
+        method: POST
+        description: Azure Synapse Analytics Replace all firewall rules
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-firewall-rules-ipfirewallrules-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Firewall Rules API — IpFirewallRules. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}/firewallrules
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: ipfirewallruleslistbyworkspace
+        description: Azure Synapse Analytics List firewall rules
+        call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallruleslistbyworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}/firewallrules/{rulename}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: ipfirewallrulesget
+        description: Azure Synapse Analytics Get a firewall rule
+        call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulesget
+        with:
+          ruleName: rest.ruleName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: ipfirewallrulescreateorupdate
+        description: Azure Synapse Analytics Create or update a firewall rule
+        call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulescreateorupdate
+        with:
+          ruleName: rest.ruleName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: ipfirewallrulesdelete
+        description: Azure Synapse Analytics Delete a firewall rule
+        call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulesdelete
+        with:
+          ruleName: rest.ruleName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}/replaceallipfirewallrules
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: POST
+        name: ipfirewallrulesreplaceall
+        description: Azure Synapse Analytics Replace all firewall rules
+        call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulesreplaceall
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-firewall-rules-ipfirewallrules-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Firewall Rules API — IpFirewallRules. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-firewall
+      description: Azure Synapse Analytics List firewall rules
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallruleslistbyworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-firewall
+      description: Azure Synapse Analytics Get a firewall rule
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulesget
+      with:
+        ruleName: tools.ruleName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a firewall rule
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulescreateorupdate
+      with:
+        ruleName: tools.ruleName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-firewall
+      description: Azure Synapse Analytics Delete a firewall rule
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulesdelete
+      with:
+        ruleName: tools.ruleName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-replace-all
+      description: Azure Synapse Analytics Replace all firewall rules
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-firewall-rules-ipfirewallrules.ipfirewallrulesreplaceall
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

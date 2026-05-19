@@ -1,0 +1,204 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - KQL Script API — KqlScripts
+  description: 'Azure Synapse Analytics - KQL Script API — KqlScripts. 5 operations. Lead operation: Azure Synapse Analytics
+    List KQL scripts. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - KqlScripts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-kql-script-kqlscripts
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - KQL Script API — KqlScripts business capability. Self-contained, no shared references.
+    resources:
+    - name: kqlScripts
+      path: /kqlScripts
+      operations:
+      - name: kqlscriptsgetall
+        method: GET
+        description: Azure Synapse Analytics List KQL scripts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: kqlScripts-kqlScriptName
+      path: /kqlScripts/{kqlScriptName}
+      operations:
+      - name: kqlscriptgetbyname
+        method: GET
+        description: Azure Synapse Analytics Get a KQL script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: kqlscriptcreateorupdate
+        method: PUT
+        description: Azure Synapse Analytics Create or update a KQL script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: kqlscriptdeletebyname
+        method: DELETE
+        description: Azure Synapse Analytics Delete a KQL script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: kqlScripts-kqlScriptName-rename
+      path: /kqlScripts/{kqlScriptName}/rename
+      operations:
+      - name: kqlscriptrename
+        method: POST
+        description: Azure Synapse Analytics Rename a KQL script
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-kql-script-kqlscripts-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - KQL Script API — KqlScripts. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/kqlscripts
+      name: kqlscripts
+      description: REST surface for kqlScripts.
+      operations:
+      - method: GET
+        name: kqlscriptsgetall
+        description: Azure Synapse Analytics List KQL scripts
+        call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptsgetall
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/kqlscripts/{kqlscriptname}
+      name: kqlscripts-kqlscriptname
+      description: REST surface for kqlScripts-kqlScriptName.
+      operations:
+      - method: GET
+        name: kqlscriptgetbyname
+        description: Azure Synapse Analytics Get a KQL script
+        call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptgetbyname
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: kqlscriptcreateorupdate
+        description: Azure Synapse Analytics Create or update a KQL script
+        call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptcreateorupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: kqlscriptdeletebyname
+        description: Azure Synapse Analytics Delete a KQL script
+        call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptdeletebyname
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/kqlscripts/{kqlscriptname}/rename
+      name: kqlscripts-kqlscriptname-rename
+      description: REST surface for kqlScripts-kqlScriptName-rename.
+      operations:
+      - method: POST
+        name: kqlscriptrename
+        description: Azure Synapse Analytics Rename a KQL script
+        call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptrename
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-kql-script-kqlscripts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - KQL Script API — KqlScripts. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-kql
+      description: Azure Synapse Analytics List KQL scripts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptsgetall
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-kql
+      description: Azure Synapse Analytics Get a KQL script
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptgetbyname
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a KQL script
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptcreateorupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-kql
+      description: Azure Synapse Analytics Delete a KQL script
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptdeletebyname
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-rename-kql
+      description: Azure Synapse Analytics Rename a KQL script
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-kql-script-kqlscripts.kqlscriptrename
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

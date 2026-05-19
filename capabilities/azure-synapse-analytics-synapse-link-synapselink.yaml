@@ -1,0 +1,71 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Synapse Link API — SynapseLink
+  description: 'Azure Synapse Analytics - Synapse Link API — SynapseLink. 1 operations. Lead operation: Azure Synapse Analytics
+    List Synapse Link configurations. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business
+    surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - SynapseLink
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-synapse-link-synapselink
+    baseUri: https://management.azure.com
+    description: Azure Synapse Analytics - Synapse Link API — SynapseLink business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/synapseLinks
+      operations:
+      - name: synapselinkslistbyworkspace
+        method: GET
+        description: Azure Synapse Analytics List Synapse Link configurations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-synapse-link-synapselink-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Synapse Link API — SynapseLink. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}/synapselinks
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: synapselinkslistbyworkspace
+        description: Azure Synapse Analytics List Synapse Link configurations
+        call: azure-synapse-analytics-synapse-link-synapselink.synapselinkslistbyworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-synapse-link-synapselink-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Synapse Link API — SynapseLink. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-synapse
+      description: Azure Synapse Analytics List Synapse Link configurations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-synapse-link-synapselink.synapselinkslistbyworkspace
+      outputParameters:
+      - type: object
+        mapping: $.

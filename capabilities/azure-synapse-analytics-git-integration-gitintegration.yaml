@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Git Integration API — GitIntegration
+  description: 'Azure Synapse Analytics - Git Integration API — GitIntegration. 1 operations. Lead operation: Azure Synapse
+    Analytics Get GitHub access token. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business
+    surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - GitIntegration
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-git-integration-gitintegration
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Git Integration API — GitIntegration business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: getGitHubAccessToken
+      path: /getGitHubAccessToken
+      operations:
+      - name: workspacegitrepomanagementgetgithubaccesstoken
+        method: POST
+        description: Azure Synapse Analytics Get GitHub access token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-git-integration-gitintegration-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Git Integration API — GitIntegration. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/getgithubaccesstoken
+      name: getgithubaccesstoken
+      description: REST surface for getGitHubAccessToken.
+      operations:
+      - method: POST
+        name: workspacegitrepomanagementgetgithubaccesstoken
+        description: Azure Synapse Analytics Get GitHub access token
+        call: azure-synapse-analytics-git-integration-gitintegration.workspacegitrepomanagementgetgithubaccesstoken
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-git-integration-gitintegration-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Git Integration API — GitIntegration. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-get-github
+      description: Azure Synapse Analytics Get GitHub access token
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-git-integration-gitintegration.workspacegitrepomanagementgetgithubaccesstoken
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

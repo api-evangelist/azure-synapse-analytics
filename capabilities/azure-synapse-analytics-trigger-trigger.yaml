@@ -1,0 +1,335 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Trigger API — Trigger
+  description: 'Azure Synapse Analytics - Trigger API — Trigger. 9 operations. Lead operation: Azure Synapse Analytics List
+    triggers. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - Trigger
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-trigger-trigger
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Trigger API — Trigger business capability. Self-contained, no shared references.
+    resources:
+    - name: triggers
+      path: /triggers
+      operations:
+      - name: triggergettriggersbyworkspace
+        method: GET
+        description: Azure Synapse Analytics List triggers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: triggers-triggerName
+      path: /triggers/{triggerName}
+      operations:
+      - name: triggergettrigger
+        method: GET
+        description: Azure Synapse Analytics Get a trigger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-None-Match
+          in: header
+          type: string
+      - name: triggercreateorupdatetrigger
+        method: PUT
+        description: Azure Synapse Analytics Create or update a trigger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-Match
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: triggerdeletetrigger
+        method: DELETE
+        description: Azure Synapse Analytics Delete a trigger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: triggers-triggerName-getEventSubscriptionStatus
+      path: /triggers/{triggerName}/getEventSubscriptionStatus
+      operations:
+      - name: triggergeteventsubscriptionstatus
+        method: POST
+        description: Azure Synapse Analytics Get trigger event subscription status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: triggers-triggerName-start
+      path: /triggers/{triggerName}/start
+      operations:
+      - name: triggerstarttrigger
+        method: POST
+        description: Azure Synapse Analytics Start a trigger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: triggers-triggerName-stop
+      path: /triggers/{triggerName}/stop
+      operations:
+      - name: triggerstoptrigger
+        method: POST
+        description: Azure Synapse Analytics Stop a trigger
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: triggers-triggerName-subscribeToEvents
+      path: /triggers/{triggerName}/subscribeToEvents
+      operations:
+      - name: triggersubscribetriggertoevents
+        method: POST
+        description: Azure Synapse Analytics Subscribe trigger to events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: triggers-triggerName-unsubscribeFromEvents
+      path: /triggers/{triggerName}/unsubscribeFromEvents
+      operations:
+      - name: triggerunsubscribetriggerfromevents
+        method: POST
+        description: Azure Synapse Analytics Unsubscribe trigger from events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-trigger-trigger-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Trigger API — Trigger. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/triggers
+      name: triggers
+      description: REST surface for triggers.
+      operations:
+      - method: GET
+        name: triggergettriggersbyworkspace
+        description: Azure Synapse Analytics List triggers
+        call: azure-synapse-analytics-trigger-trigger.triggergettriggersbyworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/triggers/{triggername}
+      name: triggers-triggername
+      description: REST surface for triggers-triggerName.
+      operations:
+      - method: GET
+        name: triggergettrigger
+        description: Azure Synapse Analytics Get a trigger
+        call: azure-synapse-analytics-trigger-trigger.triggergettrigger
+        with:
+          If-None-Match: rest.If-None-Match
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: triggercreateorupdatetrigger
+        description: Azure Synapse Analytics Create or update a trigger
+        call: azure-synapse-analytics-trigger-trigger.triggercreateorupdatetrigger
+        with:
+          If-Match: rest.If-Match
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: triggerdeletetrigger
+        description: Azure Synapse Analytics Delete a trigger
+        call: azure-synapse-analytics-trigger-trigger.triggerdeletetrigger
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/triggers/{triggername}/geteventsubscriptionstatus
+      name: triggers-triggername-geteventsubscriptionstatus
+      description: REST surface for triggers-triggerName-getEventSubscriptionStatus.
+      operations:
+      - method: POST
+        name: triggergeteventsubscriptionstatus
+        description: Azure Synapse Analytics Get trigger event subscription status
+        call: azure-synapse-analytics-trigger-trigger.triggergeteventsubscriptionstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/triggers/{triggername}/start
+      name: triggers-triggername-start
+      description: REST surface for triggers-triggerName-start.
+      operations:
+      - method: POST
+        name: triggerstarttrigger
+        description: Azure Synapse Analytics Start a trigger
+        call: azure-synapse-analytics-trigger-trigger.triggerstarttrigger
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/triggers/{triggername}/stop
+      name: triggers-triggername-stop
+      description: REST surface for triggers-triggerName-stop.
+      operations:
+      - method: POST
+        name: triggerstoptrigger
+        description: Azure Synapse Analytics Stop a trigger
+        call: azure-synapse-analytics-trigger-trigger.triggerstoptrigger
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/triggers/{triggername}/subscribetoevents
+      name: triggers-triggername-subscribetoevents
+      description: REST surface for triggers-triggerName-subscribeToEvents.
+      operations:
+      - method: POST
+        name: triggersubscribetriggertoevents
+        description: Azure Synapse Analytics Subscribe trigger to events
+        call: azure-synapse-analytics-trigger-trigger.triggersubscribetriggertoevents
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/triggers/{triggername}/unsubscribefromevents
+      name: triggers-triggername-unsubscribefromevents
+      description: REST surface for triggers-triggerName-unsubscribeFromEvents.
+      operations:
+      - method: POST
+        name: triggerunsubscribetriggerfromevents
+        description: Azure Synapse Analytics Unsubscribe trigger from events
+        call: azure-synapse-analytics-trigger-trigger.triggerunsubscribetriggerfromevents
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-trigger-trigger-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Trigger API — Trigger. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-triggers
+      description: Azure Synapse Analytics List triggers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-trigger-trigger.triggergettriggersbyworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-trigger
+      description: Azure Synapse Analytics Get a trigger
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-trigger-trigger.triggergettrigger
+      with:
+        If-None-Match: tools.If-None-Match
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a trigger
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-trigger-trigger.triggercreateorupdatetrigger
+      with:
+        If-Match: tools.If-Match
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-trigger
+      description: Azure Synapse Analytics Delete a trigger
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-trigger-trigger.triggerdeletetrigger
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-trigger-2
+      description: Azure Synapse Analytics Get trigger event subscription status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-trigger-trigger.triggergeteventsubscriptionstatus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-start-trigger
+      description: Azure Synapse Analytics Start a trigger
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-trigger-trigger.triggerstarttrigger
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-stop-trigger
+      description: Azure Synapse Analytics Stop a trigger
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-trigger-trigger.triggerstoptrigger
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-subscribe-trigger
+      description: Azure Synapse Analytics Subscribe trigger to events
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-trigger-trigger.triggersubscribetriggertoevents
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-unsubscribe-trigger
+      description: Azure Synapse Analytics Unsubscribe trigger from events
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-trigger-trigger.triggerunsubscribetriggerfromevents
+      outputParameters:
+      - type: object
+        mapping: $.

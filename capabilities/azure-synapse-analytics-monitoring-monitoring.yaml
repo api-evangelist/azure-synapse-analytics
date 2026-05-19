@@ -1,0 +1,123 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Monitoring API — Monitoring
+  description: 'Azure Synapse Analytics - Monitoring API — Monitoring. 2 operations. Lead operation: Azure Synapse Analytics
+    Get Spark job list. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - Monitoring
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-monitoring-monitoring
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Monitoring API — Monitoring business capability. Self-contained, no shared references.
+    resources:
+    - name: monitoring-workloadTypes-spark-Applications
+      path: /monitoring/workloadTypes/spark/Applications
+      operations:
+      - name: monitoringgetsparkjoblist
+        method: GET
+        description: Azure Synapse Analytics Get Spark job list
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: monitoring-workloadTypes-sql-querystring
+      path: /monitoring/workloadTypes/sql/querystring
+      operations:
+      - name: monitoringgetsqljobquerystring
+        method: GET
+        description: Azure Synapse Analytics Get SQL job query string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: filter
+          in: query
+          type: string
+          description: The filter to apply on the operation.
+        - name: $orderby
+          in: query
+          type: string
+          description: The order by operation.
+        - name: skip
+          in: query
+          type: string
+          description: The number of items to skip.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-monitoring-monitoring-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Monitoring API — Monitoring. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/monitoring/workloadtypes/spark/applications
+      name: monitoring-workloadtypes-spark-applications
+      description: REST surface for monitoring-workloadTypes-spark-Applications.
+      operations:
+      - method: GET
+        name: monitoringgetsparkjoblist
+        description: Azure Synapse Analytics Get Spark job list
+        call: azure-synapse-analytics-monitoring-monitoring.monitoringgetsparkjoblist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/monitoring/workloadtypes/sql/querystring
+      name: monitoring-workloadtypes-sql-querystring
+      description: REST surface for monitoring-workloadTypes-sql-querystring.
+      operations:
+      - method: GET
+        name: monitoringgetsqljobquerystring
+        description: Azure Synapse Analytics Get SQL job query string
+        call: azure-synapse-analytics-monitoring-monitoring.monitoringgetsqljobquerystring
+        with:
+          filter: rest.filter
+          $orderby: rest.$orderby
+          skip: rest.skip
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-monitoring-monitoring-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Monitoring API — Monitoring. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-get-spark
+      description: Azure Synapse Analytics Get Spark job list
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-monitoring-monitoring.monitoringgetsparkjoblist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-sql
+      description: Azure Synapse Analytics Get SQL job query string
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-monitoring-monitoring.monitoringgetsqljobquerystring
+      with:
+        filter: tools.filter
+        $orderby: tools.$orderby
+        skip: tools.skip
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,230 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Workspace API — Workspaces
+  description: 'Azure Synapse Analytics - Workspace API — Workspaces. 6 operations. Lead operation: Azure Synapse Analytics
+    List workspaces by subscription. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business
+    surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - Workspaces
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-workspace-workspaces
+    baseUri: https://management.azure.com
+    description: Azure Synapse Analytics - Workspace API — Workspaces business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-providers-Microsoft.Synapse-workspaces
+      path: /subscriptions/{subscriptionId}/providers/Microsoft.Synapse/workspaces
+      operations:
+      - name: workspaceslist
+        method: GET
+        description: Azure Synapse Analytics List workspaces by subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces
+      operations:
+      - name: workspaceslistbyresourcegroup
+        method: GET
+        description: Azure Synapse Analytics List workspaces by resource group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}
+      operations:
+      - name: workspacesget
+        method: GET
+        description: Azure Synapse Analytics Get a workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: workspacescreateorupdate
+        method: PUT
+        description: Azure Synapse Analytics Create or update a workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: workspacesupdate
+        method: PATCH
+        description: Azure Synapse Analytics Update a workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: workspacesdelete
+        method: DELETE
+        description: Azure Synapse Analytics Delete a workspace
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-workspace-workspaces-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Workspace API — Workspaces. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/providers/microsoft-synapse/workspaces
+      name: subscriptions-subscriptionid-providers-microsoft-synapse-workspaces
+      description: REST surface for subscriptions-subscriptionId-providers-Microsoft.Synapse-workspaces.
+      operations:
+      - method: GET
+        name: workspaceslist
+        description: Azure Synapse Analytics List workspaces by subscription
+        call: azure-synapse-analytics-workspace-workspaces.workspaceslist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: workspaceslistbyresourcegroup
+        description: Azure Synapse Analytics List workspaces by resource group
+        call: azure-synapse-analytics-workspace-workspaces.workspaceslistbyresourcegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: workspacesget
+        description: Azure Synapse Analytics Get a workspace
+        call: azure-synapse-analytics-workspace-workspaces.workspacesget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: workspacescreateorupdate
+        description: Azure Synapse Analytics Create or update a workspace
+        call: azure-synapse-analytics-workspace-workspaces.workspacescreateorupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: workspacesupdate
+        description: Azure Synapse Analytics Update a workspace
+        call: azure-synapse-analytics-workspace-workspaces.workspacesupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: workspacesdelete
+        description: Azure Synapse Analytics Delete a workspace
+        call: azure-synapse-analytics-workspace-workspaces.workspacesdelete
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-workspace-workspaces-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Workspace API — Workspaces. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-workspaces
+      description: Azure Synapse Analytics List workspaces by subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaces.workspaceslist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-list-workspaces-2
+      description: Azure Synapse Analytics List workspaces by resource group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaces.workspaceslistbyresourcegroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-workspace
+      description: Azure Synapse Analytics Get a workspace
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaces.workspacesget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a workspace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaces.workspacescreateorupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-update-workspace
+      description: Azure Synapse Analytics Update a workspace
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaces.workspacesupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-workspace
+      description: Azure Synapse Analytics Delete a workspace
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaces.workspacesdelete
+      outputParameters:
+      - type: object
+        mapping: $.

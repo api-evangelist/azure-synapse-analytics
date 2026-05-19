@@ -1,0 +1,219 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Spark Configuration API — SparkConfiguration
+  description: 'Azure Synapse Analytics - Spark Configuration API — SparkConfiguration. 5 operations. Lead operation: Azure
+    Synapse Analytics List Spark configurations. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics
+    business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - SparkConfiguration
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-spark-configuration-sparkconfiguration
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Spark Configuration API — SparkConfiguration business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: sparkconfigurations
+      path: /sparkconfigurations
+      operations:
+      - name: sparkconfigurationgetsparkconfigurationsbyworkspace
+        method: GET
+        description: Azure Synapse Analytics List Spark configurations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sparkconfigurations-sparkConfigurationName
+      path: /sparkconfigurations/{sparkConfigurationName}
+      operations:
+      - name: sparkconfigurationgetsparkconfiguration
+        method: GET
+        description: Azure Synapse Analytics Get a Spark configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-None-Match
+          in: header
+          type: string
+      - name: sparkconfigurationcreateorupdatesparkconfiguration
+        method: PUT
+        description: Azure Synapse Analytics Create or update a Spark configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-Match
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: sparkconfigurationdeletesparkconfiguration
+        method: DELETE
+        description: Azure Synapse Analytics Delete a Spark configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sparkconfigurations-sparkConfigurationName-rename
+      path: /sparkconfigurations/{sparkConfigurationName}/rename
+      operations:
+      - name: sparkconfigurationrenamesparkconfiguration
+        method: POST
+        description: Azure Synapse Analytics Rename a Spark configuration
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-spark-configuration-sparkconfiguration-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Spark Configuration API — SparkConfiguration. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/sparkconfigurations
+      name: sparkconfigurations
+      description: REST surface for sparkconfigurations.
+      operations:
+      - method: GET
+        name: sparkconfigurationgetsparkconfigurationsbyworkspace
+        description: Azure Synapse Analytics List Spark configurations
+        call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationgetsparkconfigurationsbyworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sparkconfigurations/{sparkconfigurationname}
+      name: sparkconfigurations-sparkconfigurationname
+      description: REST surface for sparkconfigurations-sparkConfigurationName.
+      operations:
+      - method: GET
+        name: sparkconfigurationgetsparkconfiguration
+        description: Azure Synapse Analytics Get a Spark configuration
+        call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationgetsparkconfiguration
+        with:
+          If-None-Match: rest.If-None-Match
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: sparkconfigurationcreateorupdatesparkconfiguration
+        description: Azure Synapse Analytics Create or update a Spark configuration
+        call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationcreateorupdatesparkconfiguration
+        with:
+          If-Match: rest.If-Match
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: sparkconfigurationdeletesparkconfiguration
+        description: Azure Synapse Analytics Delete a Spark configuration
+        call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationdeletesparkconfiguration
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sparkconfigurations/{sparkconfigurationname}/rename
+      name: sparkconfigurations-sparkconfigurationname-rename
+      description: REST surface for sparkconfigurations-sparkConfigurationName-rename.
+      operations:
+      - method: POST
+        name: sparkconfigurationrenamesparkconfiguration
+        description: Azure Synapse Analytics Rename a Spark configuration
+        call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationrenamesparkconfiguration
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-spark-configuration-sparkconfiguration-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Spark Configuration API — SparkConfiguration. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-spark
+      description: Azure Synapse Analytics List Spark configurations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationgetsparkconfigurationsbyworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-spark
+      description: Azure Synapse Analytics Get a Spark configuration
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationgetsparkconfiguration
+      with:
+        If-None-Match: tools.If-None-Match
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a Spark configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationcreateorupdatesparkconfiguration
+      with:
+        If-Match: tools.If-Match
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-spark
+      description: Azure Synapse Analytics Delete a Spark configuration
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationdeletesparkconfiguration
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-rename-spark
+      description: Azure Synapse Analytics Rename a Spark configuration
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-spark-configuration-sparkconfiguration.sparkconfigurationrenamesparkconfiguration
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

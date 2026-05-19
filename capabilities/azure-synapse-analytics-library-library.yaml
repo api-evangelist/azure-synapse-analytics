@@ -1,0 +1,200 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Library API — Library
+  description: 'Azure Synapse Analytics - Library API — Library. 5 operations. Lead operation: Azure Synapse Analytics List
+    libraries. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - Library
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-library-library
+    baseUri: https://{workspaceName}.dev.azuresynapse.net
+    description: Azure Synapse Analytics - Library API — Library business capability. Self-contained, no shared references.
+    resources:
+    - name: libraries
+      path: /libraries
+      operations:
+      - name: librarylist
+        method: GET
+        description: Azure Synapse Analytics List libraries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: libraries-libraryName
+      path: /libraries/{libraryName}
+      operations:
+      - name: libraryget
+        method: GET
+        description: Azure Synapse Analytics Get a library
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: libraryappend
+        method: PUT
+        description: Azure Synapse Analytics Upload a library
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: x-ms-blob-condition-appendpos
+          in: header
+          type: integer
+          description: Set this header to a byte offset at which the block is expected to be appended.
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: librarydelete
+        method: DELETE
+        description: Azure Synapse Analytics Delete a library
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: libraries-libraryName-flush
+      path: /libraries/{libraryName}/flush
+      operations:
+      - name: libraryflush
+        method: POST
+        description: Azure Synapse Analytics Flush a library
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-library-library-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Library API — Library. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/libraries
+      name: libraries
+      description: REST surface for libraries.
+      operations:
+      - method: GET
+        name: librarylist
+        description: Azure Synapse Analytics List libraries
+        call: azure-synapse-analytics-library-library.librarylist
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/libraries/{libraryname}
+      name: libraries-libraryname
+      description: REST surface for libraries-libraryName.
+      operations:
+      - method: GET
+        name: libraryget
+        description: Azure Synapse Analytics Get a library
+        call: azure-synapse-analytics-library-library.libraryget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: libraryappend
+        description: Azure Synapse Analytics Upload a library
+        call: azure-synapse-analytics-library-library.libraryappend
+        with:
+          x-ms-blob-condition-appendpos: rest.x-ms-blob-condition-appendpos
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: librarydelete
+        description: Azure Synapse Analytics Delete a library
+        call: azure-synapse-analytics-library-library.librarydelete
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/libraries/{libraryname}/flush
+      name: libraries-libraryname-flush
+      description: REST surface for libraries-libraryName-flush.
+      operations:
+      - method: POST
+        name: libraryflush
+        description: Azure Synapse Analytics Flush a library
+        call: azure-synapse-analytics-library-library.libraryflush
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-library-library-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Library API — Library. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-libraries
+      description: Azure Synapse Analytics List libraries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-library-library.librarylist
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-library
+      description: Azure Synapse Analytics Get a library
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-library-library.libraryget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-upload-library
+      description: Azure Synapse Analytics Upload a library
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-library-library.libraryappend
+      with:
+        x-ms-blob-condition-appendpos: tools.x-ms-blob-condition-appendpos
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-library
+      description: Azure Synapse Analytics Delete a library
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-library-library.librarydelete
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-flush-library
+      description: Azure Synapse Analytics Flush a library
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: azure-synapse-analytics-library-library.libraryflush
+      outputParameters:
+      - type: object
+        mapping: $.

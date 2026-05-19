@@ -1,0 +1,132 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Workspace API — WorkspaceAadAdmins
+  description: 'Azure Synapse Analytics - Workspace API — WorkspaceAadAdmins. 3 operations. Lead operation: Azure Synapse
+    Analytics Get workspace Active Directory admin. Self-contained Naftiko capability covering one Microsoft Azure Synapse
+    Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - WorkspaceAadAdmins
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-workspace-workspaceaadadmins
+    baseUri: https://management.azure.com
+    description: Azure Synapse Analytics - Workspace API — WorkspaceAadAdmins business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory
+      operations:
+      - name: workspaceaadadminsget
+        method: GET
+        description: Azure Synapse Analytics Get workspace Active Directory admin
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: workspaceaadadminscreateorupdate
+        method: PUT
+        description: Azure Synapse Analytics Create or update workspace Active Directory admin
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: workspaceaadadminsdelete
+        method: DELETE
+        description: Azure Synapse Analytics Delete workspace Active Directory admin
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-workspace-workspaceaadadmins-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Workspace API — WorkspaceAadAdmins. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}/administrators/activedirectory
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: workspaceaadadminsget
+        description: Azure Synapse Analytics Get workspace Active Directory admin
+        call: azure-synapse-analytics-workspace-workspaceaadadmins.workspaceaadadminsget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: workspaceaadadminscreateorupdate
+        description: Azure Synapse Analytics Create or update workspace Active Directory admin
+        call: azure-synapse-analytics-workspace-workspaceaadadmins.workspaceaadadminscreateorupdate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: workspaceaadadminsdelete
+        description: Azure Synapse Analytics Delete workspace Active Directory admin
+        call: azure-synapse-analytics-workspace-workspaceaadadmins.workspaceaadadminsdelete
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-workspace-workspaceaadadmins-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Workspace API — WorkspaceAadAdmins. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-get-workspace
+      description: Azure Synapse Analytics Get workspace Active Directory admin
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaceaadadmins.workspaceaadadminsget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update workspace Active Directory admin
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaceaadadmins.workspaceaadadminscreateorupdate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-workspace
+      description: Azure Synapse Analytics Delete workspace Active Directory admin
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-workspace-workspaceaadadmins.workspaceaadadminsdelete
+      outputParameters:
+      - type: object
+        mapping: $.

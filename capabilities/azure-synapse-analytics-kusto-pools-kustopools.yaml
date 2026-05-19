@@ -1,0 +1,212 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Synapse Analytics - Kusto Pools API — KustoPools
+  description: 'Azure Synapse Analytics - Kusto Pools API — KustoPools. 5 operations. Lead operation: Azure Synapse Analytics
+    List Kusto pools. Self-contained Naftiko capability covering one Microsoft Azure Synapse Analytics business surface.'
+  tags:
+  - Microsoft Azure Synapse Analytics
+  - KustoPools
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY: MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: azure-synapse-analytics-kusto-pools-kustopools
+    baseUri: https://management.azure.com
+    description: Azure Synapse Analytics - Kusto Pools API — KustoPools business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/kustoPools
+      operations:
+      - name: kustopoolslistbyworkspace
+        method: GET
+        description: Azure Synapse Analytics List Kusto pools
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/kustoPools/{kustoPoolName}
+      operations:
+      - name: kustopoolsget
+        method: GET
+        description: Azure Synapse Analytics Get a Kusto pool
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: kustopoolscreateorupdate
+        method: PUT
+        description: Azure Synapse Analytics Create or update a Kusto pool
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-Match
+          in: header
+          type: string
+        - name: If-None-Match
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: kustopoolsupdate
+        method: PATCH
+        description: Azure Synapse Analytics Update a Kusto pool
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: If-Match
+          in: header
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: kustopoolsdelete
+        method: DELETE
+        description: Azure Synapse Analytics Delete a Kusto pool
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_SYNAPSE_ANALYTICS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: azure-synapse-analytics-kusto-pools-kustopools-rest
+    port: 8080
+    description: REST adapter for Azure Synapse Analytics - Kusto Pools API — KustoPools. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}/kustopools
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: kustopoolslistbyworkspace
+        description: Azure Synapse Analytics List Kusto pools
+        call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolslistbyworkspace
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-synapse/workspaces/{workspacename}/kustopools/{kustopoolname}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: kustopoolsget
+        description: Azure Synapse Analytics Get a Kusto pool
+        call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolsget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: kustopoolscreateorupdate
+        description: Azure Synapse Analytics Create or update a Kusto pool
+        call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolscreateorupdate
+        with:
+          If-Match: rest.If-Match
+          If-None-Match: rest.If-None-Match
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: kustopoolsupdate
+        description: Azure Synapse Analytics Update a Kusto pool
+        call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolsupdate
+        with:
+          If-Match: rest.If-Match
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: kustopoolsdelete
+        description: Azure Synapse Analytics Delete a Kusto pool
+        call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolsdelete
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: azure-synapse-analytics-kusto-pools-kustopools-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Synapse Analytics - Kusto Pools API — KustoPools. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: azure-synapse-analytics-list-kusto
+      description: Azure Synapse Analytics List Kusto pools
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolslistbyworkspace
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-get-kusto
+      description: Azure Synapse Analytics Get a Kusto pool
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolsget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-create-update
+      description: Azure Synapse Analytics Create or update a Kusto pool
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolscreateorupdate
+      with:
+        If-Match: tools.If-Match
+        If-None-Match: tools.If-None-Match
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-update-kusto
+      description: Azure Synapse Analytics Update a Kusto pool
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolsupdate
+      with:
+        If-Match: tools.If-Match
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-synapse-analytics-delete-kusto
+      description: Azure Synapse Analytics Delete a Kusto pool
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: azure-synapse-analytics-kusto-pools-kustopools.kustopoolsdelete
+      outputParameters:
+      - type: object
+        mapping: $.
