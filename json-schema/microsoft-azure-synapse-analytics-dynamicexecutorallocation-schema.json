@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DynamicExecutorAllocation",
+  "title": "DynamicExecutorAllocation",
+  "type": "object",
+  "description": "Dynamic executor allocation.",
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Whether dynamic executor allocation is enabled."
+    },
+    "minExecutors": {
+      "type": "integer",
+      "description": "Minimum number of executors."
+    },
+    "maxExecutors": {
+      "type": "integer",
+      "description": "Maximum number of executors."
+    }
+  }
+}

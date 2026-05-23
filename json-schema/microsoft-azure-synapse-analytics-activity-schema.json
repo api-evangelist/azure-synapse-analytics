@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Activity",
+  "title": "Activity",
+  "type": "object",
+  "description": "A pipeline activity.",
+  "required": [
+    "name",
+    "type"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Activity name."
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of activity."
+    },
+    "description": {
+      "type": "string",
+      "description": "Activity description."
+    },
+    "dependsOn": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "activity": {
+            "type": "string"
+          },
+          "dependencyConditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Succeeded",
+                "Failed",
+                "Skipped",
+                "Completed"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

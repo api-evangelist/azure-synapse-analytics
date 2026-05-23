@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LinkTableListResponse",
+  "title": "LinkTableListResponse",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "tableName": {
+                "type": "string"
+              },
+              "schemaName": {
+                "type": "string"
+              }
+            }
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "tableName": {
+                "type": "string"
+              },
+              "schemaName": {
+                "type": "string"
+              },
+              "distributionOptions": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

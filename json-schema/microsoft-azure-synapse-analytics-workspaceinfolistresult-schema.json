@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WorkspaceInfoListResult",
+  "title": "WorkspaceInfoListResult",
+  "type": "object",
+  "description": "List of workspaces.",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Workspace"
+      },
+      "description": "List of workspaces."
+    },
+    "nextLink": {
+      "type": "string",
+      "description": "Link to the next page of results."
+    }
+  }
+}

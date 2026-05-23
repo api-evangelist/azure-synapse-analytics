@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkJobListViewResponse",
+  "title": "SparkJobListViewResponse",
+  "type": "object",
+  "description": "List of Spark jobs response.",
+  "properties": {
+    "nJobs": {
+      "type": "integer",
+      "description": "Number of Spark jobs."
+    },
+    "sparkJobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SparkJob"
+      }
+    }
+  }
+}

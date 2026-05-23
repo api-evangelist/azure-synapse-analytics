@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SqlScriptContent",
+  "title": "SqlScriptContent",
+  "type": "object",
+  "required": [
+    "query",
+    "currentConnection"
+  ],
+  "properties": {
+    "query": {
+      "type": "string",
+      "description": "SQL query content."
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "currentConnection": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The connected pool name."
+        },
+        "type": {
+          "type": "string",
+          "description": "The pool type.",
+          "enum": [
+            "SqlOnDemand",
+            "SqlPool"
+          ]
+        }
+      }
+    },
+    "resultLimit": {
+      "type": "integer",
+      "description": "Limit of results."
+    }
+  }
+}

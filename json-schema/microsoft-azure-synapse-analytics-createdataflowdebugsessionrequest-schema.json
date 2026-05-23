@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateDataFlowDebugSessionRequest",
+  "title": "CreateDataFlowDebugSessionRequest",
+  "type": "object",
+  "properties": {
+    "computeType": {
+      "type": "string"
+    },
+    "coreCount": {
+      "type": "integer"
+    },
+    "timeToLiveInMinutes": {
+      "type": "integer"
+    },
+    "integrationRuntime": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

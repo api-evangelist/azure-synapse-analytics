@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Pipeline",
+  "title": "Pipeline",
+  "type": "object",
+  "description": "A pipeline definition.",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "The description of the pipeline."
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Activity"
+      },
+      "description": "List of activities in the pipeline."
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ParameterSpecification"
+      },
+      "description": "Pipeline parameters."
+    },
+    "variables": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/VariableSpecification"
+      },
+      "description": "Pipeline variables."
+    },
+    "concurrency": {
+      "type": "integer",
+      "description": "The max number of concurrent runs for the pipeline."
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of tags that can be used for describing the pipeline."
+    },
+    "folder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the folder that this pipeline is in."
+        }
+      }
+    }
+  }
+}

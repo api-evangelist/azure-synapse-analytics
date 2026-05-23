@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateDataFlowDebugSessionResponse",
+  "title": "CreateDataFlowDebugSessionResponse",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "sessionId": {
+      "type": "string"
+    }
+  }
+}

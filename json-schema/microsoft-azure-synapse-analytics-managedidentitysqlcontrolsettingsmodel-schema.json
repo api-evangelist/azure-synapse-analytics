@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ManagedIdentitySqlControlSettingsModel",
+  "title": "ManagedIdentitySqlControlSettingsModel",
+  "type": "object",
+  "description": "SQL control settings for the workspace managed identity.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "grantSqlControlToManagedIdentity": {
+          "type": "object",
+          "properties": {
+            "desiredState": {
+              "type": "string",
+              "description": "Desired state.",
+              "enum": [
+                "Enabled",
+                "Disabled"
+              ]
+            },
+            "actualState": {
+              "type": "string",
+              "description": "Actual state.",
+              "readOnly": true,
+              "enum": [
+                "Enabling",
+                "Enabled",
+                "Disabling",
+                "Disabled",
+                "Unknown"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

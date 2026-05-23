@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/KustoPool",
+  "title": "KustoPool",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "sku": {
+      "type": "object",
+      "required": [
+        "name",
+        "size"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "Storage optimized",
+            "Compute optimized"
+          ]
+        },
+        "capacity": {
+          "type": "integer"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "Extra small",
+            "Small",
+            "Medium",
+            "Large"
+          ]
+        }
+      }
+    },
+    "etag": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "Creating",
+            "Unavailable",
+            "Running",
+            "Deleting",
+            "Deleted",
+            "Stopping",
+            "Stopped",
+            "Starting",
+            "Updating"
+          ]
+        },
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true
+        },
+        "uri": {
+          "type": "string",
+          "readOnly": true
+        },
+        "dataIngestionUri": {
+          "type": "string",
+          "readOnly": true
+        },
+        "stateReason": {
+          "type": "string",
+          "readOnly": true
+        },
+        "optimizedAutoscale": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "integer"
+            },
+            "isEnabled": {
+              "type": "boolean"
+            },
+            "minimum": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            }
+          }
+        },
+        "enableStreamingIngest": {
+          "type": "boolean",
+          "default": false
+        },
+        "enablePurge": {
+          "type": "boolean",
+          "default": false
+        },
+        "workspaceUID": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

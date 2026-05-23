@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WorkspacePatchInfo",
+  "title": "WorkspacePatchInfo",
+  "type": "object",
+  "description": "Workspace patch details.",
+  "properties": {
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Resource tags."
+    },
+    "identity": {
+      "$ref": "#/components/schemas/ManagedIdentity"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "sqlAdministratorLoginPassword": {
+          "type": "string",
+          "description": "SQL administrator login password."
+        },
+        "managedVirtualNetworkSettings": {
+          "type": "object",
+          "properties": {
+            "preventDataExfiltration": {
+              "type": "boolean"
+            },
+            "allowedAadTenantIdsForLinking": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "encryption": {
+          "type": "object",
+          "properties": {
+            "cmk": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "keyVaultUrl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "publicNetworkAccess": {
+          "type": "string",
+          "enum": [
+            "Enabled",
+            "Disabled"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkStatementOptions",
+  "title": "SparkStatementOptions",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "The code to execute."
+    },
+    "kind": {
+      "type": "string",
+      "description": "The language of the code.",
+      "enum": [
+        "spark",
+        "pyspark",
+        "dotnetspark",
+        "sql"
+      ]
+    }
+  }
+}

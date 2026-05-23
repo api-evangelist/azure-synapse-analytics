@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BigDataPoolResourceProperties",
+  "title": "BigDataPoolResourceProperties",
+  "type": "object",
+  "description": "Properties of a Big Data pool.",
+  "properties": {
+    "provisioningState": {
+      "type": "string",
+      "description": "The state of the Big Data pool.",
+      "readOnly": true
+    },
+    "autoScale": {
+      "$ref": "#/components/schemas/AutoScaleProperties"
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "autoPause": {
+      "$ref": "#/components/schemas/AutoPauseProperties"
+    },
+    "isComputeIsolationEnabled": {
+      "type": "boolean",
+      "description": "Whether compute isolation is enabled."
+    },
+    "sessionLevelPackagesEnabled": {
+      "type": "boolean",
+      "description": "Whether session level packages are enabled."
+    },
+    "cacheSize": {
+      "type": "integer",
+      "readOnly": true
+    },
+    "dynamicExecutorAllocation": {
+      "$ref": "#/components/schemas/DynamicExecutorAllocation"
+    },
+    "sparkEventsFolder": {
+      "type": "string",
+      "description": "The Spark events folder."
+    },
+    "nodeCount": {
+      "type": "integer",
+      "description": "The number of nodes."
+    },
+    "customLibraries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LibraryInfo"
+      }
+    },
+    "sparkConfigProperties": {
+      "$ref": "#/components/schemas/SparkConfigProperties"
+    },
+    "sparkVersion": {
+      "type": "string",
+      "description": "The Apache Spark version."
+    },
+    "defaultSparkLogFolder": {
+      "type": "string",
+      "description": "The default folder where Spark logs will be written."
+    },
+    "nodeSize": {
+      "type": "string",
+      "description": "The level of compute power.",
+      "enum": [
+        "None",
+        "Small",
+        "Medium",
+        "Large",
+        "XLarge",
+        "XXLarge",
+        "XXXLarge"
+      ]
+    },
+    "nodeSizeFamily": {
+      "type": "string",
+      "description": "The kind of nodes.",
+      "enum": [
+        "None",
+        "MemoryOptimized",
+        "HardwareAcceleratedFPGA",
+        "HardwareAcceleratedGPU"
+      ]
+    }
+  }
+}

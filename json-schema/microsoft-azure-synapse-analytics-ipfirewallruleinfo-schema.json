@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/IpFirewallRuleInfo",
+  "title": "IpFirewallRuleInfo",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "endIpAddress": {
+          "type": "string",
+          "description": "The end IP address of the firewall rule (IPv4 format)."
+        },
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "Provisioning",
+            "Succeeded",
+            "Deleting",
+            "Failed",
+            "DeleteError"
+          ]
+        },
+        "startIpAddress": {
+          "type": "string",
+          "description": "The start IP address of the firewall rule (IPv4 format)."
+        }
+      }
+    }
+  }
+}

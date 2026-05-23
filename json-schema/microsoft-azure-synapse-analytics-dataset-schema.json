@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Dataset",
+  "title": "Dataset",
+  "type": "object",
+  "required": [
+    "type",
+    "linkedServiceName"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of dataset."
+    },
+    "description": {
+      "type": "string"
+    },
+    "linkedServiceName": {
+      "$ref": "#/components/schemas/LinkedServiceReference"
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "folder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "schema": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "structure": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

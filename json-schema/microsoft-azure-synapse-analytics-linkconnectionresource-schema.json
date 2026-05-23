@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LinkConnectionResource",
+  "title": "LinkConnectionResource",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "sourceDatabase": {
+          "type": "object",
+          "properties": {
+            "typeProperties": {
+              "type": "object",
+              "properties": {
+                "resourceId": {
+                  "type": "string"
+                }
+              }
+            },
+            "linkedService": {
+              "type": "object",
+              "properties": {
+                "referenceName": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "targetDatabase": {
+          "type": "object",
+          "properties": {
+            "typeProperties": {
+              "type": "object",
+              "properties": {
+                "linkedServiceTarget": {
+                  "type": "string"
+                }
+              }
+            },
+            "linkedService": {
+              "type": "object",
+              "properties": {
+                "referenceName": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "compute": {
+          "type": "object",
+          "properties": {
+            "coreCount": {
+              "type": "integer"
+            },
+            "computeType": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

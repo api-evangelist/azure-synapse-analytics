@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/VariableSpecification",
+  "title": "VariableSpecification",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "String",
+        "Bool",
+        "Array"
+      ]
+    },
+    "defaultValue": {
+      "description": "Default value of the variable."
+    }
+  }
+}

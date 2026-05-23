@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Trigger",
+  "title": "Trigger",
+  "type": "object",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Trigger type."
+    },
+    "description": {
+      "type": "string"
+    },
+    "runtimeState": {
+      "type": "string",
+      "readOnly": true,
+      "enum": [
+        "Started",
+        "Stopped",
+        "Disabled"
+      ]
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pipelines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pipelineReference": {
+            "type": "object",
+            "properties": {
+              "referenceName": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

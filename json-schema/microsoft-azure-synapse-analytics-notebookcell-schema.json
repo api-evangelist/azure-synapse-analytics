@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/NotebookCell",
+  "title": "NotebookCell",
+  "type": "object",
+  "description": "Notebook cell definition.",
+  "properties": {
+    "cell_type": {
+      "type": "string",
+      "description": "The cell type."
+    },
+    "source": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Contents of the cell."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Cell metadata."
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "description": "Cell outputs."
+    }
+  }
+}

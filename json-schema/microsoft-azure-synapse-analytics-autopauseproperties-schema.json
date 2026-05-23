@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AutoPauseProperties",
+  "title": "AutoPauseProperties",
+  "type": "object",
+  "description": "Auto-pause properties of a Big Data pool.",
+  "properties": {
+    "delayInMinutes": {
+      "type": "integer",
+      "description": "Number of minutes of idle time before auto-pause."
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Whether auto-pausing is enabled."
+    }
+  }
+}

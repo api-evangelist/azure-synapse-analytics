@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AutoScaleProperties",
+  "title": "AutoScaleProperties",
+  "type": "object",
+  "description": "Auto-scale properties of a Big Data pool.",
+  "properties": {
+    "minNodeCount": {
+      "type": "integer",
+      "description": "The minimum number of nodes."
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Whether auto-scaling is enabled."
+    },
+    "maxNodeCount": {
+      "type": "integer",
+      "description": "The maximum number of nodes."
+    }
+  }
+}

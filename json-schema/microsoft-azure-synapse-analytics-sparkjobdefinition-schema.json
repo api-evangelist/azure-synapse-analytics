@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkJobDefinition",
+  "title": "SparkJobDefinition",
+  "type": "object",
+  "required": [
+    "targetBigDataPool",
+    "jobProperties"
+  ],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "targetBigDataPool": {
+      "type": "object",
+      "properties": {
+        "referenceName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "requiredSparkVersion": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "jobProperties": {
+      "type": "object",
+      "required": [
+        "name",
+        "file"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "className": {
+          "type": "string"
+        },
+        "conf": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "jars": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pyFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "driverMemory": {
+          "type": "string"
+        },
+        "driverCores": {
+          "type": "integer"
+        },
+        "executorMemory": {
+          "type": "string"
+        },
+        "executorCores": {
+          "type": "integer"
+        },
+        "numExecutors": {
+          "type": "integer"
+        }
+      }
+    },
+    "folder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

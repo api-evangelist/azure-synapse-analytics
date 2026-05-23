@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/QueryDataFlowDebugSessionsResponse",
+  "title": "QueryDataFlowDebugSessionsResponse",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dataFlowName": {
+            "type": "string"
+          },
+          "computeType": {
+            "type": "string"
+          },
+          "coreCount": {
+            "type": "integer"
+          },
+          "nodeCount": {
+            "type": "integer"
+          },
+          "integrationRuntimeName": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "startTime": {
+            "type": "string"
+          },
+          "timeToLiveInMinutes": {
+            "type": "integer"
+          },
+          "lastActivityTime": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nextLink": {
+      "type": "string"
+    }
+  }
+}

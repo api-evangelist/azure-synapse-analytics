@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkBatchJobOptions",
+  "title": "SparkBatchJobOptions",
+  "type": "object",
+  "required": [
+    "name",
+    "file"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the batch job."
+    },
+    "file": {
+      "type": "string",
+      "description": "File containing the application to execute."
+    },
+    "className": {
+      "type": "string",
+      "description": "Main class for Java/Scala applications."
+    },
+    "args": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "jars": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pyFiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "archives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conf": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "driverMemory": {
+      "type": "string"
+    },
+    "driverCores": {
+      "type": "integer"
+    },
+    "executorMemory": {
+      "type": "string"
+    },
+    "executorCores": {
+      "type": "integer"
+    },
+    "executorCount": {
+      "type": "integer"
+    }
+  }
+}

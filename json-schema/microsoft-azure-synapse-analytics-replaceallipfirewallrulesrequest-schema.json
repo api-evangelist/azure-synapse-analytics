@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReplaceAllIpFirewallRulesRequest",
+  "title": "ReplaceAllIpFirewallRulesRequest",
+  "type": "object",
+  "properties": {
+    "ipFirewallRules": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "startIpAddress": {
+            "type": "string"
+          },
+          "endIpAddress": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

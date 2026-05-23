@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DataLakeStorageAccountDetails",
+  "title": "DataLakeStorageAccountDetails",
+  "type": "object",
+  "description": "Details of the default data lake storage account.",
+  "properties": {
+    "accountUrl": {
+      "type": "string",
+      "description": "Account URL."
+    },
+    "filesystem": {
+      "type": "string",
+      "description": "Filesystem name."
+    },
+    "resourceId": {
+      "type": "string",
+      "description": "ARM resource ID of the storage account."
+    },
+    "createManagedPrivateEndpoint": {
+      "type": "boolean",
+      "description": "Create managed private endpoint to the storage account."
+    }
+  }
+}

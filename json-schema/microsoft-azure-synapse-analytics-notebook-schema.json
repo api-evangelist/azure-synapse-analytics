@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Notebook",
+  "title": "Notebook",
+  "type": "object",
+  "description": "Notebook definition.",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "nbformat": {
+      "type": "integer",
+      "description": "Notebook format major version number."
+    },
+    "nbformat_minor": {
+      "type": "integer",
+      "description": "Notebook format minor version number."
+    },
+    "bigDataPool": {
+      "type": "object",
+      "properties": {
+        "referenceName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "sessionProperties": {
+      "type": "object",
+      "properties": {
+        "driverMemory": {
+          "type": "string"
+        },
+        "driverCores": {
+          "type": "integer"
+        },
+        "executorMemory": {
+          "type": "string"
+        },
+        "executorCores": {
+          "type": "integer"
+        },
+        "numExecutors": {
+          "type": "integer"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "kernelspec": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "display_name": {
+              "type": "string"
+            }
+          }
+        },
+        "language_info": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NotebookCell"
+      }
+    },
+    "folder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

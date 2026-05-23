@@ -1,0 +1,8 @@
+name: Azure Synapse Analytics Domain Vocabulary
+provider: Azure Synapse Analytics
+providerId: microsoft-azure-synapse-analytics
+description: Tag-derived vocabulary for the Azure Synapse Analytics API surface; sourced from openapi/ tags.
+terms:
+- term: WorkspaceAadAdmins
+- term: WorkspaceManagedIdentity
+- term: Workspaces

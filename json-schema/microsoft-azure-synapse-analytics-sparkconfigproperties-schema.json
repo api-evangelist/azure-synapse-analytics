@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkConfigProperties",
+  "title": "SparkConfigProperties",
+  "type": "object",
+  "description": "Spark configuration file properties.",
+  "properties": {
+    "time": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "content": {
+      "type": "string",
+      "description": "The content of the Spark configuration."
+    },
+    "filename": {
+      "type": "string",
+      "description": "The filename of the Spark configuration."
+    },
+    "configurationType": {
+      "type": "string",
+      "enum": [
+        "File",
+        "Artifact"
+      ]
+    }
+  }
+}

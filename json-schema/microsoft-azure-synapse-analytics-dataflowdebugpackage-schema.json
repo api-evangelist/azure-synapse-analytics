@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DataFlowDebugPackage",
+  "title": "DataFlowDebugPackage",
+  "type": "object",
+  "properties": {
+    "sessionId": {
+      "type": "string"
+    },
+    "dataFlow": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "properties": {
+          "type": "object"
+        }
+      }
+    },
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "linkedServices": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "staging": {
+      "type": "object"
+    },
+    "debugSettings": {
+      "type": "object"
+    }
+  }
+}

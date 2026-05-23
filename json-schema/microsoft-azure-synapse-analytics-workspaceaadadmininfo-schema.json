@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WorkspaceAadAdminInfo",
+  "title": "WorkspaceAadAdminInfo",
+  "type": "object",
+  "description": "Workspace active directory admin.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
+          "type": "string",
+          "description": "Tenant ID of the workspace active directory administrator."
+        },
+        "login": {
+          "type": "string",
+          "description": "Login name of the workspace active directory administrator."
+        },
+        "administratorType": {
+          "type": "string",
+          "description": "Workspace active directory administrator type."
+        },
+        "sid": {
+          "type": "string",
+          "description": "Object ID of the workspace active directory administrator."
+        }
+      }
+    }
+  }
+}

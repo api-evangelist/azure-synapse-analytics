@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Key",
+  "title": "Key",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "isActiveCMK": {
+          "type": "boolean",
+          "description": "Used to activate the workspace after a customer managed key is provided."
+        },
+        "keyVaultUrl": {
+          "type": "string",
+          "description": "The Key Vault Url of the workspace key."
+        }
+      }
+    }
+  }
+}

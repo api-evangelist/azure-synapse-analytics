@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/KqlScript",
+  "title": "KqlScript",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "The KQL query content."
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "language": {
+              "type": "string"
+            }
+          }
+        },
+        "currentConnection": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Data Explorer pool name."
+            },
+            "databaseName": {
+              "type": "string",
+              "description": "Data Explorer database name."
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "folder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

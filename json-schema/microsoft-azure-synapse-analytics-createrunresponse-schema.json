@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CreateRunResponse",
+  "title": "CreateRunResponse",
+  "type": "object",
+  "description": "Response body with a run identifier.",
+  "properties": {
+    "runId": {
+      "type": "string",
+      "description": "Identifier of the created run."
+    }
+  }
+}

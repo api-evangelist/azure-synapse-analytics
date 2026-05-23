@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LinkedServiceReference",
+  "title": "LinkedServiceReference",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "LinkedServiceReference"
+      ]
+    },
+    "referenceName": {
+      "type": "string"
+    }
+  }
+}

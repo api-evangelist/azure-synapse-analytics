@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/KustoPoolUpdate",
+  "title": "KustoPoolUpdate",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "sku": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "integer"
+        },
+        "size": {
+          "type": "string"
+        }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "optimizedAutoscale": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "integer"
+            },
+            "isEnabled": {
+              "type": "boolean"
+            },
+            "minimum": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            }
+          }
+        },
+        "enableStreamingIngest": {
+          "type": "boolean"
+        },
+        "enablePurge": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

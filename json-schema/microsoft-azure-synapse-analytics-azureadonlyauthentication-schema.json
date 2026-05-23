@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AzureADOnlyAuthentication",
+  "title": "AzureADOnlyAuthentication",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "azureADOnlyAuthentication": {
+          "type": "boolean",
+          "description": "Azure Active Directory only Authentication enabled."
+        },
+        "state": {
+          "type": "string",
+          "readOnly": true,
+          "enum": [
+            "Consistent",
+            "InConsistent",
+            "Updating"
+          ]
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

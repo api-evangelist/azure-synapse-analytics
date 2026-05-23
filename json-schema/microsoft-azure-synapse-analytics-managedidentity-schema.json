@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ManagedIdentity",
+  "title": "ManagedIdentity",
+  "type": "object",
+  "description": "The workspace managed identity.",
+  "properties": {
+    "principalId": {
+      "type": "string",
+      "description": "The principal ID of the workspace managed identity.",
+      "readOnly": true
+    },
+    "tenantId": {
+      "type": "string",
+      "description": "The tenant ID of the workspace managed identity.",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of managed identity.",
+      "enum": [
+        "None",
+        "SystemAssigned",
+        "SystemAssigned,UserAssigned"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LibraryInfo",
+  "title": "LibraryInfo",
+  "type": "object",
+  "description": "Library information.",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "containerName": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

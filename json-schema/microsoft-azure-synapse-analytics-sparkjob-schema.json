@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkJob",
+  "title": "SparkJob",
+  "type": "object",
+  "properties": {
+    "state": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "submitter": {
+      "type": "string"
+    },
+    "compute": {
+      "type": "string"
+    },
+    "sparkApplicationId": {
+      "type": "string"
+    },
+    "livyId": {
+      "type": "string"
+    },
+    "timing": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sparkPoolName": {
+      "type": "string"
+    },
+    "submitTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "queuedDuration": {
+      "type": "string"
+    },
+    "runningDuration": {
+      "type": "string"
+    },
+    "totalDuration": {
+      "type": "string"
+    },
+    "jobType": {
+      "type": "string"
+    },
+    "pipeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "runId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PipelineListResponse",
+  "title": "PipelineListResponse",
+  "type": "object",
+  "description": "A list of pipeline resources.",
+  "properties": {
+    "value": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PipelineResource"
+      }
+    },
+    "nextLink": {
+      "type": "string"
+    }
+  }
+}

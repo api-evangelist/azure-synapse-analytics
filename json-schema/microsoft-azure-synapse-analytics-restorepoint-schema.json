@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RestorePoint",
+  "title": "RestorePoint",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "location": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "restorePointType": {
+          "type": "string",
+          "enum": [
+            "CONTINUOUS",
+            "DISCRETE"
+          ],
+          "readOnly": true
+        },
+        "earliestRestoreDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "restorePointCreationDate": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "restorePointLabel": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

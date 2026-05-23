@@ -1,0 +1,165 @@
+{
+  "provider": "Azure Synapse Analytics",
+  "providerId": "microsoft-azure-synapse-analytics",
+  "kind": "json-structure",
+  "description": "Structural overview of the Azure Synapse Analytics API surface; extracted from openapi/.",
+  "schemaCount": 9,
+  "operationCount": 11,
+  "schemas": [
+    {
+      "name": "ErrorResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "WorkspaceInfoListResult",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "Workspace",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "WorkspaceProperties",
+      "type": "object",
+      "propertyCount": 12,
+      "required": []
+    },
+    {
+      "name": "WorkspacePatchInfo",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "ManagedIdentity",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    },
+    {
+      "name": "DataLakeStorageAccountDetails",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "WorkspaceAadAdminInfo",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "ManagedIdentitySqlControlSettingsModel",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/providers/Microsoft.Synapse/workspaces",
+      "operationId": "Workspaces_List",
+      "summary": "Azure Synapse Analytics List workspaces by subscription",
+      "tags": [
+        "Workspaces"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces",
+      "operationId": "Workspaces_ListByResourceGroup",
+      "summary": "Azure Synapse Analytics List workspaces by resource group",
+      "tags": [
+        "Workspaces"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}",
+      "operationId": "Workspaces_Get",
+      "summary": "Azure Synapse Analytics Get a workspace",
+      "tags": [
+        "Workspaces"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}",
+      "operationId": "Workspaces_CreateOrUpdate",
+      "summary": "Azure Synapse Analytics Create or update a workspace",
+      "tags": [
+        "Workspaces"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}",
+      "operationId": "Workspaces_Delete",
+      "summary": "Azure Synapse Analytics Delete a workspace",
+      "tags": [
+        "Workspaces"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}",
+      "operationId": "Workspaces_Update",
+      "summary": "Azure Synapse Analytics Update a workspace",
+      "tags": [
+        "Workspaces"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory",
+      "operationId": "WorkspaceAadAdmins_Get",
+      "summary": "Azure Synapse Analytics Get workspace Active Directory admin",
+      "tags": [
+        "WorkspaceAadAdmins"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory",
+      "operationId": "WorkspaceAadAdmins_CreateOrUpdate",
+      "summary": "Azure Synapse Analytics Create or update workspace Active Directory admin",
+      "tags": [
+        "WorkspaceAadAdmins"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory",
+      "operationId": "WorkspaceAadAdmins_Delete",
+      "summary": "Azure Synapse Analytics Delete workspace Active Directory admin",
+      "tags": [
+        "WorkspaceAadAdmins"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/managedIdentitySqlControlSettings/default",
+      "operationId": "WorkspaceManagedIdentitySqlControlSettings_Get",
+      "summary": "Azure Synapse Analytics Get managed identity SQL control settings",
+      "tags": [
+        "WorkspaceManagedIdentity"
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/managedIdentitySqlControlSettings/default",
+      "operationId": "WorkspaceManagedIdentitySqlControlSettings_CreateOrUpdate",
+      "summary": "Azure Synapse Analytics Create or update managed identity SQL control settings",
+      "tags": [
+        "WorkspaceManagedIdentity"
+      ]
+    }
+  ]
+}

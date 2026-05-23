@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WorkspaceProperties",
+  "title": "WorkspaceProperties",
+  "type": "object",
+  "description": "Workspace properties.",
+  "properties": {
+    "defaultDataLakeStorage": {
+      "$ref": "#/components/schemas/DataLakeStorageAccountDetails"
+    },
+    "sqlAdministratorLoginPassword": {
+      "type": "string",
+      "description": "SQL administrator login password."
+    },
+    "managedResourceGroupName": {
+      "type": "string",
+      "description": "Workspace managed resource group name."
+    },
+    "provisioningState": {
+      "type": "string",
+      "description": "Resource provisioning state.",
+      "readOnly": true
+    },
+    "sqlAdministratorLogin": {
+      "type": "string",
+      "description": "Login for workspace SQL active directory administrator."
+    },
+    "virtualNetworkProfile": {
+      "type": "object",
+      "properties": {
+        "computeSubnetId": {
+          "type": "string",
+          "description": "Subnet ID used for computes in workspace."
+        }
+      }
+    },
+    "connectivityEndpoints": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Connectivity endpoints.",
+      "readOnly": true
+    },
+    "managedVirtualNetwork": {
+      "type": "string",
+      "description": "Setting this to 'default' will ensure that all compute is in a managed virtual network."
+    },
+    "managedVirtualNetworkSettings": {
+      "type": "object",
+      "properties": {
+        "preventDataExfiltration": {
+          "type": "boolean",
+          "description": "Prevent data exfiltration."
+        },
+        "linkedAccessCheckOnTargetResource": {
+          "type": "boolean",
+          "description": "Linked access check on target resource."
+        },
+        "allowedAadTenantIdsForLinking": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Allowed AAD Tenant IDs for linking."
+        }
+      }
+    },
+    "encryption": {
+      "type": "object",
+      "properties": {
+        "cmk": {
+          "type": "object",
+          "properties": {
+            "key": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Workspace Key Name."
+                },
+                "keyVaultUrl": {
+                  "type": "string",
+                  "description": "Workspace Key sub-resource key vault URL."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "publicNetworkAccess": {
+      "type": "string",
+      "description": "Enable or disable public network access.",
+      "enum": [
+        "Enabled",
+        "Disabled"
+      ]
+    },
+    "workspaceUID": {
+      "type": "string",
+      "description": "The workspace unique identifier.",
+      "readOnly": true
+    }
+  }
+}

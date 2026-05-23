@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SqlPoolProperties",
+  "title": "SqlPoolProperties",
+  "type": "object",
+  "description": "SQL pool properties.",
+  "properties": {
+    "maxSizeBytes": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Maximum size in bytes."
+    },
+    "collation": {
+      "type": "string",
+      "description": "Collation mode."
+    },
+    "sourceDatabaseId": {
+      "type": "string",
+      "description": "Source database ID for restore."
+    },
+    "recoverableDatabaseId": {
+      "type": "string",
+      "description": "Recoverable database ID for geo-restore."
+    },
+    "provisioningState": {
+      "type": "string",
+      "description": "Resource provisioning state.",
+      "readOnly": true
+    },
+    "status": {
+      "type": "string",
+      "description": "Resource status.",
+      "readOnly": true
+    },
+    "restorePointInTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Snapshot time to restore."
+    },
+    "createMode": {
+      "type": "string",
+      "description": "The create mode.",
+      "enum": [
+        "Default",
+        "PointInTimeRestore",
+        "Recovery",
+        "Restore"
+      ]
+    },
+    "creationDate": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "storageAccountType": {
+      "type": "string",
+      "description": "The storage account type.",
+      "enum": [
+        "GRS",
+        "LRS"
+      ]
+    }
+  }
+}

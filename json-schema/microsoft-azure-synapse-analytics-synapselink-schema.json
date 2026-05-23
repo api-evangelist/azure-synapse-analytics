@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SynapseLink",
+  "title": "SynapseLink",
+  "type": "object",
+  "description": "A Synapse Link configuration resource.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true
+        },
+        "sourceDatabase": {
+          "type": "object",
+          "properties": {
+            "linkedServiceName": {
+              "type": "string"
+            },
+            "databaseName": {
+              "type": "string"
+            }
+          }
+        },
+        "targetDatabase": {
+          "type": "object",
+          "properties": {
+            "sqlPoolName": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

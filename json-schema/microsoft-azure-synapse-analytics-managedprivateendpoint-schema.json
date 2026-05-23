@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ManagedPrivateEndpoint",
+  "title": "ManagedPrivateEndpoint",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "readOnly": true
+    },
+    "type": {
+      "type": "string",
+      "readOnly": true
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "privateLinkResourceId": {
+          "type": "string",
+          "description": "The ARM resource ID of the resource to which the managed private endpoint connects."
+        },
+        "groupId": {
+          "type": "string",
+          "description": "The groupId to which the managed private endpoint is created."
+        },
+        "provisioningState": {
+          "type": "string",
+          "readOnly": true
+        },
+        "connectionState": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "actionsRequired": {
+              "type": "string"
+            }
+          }
+        },
+        "fqdns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "isReserved": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkSession",
+  "title": "SparkSession",
+  "type": "object",
+  "properties": {
+    "livyInfo": {
+      "type": "object",
+      "properties": {
+        "currentState": {
+          "type": "string"
+        }
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "workspaceName": {
+      "type": "string"
+    },
+    "sparkPoolName": {
+      "type": "string"
+    },
+    "submitterName": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "appId": {
+      "type": "string"
+    },
+    "appInfo": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "log": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

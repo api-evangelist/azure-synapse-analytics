@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkStatement",
+  "title": "SparkStatement",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "executionCount": {
+          "type": "integer"
+        },
+        "data": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

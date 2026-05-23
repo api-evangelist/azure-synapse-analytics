@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/RoleAssignmentDetails",
+  "title": "RoleAssignmentDetails",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Role Assignment ID."
+    },
+    "roleDefinitionId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Role Definition ID."
+    },
+    "principalId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Object ID of the AAD principal or security-group."
+    },
+    "scope": {
+      "type": "string",
+      "description": "Scope at which the role assignment is created."
+    },
+    "principalType": {
+      "type": "string",
+      "description": "Type of the principal.",
+      "enum": [
+        "User",
+        "Group",
+        "ServicePrincipal"
+      ]
+    }
+  }
+}

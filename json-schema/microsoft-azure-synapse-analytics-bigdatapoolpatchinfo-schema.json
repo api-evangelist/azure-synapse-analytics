@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BigDataPoolPatchInfo",
+  "title": "BigDataPoolPatchInfo",
+  "type": "object",
+  "description": "Properties for updating a Big Data pool.",
+  "properties": {
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

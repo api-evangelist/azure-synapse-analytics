@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TriggerSubscriptionOperationStatus",
+  "title": "TriggerSubscriptionOperationStatus",
+  "type": "object",
+  "properties": {
+    "triggerName": {
+      "type": "string",
+      "readOnly": true
+    },
+    "status": {
+      "type": "string",
+      "readOnly": true,
+      "enum": [
+        "Enabled",
+        "Provisioning",
+        "Deprovisioning",
+        "Disabled",
+        "Unknown"
+      ]
+    }
+  }
+}

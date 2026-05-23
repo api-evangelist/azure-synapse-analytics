@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LinkedService",
+  "title": "LinkedService",
+  "type": "object",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of linked service."
+    },
+    "description": {
+      "type": "string"
+    },
+    "connectVia": {
+      "type": "object",
+      "properties": {
+        "referenceName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "typeProperties": {
+      "type": "object",
+      "description": "Type specific properties of the linked service."
+    }
+  }
+}

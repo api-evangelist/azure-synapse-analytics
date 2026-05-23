@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SparkSessionCollection",
+  "title": "SparkSessionCollection",
+  "type": "object",
+  "properties": {
+    "from": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SparkSession"
+      }
+    }
+  }
+}

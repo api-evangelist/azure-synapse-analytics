@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SqlPoolPatchInfo",
+  "title": "SqlPoolPatchInfo",
+  "type": "object",
+  "description": "SQL pool patch info.",
+  "properties": {
+    "tags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "location": {
+      "type": "string"
+    },
+    "sku": {
+      "$ref": "#/components/schemas/Sku"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "maxSizeBytes": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "collation": {
+          "type": "string"
+        },
+        "createMode": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
