@@ -1,0 +1,79 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Publish and Verify Notebook
+  summary: Create or update a Synapse notebook, then read it back to verify it.
+  description: >-
+    Synapse notebooks bind Spark code to a big data pool for interactive and
+    scheduled data analytics. This workflow publishes a notebook definition into
+    the workspace and then retrieves it to confirm the definition, attached big
+    data pool, and session properties were persisted as expected. Every step
+    spells out its request inline so the flow can be read and executed without
+    opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: notebookApi
+  url: ../openapi/azure-synapse-analytics-notebook-openapi.yml
+  type: openapi
+workflows:
+- workflowId: publish-and-verify-notebook
+  summary: Publish a notebook into the workspace and confirm it was stored.
+  description: >-
+    Creates or updates a notebook resource and then reads it back, capturing the
+    persisted identifier and the big data pool the notebook is bound to.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - notebookName
+    - notebook
+    properties:
+      apiVersion:
+        type: string
+        description: The Synapse data plane API version (e.g. 2020-12-01).
+      notebookName:
+        type: string
+        description: The name of the notebook to create or update.
+      notebook:
+        type: object
+        description: The NotebookResource definition to publish.
+  steps:
+  - stepId: publishNotebook
+    description: >-
+      Create or update the notebook definition, including its cells, attached
+      big data pool, and session properties.
+    operationId: Notebook_CreateOrUpdateNotebook
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: notebookName
+      in: path
+      value: $inputs.notebookName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.notebook
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      notebookId: $response.body#/id
+      notebookEtag: $response.body#/etag
+  - stepId: verifyNotebook
+    description: >-
+      Read the notebook back from the workspace to confirm the definition and
+      its big data pool binding were persisted.
+    operationId: Notebook_GetNotebook
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: notebookName
+      in: path
+      value: $inputs.notebookName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      confirmedName: $response.body#/name
+      bigDataPool: $response.body#/properties/bigDataPool/referenceName
+  outputs:
+    notebookId: $steps.publishNotebook.outputs.notebookId
+    bigDataPool: $steps.verifyNotebook.outputs.bigDataPool

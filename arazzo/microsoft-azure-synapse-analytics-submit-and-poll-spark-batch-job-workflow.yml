@@ -1,0 +1,93 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Submit and Poll Spark Batch Job
+  summary: Submit a Spark batch job to a pool and poll until it reaches a result.
+  description: >-
+    Spark batch jobs run application code against a Synapse Spark pool through
+    the Livy API. This workflow submits a batch job, then polls the job by id in
+    a loop, branching back to poll again while the job is still running and
+    ending once a terminal result (Succeeded, Failed, or Cancelled) is reported.
+    Every step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: sparkJobApi
+  url: ../openapi/azure-synapse-analytics-spark-job-openapi.yml
+  type: openapi
+workflows:
+- workflowId: submit-and-poll-spark-batch-job
+  summary: Submit a Spark batch job and poll it until it reaches a terminal result.
+  description: >-
+    Creates a Spark batch job against a pool, reads the job by id, and loops on
+    the read until the livy result is no longer Uncertain, capturing the final
+    result.
+  inputs:
+    type: object
+    required:
+    - sparkPoolName
+    - batchOptions
+    properties:
+      sparkPoolName:
+        type: string
+        description: The name of the Spark pool to run the batch job on.
+      batchOptions:
+        type: object
+        description: >-
+          The SparkBatchJobOptions body. Must include name and file at minimum.
+  steps:
+  - stepId: submitBatchJob
+    description: >-
+      Submit a new Spark batch job to the pool using the supplied batch options.
+    operationId: SparkBatch_CreateSparkBatchJob
+    parameters:
+    - name: sparkPoolName
+      in: path
+      value: $inputs.sparkPoolName
+    - name: detailed
+      in: query
+      value: true
+    requestBody:
+      contentType: application/json
+      payload: $inputs.batchOptions
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      batchId: $response.body#/id
+      submittedState: $response.body#/state
+  - stepId: pollBatchJob
+    description: >-
+      Read the batch job by id. While the livy result is still Uncertain, loop
+      back and poll again; once a terminal result is reported, end the workflow.
+    operationId: SparkBatch_GetSparkBatchJob
+    parameters:
+    - name: sparkPoolName
+      in: path
+      value: $inputs.sparkPoolName
+    - name: batchId
+      in: path
+      value: $steps.submitBatchJob.outputs.batchId
+    - name: detailed
+      in: query
+      value: true
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      result: $response.body#/result
+      currentState: $response.body#/state
+    onSuccess:
+    - name: stillRunning
+      type: goto
+      stepId: pollBatchJob
+      criteria:
+      - context: $response.body
+        condition: $.result == "Uncertain"
+        type: jsonpath
+    - name: finished
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.result != "Uncertain"
+        type: jsonpath
+  outputs:
+    batchId: $steps.submitBatchJob.outputs.batchId
+    result: $steps.pollBatchJob.outputs.result

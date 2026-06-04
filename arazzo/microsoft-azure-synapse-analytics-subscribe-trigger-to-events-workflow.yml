@@ -1,0 +1,83 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Subscribe Trigger to Events
+  summary: Subscribe an event trigger to its events and poll until the status settles.
+  description: >-
+    Event-based triggers must be subscribed to their source events before they
+    can fire pipeline runs. This workflow subscribes the trigger to its events
+    and then polls the event subscription status in a loop, branching back while
+    the provisioning status is still in progress and ending once it settles to a
+    terminal state. Every step spells out its request inline so the flow can be
+    read and executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: triggerApi
+  url: ../openapi/azure-synapse-analytics-trigger-openapi.yml
+  type: openapi
+workflows:
+- workflowId: subscribe-trigger-to-events
+  summary: Subscribe a trigger to events and poll its subscription status.
+  description: >-
+    Subscribes the trigger to its source events and loops on the event
+    subscription status until it is no longer in a Provisioning state.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - triggerName
+    properties:
+      apiVersion:
+        type: string
+        description: The Synapse data plane API version (e.g. 2020-12-01).
+      triggerName:
+        type: string
+        description: The name of the event trigger to subscribe.
+  steps:
+  - stepId: subscribeToEvents
+    description: >-
+      Subscribe the trigger to its source events, returning the initial
+      subscription operation status.
+    operationId: Trigger_SubscribeTriggerToEvents
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: triggerName
+      in: path
+      value: $inputs.triggerName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      initialStatus: $response.body#/status
+  - stepId: pollSubscriptionStatus
+    description: >-
+      Poll the event subscription status. Loop back while it is still
+      Provisioning, and end once it settles to Enabled, Disabled, or Unknown.
+    operationId: Trigger_GetEventSubscriptionStatus
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: triggerName
+      in: path
+      value: $inputs.triggerName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      status: $response.body#/status
+    onSuccess:
+    - name: stillProvisioning
+      type: goto
+      stepId: pollSubscriptionStatus
+      criteria:
+      - context: $response.body
+        condition: $.status == "Provisioning"
+        type: jsonpath
+    - name: settled
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.status != "Provisioning"
+        type: jsonpath
+  outputs:
+    status: $steps.pollSubscriptionStatus.outputs.status

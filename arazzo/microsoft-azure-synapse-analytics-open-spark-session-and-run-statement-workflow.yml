@@ -1,0 +1,114 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Open Spark Session and Run Statement
+  summary: Create an interactive Spark session, wait until idle, then run a statement.
+  description: >-
+    Interactive Spark sessions on a Synapse Spark pool let you run ad-hoc code
+    statements through the Livy API. This workflow creates a session, polls it
+    until it becomes idle and ready, and then submits a code statement to it.
+    Every step spells out its request inline so the flow can be read and executed
+    without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: sparkJobApi
+  url: ../openapi/azure-synapse-analytics-spark-job-openapi.yml
+  type: openapi
+workflows:
+- workflowId: open-spark-session-and-run-statement
+  summary: Start a Spark session, wait for it to be idle, and run a code statement.
+  description: >-
+    Creates a Spark session, loops on reading the session until its livy state
+    is idle, then submits a code statement against the ready session.
+  inputs:
+    type: object
+    required:
+    - sparkPoolName
+    - sessionOptions
+    - statement
+    properties:
+      sparkPoolName:
+        type: string
+        description: The name of the Spark pool to host the session.
+      sessionOptions:
+        type: object
+        description: The SparkSessionOptions body. Must include name at minimum.
+      statement:
+        type: object
+        description: >-
+          The SparkStatementOptions body, including code and kind (e.g. spark,
+          pyspark, sql).
+  steps:
+  - stepId: createSession
+    description: >-
+      Create a new interactive Spark session on the pool.
+    operationId: SparkSession_CreateSparkSession
+    parameters:
+    - name: sparkPoolName
+      in: path
+      value: $inputs.sparkPoolName
+    - name: detailed
+      in: query
+      value: true
+    requestBody:
+      contentType: application/json
+      payload: $inputs.sessionOptions
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      sessionId: $response.body#/id
+  - stepId: waitForIdle
+    description: >-
+      Poll the session until its livy currentState is idle. Loop back while it is
+      still starting; proceed once it is ready.
+    operationId: SparkSession_GetSparkSession
+    parameters:
+    - name: sparkPoolName
+      in: path
+      value: $inputs.sparkPoolName
+    - name: sessionId
+      in: path
+      value: $steps.createSession.outputs.sessionId
+    - name: detailed
+      in: query
+      value: true
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      currentState: $response.body#/livyInfo/currentState
+    onSuccess:
+    - name: notReady
+      type: goto
+      stepId: waitForIdle
+      criteria:
+      - context: $response.body
+        condition: $.livyInfo.currentState != "idle"
+        type: jsonpath
+    - name: ready
+      type: goto
+      stepId: runStatement
+      criteria:
+      - context: $response.body
+        condition: $.livyInfo.currentState == "idle"
+        type: jsonpath
+  - stepId: runStatement
+    description: >-
+      Submit a code statement to the ready Spark session.
+    operationId: SparkSession_CreateSparkStatement
+    parameters:
+    - name: sparkPoolName
+      in: path
+      value: $inputs.sparkPoolName
+    - name: sessionId
+      in: path
+      value: $steps.createSession.outputs.sessionId
+    requestBody:
+      contentType: application/json
+      payload: $inputs.statement
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      statementId: $response.body#/id
+      statementState: $response.body#/state
+  outputs:
+    sessionId: $steps.createSession.outputs.sessionId
+    statementId: $steps.runStatement.outputs.statementId

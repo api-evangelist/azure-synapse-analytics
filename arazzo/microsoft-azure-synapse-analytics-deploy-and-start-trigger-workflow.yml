@@ -1,0 +1,90 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Deploy and Start Trigger
+  summary: Create or update a trigger, confirm it persisted, then start it.
+  description: >-
+    Triggers schedule and event-drive pipeline runs in Azure Synapse Analytics.
+    This workflow publishes a trigger definition into the workspace, reads it
+    back to confirm it persisted, and then starts the trigger so it becomes
+    active. Every step spells out its request inline so the flow can be read and
+    executed without opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: triggerApi
+  url: ../openapi/azure-synapse-analytics-trigger-openapi.yml
+  type: openapi
+workflows:
+- workflowId: deploy-and-start-trigger
+  summary: Publish a trigger and start it so it begins firing pipeline runs.
+  description: >-
+    Creates or updates a trigger, verifies it was stored, and then starts the
+    trigger to activate it.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - triggerName
+    - trigger
+    properties:
+      apiVersion:
+        type: string
+        description: The Synapse data plane API version (e.g. 2020-12-01).
+      triggerName:
+        type: string
+        description: The name of the trigger to create or update.
+      trigger:
+        type: object
+        description: The TriggerResource definition to publish.
+  steps:
+  - stepId: deployTrigger
+    description: >-
+      Create or update the trigger definition in the workspace.
+    operationId: Trigger_CreateOrUpdateTrigger
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: triggerName
+      in: path
+      value: $inputs.triggerName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.trigger
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      triggerId: $response.body#/id
+  - stepId: confirmTrigger
+    description: >-
+      Read the trigger back to confirm it was persisted before starting it.
+    operationId: Trigger_GetTrigger
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: triggerName
+      in: path
+      value: $inputs.triggerName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      confirmedName: $response.body#/name
+  - stepId: startTrigger
+    description: >-
+      Start the confirmed trigger so it begins firing the pipeline runs it is
+      bound to.
+    operationId: Trigger_StartTrigger
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: triggerName
+      in: path
+      value: $inputs.triggerName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      startStatus: $statusCode
+  outputs:
+    triggerId: $steps.deployTrigger.outputs.triggerId
+    startStatus: $steps.startTrigger.outputs.startStatus

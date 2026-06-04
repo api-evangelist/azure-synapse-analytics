@@ -1,0 +1,131 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Provision and Resume SQL Pool
+  summary: Create a dedicated SQL pool, resume its compute, and confirm its state.
+  description: >-
+    Dedicated SQL pools provide the enterprise data warehousing compute in Azure
+    Synapse Analytics and are managed through the Azure Resource Manager plane.
+    This workflow provisions a SQL pool, resumes it so compute is online, and
+    then reads the pool to confirm its provisioning state. Every step spells out
+    its request inline so the flow can be read and executed without opening the
+    underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: sqlPoolsApi
+  url: ../openapi/azure-synapse-analytics-sql-pools-openapi.yml
+  type: openapi
+workflows:
+- workflowId: provision-and-resume-sql-pool
+  summary: Create a dedicated SQL pool, resume it, and confirm its state.
+  description: >-
+    Creates a SQL pool resource, resumes its compute, and reads the pool back to
+    capture the final provisioning state.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - subscriptionId
+    - resourceGroupName
+    - workspaceName
+    - sqlPoolName
+    - sqlPool
+    properties:
+      apiVersion:
+        type: string
+        description: The ARM API version for SQL pools (e.g. 2021-06-01).
+      subscriptionId:
+        type: string
+        description: The Azure subscription id.
+      resourceGroupName:
+        type: string
+        description: The resource group containing the Synapse workspace.
+      workspaceName:
+        type: string
+        description: The Synapse workspace name.
+      sqlPoolName:
+        type: string
+        description: The name of the SQL pool to create.
+      sqlPool:
+        type: object
+        description: The SqlPool resource body (location, sku, properties).
+  steps:
+  - stepId: createSqlPool
+    description: >-
+      Provision the dedicated SQL pool within the workspace.
+    operationId: SqlPools_Create
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: subscriptionId
+      in: path
+      value: $inputs.subscriptionId
+    - name: resourceGroupName
+      in: path
+      value: $inputs.resourceGroupName
+    - name: workspaceName
+      in: path
+      value: $inputs.workspaceName
+    - name: sqlPoolName
+      in: path
+      value: $inputs.sqlPoolName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.sqlPool
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      sqlPoolId: $response.body#/id
+  - stepId: resumeSqlPool
+    description: >-
+      Resume the SQL pool so its compute is brought online and ready for
+      queries.
+    operationId: SqlPools_Resume
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: subscriptionId
+      in: path
+      value: $inputs.subscriptionId
+    - name: resourceGroupName
+      in: path
+      value: $inputs.resourceGroupName
+    - name: workspaceName
+      in: path
+      value: $inputs.workspaceName
+    - name: sqlPoolName
+      in: path
+      value: $inputs.sqlPoolName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      resumedState: $response.body#/properties/status
+  - stepId: confirmSqlPool
+    description: >-
+      Read the SQL pool back to capture its final provisioning state.
+    operationId: SqlPools_Get
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: subscriptionId
+      in: path
+      value: $inputs.subscriptionId
+    - name: resourceGroupName
+      in: path
+      value: $inputs.resourceGroupName
+    - name: workspaceName
+      in: path
+      value: $inputs.workspaceName
+    - name: sqlPoolName
+      in: path
+      value: $inputs.sqlPoolName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      provisioningState: $response.body#/properties/provisioningState
+      status: $response.body#/properties/status
+  outputs:
+    sqlPoolId: $steps.createSqlPool.outputs.sqlPoolId
+    provisioningState: $steps.confirmSqlPool.outputs.provisioningState

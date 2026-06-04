@@ -1,0 +1,136 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Deploy and Execute Spark Job Definition
+  summary: Publish a Spark job definition, execute it, and poll the resulting batch.
+  description: >-
+    A Spark job definition is a reusable, named Spark application stored in the
+    workspace. This workflow publishes the definition, confirms it persisted,
+    executes it to launch a Spark batch job, and then polls that batch job
+    through the Livy API until it reaches a terminal result. Every step spells
+    out its request inline so the flow can be read and executed without opening
+    the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: sparkJobDefinitionApi
+  url: ../openapi/azure-synapse-analytics-spark-job-definition-openapi.yml
+  type: openapi
+- name: sparkJobApi
+  url: ../openapi/azure-synapse-analytics-spark-job-openapi.yml
+  type: openapi
+workflows:
+- workflowId: deploy-execute-spark-job-definition
+  summary: Publish a Spark job definition, run it, and poll the launched batch.
+  description: >-
+    Creates or updates a Spark job definition, verifies it, executes it to start
+    a Spark batch job, then polls the batch by id until the livy result is
+    terminal.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - sparkJobDefinitionName
+    - sparkJobDefinition
+    - sparkPoolName
+    properties:
+      apiVersion:
+        type: string
+        description: The Synapse data plane API version (e.g. 2020-12-01).
+      sparkJobDefinitionName:
+        type: string
+        description: The name of the Spark job definition to create or update.
+      sparkJobDefinition:
+        type: object
+        description: The SparkJobDefinitionResource definition to publish.
+      sparkPoolName:
+        type: string
+        description: >-
+          The Spark pool name used to poll the launched batch job via the Livy
+          API.
+  steps:
+  - stepId: deployDefinition
+    description: >-
+      Create or update the Spark job definition in the workspace.
+    operationId: SparkJobDefinition_CreateOrUpdateSparkJobDefinition
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: sparkJobDefinitionName
+      in: path
+      value: $inputs.sparkJobDefinitionName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.sparkJobDefinition
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      definitionId: $response.body#/id
+  - stepId: confirmDefinition
+    description: >-
+      Read the Spark job definition back to confirm it was persisted before
+      executing it.
+    operationId: SparkJobDefinition_GetSparkJobDefinition
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: sparkJobDefinitionName
+      in: path
+      value: $inputs.sparkJobDefinitionName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      confirmedName: $response.body#/name
+  - stepId: executeDefinition
+    description: >-
+      Execute the Spark job definition, which submits a Spark batch job and
+      returns the batch identifier.
+    operationId: SparkJobDefinition_ExecuteSparkJobDefinition
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: sparkJobDefinitionName
+      in: path
+      value: $inputs.sparkJobDefinitionName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      batchId: $response.body#/id
+  - stepId: pollBatchJob
+    description: >-
+      Poll the launched Spark batch job by id. Loop while the livy result is
+      still Uncertain, and end once a terminal result is reported.
+    operationId: SparkBatch_GetSparkBatchJob
+    parameters:
+    - name: sparkPoolName
+      in: path
+      value: $inputs.sparkPoolName
+    - name: batchId
+      in: path
+      value: $steps.executeDefinition.outputs.batchId
+    - name: detailed
+      in: query
+      value: true
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      result: $response.body#/result
+    onSuccess:
+    - name: stillRunning
+      type: goto
+      stepId: pollBatchJob
+      criteria:
+      - context: $response.body
+        condition: $.result == "Uncertain"
+        type: jsonpath
+    - name: finished
+      type: end
+      criteria:
+      - context: $response.body
+        condition: $.result != "Uncertain"
+        type: jsonpath
+  outputs:
+    definitionId: $steps.deployDefinition.outputs.definitionId
+    batchId: $steps.executeDefinition.outputs.batchId
+    result: $steps.pollBatchJob.outputs.result

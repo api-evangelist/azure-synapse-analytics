@@ -1,0 +1,79 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Publish and Verify SQL Script
+  summary: Create or update a SQL script artifact, then read it back to verify it.
+  description: >-
+    SQL scripts are reusable query artifacts stored in the Synapse workspace and
+    bound to a SQL pool or the serverless SQL on-demand endpoint. This workflow
+    publishes a SQL script and then retrieves it to confirm the query content
+    and connection were persisted. Every step spells out its request inline so
+    the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: sqlScriptApi
+  url: ../openapi/azure-synapse-analytics-sql-script-openapi.yml
+  type: openapi
+workflows:
+- workflowId: publish-and-verify-sql-script
+  summary: Publish a SQL script artifact and confirm it was stored.
+  description: >-
+    Creates or updates a SQL script resource and reads it back, capturing the
+    persisted identifier and name.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - sqlScriptName
+    - sqlScript
+    properties:
+      apiVersion:
+        type: string
+        description: The Synapse data plane API version (e.g. 2020-12-01).
+      sqlScriptName:
+        type: string
+        description: The name of the SQL script to create or update.
+      sqlScript:
+        type: object
+        description: >-
+          The SqlScriptResource definition, including content.query and
+          content.currentConnection.
+  steps:
+  - stepId: publishSqlScript
+    description: >-
+      Create or update the SQL script artifact in the workspace.
+    operationId: SqlScript_CreateOrUpdateSqlScript
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: sqlScriptName
+      in: path
+      value: $inputs.sqlScriptName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.sqlScript
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      sqlScriptId: $response.body#/id
+      sqlScriptEtag: $response.body#/etag
+  - stepId: verifySqlScript
+    description: >-
+      Read the SQL script back to confirm its content and connection were
+      persisted.
+    operationId: SqlScript_GetSqlScript
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: sqlScriptName
+      in: path
+      value: $inputs.sqlScriptName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      confirmedName: $response.body#/name
+  outputs:
+    sqlScriptId: $steps.publishSqlScript.outputs.sqlScriptId
+    confirmedName: $steps.verifySqlScript.outputs.confirmedName

@@ -1,0 +1,107 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Provision Spark Pool
+  summary: Create or update an Apache Spark (big data) pool and confirm its state.
+  description: >-
+    Apache Spark pools, also called big data pools, provide the managed Spark
+    compute for Azure Synapse Analytics and are managed through the Azure
+    Resource Manager plane. This workflow provisions a Spark pool and then reads
+    it back to confirm its node configuration and provisioning state. Every step
+    spells out its request inline so the flow can be read and executed without
+    opening the underlying OpenAPI description.
+  version: 1.0.0
+sourceDescriptions:
+- name: sparkPoolsApi
+  url: ../openapi/azure-synapse-analytics-spark-pools-openapi.yml
+  type: openapi
+workflows:
+- workflowId: provision-spark-pool
+  summary: Create or update an Apache Spark (big data) pool and verify it.
+  description: >-
+    Creates or updates a big data pool resource and reads it back to capture its
+    provisioning state and node count.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - subscriptionId
+    - resourceGroupName
+    - workspaceName
+    - bigDataPoolName
+    - bigDataPool
+    properties:
+      apiVersion:
+        type: string
+        description: The ARM API version for big data pools (e.g. 2021-06-01).
+      subscriptionId:
+        type: string
+        description: The Azure subscription id.
+      resourceGroupName:
+        type: string
+        description: The resource group containing the Synapse workspace.
+      workspaceName:
+        type: string
+        description: The Synapse workspace name.
+      bigDataPoolName:
+        type: string
+        description: The name of the Spark (big data) pool to create or update.
+      bigDataPool:
+        type: object
+        description: The BigDataPoolResourceInfo body (location, properties).
+  steps:
+  - stepId: createSparkPool
+    description: >-
+      Create or update the Apache Spark (big data) pool within the workspace.
+    operationId: BigDataPools_CreateOrUpdate
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: subscriptionId
+      in: path
+      value: $inputs.subscriptionId
+    - name: resourceGroupName
+      in: path
+      value: $inputs.resourceGroupName
+    - name: workspaceName
+      in: path
+      value: $inputs.workspaceName
+    - name: bigDataPoolName
+      in: path
+      value: $inputs.bigDataPoolName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.bigDataPool
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      sparkPoolId: $response.body#/id
+  - stepId: confirmSparkPool
+    description: >-
+      Read the Spark pool back to confirm its node configuration and
+      provisioning state.
+    operationId: BigDataPools_Get
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: subscriptionId
+      in: path
+      value: $inputs.subscriptionId
+    - name: resourceGroupName
+      in: path
+      value: $inputs.resourceGroupName
+    - name: workspaceName
+      in: path
+      value: $inputs.workspaceName
+    - name: bigDataPoolName
+      in: path
+      value: $inputs.bigDataPoolName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      provisioningState: $response.body#/properties/provisioningState
+      nodeCount: $response.body#/properties/nodeCount
+  outputs:
+    sparkPoolId: $steps.createSparkPool.outputs.sparkPoolId
+    provisioningState: $steps.confirmSparkPool.outputs.provisioningState

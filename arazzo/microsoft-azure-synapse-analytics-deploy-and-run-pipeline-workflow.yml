@@ -1,0 +1,102 @@
+arazzo: 1.0.1
+info:
+  title: Azure Synapse Analytics Deploy and Run Pipeline
+  summary: Create or update a pipeline, confirm it persisted, then trigger a run.
+  description: >-
+    The core orchestration flow for Azure Synapse Analytics data integration.
+    The workflow publishes a pipeline definition into the workspace with a
+    create-or-update call, reads the pipeline back to confirm it was persisted
+    with the expected definition, and then submits a new run of that pipeline
+    with optional run-time parameters. Every step spells out its request inline
+    so the flow can be read and executed without opening the underlying OpenAPI
+    description.
+  version: 1.0.0
+sourceDescriptions:
+- name: pipelineApi
+  url: ../openapi/azure-synapse-analytics-pipeline-openapi.yml
+  type: openapi
+workflows:
+- workflowId: deploy-and-run-pipeline
+  summary: Publish a pipeline into the workspace and kick off a run of it.
+  description: >-
+    Creates or updates a pipeline resource, retrieves it to verify the
+    definition was stored, and then creates a run of the pipeline, capturing
+    the generated run identifier.
+  inputs:
+    type: object
+    required:
+    - apiVersion
+    - pipelineName
+    - pipeline
+    properties:
+      apiVersion:
+        type: string
+        description: The Synapse data plane API version (e.g. 2020-12-01).
+      pipelineName:
+        type: string
+        description: The name of the pipeline to create or update.
+      pipeline:
+        type: object
+        description: The PipelineResource definition to publish.
+      runParameters:
+        type: object
+        description: Optional run-time parameters passed to the pipeline run.
+  steps:
+  - stepId: deployPipeline
+    description: >-
+      Create or update the pipeline definition in the workspace using the
+      supplied PipelineResource body.
+    operationId: Pipeline_CreateOrUpdatePipeline
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: pipelineName
+      in: path
+      value: $inputs.pipelineName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.pipeline
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      pipelineId: $response.body#/id
+      pipelineEtag: $response.body#/etag
+  - stepId: confirmPipeline
+    description: >-
+      Read the pipeline back from the workspace to confirm the definition was
+      persisted before triggering a run.
+    operationId: Pipeline_GetPipeline
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: pipelineName
+      in: path
+      value: $inputs.pipelineName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      confirmedName: $response.body#/name
+  - stepId: createRun
+    description: >-
+      Submit a new run of the confirmed pipeline, passing any optional run-time
+      parameters, and capture the run identifier.
+    operationId: Pipeline_CreatePipelineRun
+    parameters:
+    - name: api-version
+      in: query
+      value: $inputs.apiVersion
+    - name: pipelineName
+      in: path
+      value: $inputs.pipelineName
+    requestBody:
+      contentType: application/json
+      payload: $inputs.runParameters
+    successCriteria:
+    - condition: $statusCode == 202
+    outputs:
+      runId: $response.body#/runId
+  outputs:
+    pipelineId: $steps.deployPipeline.outputs.pipelineId
+    runId: $steps.createRun.outputs.runId
