@@ -1,0 +1,162 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Spark Configuration API",
+    "version": "2021-06-01-preview"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SparkConfiguration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List Spark configurations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkconfigurations",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists Spark configurations in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a Spark configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkconfigurations/:sparkConfigurationName",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark configuration name."
+              }
+            ]
+          },
+          "docs": "Gets a Spark configuration."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a Spark configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkconfigurations/:sparkConfigurationName",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark configuration name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a Spark configuration."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a Spark configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkconfigurations/:sparkConfigurationName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark configuration name."
+              }
+            ]
+          },
+          "docs": "Deletes a Spark configuration."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Rename a Spark configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkconfigurations/:sparkConfigurationName/rename",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkConfigurationName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark configuration name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Renames a Spark configuration."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1228 @@
+{
+  "info": {
+    "_postman_id": "fb455412-727c-494d-93ce-1e0a82760c70",
+    "name": "Azure Synapse Analytics - Private Endpoint Connections API",
+    "description": "Manage private endpoint connections to Synapse workspaces. Enables approval and management of private link connections for secure access from virtual networks.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:58.000Z",
+    "updatedAt": "2026-06-05T15:11:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fb455412-727c-494d-93ce-1e0a82760c70"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Synapse",
+                          "item": [
+                            {
+                              "name": "workspaces",
+                              "item": [
+                                {
+                                  "name": "{workspaceName}",
+                                  "item": [
+                                    {
+                                      "name": "privateEndpointConnections",
+                                      "item": [
+                                        {
+                                          "name": "{privateEndpointConnectionName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Synapse Analytics Get a private endpoint connection",
+                                              "id": "a95431d7-14e6-496b-bbf7-501d78e1592a",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "privateEndpointConnections",
+                                                    ":privateEndpointConnectionName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "6f62dcd3-8e5e-44e2-888c-3dce6ef19bb2",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "78299594-8402-4ec1-beb7-be067958ed97",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "cd6bc34e-33f7-4f9a-b21c-fbce084532f1",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "9865cae5-45e2-4543-a53c-26017922d4a6",
+                                                      "key": "privateEndpointConnectionName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the private endpoint connection."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets a private endpoint connection."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "b6781836-ebf8-4aed-abdb-374b76b93bf0",
+                                                  "name": "Successfully retrieved.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateEndpoint\": {\n      \"id\": \"<string>\"\n    },\n    \"privateLinkServiceConnectionState\": {\n      \"status\": \"Rejected\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-b6781836-ebf8-4aed-abdb-374b76b93bf0"
+                                                },
+                                                {
+                                                  "id": "97c3f5d3-7d2a-43eb-a8e0-99a392141e6c",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-97c3f5d3-7d2a-43eb-a8e0-99a392141e6c"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:58.000Z",
+                                              "updatedAt": "2026-06-05T15:11:58.000Z",
+                                              "uid": "35240-a95431d7-14e6-496b-bbf7-501d78e1592a"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Approve or reject a private endpoint connection",
+                                              "id": "21f3edbc-8af6-46e6-866d-2c72f7ae99f9",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateEndpoint\": {\n      \"id\": \"<string>\"\n    },\n    \"privateLinkServiceConnectionState\": {\n      \"status\": \"Rejected\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "privateEndpointConnections",
+                                                    ":privateEndpointConnectionName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "08b11b6f-02d5-4ac3-a9ea-f584d2a31558",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "ed90edd7-70ec-45e6-b986-921bc5d0b64d",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "eb30079b-eaea-4e97-a0bd-451cd72b7303",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "f99119bc-a4cd-420f-ae5c-36bfc28bfd5f",
+                                                      "key": "privateEndpointConnectionName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Approve or reject a private endpoint connection."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "f5bbe030-b066-420b-9344-a82b36956b73",
+                                                  "name": "Successfully updated.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateEndpoint\": {\n      \"id\": \"<string>\"\n    },\n    \"privateLinkServiceConnectionState\": {\n      \"status\": \"Rejected\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateEndpoint\": {\n      \"id\": \"<string>\"\n    },\n    \"privateLinkServiceConnectionState\": {\n      \"status\": \"Rejected\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-f5bbe030-b066-420b-9344-a82b36956b73"
+                                                },
+                                                {
+                                                  "id": "ba4061f6-f78c-4741-a2b1-39d54b2e288f",
+                                                  "name": "Successfully created.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateEndpoint\": {\n      \"id\": \"<string>\"\n    },\n    \"privateLinkServiceConnectionState\": {\n      \"status\": \"Rejected\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateEndpoint\": {\n      \"id\": \"<string>\"\n    },\n    \"privateLinkServiceConnectionState\": {\n      \"status\": \"Rejected\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-ba4061f6-f78c-4741-a2b1-39d54b2e288f"
+                                                },
+                                                {
+                                                  "id": "68087368-da0d-461e-a547-f713e3216d2b",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateEndpoint\": {\n      \"id\": \"<string>\"\n    },\n    \"privateLinkServiceConnectionState\": {\n      \"status\": \"Rejected\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"provisioningState\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-68087368-da0d-461e-a547-f713e3216d2b"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:58.000Z",
+                                              "updatedAt": "2026-06-05T15:11:58.000Z",
+                                              "uid": "35240-21f3edbc-8af6-46e6-866d-2c72f7ae99f9"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Delete a private endpoint connection",
+                                              "id": "46f782eb-6137-4cd2-a5d5-6c1613d596eb",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "privateEndpointConnections",
+                                                    ":privateEndpointConnectionName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "6c32e053-5d63-4b8b-a02e-e82948a2738f",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "e432a2a8-c3b1-4207-8818-3e55ce125a18",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "5bc73356-7d12-493e-b05d-54b81f1c7342",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "a1f01f43-cf16-490f-84b6-559efad083e1",
+                                                      "key": "privateEndpointConnectionName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Delete a private endpoint connection."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "b26c4830-86e1-4b00-974b-2a1239c250b9",
+                                                  "name": "Successfully deleted.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-b26c4830-86e1-4b00-974b-2a1239c250b9"
+                                                },
+                                                {
+                                                  "id": "ce42a42c-6dc7-4e5d-a739-fc501e71000b",
+                                                  "name": "Deletion accepted.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-ce42a42c-6dc7-4e5d-a739-fc501e71000b"
+                                                },
+                                                {
+                                                  "id": "4cb5436c-cf68-4779-bd34-e8a86ad479ce",
+                                                  "name": "Not found.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-4cb5436c-cf68-4779-bd34-e8a86ad479ce"
+                                                },
+                                                {
+                                                  "id": "a1971f8d-e220-4cdc-b521-3b4ba9d99d87",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections/:privateEndpointConnectionName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "privateEndpointConnections",
+                                                        ":privateEndpointConnectionName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "privateEndpointConnectionName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                                  "uid": "35240-a1971f8d-e220-4cdc-b521-3b4ba9d99d87"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:58.000Z",
+                                              "updatedAt": "2026-06-05T15:11:58.000Z",
+                                              "uid": "35240-46f782eb-6137-4cd2-a5d5-6c1613d596eb"
+                                            }
+                                          ],
+                                          "id": "950e6d8d-3d1e-4e16-819c-d8f611b92bc9",
+                                          "createdAt": "2026-06-05T15:11:58.000Z",
+                                          "updatedAt": "2026-06-05T15:11:58.000Z",
+                                          "uid": "35240-950e6d8d-3d1e-4e16-819c-d8f611b92bc9"
+                                        },
+                                        {
+                                          "name": "Azure Synapse Analytics List private endpoint connections",
+                                          "id": "ac79d633-251e-4b8f-9216-e3f504b30da3",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "workspaces",
+                                                ":workspaceName",
+                                                "privateEndpointConnections"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "ee770278-11cf-423b-ae43-0bb7e97496fc",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "51239928-3a39-4df6-b62b-ff845af4e6e8",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "b4523db6-e504-4165-a497-11c2c3709e42",
+                                                  "key": "workspaceName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Lists private endpoint connections in a workspace."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "eb9b5a3b-9388-4822-bbe7-4280e235e2ee",
+                                              "name": "Successfully retrieved the list.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "privateEndpointConnections"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"privateEndpoint\": {\n          \"id\": \"<string>\"\n        },\n        \"privateLinkServiceConnectionState\": {\n          \"status\": \"Disconnected\",\n          \"description\": \"<string>\",\n          \"actionsRequired\": \"<string>\"\n        },\n        \"provisioningState\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"privateEndpoint\": {\n          \"id\": \"<string>\"\n        },\n        \"privateLinkServiceConnectionState\": {\n          \"status\": \"Pending\",\n          \"description\": \"<string>\",\n          \"actionsRequired\": \"<string>\"\n        },\n        \"provisioningState\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                              "createdAt": "2026-06-05T15:11:58.000Z",
+                                              "updatedAt": "2026-06-05T15:11:58.000Z",
+                                              "uid": "35240-eb9b5a3b-9388-4822-bbe7-4280e235e2ee"
+                                            },
+                                            {
+                                              "id": "933b69ae-4184-4501-a691-42f36efe721b",
+                                              "name": "Error response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/privateEndpointConnections?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "privateEndpointConnections"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                              "createdAt": "2026-06-05T15:11:58.000Z",
+                                              "updatedAt": "2026-06-05T15:11:58.000Z",
+                                              "uid": "35240-933b69ae-4184-4501-a691-42f36efe721b"
+                                            }
+                                          ],
+                                          "createdAt": "2026-06-05T15:11:58.000Z",
+                                          "updatedAt": "2026-06-05T15:11:58.000Z",
+                                          "uid": "35240-ac79d633-251e-4b8f-9216-e3f504b30da3"
+                                        }
+                                      ],
+                                      "id": "01480db9-0657-48d8-80cd-5cf14551ea27",
+                                      "createdAt": "2026-06-05T15:11:58.000Z",
+                                      "updatedAt": "2026-06-05T15:11:58.000Z",
+                                      "uid": "35240-01480db9-0657-48d8-80cd-5cf14551ea27"
+                                    }
+                                  ],
+                                  "id": "c61572c4-93d9-4a6e-ac6e-a62a4c876d09",
+                                  "createdAt": "2026-06-05T15:11:58.000Z",
+                                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                                  "uid": "35240-c61572c4-93d9-4a6e-ac6e-a62a4c876d09"
+                                }
+                              ],
+                              "id": "348f249f-14f6-44db-b800-8b6f4e128ee4",
+                              "createdAt": "2026-06-05T15:11:58.000Z",
+                              "updatedAt": "2026-06-05T15:11:58.000Z",
+                              "uid": "35240-348f249f-14f6-44db-b800-8b6f4e128ee4"
+                            }
+                          ],
+                          "id": "5f7955b5-a8b0-484a-941a-8b22d9a81be1",
+                          "createdAt": "2026-06-05T15:11:58.000Z",
+                          "updatedAt": "2026-06-05T15:11:58.000Z",
+                          "uid": "35240-5f7955b5-a8b0-484a-941a-8b22d9a81be1"
+                        }
+                      ],
+                      "id": "c6c7039f-860e-49f9-9f73-1e223a2ab3c4",
+                      "createdAt": "2026-06-05T15:11:58.000Z",
+                      "updatedAt": "2026-06-05T15:11:58.000Z",
+                      "uid": "35240-c6c7039f-860e-49f9-9f73-1e223a2ab3c4"
+                    }
+                  ],
+                  "id": "063cc4d7-ab02-41db-9720-4fee13e91fbd",
+                  "createdAt": "2026-06-05T15:11:58.000Z",
+                  "updatedAt": "2026-06-05T15:11:58.000Z",
+                  "uid": "35240-063cc4d7-ab02-41db-9720-4fee13e91fbd"
+                }
+              ],
+              "id": "db96d0de-79c7-4281-922b-501b5231d09c",
+              "createdAt": "2026-06-05T15:11:58.000Z",
+              "updatedAt": "2026-06-05T15:11:58.000Z",
+              "uid": "35240-db96d0de-79c7-4281-922b-501b5231d09c"
+            }
+          ],
+          "id": "59f7d8c8-f1c3-45f1-a148-ed0758d5190b",
+          "createdAt": "2026-06-05T15:11:58.000Z",
+          "updatedAt": "2026-06-05T15:11:58.000Z",
+          "uid": "35240-59f7d8c8-f1c3-45f1-a148-ed0758d5190b"
+        }
+      ],
+      "id": "fac61e2e-73dd-4f09-81c3-d393e1e9cf8a",
+      "createdAt": "2026-06-05T15:11:58.000Z",
+      "updatedAt": "2026-06-05T15:11:58.000Z",
+      "uid": "35240-fac61e2e-73dd-4f09-81c3-d393e1e9cf8a"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

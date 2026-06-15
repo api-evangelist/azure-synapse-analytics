@@ -1,0 +1,1524 @@
+{
+  "item": [
+    {
+      "id": "4e440878-7e3b-4e0f-b55c-b0d0ed429f8e",
+      "name": "Notebook",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "27d6f309-ce7a-4985-aace-a944290e14ab",
+          "name": "Azure Synapse Analytics List notebooks",
+          "request": {
+            "name": "Azure Synapse Analytics List notebooks",
+            "description": {
+              "content": "Lists notebooks in the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notebooks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c04184d-377d-43ae-9b01-8430b5396554",
+              "name": "Successfully retrieved the list of notebooks.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"description\": \"string\",\n        \"nbformat\": 7537,\n        \"nbformat_minor\": 2133,\n        \"bigDataPool\": {\n          \"referenceName\": \"string\",\n          \"type\": \"string\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"string\",\n          \"driverCores\": 568,\n          \"executorMemory\": \"string\",\n          \"executorCores\": 4530,\n          \"numExecutors\": 2744\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"string\",\n            \"display_name\": \"string\"\n          },\n          \"language_info\": {\n            \"name\": \"string\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"description\": \"string\",\n        \"nbformat\": 8726,\n        \"nbformat_minor\": 625,\n        \"bigDataPool\": {\n          \"referenceName\": \"string\",\n          \"type\": \"string\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"string\",\n          \"driverCores\": 6627,\n          \"executorMemory\": \"string\",\n          \"executorCores\": 8115,\n          \"numExecutors\": 6018\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"string\",\n            \"display_name\": \"string\"\n          },\n          \"language_info\": {\n            \"name\": \"string\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fd762c49-29a8-4fdd-97e5-0e21fba2cb08",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07608de0-694f-4f8d-88d9-9ffba5df2fce",
+          "name": "Azure Synapse Analytics List notebook summaries",
+          "request": {
+            "name": "Azure Synapse Analytics List notebook summaries",
+            "description": {
+              "content": "Lists a summary of notebooks in the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notebooks",
+                "summary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b04bb81-dbfe-4cae-9f94-9ddce22c4bd9",
+              "name": "Successfully retrieved the notebook summaries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"description\": \"string\",\n        \"nbformat\": 7537,\n        \"nbformat_minor\": 2133,\n        \"bigDataPool\": {\n          \"referenceName\": \"string\",\n          \"type\": \"string\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"string\",\n          \"driverCores\": 568,\n          \"executorMemory\": \"string\",\n          \"executorCores\": 4530,\n          \"numExecutors\": 2744\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"string\",\n            \"display_name\": \"string\"\n          },\n          \"language_info\": {\n            \"name\": \"string\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"description\": \"string\",\n        \"nbformat\": 8726,\n        \"nbformat_minor\": 625,\n        \"bigDataPool\": {\n          \"referenceName\": \"string\",\n          \"type\": \"string\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"string\",\n          \"driverCores\": 6627,\n          \"executorMemory\": \"string\",\n          \"executorCores\": 8115,\n          \"numExecutors\": 6018\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"string\",\n            \"display_name\": \"string\"\n          },\n          \"language_info\": {\n            \"name\": \"string\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"cell_type\": \"string\",\n            \"source\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"metadata\": {},\n            \"outputs\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dfdfd7b8-233f-4c2b-9582-e6d2f3def190",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    "summary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5086efc2-7994-48c4-8905-a480ff01df00",
+          "name": "Azure Synapse Analytics Get a notebook",
+          "request": {
+            "name": "Azure Synapse Analytics Get a notebook",
+            "description": {
+              "content": "Gets a notebook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notebooks",
+                ":notebookName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "notebookName",
+                  "description": "(Required) The notebook name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "If-None-Match",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "de76e028-bc70-4830-9c02-03d1499d7603",
+              "name": "Successfully retrieved the notebook.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"description\": \"string\",\n    \"nbformat\": 1480,\n    \"nbformat_minor\": 2627,\n    \"bigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"string\",\n      \"driverCores\": 3825,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 4058,\n      \"numExecutors\": 8634\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"string\",\n        \"display_name\": \"string\"\n      },\n      \"language_info\": {\n        \"name\": \"string\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33fd94cf-1d03-431c-a7ea-0d86d7bd1fe7",
+              "name": "Not modified.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Modified",
+              "code": 304,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0118cf54-b8a4-4b21-a030-46e37636dc50",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb083b78-cb26-4fda-9add-a5bdc9ef8606",
+          "name": "Azure Synapse Analytics Create or update a notebook",
+          "request": {
+            "name": "Azure Synapse Analytics Create or update a notebook",
+            "description": {
+              "content": "Creates or updates a notebook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notebooks",
+                ":notebookName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "notebookName",
+                  "description": "(Required) The notebook name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "If-Match",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"nbformat\": \"<integer>\",\n    \"nbformat_minor\": \"<integer>\",\n    \"bigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"<string>\",\n        \"display_name\": \"<string>\"\n      },\n      \"language_info\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": \"<object>\",\n        \"outputs\": [\n          \"<object>\",\n          \"<object>\"\n        ]\n      },\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": \"<object>\",\n        \"outputs\": [\n          \"<object>\",\n          \"<object>\"\n        ]\n      }\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b694f70-622e-47e1-ab86-f114625fa271",
+              "name": "Successfully updated the notebook.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"description\": \"string\",\n    \"nbformat\": 6653,\n    \"nbformat_minor\": 2540,\n    \"bigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"string\",\n      \"driverCores\": 8448,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 2652,\n      \"numExecutors\": 4075\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"string\",\n        \"display_name\": \"string\"\n      },\n      \"language_info\": {\n        \"name\": \"string\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"description\": \"string\",\n    \"nbformat\": 1480,\n    \"nbformat_minor\": 2627,\n    \"bigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"string\",\n      \"driverCores\": 3825,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 4058,\n      \"numExecutors\": 8634\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"string\",\n        \"display_name\": \"string\"\n      },\n      \"language_info\": {\n        \"name\": \"string\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b809e60-2253-482b-b313-287705650d88",
+              "name": "Notebook creation accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"description\": \"string\",\n    \"nbformat\": 6653,\n    \"nbformat_minor\": 2540,\n    \"bigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"string\",\n      \"driverCores\": 8448,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 2652,\n      \"numExecutors\": 4075\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"string\",\n        \"display_name\": \"string\"\n      },\n      \"language_info\": {\n        \"name\": \"string\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "30a9c0d9-a8f4-438b-850e-8020f4f9b9d4",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"description\": \"string\",\n    \"nbformat\": 6653,\n    \"nbformat_minor\": 2540,\n    \"bigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"string\",\n      \"driverCores\": 8448,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 2652,\n      \"numExecutors\": 4075\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"string\",\n        \"display_name\": \"string\"\n      },\n      \"language_info\": {\n        \"name\": \"string\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"string\",\n        \"source\": [\n          \"string\",\n          \"string\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "201ef998-43a2-4bee-b308-a8996e389148",
+          "name": "Azure Synapse Analytics Delete a notebook",
+          "request": {
+            "name": "Azure Synapse Analytics Delete a notebook",
+            "description": {
+              "content": "Deletes a notebook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notebooks",
+                ":notebookName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "notebookName",
+                  "description": "(Required) The notebook name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b73e208-2a90-4eaa-8023-346baed9a1a4",
+              "name": "Successfully deleted the notebook.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c9c37f41-4898-4046-925f-18482557ed05",
+              "name": "Notebook deletion accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63b25f52-9994-4c57-9d36-bdb54f94b382",
+              "name": "Notebook not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2ec55594-eba8-4f95-bd5d-61db24a2f234",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8da72c3b-0400-4982-af64-3d5b0903dcfd",
+          "name": "Azure Synapse Analytics Rename a notebook",
+          "request": {
+            "name": "Azure Synapse Analytics Rename a notebook",
+            "description": {
+              "content": "Renames a notebook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "notebooks",
+                ":notebookName",
+                "rename"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "notebookName",
+                  "description": "(Required) The notebook name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"newName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "64c6f650-8b68-4d59-8e41-c69f0c0f919f",
+              "name": "Successfully renamed the notebook.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8f71a8c8-4d66-4ae6-b25e-95b0117b18e4",
+              "name": "Notebook rename accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d4dca08a-7fe5-4e15-bf80-4687772c081c",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notebooks",
+                    ":notebookName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "notebookName",
+                      "description": "(Required) The notebook name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The workspace name.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myworkspace",
+      "key": "workspaceName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "45aafce3-5119-4ab3-bd67-5df514da1e95",
+    "name": "Azure Synapse Analytics - Notebook API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Create, update, list, and delete notebooks within a Synapse workspace. Notebooks support interactive data exploration using Python, Scala, SQL, and .NET languages.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}

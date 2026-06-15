@@ -1,0 +1,1640 @@
+{
+  "info": {
+    "_postman_id": "2c1f702b-4f2e-4262-95f4-aee2f479bf39",
+    "name": "Azure Synapse Analytics - Firewall Rules API",
+    "description": "Manage IP firewall rules for Synapse workspaces to control network access. Supports creating, updating, and deleting server-level IP firewall rules for workspace security.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:56.000Z",
+    "updatedAt": "2026-06-05T15:11:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2c1f702b-4f2e-4262-95f4-aee2f479bf39"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Synapse",
+                          "item": [
+                            {
+                              "name": "workspaces",
+                              "item": [
+                                {
+                                  "name": "{workspaceName}",
+                                  "item": [
+                                    {
+                                      "name": "firewallRules",
+                                      "item": [
+                                        {
+                                          "name": "{ruleName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Synapse Analytics Get a firewall rule",
+                                              "id": "b26329e1-9c1e-4477-8998-15d26055229b",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "firewallRules",
+                                                    ":ruleName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "c6541923-6083-416d-bdd9-4c16e3448322",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "8209a363-0eb1-4ad1-9a24-f1968c488602",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "fea1e0cb-f880-4f01-a21a-b6bea78d228e",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "0aca91ef-c9bc-4467-b3e8-509a2f9f3fa9",
+                                                      "key": "ruleName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The IP firewall rule name."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Get a firewall rule."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "7d322d87-a33d-45cb-b820-ca395e421148",
+                                                  "name": "Successfully retrieved the firewall rule.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-7d322d87-a33d-45cb-b820-ca395e421148"
+                                                },
+                                                {
+                                                  "id": "8b14fdbe-5fde-4fca-91ac-82db60e50f9b",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-8b14fdbe-5fde-4fca-91ac-82db60e50f9b"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-b26329e1-9c1e-4477-8998-15d26055229b"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Create or update a firewall rule",
+                                              "id": "47aa0f80-7c09-458f-9562-b2b3de09174e",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "firewallRules",
+                                                    ":ruleName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "029b8c18-fd47-4e6c-ba35-555796834827",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "03f5bb95-cede-4515-afa5-cd6fe4681b00",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "0ad3696a-f41c-40cc-90e2-7f4add2ab02f",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "be2263ce-101d-470d-b871-c6f0883a329e",
+                                                      "key": "ruleName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Creates or updates a firewall rule."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "c65f20f8-6eed-4c9b-9c19-efb2a5f7aa65",
+                                                  "name": "Successfully updated the firewall rule.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-c65f20f8-6eed-4c9b-9c19-efb2a5f7aa65"
+                                                },
+                                                {
+                                                  "id": "37599281-d7f6-4547-b32d-0722d44f3c52",
+                                                  "name": "Successfully created the firewall rule.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-37599281-d7f6-4547-b32d-0722d44f3c52"
+                                                },
+                                                {
+                                                  "id": "6696e3b7-5474-4f2c-af25-97c4d0a24817",
+                                                  "name": "Firewall rule creation accepted.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-6696e3b7-5474-4f2c-af25-97c4d0a24817"
+                                                },
+                                                {
+                                                  "id": "bafd396e-9ac7-481b-a583-93d6c0f7b307",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-bafd396e-9ac7-481b-a583-93d6c0f7b307"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-47aa0f80-7c09-458f-9562-b2b3de09174e"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Delete a firewall rule",
+                                              "id": "dde637b9-1431-4a96-be4f-af0475481134",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "firewallRules",
+                                                    ":ruleName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "dbe3fa2f-1eff-4efa-a9c7-239963209d2e",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "b8474449-f82e-43fa-858b-d052d9437f8b",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "11aacb64-b58c-447a-a4d7-1aa9ade15753",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "2c029508-8336-4760-bda7-7dfd78f780fe",
+                                                      "key": "ruleName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Deletes a firewall rule."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "016dcb1a-9cdd-4a7b-b349-315842209c83",
+                                                  "name": "Successfully deleted.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"endIpAddress\": \"<string>\",\n    \"provisioningState\": \"DeleteError\",\n    \"startIpAddress\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-016dcb1a-9cdd-4a7b-b349-315842209c83"
+                                                },
+                                                {
+                                                  "id": "5eb6c1ac-9902-4205-82b8-d6e6285ebed0",
+                                                  "name": "Deletion accepted.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-5eb6c1ac-9902-4205-82b8-d6e6285ebed0"
+                                                },
+                                                {
+                                                  "id": "00653219-b5e7-4d0f-ad41-4d5a14f39e9a",
+                                                  "name": "Not found.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-00653219-b5e7-4d0f-ad41-4d5a14f39e9a"
+                                                },
+                                                {
+                                                  "id": "abfc196c-bc94-4fcf-9a43-8b74e1753314",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules/:ruleName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "firewallRules",
+                                                        ":ruleName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "ruleName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                                  "uid": "35240-abfc196c-bc94-4fcf-9a43-8b74e1753314"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-dde637b9-1431-4a96-be4f-af0475481134"
+                                            }
+                                          ],
+                                          "id": "e9dcd469-5088-4127-8f9a-73c7b26426bf",
+                                          "createdAt": "2026-06-05T15:11:56.000Z",
+                                          "updatedAt": "2026-06-05T15:11:56.000Z",
+                                          "uid": "35240-e9dcd469-5088-4127-8f9a-73c7b26426bf"
+                                        },
+                                        {
+                                          "name": "Azure Synapse Analytics List firewall rules",
+                                          "id": "4df85cdf-3c3c-41ef-90a6-7d29922da847",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "workspaces",
+                                                ":workspaceName",
+                                                "firewallRules"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "f83d9915-ea4e-4662-bc81-c1eff9e536bc",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "231add5f-0633-4722-83ea-4cd52f38d01b",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "8cc03149-5b79-434a-9c3a-4f55a963149e",
+                                                  "key": "workspaceName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Returns a list of firewall rules."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "d714a990-7ec1-4906-8b49-ea83e4ab3868",
+                                              "name": "Successfully retrieved the list.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "firewallRules"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"endIpAddress\": \"<string>\",\n        \"provisioningState\": \"Succeeded\",\n        \"startIpAddress\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"endIpAddress\": \"<string>\",\n        \"provisioningState\": \"Succeeded\",\n        \"startIpAddress\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-d714a990-7ec1-4906-8b49-ea83e4ab3868"
+                                            },
+                                            {
+                                              "id": "d7d1dbbe-031f-474e-ad14-89157867aba5",
+                                              "name": "Error response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/firewallRules?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "firewallRules"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-d7d1dbbe-031f-474e-ad14-89157867aba5"
+                                            }
+                                          ],
+                                          "createdAt": "2026-06-05T15:11:56.000Z",
+                                          "updatedAt": "2026-06-05T15:11:56.000Z",
+                                          "uid": "35240-4df85cdf-3c3c-41ef-90a6-7d29922da847"
+                                        }
+                                      ],
+                                      "id": "bf9334e0-81ea-433a-93c5-fe67156b0ca8",
+                                      "createdAt": "2026-06-05T15:11:56.000Z",
+                                      "updatedAt": "2026-06-05T15:11:56.000Z",
+                                      "uid": "35240-bf9334e0-81ea-433a-93c5-fe67156b0ca8"
+                                    },
+                                    {
+                                      "name": "replaceAllIpFirewallRules",
+                                      "item": [
+                                        {
+                                          "name": "Azure Synapse Analytics Replace all firewall rules",
+                                          "id": "5e30eb2a-9246-4ba8-a8de-9b53f180e8d4",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"ipFirewallRules\": {\n    \"ex8\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"nisic\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"non0\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"in01f\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    }\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/replaceAllIpFirewallRules?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "workspaces",
+                                                ":workspaceName",
+                                                "replaceAllIpFirewallRules"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "9fbe047b-f742-40f0-a68c-f1d43350cfc6",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "d818b3de-66f0-4756-9273-eb77766ef0b4",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "726138ca-2c5f-41b8-bb35-a4fe11324792",
+                                                  "key": "workspaceName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Replaces firewall rules."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "01ea9741-2a5a-44e4-8b1f-c3c7ad9b78e8",
+                                              "name": "Successfully replaced firewall rules.",
+                                              "originalRequest": {
+                                                "method": "POST",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"ipFirewallRules\": {\n    \"ex8\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"nisic\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"non0\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"in01f\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    }\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/replaceAllIpFirewallRules?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "replaceAllIpFirewallRules"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"operationId\": \"<string>\"\n}",
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-01ea9741-2a5a-44e4-8b1f-c3c7ad9b78e8"
+                                            },
+                                            {
+                                              "id": "95e02b4f-2695-4069-9a72-b1d68dfd1cea",
+                                              "name": "Replace accepted.",
+                                              "originalRequest": {
+                                                "method": "POST",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"ipFirewallRules\": {\n    \"ex8\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"nisic\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"non0\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"in01f\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    }\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/replaceAllIpFirewallRules?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "replaceAllIpFirewallRules"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Accepted",
+                                              "code": 202,
+                                              "_postman_previewlanguage": "text",
+                                              "header": [],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": null,
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-95e02b4f-2695-4069-9a72-b1d68dfd1cea"
+                                            },
+                                            {
+                                              "id": "aa365614-d5db-4274-ab64-37a1d76cecb5",
+                                              "name": "Error response.",
+                                              "originalRequest": {
+                                                "method": "POST",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"ipFirewallRules\": {\n    \"ex8\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"nisic\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"non0\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    },\n    \"in01f\": {\n      \"startIpAddress\": \"<string>\",\n      \"endIpAddress\": \"<string>\"\n    }\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/replaceAllIpFirewallRules?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "replaceAllIpFirewallRules"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                              "createdAt": "2026-06-05T15:11:56.000Z",
+                                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                                              "uid": "35240-aa365614-d5db-4274-ab64-37a1d76cecb5"
+                                            }
+                                          ],
+                                          "createdAt": "2026-06-05T15:11:56.000Z",
+                                          "updatedAt": "2026-06-05T15:11:56.000Z",
+                                          "uid": "35240-5e30eb2a-9246-4ba8-a8de-9b53f180e8d4"
+                                        }
+                                      ],
+                                      "id": "525eba04-f4b0-4161-b92e-27ae3394fef0",
+                                      "createdAt": "2026-06-05T15:11:56.000Z",
+                                      "updatedAt": "2026-06-05T15:11:56.000Z",
+                                      "uid": "35240-525eba04-f4b0-4161-b92e-27ae3394fef0"
+                                    }
+                                  ],
+                                  "id": "2175fad1-6fda-4e25-af3c-0b0a28152a2a",
+                                  "createdAt": "2026-06-05T15:11:56.000Z",
+                                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                                  "uid": "35240-2175fad1-6fda-4e25-af3c-0b0a28152a2a"
+                                }
+                              ],
+                              "id": "10a54fe6-13ab-45a3-8072-1a4aed828a0f",
+                              "createdAt": "2026-06-05T15:11:56.000Z",
+                              "updatedAt": "2026-06-05T15:11:56.000Z",
+                              "uid": "35240-10a54fe6-13ab-45a3-8072-1a4aed828a0f"
+                            }
+                          ],
+                          "id": "5cbe0d7e-d28d-41c9-b05e-5b5a8fd7e52d",
+                          "createdAt": "2026-06-05T15:11:56.000Z",
+                          "updatedAt": "2026-06-05T15:11:56.000Z",
+                          "uid": "35240-5cbe0d7e-d28d-41c9-b05e-5b5a8fd7e52d"
+                        }
+                      ],
+                      "id": "24c01b3b-df79-44c4-879e-d7a015299a08",
+                      "createdAt": "2026-06-05T15:11:56.000Z",
+                      "updatedAt": "2026-06-05T15:11:56.000Z",
+                      "uid": "35240-24c01b3b-df79-44c4-879e-d7a015299a08"
+                    }
+                  ],
+                  "id": "f7c208da-128c-431d-b54e-7b64e3ce531d",
+                  "createdAt": "2026-06-05T15:11:56.000Z",
+                  "updatedAt": "2026-06-05T15:11:56.000Z",
+                  "uid": "35240-f7c208da-128c-431d-b54e-7b64e3ce531d"
+                }
+              ],
+              "id": "ee619ca6-a834-4804-83c5-c5655ffee705",
+              "createdAt": "2026-06-05T15:11:56.000Z",
+              "updatedAt": "2026-06-05T15:11:56.000Z",
+              "uid": "35240-ee619ca6-a834-4804-83c5-c5655ffee705"
+            }
+          ],
+          "id": "24e741fa-0daa-462d-aa3a-8096a3145e73",
+          "createdAt": "2026-06-05T15:11:56.000Z",
+          "updatedAt": "2026-06-05T15:11:56.000Z",
+          "uid": "35240-24e741fa-0daa-462d-aa3a-8096a3145e73"
+        }
+      ],
+      "id": "ee4d0d29-1daa-4858-9b81-ad1637a88b39",
+      "createdAt": "2026-06-05T15:11:56.000Z",
+      "updatedAt": "2026-06-05T15:11:56.000Z",
+      "uid": "35240-ee4d0d29-1daa-4858-9b81-ad1637a88b39"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

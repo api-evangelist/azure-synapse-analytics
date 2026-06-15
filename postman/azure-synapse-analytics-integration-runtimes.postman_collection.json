@@ -1,0 +1,355 @@
+{
+  "info": {
+    "_postman_id": "05395f1c-cfcb-4b7c-8838-ec8766931b7f",
+    "name": "Azure Synapse Analytics - Integration Runtimes API",
+    "description": "Manage integration runtimes that provide the compute infrastructure for data integration activities. Supports Azure-hosted, self-hosted, and Azure-SSIS integration runtime types.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:52.000Z",
+    "updatedAt": "2026-06-05T15:11:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-05395f1c-cfcb-4b7c-8838-ec8766931b7f"
+  },
+  "item": [
+    {
+      "name": "integrationRuntimes",
+      "item": [
+        {
+          "name": "{integrationRuntimeName}",
+          "item": [
+            {
+              "name": "Azure Synapse Analytics Get an integration runtime",
+              "id": "709ab4bd-ea73-4bed-bebb-fc3a124e8740",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/integrationRuntimes/:integrationRuntimeName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "integrationRuntimes",
+                    ":integrationRuntimeName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "657dadfb-0b49-4bde-9a42-a9107caf07ca",
+                      "key": "integrationRuntimeName",
+                      "value": "<string>",
+                      "description": "(Required) Integration runtime name."
+                    }
+                  ]
+                },
+                "description": "Get an integration runtime."
+              },
+              "response": [
+                {
+                  "id": "6b972ba8-db90-428c-93d8-0428ee53a819",
+                  "name": "Successfully retrieved.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/integrationRuntimes/:integrationRuntimeName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "integrationRuntimes",
+                        ":integrationRuntimeName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "integrationRuntimeName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"SelfHosted\",\n    \"description\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:53.000Z",
+                  "updatedAt": "2026-06-05T15:11:53.000Z",
+                  "uid": "35240-6b972ba8-db90-428c-93d8-0428ee53a819"
+                },
+                {
+                  "id": "800456ec-ae3b-48e0-b35c-6b02218f3d92",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/integrationRuntimes/:integrationRuntimeName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "integrationRuntimes",
+                        ":integrationRuntimeName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "integrationRuntimeName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:53.000Z",
+                  "updatedAt": "2026-06-05T15:11:53.000Z",
+                  "uid": "35240-800456ec-ae3b-48e0-b35c-6b02218f3d92"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:53.000Z",
+              "updatedAt": "2026-06-05T15:11:53.000Z",
+              "uid": "35240-709ab4bd-ea73-4bed-bebb-fc3a124e8740"
+            }
+          ],
+          "id": "d402fb71-6c26-4f12-bb6b-2522d54aa7e3",
+          "createdAt": "2026-06-05T15:11:53.000Z",
+          "updatedAt": "2026-06-05T15:11:53.000Z",
+          "uid": "35240-d402fb71-6c26-4f12-bb6b-2522d54aa7e3"
+        },
+        {
+          "name": "Azure Synapse Analytics List integration runtimes",
+          "id": "8427598a-00fc-462d-88df-bf5ed8d9d29d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/integrationRuntimes?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "integrationRuntimes"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "List integration runtimes in the workspace."
+          },
+          "response": [
+            {
+              "id": "88cd3e28-3870-49dc-83ab-b760159322fd",
+              "name": "Successfully retrieved the list.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/integrationRuntimes?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "integrationRuntimes"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"SelfHosted\",\n        \"description\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"Managed\",\n        \"description\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:53.000Z",
+              "updatedAt": "2026-06-05T15:11:53.000Z",
+              "uid": "35240-88cd3e28-3870-49dc-83ab-b760159322fd"
+            },
+            {
+              "id": "f4574d7d-e731-4095-9b1f-88c3a0105409",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/integrationRuntimes?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "integrationRuntimes"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:53.000Z",
+              "updatedAt": "2026-06-05T15:11:53.000Z",
+              "uid": "35240-f4574d7d-e731-4095-9b1f-88c3a0105409"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:53.000Z",
+          "updatedAt": "2026-06-05T15:11:53.000Z",
+          "uid": "35240-8427598a-00fc-462d-88df-bf5ed8d9d29d"
+        }
+      ],
+      "id": "ee13ed6b-b13c-4c03-8c42-e848341f19ee",
+      "createdAt": "2026-06-05T15:11:53.000Z",
+      "updatedAt": "2026-06-05T15:11:53.000Z",
+      "uid": "35240-ee13ed6b-b13c-4c03-8c42-e848341f19ee"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

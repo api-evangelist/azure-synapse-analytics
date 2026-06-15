@@ -1,0 +1,1036 @@
+{
+  "info": {
+    "_postman_id": "34603fdc-15f0-407c-8371-22fdccb1c014",
+    "name": "Azure Synapse Analytics - Data Flow Debug Session API",
+    "description": "Manage data flow debug sessions for interactive testing and debugging of data flow transformations. Enables previewing data and validating transformation logic before deployment.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:12:16.000Z",
+    "updatedAt": "2026-06-05T15:12:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-34603fdc-15f0-407c-8371-22fdccb1c014"
+  },
+  "item": [
+    {
+      "name": "queryDataFlowDebugSessions",
+      "item": [
+        {
+          "name": "Azure Synapse Analytics List data flow debug sessions",
+          "id": "8d44da76-d291-49f6-8046-33f4d3f80598",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/queryDataFlowDebugSessions?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "queryDataFlowDebugSessions"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Query all active data flow debug sessions."
+          },
+          "response": [
+            {
+              "id": "ab16d3e3-57fa-4c98-9c50-ddec2a50a183",
+              "name": "Successfully retrieved the list.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/queryDataFlowDebugSessions?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "queryDataFlowDebugSessions"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"dataFlowName\": \"<string>\",\n      \"computeType\": \"<string>\",\n      \"coreCount\": \"<integer>\",\n      \"nodeCount\": \"<integer>\",\n      \"integrationRuntimeName\": \"<string>\",\n      \"sessionId\": \"<string>\",\n      \"startTime\": \"<string>\",\n      \"timeToLiveInMinutes\": \"<integer>\",\n      \"lastActivityTime\": \"<string>\"\n    },\n    {\n      \"dataFlowName\": \"<string>\",\n      \"computeType\": \"<string>\",\n      \"coreCount\": \"<integer>\",\n      \"nodeCount\": \"<integer>\",\n      \"integrationRuntimeName\": \"<string>\",\n      \"sessionId\": \"<string>\",\n      \"startTime\": \"<string>\",\n      \"timeToLiveInMinutes\": \"<integer>\",\n      \"lastActivityTime\": \"<string>\"\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-ab16d3e3-57fa-4c98-9c50-ddec2a50a183"
+            },
+            {
+              "id": "72db6d1b-5273-476c-b1f0-5887ce7f7f5a",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/queryDataFlowDebugSessions?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "queryDataFlowDebugSessions"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-72db6d1b-5273-476c-b1f0-5887ce7f7f5a"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:17.000Z",
+          "updatedAt": "2026-06-05T15:12:17.000Z",
+          "uid": "35240-8d44da76-d291-49f6-8046-33f4d3f80598"
+        }
+      ],
+      "id": "d078da3e-ef4a-4807-9955-1ce728925563",
+      "createdAt": "2026-06-05T15:12:17.000Z",
+      "updatedAt": "2026-06-05T15:12:17.000Z",
+      "uid": "35240-d078da3e-ef4a-4807-9955-1ce728925563"
+    },
+    {
+      "name": "createDataFlowDebugSession",
+      "item": [
+        {
+          "name": "Azure Synapse Analytics Create a data flow debug session",
+          "id": "bf1eec66-5d78-4a47-b52b-4e0507d875ca",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"computeType\": \"<string>\",\n  \"coreCount\": \"<integer>\",\n  \"timeToLiveInMinutes\": \"<integer>\",\n  \"integrationRuntime\": {\n    \"name\": \"<string>\",\n    \"properties\": {}\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/createDataFlowDebugSession?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "createDataFlowDebugSession"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Creates a data flow debug session."
+          },
+          "response": [
+            {
+              "id": "7567b891-8a01-4048-b2b7-c712a526ecfe",
+              "name": "Successfully created.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computeType\": \"<string>\",\n  \"coreCount\": \"<integer>\",\n  \"timeToLiveInMinutes\": \"<integer>\",\n  \"integrationRuntime\": {\n    \"name\": \"<string>\",\n    \"properties\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/createDataFlowDebugSession?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "createDataFlowDebugSession"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"status\": \"<string>\",\n  \"sessionId\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-7567b891-8a01-4048-b2b7-c712a526ecfe"
+            },
+            {
+              "id": "8c2b62f6-9948-4a72-ba4f-659710465cc9",
+              "name": "Creation accepted.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computeType\": \"<string>\",\n  \"coreCount\": \"<integer>\",\n  \"timeToLiveInMinutes\": \"<integer>\",\n  \"integrationRuntime\": {\n    \"name\": \"<string>\",\n    \"properties\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/createDataFlowDebugSession?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "createDataFlowDebugSession"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-8c2b62f6-9948-4a72-ba4f-659710465cc9"
+            },
+            {
+              "id": "c2095a83-4f00-424b-947c-36bfb7c89571",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"computeType\": \"<string>\",\n  \"coreCount\": \"<integer>\",\n  \"timeToLiveInMinutes\": \"<integer>\",\n  \"integrationRuntime\": {\n    \"name\": \"<string>\",\n    \"properties\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/createDataFlowDebugSession?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "createDataFlowDebugSession"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-c2095a83-4f00-424b-947c-36bfb7c89571"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:17.000Z",
+          "updatedAt": "2026-06-05T15:12:17.000Z",
+          "uid": "35240-bf1eec66-5d78-4a47-b52b-4e0507d875ca"
+        }
+      ],
+      "id": "2df25122-6153-460e-8cec-3647fa9c3b38",
+      "createdAt": "2026-06-05T15:12:17.000Z",
+      "updatedAt": "2026-06-05T15:12:17.000Z",
+      "uid": "35240-2df25122-6153-460e-8cec-3647fa9c3b38"
+    },
+    {
+      "name": "addDataFlowToDebugSession",
+      "item": [
+        {
+          "name": "Azure Synapse Analytics Add a data flow to debug session",
+          "id": "58260530-9a0f-4c7a-a163-62b2b6e13b9b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"<string>\",\n  \"dataFlow\": {\n    \"name\": \"<string>\",\n    \"properties\": {}\n  },\n  \"staging\": {},\n  \"debugSettings\": {}\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/addDataFlowToDebugSession?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "addDataFlowToDebugSession"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Add a data flow into debug session."
+          },
+          "response": [
+            {
+              "id": "25829164-06c7-426f-90ee-da4be12d9691",
+              "name": "Successfully added.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"dataFlow\": {\n    \"name\": \"<string>\",\n    \"properties\": {}\n  },\n  \"staging\": {},\n  \"debugSettings\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/addDataFlowToDebugSession?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "addDataFlowToDebugSession"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"jobVersion\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-25829164-06c7-426f-90ee-da4be12d9691"
+            },
+            {
+              "id": "760eb0a2-e0fa-4a83-8dd5-0f5d38576522",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"dataFlow\": {\n    \"name\": \"<string>\",\n    \"properties\": {}\n  },\n  \"staging\": {},\n  \"debugSettings\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/addDataFlowToDebugSession?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "addDataFlowToDebugSession"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-760eb0a2-e0fa-4a83-8dd5-0f5d38576522"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:17.000Z",
+          "updatedAt": "2026-06-05T15:12:17.000Z",
+          "uid": "35240-58260530-9a0f-4c7a-a163-62b2b6e13b9b"
+        }
+      ],
+      "id": "20f36480-6383-4044-b5f8-6a73530daaa8",
+      "createdAt": "2026-06-05T15:12:17.000Z",
+      "updatedAt": "2026-06-05T15:12:17.000Z",
+      "uid": "35240-20f36480-6383-4044-b5f8-6a73530daaa8"
+    },
+    {
+      "name": "deleteDataFlowDebugSession",
+      "item": [
+        {
+          "name": "Azure Synapse Analytics Delete a data flow debug session",
+          "id": "1e366238-d866-4a8b-a731-262ecabcaa93",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/deleteDataFlowDebugSession?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deleteDataFlowDebugSession"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Deletes a data flow debug session."
+          },
+          "response": [
+            {
+              "id": "17ab7e8a-c740-4d42-b4b4-88bcbccc1782",
+              "name": "Successfully deleted.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/deleteDataFlowDebugSession?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "deleteDataFlowDebugSession"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-17ab7e8a-c740-4d42-b4b4-88bcbccc1782"
+            },
+            {
+              "id": "9439d7e5-024d-4d9f-8372-246299f55442",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/deleteDataFlowDebugSession?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "deleteDataFlowDebugSession"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-9439d7e5-024d-4d9f-8372-246299f55442"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:17.000Z",
+          "updatedAt": "2026-06-05T15:12:17.000Z",
+          "uid": "35240-1e366238-d866-4a8b-a731-262ecabcaa93"
+        }
+      ],
+      "id": "3edde9e0-391c-4117-9da1-26d35e8b58fb",
+      "createdAt": "2026-06-05T15:12:17.000Z",
+      "updatedAt": "2026-06-05T15:12:17.000Z",
+      "uid": "35240-3edde9e0-391c-4117-9da1-26d35e8b58fb"
+    },
+    {
+      "name": "executeDataFlowDebugCommand",
+      "item": [
+        {
+          "name": "Azure Synapse Analytics Execute a data flow debug command",
+          "id": "1d98b624-0a05-4832-b0a1-50756d35e595",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"<string>\",\n  \"command\": \"executePreviewQuery\",\n  \"commandPayload\": {\n    \"streamName\": \"<string>\",\n    \"rowLimits\": \"<integer>\",\n    \"columns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"expression\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/executeDataFlowDebugCommand?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "executeDataFlowDebugCommand"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Execute a data flow debug command."
+          },
+          "response": [
+            {
+              "id": "934b97b2-1bbf-4723-95d5-2a363e7e4b46",
+              "name": "Successfully executed.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"command\": \"executePreviewQuery\",\n  \"commandPayload\": {\n    \"streamName\": \"<string>\",\n    \"rowLimits\": \"<integer>\",\n    \"columns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"expression\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/executeDataFlowDebugCommand?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "executeDataFlowDebugCommand"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"status\": \"<string>\",\n  \"data\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-934b97b2-1bbf-4723-95d5-2a363e7e4b46"
+            },
+            {
+              "id": "76908639-48c1-4331-862a-bf55b3d96fc4",
+              "name": "Execution accepted.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"command\": \"executePreviewQuery\",\n  \"commandPayload\": {\n    \"streamName\": \"<string>\",\n    \"rowLimits\": \"<integer>\",\n    \"columns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"expression\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/executeDataFlowDebugCommand?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "executeDataFlowDebugCommand"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-76908639-48c1-4331-862a-bf55b3d96fc4"
+            },
+            {
+              "id": "1446e333-9371-4c86-8499-2fa81c230d58",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sessionId\": \"<string>\",\n  \"command\": \"executePreviewQuery\",\n  \"commandPayload\": {\n    \"streamName\": \"<string>\",\n    \"rowLimits\": \"<integer>\",\n    \"columns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"expression\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/executeDataFlowDebugCommand?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "executeDataFlowDebugCommand"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:17.000Z",
+              "updatedAt": "2026-06-05T15:12:17.000Z",
+              "uid": "35240-1446e333-9371-4c86-8499-2fa81c230d58"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:17.000Z",
+          "updatedAt": "2026-06-05T15:12:17.000Z",
+          "uid": "35240-1d98b624-0a05-4832-b0a1-50756d35e595"
+        }
+      ],
+      "id": "e20b1bcf-77dc-4741-aa0c-4ae65d0a7a34",
+      "createdAt": "2026-06-05T15:12:17.000Z",
+      "updatedAt": "2026-06-05T15:12:17.000Z",
+      "uid": "35240-e20b1bcf-77dc-4741-aa0c-4ae65d0a7a34"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

@@ -1,0 +1,433 @@
+{
+  "info": {
+    "_postman_id": "0a16b7a4-77c1-48a5-9ae4-41979b89b326",
+    "name": "Azure Synapse Analytics - Monitoring API",
+    "description": "Monitor pipeline runs, Spark jobs, and SQL requests within a Synapse workspace. Provides visibility into execution status, performance metrics, and operational health.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:40.000Z",
+    "updatedAt": "2026-06-05T15:11:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0a16b7a4-77c1-48a5-9ae4-41979b89b326"
+  },
+  "item": [
+    {
+      "name": "monitoring",
+      "item": [
+        {
+          "name": "workloadTypes",
+          "item": [
+            {
+              "name": "spark",
+              "item": [
+                {
+                  "name": "Applications",
+                  "item": [
+                    {
+                      "name": "Azure Synapse Analytics Get Spark job list",
+                      "id": "3e1e655f-82c9-48d7-8e78-0111405cca09",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/monitoring/workloadTypes/spark/Applications?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "monitoring",
+                            "workloadTypes",
+                            "spark",
+                            "Applications"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ]
+                        },
+                        "description": "Get list of Spark applications for the workspace."
+                      },
+                      "response": [
+                        {
+                          "id": "9f5b86bf-a568-4077-92f6-c8f35ea1b4fd",
+                          "name": "Successfully retrieved the Spark job list.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/monitoring/workloadTypes/spark/Applications?api-version=2020-12-01",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "monitoring",
+                                "workloadTypes",
+                                "spark",
+                                "Applications"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2020-12-01"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"nJobs\": \"<integer>\",\n  \"sparkJobs\": [\n    {\n      \"state\": \"<string>\",\n      \"name\": \"<string>\",\n      \"submitter\": \"<string>\",\n      \"compute\": \"<string>\",\n      \"sparkApplicationId\": \"<string>\",\n      \"livyId\": \"<string>\",\n      \"timing\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"sparkPoolName\": \"<string>\",\n      \"submitTime\": \"<dateTime>\",\n      \"endTime\": \"<dateTime>\",\n      \"queuedDuration\": \"<string>\",\n      \"runningDuration\": \"<string>\",\n      \"totalDuration\": \"<string>\",\n      \"jobType\": \"<string>\",\n      \"pipeline\": [\n        {\n          \"runId\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"runId\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"state\": \"<string>\",\n      \"name\": \"<string>\",\n      \"submitter\": \"<string>\",\n      \"compute\": \"<string>\",\n      \"sparkApplicationId\": \"<string>\",\n      \"livyId\": \"<string>\",\n      \"timing\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"sparkPoolName\": \"<string>\",\n      \"submitTime\": \"<dateTime>\",\n      \"endTime\": \"<dateTime>\",\n      \"queuedDuration\": \"<string>\",\n      \"runningDuration\": \"<string>\",\n      \"totalDuration\": \"<string>\",\n      \"jobType\": \"<string>\",\n      \"pipeline\": [\n        {\n          \"runId\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"runId\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                          "createdAt": "2026-06-05T15:11:41.000Z",
+                          "updatedAt": "2026-06-05T15:11:41.000Z",
+                          "uid": "35240-9f5b86bf-a568-4077-92f6-c8f35ea1b4fd"
+                        },
+                        {
+                          "id": "1702f9b0-e521-468e-8881-46d8b6d8fc43",
+                          "name": "Error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/monitoring/workloadTypes/spark/Applications?api-version=2020-12-01",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "monitoring",
+                                "workloadTypes",
+                                "spark",
+                                "Applications"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2020-12-01"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-06-05T15:11:41.000Z",
+                          "updatedAt": "2026-06-05T15:11:41.000Z",
+                          "uid": "35240-1702f9b0-e521-468e-8881-46d8b6d8fc43"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:11:41.000Z",
+                      "updatedAt": "2026-06-05T15:11:41.000Z",
+                      "uid": "35240-3e1e655f-82c9-48d7-8e78-0111405cca09"
+                    }
+                  ],
+                  "id": "5e32a539-50b9-4a5e-9177-cd2179fa94d5",
+                  "createdAt": "2026-06-05T15:11:41.000Z",
+                  "updatedAt": "2026-06-05T15:11:41.000Z",
+                  "uid": "35240-5e32a539-50b9-4a5e-9177-cd2179fa94d5"
+                }
+              ],
+              "id": "f5321470-a747-40c3-8456-65d2dabddaea",
+              "createdAt": "2026-06-05T15:11:41.000Z",
+              "updatedAt": "2026-06-05T15:11:41.000Z",
+              "uid": "35240-f5321470-a747-40c3-8456-65d2dabddaea"
+            },
+            {
+              "name": "sql",
+              "item": [
+                {
+                  "name": "querystring",
+                  "item": [
+                    {
+                      "name": "Azure Synapse Analytics Get SQL job query string",
+                      "id": "ad26a7ae-9964-4bdb-b034-56285e40530c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/monitoring/workloadTypes/sql/querystring?api-version=2020-12-01&filter=<string>&$orderby=<string>&skip=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "monitoring",
+                            "workloadTypes",
+                            "sql",
+                            "querystring"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            },
+                            {
+                              "description": "The filter to apply on the operation.",
+                              "key": "filter",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The order by operation.",
+                              "key": "$orderby",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The number of items to skip.",
+                              "key": "skip",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Get SQL OD/DW Query for the workspace."
+                      },
+                      "response": [
+                        {
+                          "id": "5bdef27e-fbd2-47bc-8d43-c7fe197a8ff2",
+                          "name": "Successfully retrieved the SQL query string.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/monitoring/workloadTypes/sql/querystring?api-version=2020-12-01&filter=<string>&$orderby=<string>&skip=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "monitoring",
+                                "workloadTypes",
+                                "sql",
+                                "querystring"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2020-12-01"
+                                },
+                                {
+                                  "description": "The filter to apply on the operation.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The order by operation.",
+                                  "key": "$orderby",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of items to skip.",
+                                  "key": "skip",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"query\": \"<string>\"\n}",
+                          "createdAt": "2026-06-05T15:11:41.000Z",
+                          "updatedAt": "2026-06-05T15:11:41.000Z",
+                          "uid": "35240-5bdef27e-fbd2-47bc-8d43-c7fe197a8ff2"
+                        },
+                        {
+                          "id": "6ac72aae-3e44-4f53-a634-b719ebfbf213",
+                          "name": "Error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/monitoring/workloadTypes/sql/querystring?api-version=2020-12-01&filter=<string>&$orderby=<string>&skip=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "monitoring",
+                                "workloadTypes",
+                                "sql",
+                                "querystring"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2020-12-01"
+                                },
+                                {
+                                  "description": "The filter to apply on the operation.",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The order by operation.",
+                                  "key": "$orderby",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The number of items to skip.",
+                                  "key": "skip",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-06-05T15:11:41.000Z",
+                          "updatedAt": "2026-06-05T15:11:41.000Z",
+                          "uid": "35240-6ac72aae-3e44-4f53-a634-b719ebfbf213"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:11:41.000Z",
+                      "updatedAt": "2026-06-05T15:11:41.000Z",
+                      "uid": "35240-ad26a7ae-9964-4bdb-b034-56285e40530c"
+                    }
+                  ],
+                  "id": "aabb062b-505f-4317-a25e-bac88b14e786",
+                  "createdAt": "2026-06-05T15:11:41.000Z",
+                  "updatedAt": "2026-06-05T15:11:41.000Z",
+                  "uid": "35240-aabb062b-505f-4317-a25e-bac88b14e786"
+                }
+              ],
+              "id": "339b6eeb-939d-4fa3-9ed8-e587e80ebff2",
+              "createdAt": "2026-06-05T15:11:41.000Z",
+              "updatedAt": "2026-06-05T15:11:41.000Z",
+              "uid": "35240-339b6eeb-939d-4fa3-9ed8-e587e80ebff2"
+            }
+          ],
+          "id": "c52e11e9-b891-47b8-a175-a85714a0e870",
+          "createdAt": "2026-06-05T15:11:41.000Z",
+          "updatedAt": "2026-06-05T15:11:41.000Z",
+          "uid": "35240-c52e11e9-b891-47b8-a175-a85714a0e870"
+        }
+      ],
+      "id": "1e9ea358-bf65-4239-8000-ed2db4ade721",
+      "createdAt": "2026-06-05T15:11:41.000Z",
+      "updatedAt": "2026-06-05T15:11:41.000Z",
+      "uid": "35240-1e9ea358-bf65-4239-8000-ed2db4ade721"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

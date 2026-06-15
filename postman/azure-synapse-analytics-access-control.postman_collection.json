@@ -1,0 +1,828 @@
+{
+  "info": {
+    "_postman_id": "0588708e-5a2a-4bb5-8da3-8e843b942017",
+    "name": "Azure Synapse Analytics - Access Control API",
+    "description": "Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:42.000Z",
+    "updatedAt": "2026-06-05T15:11:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0588708e-5a2a-4bb5-8da3-8e843b942017"
+  },
+  "item": [
+    {
+      "name": "roleAssignments",
+      "item": [
+        {
+          "name": "{roleAssignmentId}",
+          "item": [
+            {
+              "name": "Azure Synapse Analytics Get role assignment",
+              "id": "600c3603-902f-46d0-a934-3129ab4bcc78",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "roleAssignments",
+                    ":roleAssignmentId"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "450d5212-c878-4e66-8740-ebed73253e28",
+                      "key": "roleAssignmentId",
+                      "value": "<string>",
+                      "description": "(Required) The ID of the role assignment."
+                    }
+                  ]
+                },
+                "description": "Get role assignment by role assignment Id."
+              },
+              "response": [
+                {
+                  "id": "b255157b-8c94-425e-98e0-cbe2c5ebdf43",
+                  "name": "Successfully retrieved the role assignment.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "roleAssignments",
+                        ":roleAssignmentId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAssignmentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"roleDefinitionId\": \"<uuid>\",\n  \"principalId\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"principalType\": \"Group\"\n}",
+                  "createdAt": "2026-06-05T15:11:43.000Z",
+                  "updatedAt": "2026-06-05T15:11:43.000Z",
+                  "uid": "35240-b255157b-8c94-425e-98e0-cbe2c5ebdf43"
+                },
+                {
+                  "id": "26c52411-4dde-468a-82a1-8ee33bad22f9",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "roleAssignments",
+                        ":roleAssignmentId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAssignmentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:43.000Z",
+                  "updatedAt": "2026-06-05T15:11:43.000Z",
+                  "uid": "35240-26c52411-4dde-468a-82a1-8ee33bad22f9"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:43.000Z",
+              "updatedAt": "2026-06-05T15:11:43.000Z",
+              "uid": "35240-600c3603-902f-46d0-a934-3129ab4bcc78"
+            },
+            {
+              "name": "Azure Synapse Analytics Create role assignment",
+              "id": "2d31ae62-9d47-4ad9-85bb-f5e351ef5514",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleId\": \"<uuid>\",\n  \"principalId\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"principalType\": \"Group\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "roleAssignments",
+                    ":roleAssignmentId"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "b8e4a0dc-b653-41fd-8c53-c7fed031662a",
+                      "key": "roleAssignmentId",
+                      "value": "<string>",
+                      "description": "(Required) The ID of the role assignment."
+                    }
+                  ]
+                },
+                "description": "Create role assignment."
+              },
+              "response": [
+                {
+                  "id": "12032204-a800-4883-a42a-e2286ccd920d",
+                  "name": "Successfully created the role assignment.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleId\": \"<uuid>\",\n  \"principalId\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"principalType\": \"Group\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "roleAssignments",
+                        ":roleAssignmentId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAssignmentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"roleDefinitionId\": \"<uuid>\",\n  \"principalId\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"principalType\": \"Group\"\n}",
+                  "createdAt": "2026-06-05T15:11:43.000Z",
+                  "updatedAt": "2026-06-05T15:11:43.000Z",
+                  "uid": "35240-12032204-a800-4883-a42a-e2286ccd920d"
+                },
+                {
+                  "id": "a3d3b420-9526-45eb-8fec-2a302aedd0c5",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleId\": \"<uuid>\",\n  \"principalId\": \"<uuid>\",\n  \"scope\": \"<string>\",\n  \"principalType\": \"Group\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "roleAssignments",
+                        ":roleAssignmentId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAssignmentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:43.000Z",
+                  "updatedAt": "2026-06-05T15:11:43.000Z",
+                  "uid": "35240-a3d3b420-9526-45eb-8fec-2a302aedd0c5"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:43.000Z",
+              "updatedAt": "2026-06-05T15:11:43.000Z",
+              "uid": "35240-2d31ae62-9d47-4ad9-85bb-f5e351ef5514"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete role assignment",
+              "id": "953fddcb-df51-4f79-b933-726eb0d7878d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01&scope=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "roleAssignments",
+                    ":roleAssignmentId"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    },
+                    {
+                      "description": "Scope of the Synapse Built-In Role.",
+                      "key": "scope",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "96a7c4ce-864f-402b-9c58-cdcecc3cdafd",
+                      "key": "roleAssignmentId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Delete role assignment by role assignment Id."
+              },
+              "response": [
+                {
+                  "id": "0e7865ca-028a-4f14-a751-8a1c24246844",
+                  "name": "Successfully deleted the role assignment.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01&scope=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "roleAssignments",
+                        ":roleAssignmentId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        },
+                        {
+                          "description": "Scope of the Synapse Built-In Role.",
+                          "key": "scope",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAssignmentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:43.000Z",
+                  "updatedAt": "2026-06-05T15:11:43.000Z",
+                  "uid": "35240-0e7865ca-028a-4f14-a751-8a1c24246844"
+                },
+                {
+                  "id": "4efb279c-5e09-406a-b97a-bac45b4d5480",
+                  "name": "Role assignment not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01&scope=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "roleAssignments",
+                        ":roleAssignmentId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        },
+                        {
+                          "description": "Scope of the Synapse Built-In Role.",
+                          "key": "scope",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAssignmentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:43.000Z",
+                  "updatedAt": "2026-06-05T15:11:43.000Z",
+                  "uid": "35240-4efb279c-5e09-406a-b97a-bac45b4d5480"
+                },
+                {
+                  "id": "dcc2f340-b3fa-4845-b24b-140537b9bcfd",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/roleAssignments/:roleAssignmentId?api-version=2020-12-01&scope=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "roleAssignments",
+                        ":roleAssignmentId"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        },
+                        {
+                          "description": "Scope of the Synapse Built-In Role.",
+                          "key": "scope",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAssignmentId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:43.000Z",
+                  "updatedAt": "2026-06-05T15:11:43.000Z",
+                  "uid": "35240-dcc2f340-b3fa-4845-b24b-140537b9bcfd"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:43.000Z",
+              "updatedAt": "2026-06-05T15:11:43.000Z",
+              "uid": "35240-953fddcb-df51-4f79-b933-726eb0d7878d"
+            }
+          ],
+          "id": "5344c88d-5366-457c-879f-672c7327f31b",
+          "createdAt": "2026-06-05T15:11:43.000Z",
+          "updatedAt": "2026-06-05T15:11:43.000Z",
+          "uid": "35240-5344c88d-5366-457c-879f-672c7327f31b"
+        },
+        {
+          "name": "Azure Synapse Analytics List role assignments",
+          "id": "8f29ad33-b0e8-49b2-a5f6-1257ff27f9fb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "description": "Continuation token.",
+                "key": "x-ms-continuation",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/roleAssignments?api-version=2020-12-01&roleId=<string>&principalId=<string>&scope=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "roleAssignments"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                },
+                {
+                  "description": "Synapse Built-In Role Id.",
+                  "key": "roleId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Object ID of the AAD principal or security-group.",
+                  "key": "principalId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Scope of the Synapse Built-In Role.",
+                  "key": "scope",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "List role assignments."
+          },
+          "response": [
+            {
+              "id": "ef88da2c-4ed0-479d-8209-6dccda3b47d7",
+              "name": "Successfully retrieved the role assignments.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Continuation token.",
+                    "key": "x-ms-continuation",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/roleAssignments?api-version=2020-12-01&roleId=<string>&principalId=<string>&scope=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "roleAssignments"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    },
+                    {
+                      "description": "Synapse Built-In Role Id.",
+                      "key": "roleId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Object ID of the AAD principal or security-group.",
+                      "key": "principalId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Scope of the Synapse Built-In Role.",
+                      "key": "scope",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"count\": \"<integer>\",\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"roleDefinitionId\": \"<uuid>\",\n      \"principalId\": \"<uuid>\",\n      \"scope\": \"<string>\",\n      \"principalType\": \"Group\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"roleDefinitionId\": \"<uuid>\",\n      \"principalId\": \"<uuid>\",\n      \"scope\": \"<string>\",\n      \"principalType\": \"ServicePrincipal\"\n    }\n  ]\n}",
+              "createdAt": "2026-06-05T15:11:43.000Z",
+              "updatedAt": "2026-06-05T15:11:43.000Z",
+              "uid": "35240-ef88da2c-4ed0-479d-8209-6dccda3b47d7"
+            },
+            {
+              "id": "23bae1da-e138-4ef2-8a38-5a755968d195",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Continuation token.",
+                    "key": "x-ms-continuation",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/roleAssignments?api-version=2020-12-01&roleId=<string>&principalId=<string>&scope=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "roleAssignments"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    },
+                    {
+                      "description": "Synapse Built-In Role Id.",
+                      "key": "roleId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Object ID of the AAD principal or security-group.",
+                      "key": "principalId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Scope of the Synapse Built-In Role.",
+                      "key": "scope",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:43.000Z",
+              "updatedAt": "2026-06-05T15:11:43.000Z",
+              "uid": "35240-23bae1da-e138-4ef2-8a38-5a755968d195"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:43.000Z",
+          "updatedAt": "2026-06-05T15:11:43.000Z",
+          "uid": "35240-8f29ad33-b0e8-49b2-a5f6-1257ff27f9fb"
+        }
+      ],
+      "id": "6bc589ba-9401-48d6-a7f8-b46a75a96bab",
+      "createdAt": "2026-06-05T15:11:43.000Z",
+      "updatedAt": "2026-06-05T15:11:43.000Z",
+      "uid": "35240-6bc589ba-9401-48d6-a7f8-b46a75a96bab"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

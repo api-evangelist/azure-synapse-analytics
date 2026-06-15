@@ -1,0 +1,1088 @@
+{
+  "info": {
+    "_postman_id": "abcd6ff6-6fcc-4aa9-ade1-874c56905e08",
+    "name": "Azure Synapse Analytics - Keys API",
+    "description": "Manage workspace encryption keys for data protection at rest. Supports customer-managed key configuration for dedicated SQL pools and workspace-level encryption.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:57.000Z",
+    "updatedAt": "2026-06-05T15:11:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-abcd6ff6-6fcc-4aa9-ade1-874c56905e08"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Synapse",
+                          "item": [
+                            {
+                              "name": "workspaces",
+                              "item": [
+                                {
+                                  "name": "{workspaceName}",
+                                  "item": [
+                                    {
+                                      "name": "keys",
+                                      "item": [
+                                        {
+                                          "name": "{keyName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Synapse Analytics Get a workspace key",
+                                              "id": "f10a12f8-fde8-437a-a3a9-92a8e664238f",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "keys",
+                                                    ":keyName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "335264f4-d622-4711-9300-a7ff711a8085",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "7c2e45ff-e778-42f9-bbdd-63469a279fa7",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "3b3dec93-792c-43af-824b-82b1c8fd7bd5",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "5b42b7c1-2e29-4138-95c3-c68ebd12ccaf",
+                                                      "key": "keyName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the workspace key."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets a workspace key."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "ebef1b42-3ea6-4cc4-aed6-4fdb69e391bb",
+                                                  "name": "Successfully retrieved the key.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "keys",
+                                                        ":keyName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "keyName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"isActiveCMK\": \"<boolean>\",\n    \"keyVaultUrl\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                                  "uid": "35240-ebef1b42-3ea6-4cc4-aed6-4fdb69e391bb"
+                                                },
+                                                {
+                                                  "id": "c167863e-032e-4836-85fa-430f4d495385",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "keys",
+                                                        ":keyName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "keyName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                                  "uid": "35240-c167863e-032e-4836-85fa-430f4d495385"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:57.000Z",
+                                              "updatedAt": "2026-06-05T15:11:57.000Z",
+                                              "uid": "35240-f10a12f8-fde8-437a-a3a9-92a8e664238f"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Create or update a workspace key",
+                                              "id": "8990c51a-60ac-4b8b-9a60-e42695d3333c",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"isActiveCMK\": \"<boolean>\",\n    \"keyVaultUrl\": \"<string>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "keys",
+                                                    ":keyName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "28facb66-6049-4e36-a523-b15a15380994",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "31a51649-73df-4b6d-afbd-47e79b5d8181",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "ffba8719-9dba-4101-9e2b-3c7eaf480d8b",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "7a9dbc79-a1a9-4a8f-a1ca-da1dd4c66e1b",
+                                                      "key": "keyName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Creates or updates a workspace key."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "18fda886-31d2-4545-8f02-bbe6091fd0ea",
+                                                  "name": "Successfully updated the key.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"isActiveCMK\": \"<boolean>\",\n    \"keyVaultUrl\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "keys",
+                                                        ":keyName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "keyName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"isActiveCMK\": \"<boolean>\",\n    \"keyVaultUrl\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                                  "uid": "35240-18fda886-31d2-4545-8f02-bbe6091fd0ea"
+                                                },
+                                                {
+                                                  "id": "a678ecfb-aff4-447a-9dc1-efe058c21fb6",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"isActiveCMK\": \"<boolean>\",\n    \"keyVaultUrl\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "keys",
+                                                        ":keyName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "keyName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                                  "uid": "35240-a678ecfb-aff4-447a-9dc1-efe058c21fb6"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:57.000Z",
+                                              "updatedAt": "2026-06-05T15:11:57.000Z",
+                                              "uid": "35240-8990c51a-60ac-4b8b-9a60-e42695d3333c"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Delete a workspace key",
+                                              "id": "a8b82771-c981-4751-84c5-1d7c840668ab",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "keys",
+                                                    ":keyName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "4110882a-4901-4544-9687-16e9c7ad2ff0",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "5cca43b1-a7ae-4b0d-8ab4-d2c2005fe6af",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "cfe5649b-a163-4cc0-bc3e-5fc292c7184f",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "78a91782-1a07-4016-a2e3-f21d6c4589b7",
+                                                      "key": "keyName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Deletes a workspace key."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "1b005eec-3300-4271-b558-8cf23297da76",
+                                                  "name": "Successfully deleted.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "keys",
+                                                        ":keyName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "keyName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"isActiveCMK\": \"<boolean>\",\n    \"keyVaultUrl\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                                  "uid": "35240-1b005eec-3300-4271-b558-8cf23297da76"
+                                                },
+                                                {
+                                                  "id": "ad9a29ac-9e53-46d8-8a99-1d97f4a0dfe0",
+                                                  "name": "Not found.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "keys",
+                                                        ":keyName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "keyName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                                  "uid": "35240-ad9a29ac-9e53-46d8-8a99-1d97f4a0dfe0"
+                                                },
+                                                {
+                                                  "id": "735c35ad-5cff-4ae7-b300-795be38204c7",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys/:keyName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "keys",
+                                                        ":keyName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "keyName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                                  "uid": "35240-735c35ad-5cff-4ae7-b300-795be38204c7"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:11:57.000Z",
+                                              "updatedAt": "2026-06-05T15:11:57.000Z",
+                                              "uid": "35240-a8b82771-c981-4751-84c5-1d7c840668ab"
+                                            }
+                                          ],
+                                          "id": "c5f0f47e-1a0c-42f4-ab94-c0f1456f23b1",
+                                          "createdAt": "2026-06-05T15:11:57.000Z",
+                                          "updatedAt": "2026-06-05T15:11:57.000Z",
+                                          "uid": "35240-c5f0f47e-1a0c-42f4-ab94-c0f1456f23b1"
+                                        },
+                                        {
+                                          "name": "Azure Synapse Analytics List workspace keys",
+                                          "id": "0caa8703-6842-4874-a736-581c3cc4e573",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "workspaces",
+                                                ":workspaceName",
+                                                "keys"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "a53738a1-75a4-476e-8141-6cbcc602f846",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "c887687a-3750-4d2f-abc4-72455430fb14",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "bf777593-ce64-4363-9592-cc460902bb40",
+                                                  "key": "workspaceName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Returns a list of keys in a workspace."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "c1a28e32-83bb-48f9-91a9-f7986b96f6a2",
+                                              "name": "Successfully retrieved the list.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "keys"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"isActiveCMK\": \"<boolean>\",\n        \"keyVaultUrl\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"isActiveCMK\": \"<boolean>\",\n        \"keyVaultUrl\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                              "createdAt": "2026-06-05T15:11:57.000Z",
+                                              "updatedAt": "2026-06-05T15:11:57.000Z",
+                                              "uid": "35240-c1a28e32-83bb-48f9-91a9-f7986b96f6a2"
+                                            },
+                                            {
+                                              "id": "f421d135-b6ed-414c-a8dd-d4b5cc63bf88",
+                                              "name": "Error response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/keys?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "keys"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                              "createdAt": "2026-06-05T15:11:57.000Z",
+                                              "updatedAt": "2026-06-05T15:11:57.000Z",
+                                              "uid": "35240-f421d135-b6ed-414c-a8dd-d4b5cc63bf88"
+                                            }
+                                          ],
+                                          "createdAt": "2026-06-05T15:11:57.000Z",
+                                          "updatedAt": "2026-06-05T15:11:57.000Z",
+                                          "uid": "35240-0caa8703-6842-4874-a736-581c3cc4e573"
+                                        }
+                                      ],
+                                      "id": "0350f468-753a-4529-b8d9-64f797c57cad",
+                                      "createdAt": "2026-06-05T15:11:57.000Z",
+                                      "updatedAt": "2026-06-05T15:11:57.000Z",
+                                      "uid": "35240-0350f468-753a-4529-b8d9-64f797c57cad"
+                                    }
+                                  ],
+                                  "id": "c6977ec1-1ab7-41d6-a884-18c22b2ac9a4",
+                                  "createdAt": "2026-06-05T15:11:57.000Z",
+                                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                                  "uid": "35240-c6977ec1-1ab7-41d6-a884-18c22b2ac9a4"
+                                }
+                              ],
+                              "id": "5a0ec085-2f68-4151-be69-b678850e823f",
+                              "createdAt": "2026-06-05T15:11:57.000Z",
+                              "updatedAt": "2026-06-05T15:11:57.000Z",
+                              "uid": "35240-5a0ec085-2f68-4151-be69-b678850e823f"
+                            }
+                          ],
+                          "id": "2eeb7929-3a5e-4091-9110-615b1633b65b",
+                          "createdAt": "2026-06-05T15:11:57.000Z",
+                          "updatedAt": "2026-06-05T15:11:57.000Z",
+                          "uid": "35240-2eeb7929-3a5e-4091-9110-615b1633b65b"
+                        }
+                      ],
+                      "id": "86a096bc-f8b4-494a-bd3f-d4782935703b",
+                      "createdAt": "2026-06-05T15:11:57.000Z",
+                      "updatedAt": "2026-06-05T15:11:57.000Z",
+                      "uid": "35240-86a096bc-f8b4-494a-bd3f-d4782935703b"
+                    }
+                  ],
+                  "id": "957ede41-cb57-4dcc-8f36-afdf2e8f7d41",
+                  "createdAt": "2026-06-05T15:11:57.000Z",
+                  "updatedAt": "2026-06-05T15:11:57.000Z",
+                  "uid": "35240-957ede41-cb57-4dcc-8f36-afdf2e8f7d41"
+                }
+              ],
+              "id": "d58c1191-16c4-4f96-9629-2a98257bf062",
+              "createdAt": "2026-06-05T15:11:57.000Z",
+              "updatedAt": "2026-06-05T15:11:57.000Z",
+              "uid": "35240-d58c1191-16c4-4f96-9629-2a98257bf062"
+            }
+          ],
+          "id": "380301cc-3f11-4d54-9fb2-7f2a546b47b3",
+          "createdAt": "2026-06-05T15:11:57.000Z",
+          "updatedAt": "2026-06-05T15:11:57.000Z",
+          "uid": "35240-380301cc-3f11-4d54-9fb2-7f2a546b47b3"
+        }
+      ],
+      "id": "984cf3a8-e497-49a0-abbe-ab04fd01422e",
+      "createdAt": "2026-06-05T15:11:57.000Z",
+      "updatedAt": "2026-06-05T15:11:57.000Z",
+      "uid": "35240-984cf3a8-e497-49a0-abbe-ab04fd01422e"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

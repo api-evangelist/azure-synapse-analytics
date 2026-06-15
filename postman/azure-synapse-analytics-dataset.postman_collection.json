@@ -1,0 +1,1195 @@
+{
+  "info": {
+    "_postman_id": "2151f78a-05f7-42d1-a4fc-8ddfe2282537",
+    "name": "Azure Synapse Analytics - Dataset API",
+    "description": "Create and manage datasets that represent data structures within linked data stores. Datasets define the schema and location of data used in pipelines and data flows.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:44.000Z",
+    "updatedAt": "2026-06-05T15:11:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2151f78a-05f7-42d1-a4fc-8ddfe2282537"
+  },
+  "item": [
+    {
+      "name": "datasets",
+      "item": [
+        {
+          "name": "{datasetName}",
+          "item": [
+            {
+              "name": "rename",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Rename a dataset",
+                  "id": "258e12e5-61a2-466a-b21b-724e85a81fec",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"newName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName/rename?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName",
+                        "rename"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "fbd1f17e-2001-49cd-9a94-529b1d14770e",
+                          "key": "datasetName",
+                          "value": "<string>",
+                          "description": "(Required) The dataset name."
+                        }
+                      ]
+                    },
+                    "description": "Renames a dataset."
+                  },
+                  "response": [
+                    {
+                      "id": "15e7b53b-4582-4e93-9c9c-b4a7b220d695",
+                      "name": "Successfully renamed the dataset.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/datasets/:datasetName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "datasets",
+                            ":datasetName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "datasetName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:45.000Z",
+                      "updatedAt": "2026-06-05T15:11:45.000Z",
+                      "uid": "35240-15e7b53b-4582-4e93-9c9c-b4a7b220d695"
+                    },
+                    {
+                      "id": "ea393b5e-be83-4018-83be-cb8034911aa8",
+                      "name": "Dataset rename accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/datasets/:datasetName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "datasets",
+                            ":datasetName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "datasetName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:45.000Z",
+                      "updatedAt": "2026-06-05T15:11:45.000Z",
+                      "uid": "35240-ea393b5e-be83-4018-83be-cb8034911aa8"
+                    },
+                    {
+                      "id": "7fb5da4e-47c7-4d75-bbc8-b372fcac78c7",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/datasets/:datasetName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "datasets",
+                            ":datasetName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "datasetName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:45.000Z",
+                      "updatedAt": "2026-06-05T15:11:45.000Z",
+                      "uid": "35240-7fb5da4e-47c7-4d75-bbc8-b372fcac78c7"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-258e12e5-61a2-466a-b21b-724e85a81fec"
+                }
+              ],
+              "id": "6f0c81cd-0d8e-4e2e-b08d-db3d7cb24023",
+              "createdAt": "2026-06-05T15:11:45.000Z",
+              "updatedAt": "2026-06-05T15:11:45.000Z",
+              "uid": "35240-6f0c81cd-0d8e-4e2e-b08d-db3d7cb24023"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a dataset",
+              "id": "f27ac36c-4edd-4423-b3b4-36820a9d4f77",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets",
+                    ":datasetName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "5a31f310-3eed-40f6-8f3e-5b73f09ce409",
+                      "key": "datasetName",
+                      "value": "<string>",
+                      "description": "(Required) The dataset name."
+                    }
+                  ]
+                },
+                "description": "Gets a dataset."
+              },
+              "response": [
+                {
+                  "id": "ccc60a1f-753a-4bad-a1b0-68609fc6375e",
+                  "name": "Successfully retrieved the dataset.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"linkedServiceName\": {\n      \"type\": \"LinkedServiceReference\",\n      \"referenceName\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"parameters\": {\n      \"anim_ac7\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"schema\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"structure\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-ccc60a1f-753a-4bad-a1b0-68609fc6375e"
+                },
+                {
+                  "id": "200d1dad-5a26-4ed9-948d-dd9daba5f4ab",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-200d1dad-5a26-4ed9-948d-dd9daba5f4ab"
+                },
+                {
+                  "id": "a5474553-eee8-4ae9-b1ab-f69e3bcac2b1",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-a5474553-eee8-4ae9-b1ab-f69e3bcac2b1"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:45.000Z",
+              "updatedAt": "2026-06-05T15:11:45.000Z",
+              "uid": "35240-f27ac36c-4edd-4423-b3b4-36820a9d4f77"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a dataset",
+              "id": "c8df997a-5dc0-4d08-ad4c-a3be808355a5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"linkedServiceName\": {\n      \"type\": \"LinkedServiceReference\",\n      \"referenceName\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"parameters\": {\n      \"anim_ac7\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"schema\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"structure\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets",
+                    ":datasetName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "8f82963c-c26b-441e-bf0b-f6a952ccabb1",
+                      "key": "datasetName",
+                      "value": "<string>",
+                      "description": "(Required) The dataset name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a dataset."
+              },
+              "response": [
+                {
+                  "id": "5404777b-6cba-4fc4-9c36-f9b5541e4c37",
+                  "name": "Successfully updated the dataset.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"linkedServiceName\": {\n      \"type\": \"LinkedServiceReference\",\n      \"referenceName\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"parameters\": {\n      \"anim_ac7\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"schema\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"structure\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"linkedServiceName\": {\n      \"type\": \"LinkedServiceReference\",\n      \"referenceName\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"parameters\": {\n      \"anim_ac7\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"schema\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"structure\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-5404777b-6cba-4fc4-9c36-f9b5541e4c37"
+                },
+                {
+                  "id": "8e27038c-365e-49d3-a6b6-a3d4bfa9ce05",
+                  "name": "Dataset creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"linkedServiceName\": {\n      \"type\": \"LinkedServiceReference\",\n      \"referenceName\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"parameters\": {\n      \"anim_ac7\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"schema\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"structure\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-8e27038c-365e-49d3-a6b6-a3d4bfa9ce05"
+                },
+                {
+                  "id": "c05c957c-cbaa-43a4-9b7f-b29479cfcded",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"linkedServiceName\": {\n      \"type\": \"LinkedServiceReference\",\n      \"referenceName\": \"<string>\"\n    },\n    \"description\": \"<string>\",\n    \"parameters\": {\n      \"anim_ac7\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"schema\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"structure\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-c05c957c-cbaa-43a4-9b7f-b29479cfcded"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:45.000Z",
+              "updatedAt": "2026-06-05T15:11:45.000Z",
+              "uid": "35240-c8df997a-5dc0-4d08-ad4c-a3be808355a5"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a dataset",
+              "id": "2172f9cd-b6e1-4c97-b9fb-e2b3b2550281",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets",
+                    ":datasetName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "13cf7bec-4e23-4ec7-801e-10117901e328",
+                      "key": "datasetName",
+                      "value": "<string>",
+                      "description": "(Required) The dataset name."
+                    }
+                  ]
+                },
+                "description": "Deletes a dataset."
+              },
+              "response": [
+                {
+                  "id": "26a8ee27-904f-48ee-b7ed-4ea1cfa4ff7f",
+                  "name": "Successfully deleted the dataset.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-26a8ee27-904f-48ee-b7ed-4ea1cfa4ff7f"
+                },
+                {
+                  "id": "255b4c4c-1f68-443f-b50f-a97c91b48c41",
+                  "name": "Dataset deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-255b4c4c-1f68-443f-b50f-a97c91b48c41"
+                },
+                {
+                  "id": "538d2e17-68de-4c47-b51f-39ae7a12b20c",
+                  "name": "Dataset not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-538d2e17-68de-4c47-b51f-39ae7a12b20c"
+                },
+                {
+                  "id": "2abefe56-e198-419d-be78-60faa2d272b2",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/datasets/:datasetName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "datasets",
+                        ":datasetName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "datasetName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:45.000Z",
+                  "updatedAt": "2026-06-05T15:11:45.000Z",
+                  "uid": "35240-2abefe56-e198-419d-be78-60faa2d272b2"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:45.000Z",
+              "updatedAt": "2026-06-05T15:11:45.000Z",
+              "uid": "35240-2172f9cd-b6e1-4c97-b9fb-e2b3b2550281"
+            }
+          ],
+          "id": "8fe7020c-c74a-46c2-9a15-0723e7b172b2",
+          "createdAt": "2026-06-05T15:11:45.000Z",
+          "updatedAt": "2026-06-05T15:11:45.000Z",
+          "uid": "35240-8fe7020c-c74a-46c2-9a15-0723e7b172b2"
+        },
+        {
+          "name": "Azure Synapse Analytics List datasets",
+          "id": "c534eb13-99d3-4d02-9a78-cdd9c2b03452",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/datasets?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "datasets"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Lists datasets in the workspace."
+          },
+          "response": [
+            {
+              "id": "972e0129-5ec9-4619-9138-29226d41b289",
+              "name": "Successfully retrieved the list of datasets.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"<string>\",\n        \"linkedServiceName\": {\n          \"type\": \"LinkedServiceReference\",\n          \"referenceName\": \"<string>\"\n        },\n        \"description\": \"<string>\",\n        \"parameters\": {\n          \"fugiat_1ce\": {}\n        },\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        },\n        \"schema\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        ],\n        \"structure\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"<string>\",\n        \"linkedServiceName\": {\n          \"type\": \"LinkedServiceReference\",\n          \"referenceName\": \"<string>\"\n        },\n        \"description\": \"<string>\",\n        \"parameters\": {\n          \"id__7\": {},\n          \"esse_5\": {}\n        },\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        },\n        \"schema\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        ],\n        \"structure\": [\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:45.000Z",
+              "updatedAt": "2026-06-05T15:11:45.000Z",
+              "uid": "35240-972e0129-5ec9-4619-9138-29226d41b289"
+            },
+            {
+              "id": "1c66c54f-0881-4c75-b30d-90ee1660b9d3",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/datasets?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "datasets"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:45.000Z",
+              "updatedAt": "2026-06-05T15:11:45.000Z",
+              "uid": "35240-1c66c54f-0881-4c75-b30d-90ee1660b9d3"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:45.000Z",
+          "updatedAt": "2026-06-05T15:11:45.000Z",
+          "uid": "35240-c534eb13-99d3-4d02-9a78-cdd9c2b03452"
+        }
+      ],
+      "id": "8f987d00-a3a4-4c79-8c3f-0785ac2c9e51",
+      "createdAt": "2026-06-05T15:11:45.000Z",
+      "updatedAt": "2026-06-05T15:11:45.000Z",
+      "uid": "35240-8f987d00-a3a4-4c79-8c3f-0785ac2c9e51"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

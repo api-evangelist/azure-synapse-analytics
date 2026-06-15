@@ -1,0 +1,971 @@
+{
+  "info": {
+    "_postman_id": "0cbe4ae1-07c6-4a83-a84d-93085145c69e",
+    "name": "Azure Synapse Analytics - Azure AD Only Authentication API",
+    "description": "Manage Azure Active Directory only authentication settings for Synapse workspaces. Enables enforcing Azure AD authentication and disabling SQL authentication for enhanced security.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:12:14.000Z",
+    "updatedAt": "2026-06-05T15:12:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0cbe4ae1-07c6-4a83-a84d-93085145c69e"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Synapse",
+                          "item": [
+                            {
+                              "name": "workspaces",
+                              "item": [
+                                {
+                                  "name": "{workspaceName}",
+                                  "item": [
+                                    {
+                                      "name": "azureADOnlyAuthentications",
+                                      "item": [
+                                        {
+                                          "name": "{azureADOnlyAuthenticationName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Synapse Analytics Get Azure AD only authentication",
+                                              "id": "0bea0937-8f26-45d2-b693-8208a321ac75",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "azureADOnlyAuthentications",
+                                                    ":azureADOnlyAuthenticationName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "d2f3e21f-b210-44d0-9076-a0ac14452347",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "470e789c-e96c-4b6a-b4bc-8741a427c91c",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "deb2f17f-e3e1-43ce-8c07-bca7ed39064f",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "790e2e87-3dba-49ae-a38d-db2c654c46ca",
+                                                      "key": "azureADOnlyAuthenticationName",
+                                                      "value": "default",
+                                                      "description": "(Required) Name of the Azure AD only authentication (default)."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets a Azure Active Directory only authentication property."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "9816d34b-14b1-45c2-b2ad-3334918da9f2",
+                                                  "name": "Successfully retrieved.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "azureADOnlyAuthentications",
+                                                        ":azureADOnlyAuthenticationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "azureADOnlyAuthenticationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:14.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                                                  "uid": "35240-9816d34b-14b1-45c2-b2ad-3334918da9f2"
+                                                },
+                                                {
+                                                  "id": "f8ef378d-f5a7-4f9d-b1e2-8a9814b0c098",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "azureADOnlyAuthentications",
+                                                        ":azureADOnlyAuthenticationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "azureADOnlyAuthenticationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:14.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                                                  "uid": "35240-f8ef378d-f5a7-4f9d-b1e2-8a9814b0c098"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:12:14.000Z",
+                                              "updatedAt": "2026-06-05T15:12:14.000Z",
+                                              "uid": "35240-0bea0937-8f26-45d2-b693-8208a321ac75"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Create or update Azure AD only authentication",
+                                              "id": "f9096a34-69db-4cc1-96eb-b53d3f8bc0fa",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "azureADOnlyAuthentications",
+                                                    ":azureADOnlyAuthenticationName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "189b00bf-6eb1-417c-8a38-e09a09860917",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "4c8660a5-f90a-4d1c-b6fa-ff054ea33bb2",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "064d9869-ca07-4b41-a04c-b9f7ab6abb87",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "e6149e3f-c63e-4048-8fd9-a879c03186fa",
+                                                      "key": "azureADOnlyAuthenticationName",
+                                                      "value": "default",
+                                                      "description": "(Required) "
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Create or Update a Azure Active Directory only authentication property for the workspaces."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "55adc3b8-f023-42b3-9b9c-73ee96d22295",
+                                                  "name": "Successfully updated.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "azureADOnlyAuthentications",
+                                                        ":azureADOnlyAuthenticationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "azureADOnlyAuthenticationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:14.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                                                  "uid": "35240-55adc3b8-f023-42b3-9b9c-73ee96d22295"
+                                                },
+                                                {
+                                                  "id": "39881e59-175b-4b21-a7d9-53b053f78c50",
+                                                  "name": "Successfully created.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "azureADOnlyAuthentications",
+                                                        ":azureADOnlyAuthenticationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "azureADOnlyAuthenticationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:14.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                                                  "uid": "35240-39881e59-175b-4b21-a7d9-53b053f78c50"
+                                                },
+                                                {
+                                                  "id": "5c90add1-04c1-41f4-9b83-5fe872a6d4e5",
+                                                  "name": "Accepted.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "azureADOnlyAuthentications",
+                                                        ":azureADOnlyAuthenticationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "azureADOnlyAuthenticationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:12:14.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                                                  "uid": "35240-5c90add1-04c1-41f4-9b83-5fe872a6d4e5"
+                                                },
+                                                {
+                                                  "id": "76b7bf07-0b86-40e9-821c-174e1a2eb8c2",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"azureADOnlyAuthentication\": \"<boolean>\",\n    \"state\": \"Updating\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications/:azureADOnlyAuthenticationName?api-version=2021-06-01",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "azureADOnlyAuthentications",
+                                                        ":azureADOnlyAuthenticationName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "azureADOnlyAuthenticationName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:14.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                                                  "uid": "35240-76b7bf07-0b86-40e9-821c-174e1a2eb8c2"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:12:14.000Z",
+                                              "updatedAt": "2026-06-05T15:12:14.000Z",
+                                              "uid": "35240-f9096a34-69db-4cc1-96eb-b53d3f8bc0fa"
+                                            }
+                                          ],
+                                          "id": "4c3e27ef-dfeb-4f40-8ba6-eaf258ce7174",
+                                          "createdAt": "2026-06-05T15:12:14.000Z",
+                                          "updatedAt": "2026-06-05T15:12:14.000Z",
+                                          "uid": "35240-4c3e27ef-dfeb-4f40-8ba6-eaf258ce7174"
+                                        },
+                                        {
+                                          "name": "Azure Synapse Analytics List Azure AD only authentications",
+                                          "id": "d7fe399d-957b-4010-bba6-67642484c126",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "workspaces",
+                                                ":workspaceName",
+                                                "azureADOnlyAuthentications"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "99ff9112-e2bc-407d-90d2-fde1b93f8811",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "36140217-2bd7-4022-abbb-6d5738be79df",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "40a1da9d-7016-499e-bdde-50d032e8811d",
+                                                  "key": "workspaceName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Gets a list of Azure Active Directory only authentication property for a workspace."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "7c2bde2b-b465-4660-a28c-3e693187c26f",
+                                              "name": "Successfully retrieved the list.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "azureADOnlyAuthentications"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"azureADOnlyAuthentication\": \"<boolean>\",\n        \"state\": \"Updating\",\n        \"creationDate\": \"<dateTime>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"azureADOnlyAuthentication\": \"<boolean>\",\n        \"state\": \"Updating\",\n        \"creationDate\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                              "createdAt": "2026-06-05T15:12:14.000Z",
+                                              "updatedAt": "2026-06-05T15:12:14.000Z",
+                                              "uid": "35240-7c2bde2b-b465-4660-a28c-3e693187c26f"
+                                            },
+                                            {
+                                              "id": "e2b206a1-2baf-47c7-808a-ca61cba567f3",
+                                              "name": "Error response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/azureADOnlyAuthentications?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "azureADOnlyAuthentications"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                              "createdAt": "2026-06-05T15:12:14.000Z",
+                                              "updatedAt": "2026-06-05T15:12:14.000Z",
+                                              "uid": "35240-e2b206a1-2baf-47c7-808a-ca61cba567f3"
+                                            }
+                                          ],
+                                          "createdAt": "2026-06-05T15:12:14.000Z",
+                                          "updatedAt": "2026-06-05T15:12:14.000Z",
+                                          "uid": "35240-d7fe399d-957b-4010-bba6-67642484c126"
+                                        }
+                                      ],
+                                      "id": "90f9a1fd-1f24-4838-88d2-5ed3ce3bec90",
+                                      "createdAt": "2026-06-05T15:12:14.000Z",
+                                      "updatedAt": "2026-06-05T15:12:14.000Z",
+                                      "uid": "35240-90f9a1fd-1f24-4838-88d2-5ed3ce3bec90"
+                                    }
+                                  ],
+                                  "id": "ef3f4a55-7f4b-4ef3-95a5-36140596fee3",
+                                  "createdAt": "2026-06-05T15:12:14.000Z",
+                                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                                  "uid": "35240-ef3f4a55-7f4b-4ef3-95a5-36140596fee3"
+                                }
+                              ],
+                              "id": "ab3b09da-3230-4b11-99eb-ebed15aa5949",
+                              "createdAt": "2026-06-05T15:12:14.000Z",
+                              "updatedAt": "2026-06-05T15:12:14.000Z",
+                              "uid": "35240-ab3b09da-3230-4b11-99eb-ebed15aa5949"
+                            }
+                          ],
+                          "id": "770745d7-b9c0-4667-90bd-959b56882f11",
+                          "createdAt": "2026-06-05T15:12:14.000Z",
+                          "updatedAt": "2026-06-05T15:12:14.000Z",
+                          "uid": "35240-770745d7-b9c0-4667-90bd-959b56882f11"
+                        }
+                      ],
+                      "id": "c8e1ebcc-6864-415c-89f4-734387554e0b",
+                      "createdAt": "2026-06-05T15:12:14.000Z",
+                      "updatedAt": "2026-06-05T15:12:14.000Z",
+                      "uid": "35240-c8e1ebcc-6864-415c-89f4-734387554e0b"
+                    }
+                  ],
+                  "id": "1f6cdde0-1ca3-482a-90bb-08818e0408bb",
+                  "createdAt": "2026-06-05T15:12:14.000Z",
+                  "updatedAt": "2026-06-05T15:12:14.000Z",
+                  "uid": "35240-1f6cdde0-1ca3-482a-90bb-08818e0408bb"
+                }
+              ],
+              "id": "3949c650-2ed4-4ed0-84c6-e73e5e534cb4",
+              "createdAt": "2026-06-05T15:12:14.000Z",
+              "updatedAt": "2026-06-05T15:12:14.000Z",
+              "uid": "35240-3949c650-2ed4-4ed0-84c6-e73e5e534cb4"
+            }
+          ],
+          "id": "77cceecb-07a8-4cec-a2ff-fa9884379ee8",
+          "createdAt": "2026-06-05T15:12:14.000Z",
+          "updatedAt": "2026-06-05T15:12:14.000Z",
+          "uid": "35240-77cceecb-07a8-4cec-a2ff-fa9884379ee8"
+        }
+      ],
+      "id": "53ff121e-ad4d-4c3e-9853-94969adb44dc",
+      "createdAt": "2026-06-05T15:12:14.000Z",
+      "updatedAt": "2026-06-05T15:12:14.000Z",
+      "uid": "35240-53ff121e-ad4d-4c3e-9853-94969adb44dc"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

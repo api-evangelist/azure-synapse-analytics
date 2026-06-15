@@ -1,0 +1,1422 @@
+{
+  "item": [
+    {
+      "id": "6125eeb6-6912-4122-bed1-40327bc878ec",
+      "name": "DataFlow",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0765f4f7-6ccb-444c-a3e7-c23fe1b350eb",
+          "name": "Azure Synapse Analytics List data flows",
+          "request": {
+            "name": "Azure Synapse Analytics List data flows",
+            "description": {
+              "content": "Lists data flows in the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dataflows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b96a0bec-b56d-46fa-b7ef-6c74e5b871e6",
+              "name": "Successfully retrieved the list of data flows.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"type\": \"Flowlet\",\n        \"description\": \"string\",\n        \"annotations\": [\n          \"string\",\n          \"string\"\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        },\n        \"typeProperties\": {\n          \"sources\": [\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          ],\n          \"sinks\": [\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          ],\n          \"transformations\": [\n            {\n              \"name\": \"string\",\n              \"description\": \"string\"\n            },\n            {\n              \"name\": \"string\",\n              \"description\": \"string\"\n            }\n          ],\n          \"script\": \"string\"\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"type\": \"MappingDataFlow\",\n        \"description\": \"string\",\n        \"annotations\": [\n          \"string\",\n          \"string\"\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        },\n        \"typeProperties\": {\n          \"sources\": [\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          ],\n          \"sinks\": [\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            },\n            {\n              \"name\": \"string\",\n              \"dataset\": {\n                \"referenceName\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"type\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            }\n          ],\n          \"transformations\": [\n            {\n              \"name\": \"string\",\n              \"description\": \"string\"\n            },\n            {\n              \"name\": \"string\",\n              \"description\": \"string\"\n            }\n          ],\n          \"script\": \"string\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79cb086e-0b92-440d-9e38-7dc7d620cbe0",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7c61648-a9b1-40b7-8af1-36c0b0a719c8",
+          "name": "Azure Synapse Analytics Get a data flow",
+          "request": {
+            "name": "Azure Synapse Analytics Get a data flow",
+            "description": {
+              "content": "Gets a data flow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dataflows",
+                ":dataFlowName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataFlowName",
+                  "description": "(Required) The data flow name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "If-None-Match",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64327275-5076-42d8-99a5-74f4f8febb4c",
+              "name": "Successfully retrieved the data flow.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"type\": \"Flowlet\",\n    \"description\": \"string\",\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"script\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fef7e001-834e-4bb5-9e05-d56e34328cd6",
+              "name": "Not modified.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Modified",
+              "code": 304,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aea8be3c-b412-41e6-b827-54229ee9b68b",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d706afd-9df2-4d0b-937e-b3ec89a1c657",
+          "name": "Azure Synapse Analytics Create or update a data flow",
+          "request": {
+            "name": "Azure Synapse Analytics Create or update a data flow",
+            "description": {
+              "content": "Creates or updates a data flow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dataflows",
+                ":dataFlowName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataFlowName",
+                  "description": "(Required) The data flow name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "If-Match",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ],\n      \"script\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "60f0c3a9-45be-4129-93df-3b0823d82cee",
+              "name": "Successfully updated the data flow.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"string\",\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"script\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"type\": \"Flowlet\",\n    \"description\": \"string\",\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"script\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "47566855-016d-4a75-a1a1-230b407475fc",
+              "name": "Data flow creation accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"string\",\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"script\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3761af03-92d3-4528-b095-83a2e4af00aa",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"string\",\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        },\n        {\n          \"name\": \"string\",\n          \"dataset\": {\n            \"referenceName\": \"string\",\n            \"type\": \"string\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"script\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77527467-7db4-4ccd-b97c-d1d7fa16510f",
+          "name": "Azure Synapse Analytics Delete a data flow",
+          "request": {
+            "name": "Azure Synapse Analytics Delete a data flow",
+            "description": {
+              "content": "Deletes a data flow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dataflows",
+                ":dataFlowName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataFlowName",
+                  "description": "(Required) The data flow name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aee794e6-5bb2-4e4e-a016-a49e5ea91e39",
+              "name": "Successfully deleted the data flow.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3a62379f-dfbe-4e54-a9f4-cc8b778d05ea",
+              "name": "Data flow deletion accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c7508f32-de23-4671-ad92-9e7d30910086",
+              "name": "Data flow not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ab0d2c56-245f-4f0b-b90e-57f834f538d6",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65e7edaf-0b30-4b10-b479-596d350113f3",
+          "name": "Azure Synapse Analytics Rename a data flow",
+          "request": {
+            "name": "Azure Synapse Analytics Rename a data flow",
+            "description": {
+              "content": "Renames a data flow.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dataflows",
+                ":dataFlowName",
+                "rename"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataFlowName",
+                  "description": "(Required) The data flow name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"newName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "887d3c15-7274-4703-9ed3-a31b9e26bd85",
+              "name": "Successfully renamed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1fe64da3-c654-422f-a1d1-d2bbd43cbdad",
+              "name": "Rename accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8613b6ff-2f5b-4018-bc13-8d84884efc15",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataFlowName",
+                      "description": "(Required) The data flow name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myworkspace",
+      "key": "workspaceName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "904b32bd-ae91-4c8e-805d-5ed237cd9785",
+    "name": "Azure Synapse Analytics - Data Flow API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Create and manage data flows for visual data transformation logic. Data flows enable code-free data transformation at scale within Synapse pipelines.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}

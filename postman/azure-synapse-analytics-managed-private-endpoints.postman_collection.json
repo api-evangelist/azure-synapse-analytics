@@ -1,0 +1,849 @@
+{
+  "info": {
+    "_postman_id": "4e5aabed-7452-4ad9-8d83-2ef205d9978e",
+    "name": "Azure Synapse Analytics - Managed Private Endpoints API",
+    "description": "Create and manage managed private endpoints within a Synapse managed virtual network. Enables secure, private connectivity to Azure resources without exposing traffic to the public internet.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:51.000Z",
+    "updatedAt": "2026-06-05T15:11:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4e5aabed-7452-4ad9-8d83-2ef205d9978e"
+  },
+  "item": [
+    {
+      "name": "managedVirtualNetworks",
+      "item": [
+        {
+          "name": "{managedVirtualNetworkName}",
+          "item": [
+            {
+              "name": "managedPrivateEndpoints",
+              "item": [
+                {
+                  "name": "{managedPrivateEndpointName}",
+                  "item": [
+                    {
+                      "name": "Azure Synapse Analytics Get a managed private endpoint",
+                      "id": "253dffae-b7dc-4911-a79a-ce1b60a28ff0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "managedVirtualNetworks",
+                            ":managedVirtualNetworkName",
+                            "managedPrivateEndpoints",
+                            ":managedPrivateEndpointName"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "abfdf2f8-8d47-490a-be49-c6689e0141e0",
+                              "key": "managedVirtualNetworkName",
+                              "value": "<string>",
+                              "description": "(Required) Managed virtual network name."
+                            },
+                            {
+                              "id": "60ee2284-abf3-4fb8-9e81-5c146e2742a2",
+                              "key": "managedPrivateEndpointName",
+                              "value": "<string>",
+                              "description": "(Required) Managed private endpoint name."
+                            }
+                          ]
+                        },
+                        "description": "Get a managed private endpoint."
+                      },
+                      "response": [
+                        {
+                          "id": "acf540a0-53e6-414a-9d7a-505036a0e5a8",
+                          "name": "Successfully retrieved.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "managedVirtualNetworks",
+                                ":managedVirtualNetworkName",
+                                "managedPrivateEndpoints",
+                                ":managedPrivateEndpointName"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01-preview"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "managedVirtualNetworkName"
+                                },
+                                {
+                                  "key": "managedPrivateEndpointName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateLinkResourceId\": \"<string>\",\n    \"groupId\": \"<string>\",\n    \"provisioningState\": \"<string>\",\n    \"connectionState\": {\n      \"status\": \"<string>\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"fqdns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"isReserved\": \"<boolean>\"\n  }\n}",
+                          "createdAt": "2026-06-05T15:11:52.000Z",
+                          "updatedAt": "2026-06-05T15:11:52.000Z",
+                          "uid": "35240-acf540a0-53e6-414a-9d7a-505036a0e5a8"
+                        },
+                        {
+                          "id": "dfd6bc48-7057-4cb6-8759-1fbd0b180603",
+                          "name": "Error response.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "managedVirtualNetworks",
+                                ":managedVirtualNetworkName",
+                                "managedPrivateEndpoints",
+                                ":managedPrivateEndpointName"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01-preview"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "managedVirtualNetworkName"
+                                },
+                                {
+                                  "key": "managedPrivateEndpointName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-06-05T15:11:52.000Z",
+                          "updatedAt": "2026-06-05T15:11:52.000Z",
+                          "uid": "35240-dfd6bc48-7057-4cb6-8759-1fbd0b180603"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:11:52.000Z",
+                      "updatedAt": "2026-06-05T15:11:52.000Z",
+                      "uid": "35240-253dffae-b7dc-4911-a79a-ce1b60a28ff0"
+                    },
+                    {
+                      "name": "Azure Synapse Analytics Create a managed private endpoint",
+                      "id": "711a0574-4f1f-4340-b97e-ec0bc2a7f9a5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateLinkResourceId\": \"<string>\",\n    \"groupId\": \"<string>\",\n    \"provisioningState\": \"<string>\",\n    \"connectionState\": {\n      \"status\": \"<string>\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"fqdns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"isReserved\": \"<boolean>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "managedVirtualNetworks",
+                            ":managedVirtualNetworkName",
+                            "managedPrivateEndpoints",
+                            ":managedPrivateEndpointName"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "876487f5-8482-47c9-b02a-4136c2ff0f1e",
+                              "key": "managedVirtualNetworkName",
+                              "value": "<string>",
+                              "description": "(Required) Managed virtual network name."
+                            },
+                            {
+                              "id": "1434ebda-58cc-4da4-b4f4-085ad003ee35",
+                              "key": "managedPrivateEndpointName",
+                              "value": "<string>",
+                              "description": "(Required) Managed private endpoint name."
+                            }
+                          ]
+                        },
+                        "description": "Create a managed private endpoint."
+                      },
+                      "response": [
+                        {
+                          "id": "697b2f17-dbdc-4882-b4d6-b3832a4f2006",
+                          "name": "Successfully created.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateLinkResourceId\": \"<string>\",\n    \"groupId\": \"<string>\",\n    \"provisioningState\": \"<string>\",\n    \"connectionState\": {\n      \"status\": \"<string>\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"fqdns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"isReserved\": \"<boolean>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "managedVirtualNetworks",
+                                ":managedVirtualNetworkName",
+                                "managedPrivateEndpoints",
+                                ":managedPrivateEndpointName"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01-preview"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "managedVirtualNetworkName"
+                                },
+                                {
+                                  "key": "managedPrivateEndpointName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateLinkResourceId\": \"<string>\",\n    \"groupId\": \"<string>\",\n    \"provisioningState\": \"<string>\",\n    \"connectionState\": {\n      \"status\": \"<string>\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"fqdns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"isReserved\": \"<boolean>\"\n  }\n}",
+                          "createdAt": "2026-06-05T15:11:52.000Z",
+                          "updatedAt": "2026-06-05T15:11:52.000Z",
+                          "uid": "35240-697b2f17-dbdc-4882-b4d6-b3832a4f2006"
+                        },
+                        {
+                          "id": "077a8552-9cc5-4033-9fcf-bb782b9e2409",
+                          "name": "Error response.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"privateLinkResourceId\": \"<string>\",\n    \"groupId\": \"<string>\",\n    \"provisioningState\": \"<string>\",\n    \"connectionState\": {\n      \"status\": \"<string>\",\n      \"description\": \"<string>\",\n      \"actionsRequired\": \"<string>\"\n    },\n    \"fqdns\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"isReserved\": \"<boolean>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "managedVirtualNetworks",
+                                ":managedVirtualNetworkName",
+                                "managedPrivateEndpoints",
+                                ":managedPrivateEndpointName"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01-preview"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "managedVirtualNetworkName"
+                                },
+                                {
+                                  "key": "managedPrivateEndpointName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-06-05T15:11:52.000Z",
+                          "updatedAt": "2026-06-05T15:11:52.000Z",
+                          "uid": "35240-077a8552-9cc5-4033-9fcf-bb782b9e2409"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:11:52.000Z",
+                      "updatedAt": "2026-06-05T15:11:52.000Z",
+                      "uid": "35240-711a0574-4f1f-4340-b97e-ec0bc2a7f9a5"
+                    },
+                    {
+                      "name": "Azure Synapse Analytics Delete a managed private endpoint",
+                      "id": "1fbde85f-2821-40d8-9784-d1724d7e5529",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "managedVirtualNetworks",
+                            ":managedVirtualNetworkName",
+                            "managedPrivateEndpoints",
+                            ":managedPrivateEndpointName"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "8db9bba1-9206-41ee-a273-274c25beb16d",
+                              "key": "managedVirtualNetworkName",
+                              "value": "<string>",
+                              "description": "(Required) Managed virtual network name."
+                            },
+                            {
+                              "id": "ba4d6c47-ead5-49f2-b6ce-7e3212e2dd05",
+                              "key": "managedPrivateEndpointName",
+                              "value": "<string>",
+                              "description": "(Required) Managed private endpoint name."
+                            }
+                          ]
+                        },
+                        "description": "Delete a managed private endpoint."
+                      },
+                      "response": [
+                        {
+                          "id": "091eab44-b167-4e42-ba67-376b18dd58fc",
+                          "name": "Deletion accepted.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "managedVirtualNetworks",
+                                ":managedVirtualNetworkName",
+                                "managedPrivateEndpoints",
+                                ":managedPrivateEndpointName"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01-preview"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "managedVirtualNetworkName"
+                                },
+                                {
+                                  "key": "managedPrivateEndpointName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Accepted",
+                          "code": 202,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:11:52.000Z",
+                          "updatedAt": "2026-06-05T15:11:52.000Z",
+                          "uid": "35240-091eab44-b167-4e42-ba67-376b18dd58fc"
+                        },
+                        {
+                          "id": "0e190a6c-6740-492c-87aa-d4883650f86d",
+                          "name": "Not found.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "managedVirtualNetworks",
+                                ":managedVirtualNetworkName",
+                                "managedPrivateEndpoints",
+                                ":managedPrivateEndpointName"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01-preview"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "managedVirtualNetworkName"
+                                },
+                                {
+                                  "key": "managedPrivateEndpointName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-06-05T15:11:52.000Z",
+                          "updatedAt": "2026-06-05T15:11:52.000Z",
+                          "uid": "35240-0e190a6c-6740-492c-87aa-d4883650f86d"
+                        },
+                        {
+                          "id": "f36f2ccc-94fd-4718-a8cd-87080de482e1",
+                          "name": "Error response.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName?api-version=2021-06-01-preview",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "managedVirtualNetworks",
+                                ":managedVirtualNetworkName",
+                                "managedPrivateEndpoints",
+                                ":managedPrivateEndpointName"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01-preview"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "managedVirtualNetworkName"
+                                },
+                                {
+                                  "key": "managedPrivateEndpointName"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                          "createdAt": "2026-06-05T15:11:52.000Z",
+                          "updatedAt": "2026-06-05T15:11:52.000Z",
+                          "uid": "35240-f36f2ccc-94fd-4718-a8cd-87080de482e1"
+                        }
+                      ],
+                      "createdAt": "2026-06-05T15:11:52.000Z",
+                      "updatedAt": "2026-06-05T15:11:52.000Z",
+                      "uid": "35240-1fbde85f-2821-40d8-9784-d1724d7e5529"
+                    }
+                  ],
+                  "id": "a8c167b8-a86b-4869-a441-dd51cdcff367",
+                  "createdAt": "2026-06-05T15:11:52.000Z",
+                  "updatedAt": "2026-06-05T15:11:52.000Z",
+                  "uid": "35240-a8c167b8-a86b-4869-a441-dd51cdcff367"
+                },
+                {
+                  "name": "Azure Synapse Analytics List managed private endpoints",
+                  "id": "d34ddcff-e78b-44d9-bee9-830c4573ec54",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "managedVirtualNetworks",
+                        ":managedVirtualNetworkName",
+                        "managedPrivateEndpoints"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "76dbb473-f02a-4104-a213-e16c3c9e4039",
+                          "key": "managedVirtualNetworkName",
+                          "value": "<string>",
+                          "description": "(Required) Managed virtual network name."
+                        }
+                      ]
+                    },
+                    "description": "List managed private endpoints in a managed virtual network."
+                  },
+                  "response": [
+                    {
+                      "id": "076597fe-a83d-47d1-951f-7529bbc39925",
+                      "name": "Successfully retrieved the list.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "managedVirtualNetworks",
+                            ":managedVirtualNetworkName",
+                            "managedPrivateEndpoints"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "managedVirtualNetworkName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"privateLinkResourceId\": \"<string>\",\n        \"groupId\": \"<string>\",\n        \"provisioningState\": \"<string>\",\n        \"connectionState\": {\n          \"status\": \"<string>\",\n          \"description\": \"<string>\",\n          \"actionsRequired\": \"<string>\"\n        },\n        \"fqdns\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"isReserved\": \"<boolean>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"privateLinkResourceId\": \"<string>\",\n        \"groupId\": \"<string>\",\n        \"provisioningState\": \"<string>\",\n        \"connectionState\": {\n          \"status\": \"<string>\",\n          \"description\": \"<string>\",\n          \"actionsRequired\": \"<string>\"\n        },\n        \"fqdns\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"isReserved\": \"<boolean>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                      "createdAt": "2026-06-05T15:11:52.000Z",
+                      "updatedAt": "2026-06-05T15:11:52.000Z",
+                      "uid": "35240-076597fe-a83d-47d1-951f-7529bbc39925"
+                    },
+                    {
+                      "id": "317ebace-a234-491c-aa0f-5b6a68d4c3e9",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "managedVirtualNetworks",
+                            ":managedVirtualNetworkName",
+                            "managedPrivateEndpoints"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "managedVirtualNetworkName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:52.000Z",
+                      "updatedAt": "2026-06-05T15:11:52.000Z",
+                      "uid": "35240-317ebace-a234-491c-aa0f-5b6a68d4c3e9"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:52.000Z",
+                  "updatedAt": "2026-06-05T15:11:52.000Z",
+                  "uid": "35240-d34ddcff-e78b-44d9-bee9-830c4573ec54"
+                }
+              ],
+              "id": "dbe2c424-5adf-44bd-bfc2-aaed3e5d72f6",
+              "createdAt": "2026-06-05T15:11:52.000Z",
+              "updatedAt": "2026-06-05T15:11:52.000Z",
+              "uid": "35240-dbe2c424-5adf-44bd-bfc2-aaed3e5d72f6"
+            }
+          ],
+          "id": "044cdc66-2fe6-4aa4-87f4-83ed8c3c2def",
+          "createdAt": "2026-06-05T15:11:52.000Z",
+          "updatedAt": "2026-06-05T15:11:52.000Z",
+          "uid": "35240-044cdc66-2fe6-4aa4-87f4-83ed8c3c2def"
+        }
+      ],
+      "id": "b374061b-9171-4862-8fb3-6b75ea1b4108",
+      "createdAt": "2026-06-05T15:11:52.000Z",
+      "updatedAt": "2026-06-05T15:11:52.000Z",
+      "uid": "35240-b374061b-9171-4862-8fb3-6b75ea1b4108"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

@@ -1,0 +1,1975 @@
+{
+  "item": [
+    {
+      "id": "97965abd-eb56-40ed-94ae-45bc5d79b149",
+      "name": "SparkJobDefinition",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "51d4b30e-08e2-43a3-8de1-fe9507606a7b",
+          "name": "Azure Synapse Analytics List Spark job definitions",
+          "request": {
+            "name": "Azure Synapse Analytics List Spark job definitions",
+            "description": {
+              "content": "Lists Spark job definitions in the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sparkJobDefinitions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea980fea-9de2-41f2-ae4e-ba09d203eff9",
+              "name": "Successfully retrieved the list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"targetBigDataPool\": {\n          \"referenceName\": \"string\",\n          \"type\": \"string\"\n        },\n        \"jobProperties\": {\n          \"name\": \"string\",\n          \"file\": \"string\",\n          \"className\": \"string\",\n          \"conf\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\",\n            \"key_2\": \"string\",\n            \"key_3\": \"string\"\n          },\n          \"args\": [\n            \"string\",\n            \"string\"\n          ],\n          \"jars\": [\n            \"string\",\n            \"string\"\n          ],\n          \"pyFiles\": [\n            \"string\",\n            \"string\"\n          ],\n          \"files\": [\n            \"string\",\n            \"string\"\n          ],\n          \"driverMemory\": \"string\",\n          \"driverCores\": 2280,\n          \"executorMemory\": \"string\",\n          \"executorCores\": 7961,\n          \"numExecutors\": 4633\n        },\n        \"description\": \"string\",\n        \"requiredSparkVersion\": \"string\",\n        \"language\": \"string\",\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"targetBigDataPool\": {\n          \"referenceName\": \"string\",\n          \"type\": \"string\"\n        },\n        \"jobProperties\": {\n          \"name\": \"string\",\n          \"file\": \"string\",\n          \"className\": \"string\",\n          \"conf\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"args\": [\n            \"string\",\n            \"string\"\n          ],\n          \"jars\": [\n            \"string\",\n            \"string\"\n          ],\n          \"pyFiles\": [\n            \"string\",\n            \"string\"\n          ],\n          \"files\": [\n            \"string\",\n            \"string\"\n          ],\n          \"driverMemory\": \"string\",\n          \"driverCores\": 3961,\n          \"executorMemory\": \"string\",\n          \"executorCores\": 2101,\n          \"numExecutors\": 9932\n        },\n        \"description\": \"string\",\n        \"requiredSparkVersion\": \"string\",\n        \"language\": \"string\",\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9af51247-3958-4f97-8140-439642d17e4c",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "edee22d3-c9ec-4a9d-986e-54579c9eea7b",
+          "name": "Azure Synapse Analytics Get a Spark job definition",
+          "request": {
+            "name": "Azure Synapse Analytics Get a Spark job definition",
+            "description": {
+              "content": "Gets a Spark job definition.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sparkJobDefinitions",
+                ":sparkJobDefinitionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkJobDefinitionName",
+                  "description": "(Required) The Spark job definition name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "If-None-Match",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed6e52fb-5d20-4c5b-8e1b-77e00e0d64d8",
+              "name": "Successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 9456,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 2931,\n      \"numExecutors\": 6898\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce446ac0-2d15-47a7-85ba-d9714119c71d",
+              "name": "Not modified.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Modified",
+              "code": 304,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a7723ba1-5832-4d73-826c-91c3514c32f3",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-None-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f55f54f-900e-47f4-b2bf-3575a67741af",
+          "name": "Azure Synapse Analytics Create or update a Spark job definition",
+          "request": {
+            "name": "Azure Synapse Analytics Create or update a Spark job definition",
+            "description": {
+              "content": "Creates or updates a Spark job definition.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sparkJobDefinitions",
+                ":sparkJobDefinitionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkJobDefinitionName",
+                  "description": "(Required) The Spark job definition name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "If-Match",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"jobProperties\": {\n      \"name\": \"<string>\",\n      \"file\": \"<string>\",\n      \"className\": \"<string>\",\n      \"conf\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"jars\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"pyFiles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"files\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"requiredSparkVersion\": \"<string>\",\n    \"language\": \"<string>\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4945e808-8377-4d82-9dd5-79fdc7f64fe3",
+              "name": "Successfully updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 2829,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 5898,\n      \"numExecutors\": 7097\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 9456,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 2931,\n      \"numExecutors\": 6898\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "21162f2b-73cd-49cd-9bad-b0daf12e7aaf",
+              "name": "Creation accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 2829,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 5898,\n      \"numExecutors\": 7097\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d044f4bf-874e-4758-936d-f45a8e1091fd",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "If-Match",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 2829,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 5898,\n      \"numExecutors\": 7097\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a53bf96-3471-498f-ad8e-24cbe27a0096",
+          "name": "Azure Synapse Analytics Delete a Spark job definition",
+          "request": {
+            "name": "Azure Synapse Analytics Delete a Spark job definition",
+            "description": {
+              "content": "Deletes a Spark job definition.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sparkJobDefinitions",
+                ":sparkJobDefinitionName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkJobDefinitionName",
+                  "description": "(Required) The Spark job definition name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "adf0b01f-eee6-4e0b-8fcf-14ab63e61288",
+              "name": "Successfully deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05c4dea3-1509-4319-bdc8-80ce497ecf13",
+              "name": "Deletion accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d87c7ee2-a0f8-4cab-869d-b0f94d6cb3bd",
+              "name": "Not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6dab5e2e-daf3-4cb6-aa64-8c83da79bc29",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88f1235c-b551-4970-af87-49dc01d16881",
+          "name": "Azure Synapse Analytics Rename a Spark job definition",
+          "request": {
+            "name": "Azure Synapse Analytics Rename a Spark job definition",
+            "description": {
+              "content": "Renames a Spark job definition.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sparkJobDefinitions",
+                ":sparkJobDefinitionName",
+                "rename"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkJobDefinitionName",
+                  "description": "(Required) The Spark job definition name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"newName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aec3d460-9f66-4867-bdea-5da5e71a7606",
+              "name": "Successfully renamed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "146bda63-cd06-4360-a3de-dbd92ec560c8",
+              "name": "Rename accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a0dae24-886a-4d5b-aa54-852b49d6c741",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ebac18d-6f51-4b7f-821d-b241dc2f02b5",
+          "name": "Azure Synapse Analytics Execute a Spark job definition",
+          "request": {
+            "name": "Azure Synapse Analytics Execute a Spark job definition",
+            "description": {
+              "content": "Executes the Spark job definition.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sparkJobDefinitions",
+                ":sparkJobDefinitionName",
+                "execute"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkJobDefinitionName",
+                  "description": "(Required) The Spark job definition name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fa1d22c9-8ea7-4728-b4ad-c1d1f103c376",
+              "name": "Successfully submitted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "execute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6719,\n  \"name\": \"string\",\n  \"state\": \"string\",\n  \"appId\": \"string\",\n  \"log\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0f66ca8-533e-492d-b447-36b15834bb98",
+              "name": "Execution accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "execute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bb86bb3e-f05a-4cf4-8d3e-c77e0fd4ce78",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "execute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c5078bea-5c86-439f-ab74-655556202aa7",
+          "name": "Azure Synapse Analytics Debug a Spark job definition",
+          "request": {
+            "name": "Azure Synapse Analytics Debug a Spark job definition",
+            "description": {
+              "content": "Debug the Spark job definition.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sparkJobDefinitions",
+                ":sparkJobDefinitionName",
+                "debug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkJobDefinitionName",
+                  "description": "(Required) The Spark job definition name."
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"jobProperties\": {\n      \"name\": \"<string>\",\n      \"file\": \"<string>\",\n      \"className\": \"<string>\",\n      \"conf\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"jars\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"pyFiles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"files\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"requiredSparkVersion\": \"<string>\",\n    \"language\": \"<string>\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7c972955-fb45-4a23-82ce-de8e90e8ef64",
+              "name": "Successfully submitted debug.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "debug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 2829,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 5898,\n      \"numExecutors\": 7097\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6719,\n  \"name\": \"string\",\n  \"state\": \"string\",\n  \"appId\": \"string\",\n  \"log\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba9507db-b86e-4bff-b81e-c5464725ca90",
+              "name": "Debug accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "debug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 2829,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 5898,\n      \"numExecutors\": 7097\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b9c9a506-027a-41d0-95d8-2acd0211b5c1",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sparkJobDefinitions",
+                    ":sparkJobDefinitionName",
+                    "debug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkJobDefinitionName",
+                      "description": "(Required) The Spark job definition name."
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"targetBigDataPool\": {\n      \"referenceName\": \"string\",\n      \"type\": \"string\"\n    },\n    \"jobProperties\": {\n      \"name\": \"string\",\n      \"file\": \"string\",\n      \"className\": \"string\",\n      \"conf\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"args\": [\n        \"string\",\n        \"string\"\n      ],\n      \"jars\": [\n        \"string\",\n        \"string\"\n      ],\n      \"pyFiles\": [\n        \"string\",\n        \"string\"\n      ],\n      \"files\": [\n        \"string\",\n        \"string\"\n      ],\n      \"driverMemory\": \"string\",\n      \"driverCores\": 2829,\n      \"executorMemory\": \"string\",\n      \"executorCores\": 5898,\n      \"numExecutors\": 7097\n    },\n    \"description\": \"string\",\n    \"requiredSparkVersion\": \"string\",\n    \"language\": \"string\",\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myworkspace",
+      "key": "workspaceName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "40100ec5-322f-4184-a2ee-c7e178d8c3fd",
+    "name": "Azure Synapse Analytics - Spark Job Definition API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Create and manage Spark job definitions as reusable templates for batch processing. Spark job definitions encapsulate configuration, code, and dependencies for repeatable execution.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}

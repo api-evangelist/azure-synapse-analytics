@@ -1,0 +1,1343 @@
+{
+  "info": {
+    "_postman_id": "3af67f0a-82aa-4703-bbcb-a8eb014b7215",
+    "name": "Azure Synapse Analytics - Notebook API",
+    "description": "Create, update, list, and delete notebooks within a Synapse workspace. Notebooks support interactive data exploration using Python, Scala, SQL, and .NET languages.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:43.000Z",
+    "updatedAt": "2026-06-05T15:11:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3af67f0a-82aa-4703-bbcb-a8eb014b7215"
+  },
+  "item": [
+    {
+      "name": "notebooks",
+      "item": [
+        {
+          "name": "summary",
+          "item": [
+            {
+              "name": "Azure Synapse Analytics List notebook summaries",
+              "id": "8b013263-99bb-48ff-bce9-fa24f2afd864",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notebooks/summary?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notebooks",
+                    "summary"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                },
+                "description": "Lists a summary of notebooks in the workspace."
+              },
+              "response": [
+                {
+                  "id": "6dc76e14-cdd2-4323-b0f0-0f83832a36f2",
+                  "name": "Successfully retrieved the notebook summaries.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/summary?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        "summary"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"nbformat\": \"<integer>\",\n        \"nbformat_minor\": \"<integer>\",\n        \"bigDataPool\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"<string>\",\n          \"driverCores\": \"<integer>\",\n          \"executorMemory\": \"<string>\",\n          \"executorCores\": \"<integer>\",\n          \"numExecutors\": \"<integer>\"\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"<string>\",\n            \"display_name\": \"<string>\"\n          },\n          \"language_info\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          },\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          }\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"nbformat\": \"<integer>\",\n        \"nbformat_minor\": \"<integer>\",\n        \"bigDataPool\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"<string>\",\n          \"driverCores\": \"<integer>\",\n          \"executorMemory\": \"<string>\",\n          \"executorCores\": \"<integer>\",\n          \"numExecutors\": \"<integer>\"\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"<string>\",\n            \"display_name\": \"<string>\"\n          },\n          \"language_info\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          },\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          }\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-6dc76e14-cdd2-4323-b0f0-0f83832a36f2"
+                },
+                {
+                  "id": "8c67fc6f-3ff3-4f26-8486-4f17065345d1",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/summary?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        "summary"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-8c67fc6f-3ff3-4f26-8486-4f17065345d1"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:44.000Z",
+              "updatedAt": "2026-06-05T15:11:44.000Z",
+              "uid": "35240-8b013263-99bb-48ff-bce9-fa24f2afd864"
+            }
+          ],
+          "id": "232d4d4e-f7d8-42bb-8b76-d7b865944782",
+          "createdAt": "2026-06-05T15:11:44.000Z",
+          "updatedAt": "2026-06-05T15:11:44.000Z",
+          "uid": "35240-232d4d4e-f7d8-42bb-8b76-d7b865944782"
+        },
+        {
+          "name": "{notebookName}",
+          "item": [
+            {
+              "name": "rename",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Rename a notebook",
+                  "id": "da186c53-cd3c-4567-abe8-f7df3b8cbb30",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"newName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName/rename?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName",
+                        "rename"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "0b2ef21c-fd56-4364-8b3c-a074db43103e",
+                          "key": "notebookName",
+                          "value": "<string>",
+                          "description": "(Required) The notebook name."
+                        }
+                      ]
+                    },
+                    "description": "Renames a notebook."
+                  },
+                  "response": [
+                    {
+                      "id": "d0fcd043-1fe2-45e6-950c-3a19cb921b4b",
+                      "name": "Successfully renamed the notebook.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/notebooks/:notebookName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "notebooks",
+                            ":notebookName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "notebookName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:44.000Z",
+                      "updatedAt": "2026-06-05T15:11:44.000Z",
+                      "uid": "35240-d0fcd043-1fe2-45e6-950c-3a19cb921b4b"
+                    },
+                    {
+                      "id": "4ee1f57d-63d1-43c0-9430-c2d9615ad814",
+                      "name": "Notebook rename accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/notebooks/:notebookName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "notebooks",
+                            ":notebookName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "notebookName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:44.000Z",
+                      "updatedAt": "2026-06-05T15:11:44.000Z",
+                      "uid": "35240-4ee1f57d-63d1-43c0-9430-c2d9615ad814"
+                    },
+                    {
+                      "id": "ffa25569-17d1-49e7-951d-8b9c4973c7fe",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/notebooks/:notebookName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "notebooks",
+                            ":notebookName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "notebookName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:44.000Z",
+                      "updatedAt": "2026-06-05T15:11:44.000Z",
+                      "uid": "35240-ffa25569-17d1-49e7-951d-8b9c4973c7fe"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-da186c53-cd3c-4567-abe8-f7df3b8cbb30"
+                }
+              ],
+              "id": "e25a2226-76c2-4a9c-8d6d-7e74f7090a5c",
+              "createdAt": "2026-06-05T15:11:44.000Z",
+              "updatedAt": "2026-06-05T15:11:44.000Z",
+              "uid": "35240-e25a2226-76c2-4a9c-8d6d-7e74f7090a5c"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a notebook",
+              "id": "ccdf6a87-90f6-423c-8f74-0b80d73404f6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "55d70930-b512-4391-9c7f-35eabc16ae3c",
+                      "key": "notebookName",
+                      "value": "<string>",
+                      "description": "(Required) The notebook name."
+                    }
+                  ]
+                },
+                "description": "Gets a notebook."
+              },
+              "response": [
+                {
+                  "id": "e56a8143-98b6-48c3-b6f6-6581e25f1475",
+                  "name": "Successfully retrieved the notebook.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"nbformat\": \"<integer>\",\n    \"nbformat_minor\": \"<integer>\",\n    \"bigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"<string>\",\n        \"display_name\": \"<string>\"\n      },\n      \"language_info\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-e56a8143-98b6-48c3-b6f6-6581e25f1475"
+                },
+                {
+                  "id": "eeff7359-1a06-4b0c-82d1-c2bf3033485c",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-eeff7359-1a06-4b0c-82d1-c2bf3033485c"
+                },
+                {
+                  "id": "7ed59e6f-878c-4167-9900-62e27baae6ed",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-7ed59e6f-878c-4167-9900-62e27baae6ed"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:44.000Z",
+              "updatedAt": "2026-06-05T15:11:44.000Z",
+              "uid": "35240-ccdf6a87-90f6-423c-8f74-0b80d73404f6"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a notebook",
+              "id": "644a732a-039d-4861-8bc8-b7b42d9d3ef1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"nbformat\": \"<integer>\",\n    \"nbformat_minor\": \"<integer>\",\n    \"bigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"<string>\",\n        \"display_name\": \"<string>\"\n      },\n      \"language_info\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "3ab36afa-5d7e-4ae5-9f6e-ec013047aa1a",
+                      "key": "notebookName",
+                      "value": "<string>",
+                      "description": "(Required) The notebook name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a notebook."
+              },
+              "response": [
+                {
+                  "id": "7cdea9ec-9937-4823-b32d-35704ddb0baf",
+                  "name": "Successfully updated the notebook.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"nbformat\": \"<integer>\",\n    \"nbformat_minor\": \"<integer>\",\n    \"bigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"<string>\",\n        \"display_name\": \"<string>\"\n      },\n      \"language_info\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"nbformat\": \"<integer>\",\n    \"nbformat_minor\": \"<integer>\",\n    \"bigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"<string>\",\n        \"display_name\": \"<string>\"\n      },\n      \"language_info\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-7cdea9ec-9937-4823-b32d-35704ddb0baf"
+                },
+                {
+                  "id": "12007098-30ad-4981-b613-cf3a251d7bff",
+                  "name": "Notebook creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"nbformat\": \"<integer>\",\n    \"nbformat_minor\": \"<integer>\",\n    \"bigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"<string>\",\n        \"display_name\": \"<string>\"\n      },\n      \"language_info\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-12007098-30ad-4981-b613-cf3a251d7bff"
+                },
+                {
+                  "id": "29f89fd3-c240-43bb-a9a7-72ee66d4a716",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"nbformat\": \"<integer>\",\n    \"nbformat_minor\": \"<integer>\",\n    \"bigDataPool\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"sessionProperties\": {\n      \"driverMemory\": \"<string>\",\n      \"driverCores\": \"<integer>\",\n      \"executorMemory\": \"<string>\",\n      \"executorCores\": \"<integer>\",\n      \"numExecutors\": \"<integer>\"\n    },\n    \"metadata\": {\n      \"kernelspec\": {\n        \"name\": \"<string>\",\n        \"display_name\": \"<string>\"\n      },\n      \"language_info\": {\n        \"name\": \"<string>\"\n      }\n    },\n    \"cells\": [\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      },\n      {\n        \"cell_type\": \"<string>\",\n        \"source\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"metadata\": {}\n      }\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-29f89fd3-c240-43bb-a9a7-72ee66d4a716"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:44.000Z",
+              "updatedAt": "2026-06-05T15:11:44.000Z",
+              "uid": "35240-644a732a-039d-4861-8bc8-b7b42d9d3ef1"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a notebook",
+              "id": "fec7f638-7280-4e88-ad70-acc0eb2e9aa6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notebooks",
+                    ":notebookName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "48e6f5a0-02f9-4475-b284-6badb9351422",
+                      "key": "notebookName",
+                      "value": "<string>",
+                      "description": "(Required) The notebook name."
+                    }
+                  ]
+                },
+                "description": "Deletes a notebook."
+              },
+              "response": [
+                {
+                  "id": "40e7e58d-39d6-415c-936c-d67f2bf39fd4",
+                  "name": "Successfully deleted the notebook.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-40e7e58d-39d6-415c-936c-d67f2bf39fd4"
+                },
+                {
+                  "id": "721f6b5e-3be0-40d2-ab89-18fa7932449c",
+                  "name": "Notebook deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-721f6b5e-3be0-40d2-ab89-18fa7932449c"
+                },
+                {
+                  "id": "09f042b3-e469-4702-bceb-e8532a33df10",
+                  "name": "Notebook not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-09f042b3-e469-4702-bceb-e8532a33df10"
+                },
+                {
+                  "id": "f11be794-e984-4f71-9863-a0f34765d85a",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/notebooks/:notebookName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "notebooks",
+                        ":notebookName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "notebookName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:44.000Z",
+                  "updatedAt": "2026-06-05T15:11:44.000Z",
+                  "uid": "35240-f11be794-e984-4f71-9863-a0f34765d85a"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:44.000Z",
+              "updatedAt": "2026-06-05T15:11:44.000Z",
+              "uid": "35240-fec7f638-7280-4e88-ad70-acc0eb2e9aa6"
+            }
+          ],
+          "id": "7ed94980-c7d1-457e-ba64-30c094965164",
+          "createdAt": "2026-06-05T15:11:44.000Z",
+          "updatedAt": "2026-06-05T15:11:44.000Z",
+          "uid": "35240-7ed94980-c7d1-457e-ba64-30c094965164"
+        },
+        {
+          "name": "Azure Synapse Analytics List notebooks",
+          "id": "14919077-e24a-4af2-b5c4-3bb8cae45055",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/notebooks?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "notebooks"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Lists notebooks in the workspace."
+          },
+          "response": [
+            {
+              "id": "1dbf0a23-47e0-4a51-953c-a31f7697cc57",
+              "name": "Successfully retrieved the list of notebooks.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notebooks?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notebooks"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"nbformat\": \"<integer>\",\n        \"nbformat_minor\": \"<integer>\",\n        \"bigDataPool\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"<string>\",\n          \"driverCores\": \"<integer>\",\n          \"executorMemory\": \"<string>\",\n          \"executorCores\": \"<integer>\",\n          \"numExecutors\": \"<integer>\"\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"<string>\",\n            \"display_name\": \"<string>\"\n          },\n          \"language_info\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          },\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          }\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"nbformat\": \"<integer>\",\n        \"nbformat_minor\": \"<integer>\",\n        \"bigDataPool\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"sessionProperties\": {\n          \"driverMemory\": \"<string>\",\n          \"driverCores\": \"<integer>\",\n          \"executorMemory\": \"<string>\",\n          \"executorCores\": \"<integer>\",\n          \"numExecutors\": \"<integer>\"\n        },\n        \"metadata\": {\n          \"kernelspec\": {\n            \"name\": \"<string>\",\n            \"display_name\": \"<string>\"\n          },\n          \"language_info\": {\n            \"name\": \"<string>\"\n          }\n        },\n        \"cells\": [\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          },\n          {\n            \"cell_type\": \"<string>\",\n            \"source\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"metadata\": {}\n          }\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:44.000Z",
+              "updatedAt": "2026-06-05T15:11:44.000Z",
+              "uid": "35240-1dbf0a23-47e0-4a51-953c-a31f7697cc57"
+            },
+            {
+              "id": "3d47bc5f-b57c-48bd-9c8c-d3f08495e3df",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/notebooks?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "notebooks"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:44.000Z",
+              "updatedAt": "2026-06-05T15:11:44.000Z",
+              "uid": "35240-3d47bc5f-b57c-48bd-9c8c-d3f08495e3df"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:44.000Z",
+          "updatedAt": "2026-06-05T15:11:44.000Z",
+          "uid": "35240-14919077-e24a-4af2-b5c4-3bb8cae45055"
+        }
+      ],
+      "id": "46112ad2-05f6-45d7-996a-ca38942c728b",
+      "createdAt": "2026-06-05T15:11:44.000Z",
+      "updatedAt": "2026-06-05T15:11:44.000Z",
+      "uid": "35240-46112ad2-05f6-45d7-996a-ca38942c728b"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

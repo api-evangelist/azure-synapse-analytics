@@ -1,0 +1,1035 @@
+{
+  "info": {
+    "_postman_id": "9c01b087-6aea-4e32-ac85-f1a59dfa532e",
+    "name": "Azure Synapse Analytics - Library API",
+    "description": "Manage workspace libraries including JAR files, Python wheels, and other packages used by Spark pools. Supports uploading, listing, and deleting library resources.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:53.000Z",
+    "updatedAt": "2026-06-05T15:11:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9c01b087-6aea-4e32-ac85-f1a59dfa532e"
+  },
+  "item": [
+    {
+      "name": "libraries",
+      "item": [
+        {
+          "name": "{libraryName}",
+          "item": [
+            {
+              "name": "flush",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Flush a library",
+                  "id": "d488a55b-db26-4405-88f7-d8fd2ce7cd1f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName/flush?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName",
+                        "flush"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "6e068c31-0d20-454e-a86f-14af390b4d08",
+                          "key": "libraryName",
+                          "value": "<string>",
+                          "description": "(Required) Library name (e.g., library.jar or library.whl)."
+                        }
+                      ]
+                    },
+                    "description": "Flush a library resource."
+                  },
+                  "response": [
+                    {
+                      "id": "459fcc6d-350d-461c-a01e-da3a37395fc4",
+                      "name": "Successfully flushed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/libraries/:libraryName/flush?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "libraries",
+                            ":libraryName",
+                            "flush"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "libraryName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:54.000Z",
+                      "updatedAt": "2026-06-05T15:11:54.000Z",
+                      "uid": "35240-459fcc6d-350d-461c-a01e-da3a37395fc4"
+                    },
+                    {
+                      "id": "388d50f8-3aad-4fbd-9d47-50a552391995",
+                      "name": "Flush accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/libraries/:libraryName/flush?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "libraries",
+                            ":libraryName",
+                            "flush"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "libraryName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:54.000Z",
+                      "updatedAt": "2026-06-05T15:11:54.000Z",
+                      "uid": "35240-388d50f8-3aad-4fbd-9d47-50a552391995"
+                    },
+                    {
+                      "id": "1c7ebbaa-9af2-40c3-8ddb-a8d5a3eb54b9",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/libraries/:libraryName/flush?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "libraries",
+                            ":libraryName",
+                            "flush"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "libraryName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:54.000Z",
+                      "updatedAt": "2026-06-05T15:11:54.000Z",
+                      "uid": "35240-1c7ebbaa-9af2-40c3-8ddb-a8d5a3eb54b9"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-d488a55b-db26-4405-88f7-d8fd2ce7cd1f"
+                }
+              ],
+              "id": "b73e4b00-3df9-49a0-8d38-99019e96d31e",
+              "createdAt": "2026-06-05T15:11:54.000Z",
+              "updatedAt": "2026-06-05T15:11:54.000Z",
+              "uid": "35240-b73e4b00-3df9-49a0-8d38-99019e96d31e"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a library",
+              "id": "03cfca87-c4e1-48ac-a6b3-04bd3ee5adc0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "libraries",
+                    ":libraryName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "c5fa61e7-2504-4753-bcee-dedb490d5e4b",
+                      "key": "libraryName",
+                      "value": "<string>",
+                      "description": "(Required) Library name (e.g., library.jar or library.whl)."
+                    }
+                  ]
+                },
+                "description": "Get a library resource."
+              },
+              "response": [
+                {
+                  "id": "321d7e21-cc2a-4bc2-82f5-bef479cdd1e4",
+                  "name": "Successfully retrieved.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"name\": \"<string>\",\n    \"path\": \"<string>\",\n    \"containerName\": \"<string>\",\n    \"uploadedTimestamp\": \"<dateTime>\",\n    \"type\": \"<string>\",\n    \"provisioningStatus\": \"<string>\",\n    \"creatorId\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-321d7e21-cc2a-4bc2-82f5-bef479cdd1e4"
+                },
+                {
+                  "id": "8a028e47-fa7d-4343-80a1-90f8aa39858f",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-8a028e47-fa7d-4343-80a1-90f8aa39858f"
+                },
+                {
+                  "id": "d9e7f742-9697-480b-b3fc-fd9247c6ce96",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-d9e7f742-9697-480b-b3fc-fd9247c6ce96"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:54.000Z",
+              "updatedAt": "2026-06-05T15:11:54.000Z",
+              "uid": "35240-03cfca87-c4e1-48ac-a6b3-04bd3ee5adc0"
+            },
+            {
+              "name": "Azure Synapse Analytics Upload a library",
+              "id": "bc18000b-2290-4d86-af67-b5fc5ea6424e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "description": "Set this header to a byte offset at which the block is expected to be appended.",
+                    "key": "x-ms-blob-condition-appendpos",
+                    "value": "<long>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/octet-stream"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "libraries",
+                    ":libraryName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "592def16-2d33-4985-83f9-cb38bbc805be",
+                      "key": "libraryName",
+                      "value": "<string>",
+                      "description": "(Required) Library name (e.g., library.jar or library.whl)."
+                    }
+                  ]
+                },
+                "description": "Creates or appends to a library resource."
+              },
+              "response": [
+                {
+                  "id": "5a5735e9-78a7-469a-8eab-f9feeec72db3",
+                  "name": "Successfully uploaded.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": "Set this header to a byte offset at which the block is expected to be appended.",
+                        "key": "x-ms-blob-condition-appendpos",
+                        "value": "<long>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/octet-stream"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<binary>"
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-5a5735e9-78a7-469a-8eab-f9feeec72db3"
+                },
+                {
+                  "id": "36ace96e-58c4-4af9-8e0f-7eef3c10ad9a",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "description": "Set this header to a byte offset at which the block is expected to be appended.",
+                        "key": "x-ms-blob-condition-appendpos",
+                        "value": "<long>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/octet-stream"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "<binary>"
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-36ace96e-58c4-4af9-8e0f-7eef3c10ad9a"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:54.000Z",
+              "updatedAt": "2026-06-05T15:11:54.000Z",
+              "uid": "35240-bc18000b-2290-4d86-af67-b5fc5ea6424e"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a library",
+              "id": "45797647-36aa-4271-9c90-82e113334bca",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "libraries",
+                    ":libraryName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "55a85668-2951-4085-a38e-c701354fa6fb",
+                      "key": "libraryName",
+                      "value": "<string>",
+                      "description": "(Required) Library name (e.g., library.jar or library.whl)."
+                    }
+                  ]
+                },
+                "description": "Delete a library resource."
+              },
+              "response": [
+                {
+                  "id": "e480e0f1-31c5-4292-a6d5-ad042c5c35a9",
+                  "name": "Successfully deleted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-e480e0f1-31c5-4292-a6d5-ad042c5c35a9"
+                },
+                {
+                  "id": "68886c81-a5fd-437c-bd50-2f69a4b0a076",
+                  "name": "Deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-68886c81-a5fd-437c-bd50-2f69a4b0a076"
+                },
+                {
+                  "id": "2f540368-8eae-4072-b085-d8273179a0d8",
+                  "name": "Conflict.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Conflict",
+                  "code": 409,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-2f540368-8eae-4072-b085-d8273179a0d8"
+                },
+                {
+                  "id": "7db8a6bb-f8d7-40ca-8404-9e6a8973d5df",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/libraries/:libraryName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "libraries",
+                        ":libraryName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "libraryName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:54.000Z",
+                  "updatedAt": "2026-06-05T15:11:54.000Z",
+                  "uid": "35240-7db8a6bb-f8d7-40ca-8404-9e6a8973d5df"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:54.000Z",
+              "updatedAt": "2026-06-05T15:11:54.000Z",
+              "uid": "35240-45797647-36aa-4271-9c90-82e113334bca"
+            }
+          ],
+          "id": "0d0889f7-e5ba-4e3c-9145-20bf9a839be4",
+          "createdAt": "2026-06-05T15:11:54.000Z",
+          "updatedAt": "2026-06-05T15:11:54.000Z",
+          "uid": "35240-0d0889f7-e5ba-4e3c-9145-20bf9a839be4"
+        },
+        {
+          "name": "Azure Synapse Analytics List libraries",
+          "id": "91ab47f9-0299-4b3a-971d-4fb9da713c9c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/libraries?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "libraries"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Lists library resources in the workspace."
+          },
+          "response": [
+            {
+              "id": "625a52f7-2022-4564-b7c9-bdc052f9a3a2",
+              "name": "Successfully retrieved the list.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/libraries?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "libraries"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"containerName\": \"<string>\",\n        \"uploadedTimestamp\": \"<dateTime>\",\n        \"type\": \"<string>\",\n        \"provisioningStatus\": \"<string>\",\n        \"creatorId\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"containerName\": \"<string>\",\n        \"uploadedTimestamp\": \"<dateTime>\",\n        \"type\": \"<string>\",\n        \"provisioningStatus\": \"<string>\",\n        \"creatorId\": \"<string>\"\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:54.000Z",
+              "updatedAt": "2026-06-05T15:11:54.000Z",
+              "uid": "35240-625a52f7-2022-4564-b7c9-bdc052f9a3a2"
+            },
+            {
+              "id": "ac2dc645-e4b8-4fcf-ac3a-aecae0fd5829",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/libraries?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "libraries"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:54.000Z",
+              "updatedAt": "2026-06-05T15:11:54.000Z",
+              "uid": "35240-ac2dc645-e4b8-4fcf-ac3a-aecae0fd5829"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:54.000Z",
+          "updatedAt": "2026-06-05T15:11:54.000Z",
+          "uid": "35240-91ab47f9-0299-4b3a-971d-4fb9da713c9c"
+        }
+      ],
+      "id": "a3109675-7e8a-4883-a741-b7e6dd7ed418",
+      "createdAt": "2026-06-05T15:11:54.000Z",
+      "updatedAt": "2026-06-05T15:11:54.000Z",
+      "uid": "35240-a3109675-7e8a-4883-a741-b7e6dd7ed418"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Spark Job Definition API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SparkJobDefinition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List Spark job definitions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkJobDefinitions",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists Spark job definitions in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a Spark job definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkJobDefinitions/:sparkJobDefinitionName",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkJobDefinitionName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark job definition name."
+              }
+            ]
+          },
+          "docs": "Gets a Spark job definition."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a Spark job definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkJobDefinitions/:sparkJobDefinitionName",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkJobDefinitionName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark job definition name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a Spark job definition."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a Spark job definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkJobDefinitions/:sparkJobDefinitionName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkJobDefinitionName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark job definition name."
+              }
+            ]
+          },
+          "docs": "Deletes a Spark job definition."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Rename a Spark job definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkJobDefinitions/:sparkJobDefinitionName/rename",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkJobDefinitionName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark job definition name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Renames a Spark job definition."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Execute a Spark job definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkJobDefinitions/:sparkJobDefinitionName/execute",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkJobDefinitionName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark job definition name."
+              }
+            ]
+          },
+          "docs": "Executes the Spark job definition."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Debug a Spark job definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sparkJobDefinitions/:sparkJobDefinitionName/debug",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sparkJobDefinitionName",
+                "value": "",
+                "type": "path",
+                "description": "The Spark job definition name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Debug the Spark job definition."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

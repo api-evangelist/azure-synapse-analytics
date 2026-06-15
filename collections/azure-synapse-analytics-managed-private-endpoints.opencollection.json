@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Managed Private Endpoints API",
+    "version": "2021-06-01-preview"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ManagedPrivateEndpoints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List managed private endpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "managedVirtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "Managed virtual network name."
+              }
+            ]
+          },
+          "docs": "List managed private endpoints in a managed virtual network."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a managed private endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "managedVirtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "Managed virtual network name."
+              },
+              {
+                "name": "managedPrivateEndpointName",
+                "value": "",
+                "type": "path",
+                "description": "Managed private endpoint name."
+              }
+            ]
+          },
+          "docs": "Get a managed private endpoint."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create a managed private endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "managedVirtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "Managed virtual network name."
+              },
+              {
+                "name": "managedPrivateEndpointName",
+                "value": "",
+                "type": "path",
+                "description": "Managed private endpoint name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a managed private endpoint."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a managed private endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/managedVirtualNetworks/:managedVirtualNetworkName/managedPrivateEndpoints/:managedPrivateEndpointName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "managedVirtualNetworkName",
+                "value": "",
+                "type": "path",
+                "description": "Managed virtual network name."
+              },
+              {
+                "name": "managedPrivateEndpointName",
+                "value": "",
+                "type": "path",
+                "description": "Managed private endpoint name."
+              }
+            ]
+          },
+          "docs": "Delete a managed private endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

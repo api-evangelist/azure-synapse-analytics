@@ -1,0 +1,1195 @@
+{
+  "info": {
+    "_postman_id": "120a64f8-11b8-4453-b1e8-c9b0046fdb77",
+    "name": "Azure Synapse Analytics - Spark Configuration API",
+    "description": "Create and manage reusable Spark configuration artifacts for Synapse Spark pools. Supports defining Spark properties, environment variables, and package requirements as shareable configurations.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:12:15.000Z",
+    "updatedAt": "2026-06-05T15:12:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-120a64f8-11b8-4453-b1e8-c9b0046fdb77"
+  },
+  "item": [
+    {
+      "name": "sparkconfigurations",
+      "item": [
+        {
+          "name": "{sparkConfigurationName}",
+          "item": [
+            {
+              "name": "rename",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Rename a Spark configuration",
+                  "id": "ca86eb9e-0c45-45f8-9a1a-f9b2debb4aef",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"newName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName/rename?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName",
+                        "rename"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "ece9fa0b-224d-43fb-b5f4-767f7440dbf4",
+                          "key": "sparkConfigurationName",
+                          "value": "<string>",
+                          "description": "(Required) The Spark configuration name."
+                        }
+                      ]
+                    },
+                    "description": "Renames a Spark configuration."
+                  },
+                  "response": [
+                    {
+                      "id": "e36618b0-bfe4-456e-9c7b-5b50c6614ac5",
+                      "name": "Successfully renamed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName/rename?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sparkconfigurations",
+                            ":sparkConfigurationName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "sparkConfigurationName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:12:15.000Z",
+                      "updatedAt": "2026-06-05T15:12:15.000Z",
+                      "uid": "35240-e36618b0-bfe4-456e-9c7b-5b50c6614ac5"
+                    },
+                    {
+                      "id": "9ea925a4-769e-4c50-b1ae-4f3cd8688d94",
+                      "name": "Rename accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName/rename?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sparkconfigurations",
+                            ":sparkConfigurationName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "sparkConfigurationName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:12:15.000Z",
+                      "updatedAt": "2026-06-05T15:12:15.000Z",
+                      "uid": "35240-9ea925a4-769e-4c50-b1ae-4f3cd8688d94"
+                    },
+                    {
+                      "id": "9368ae67-930b-44d2-b9e9-c3f721e9a922",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName/rename?api-version=2021-06-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sparkconfigurations",
+                            ":sparkConfigurationName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-06-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "sparkConfigurationName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:12:15.000Z",
+                      "updatedAt": "2026-06-05T15:12:15.000Z",
+                      "uid": "35240-9368ae67-930b-44d2-b9e9-c3f721e9a922"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-ca86eb9e-0c45-45f8-9a1a-f9b2debb4aef"
+                }
+              ],
+              "id": "3a40b201-aae5-46e4-83c8-4601d70fcd1e",
+              "createdAt": "2026-06-05T15:12:15.000Z",
+              "updatedAt": "2026-06-05T15:12:15.000Z",
+              "uid": "35240-3a40b201-aae5-46e4-83c8-4601d70fcd1e"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a Spark configuration",
+              "id": "41b7c1bf-61de-42f4-bc62-c3e8637efed0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sparkconfigurations",
+                    ":sparkConfigurationName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-06-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "3473e6bd-adcd-4a4e-b1d2-3d2cff5bf7be",
+                      "key": "sparkConfigurationName",
+                      "value": "<string>",
+                      "description": "(Required) The Spark configuration name."
+                    }
+                  ]
+                },
+                "description": "Gets a Spark configuration."
+              },
+              "response": [
+                {
+                  "id": "e5806d9a-a559-4667-b7ca-cce624c477b5",
+                  "name": "Successfully retrieved.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"configs\": {\n      \"nulla1\": \"<string>\",\n      \"irure98\": \"<string>\"\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"notes\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"configMergeRule\": {\n      \"enim_1e\": \"<string>\",\n      \"nostrud_0d4\": \"<string>\",\n      \"consectetur_a77\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-e5806d9a-a559-4667-b7ca-cce624c477b5"
+                },
+                {
+                  "id": "fb91ff83-5992-4bae-a759-213478e973bb",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-fb91ff83-5992-4bae-a759-213478e973bb"
+                },
+                {
+                  "id": "fb1c1c88-0ccc-461e-845d-b2e0ee798ad9",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-fb1c1c88-0ccc-461e-845d-b2e0ee798ad9"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:15.000Z",
+              "updatedAt": "2026-06-05T15:12:15.000Z",
+              "uid": "35240-41b7c1bf-61de-42f4-bc62-c3e8637efed0"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a Spark configuration",
+              "id": "ca04adae-b1e6-43ad-ae08-96b3498d6ebd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"configs\": {\n      \"nulla1\": \"<string>\",\n      \"irure98\": \"<string>\"\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"notes\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"configMergeRule\": {\n      \"enim_1e\": \"<string>\",\n      \"nostrud_0d4\": \"<string>\",\n      \"consectetur_a77\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sparkconfigurations",
+                    ":sparkConfigurationName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-06-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "95b18936-e883-4c32-931e-20cf8b5582c7",
+                      "key": "sparkConfigurationName",
+                      "value": "<string>",
+                      "description": "(Required) The Spark configuration name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a Spark configuration."
+              },
+              "response": [
+                {
+                  "id": "9526af49-fe59-47f5-bc8f-46bd9bf8e737",
+                  "name": "Successfully updated.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"configs\": {\n      \"nulla1\": \"<string>\",\n      \"irure98\": \"<string>\"\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"notes\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"configMergeRule\": {\n      \"enim_1e\": \"<string>\",\n      \"nostrud_0d4\": \"<string>\",\n      \"consectetur_a77\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"configs\": {\n      \"nulla1\": \"<string>\",\n      \"irure98\": \"<string>\"\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"notes\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"configMergeRule\": {\n      \"enim_1e\": \"<string>\",\n      \"nostrud_0d4\": \"<string>\",\n      \"consectetur_a77\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-9526af49-fe59-47f5-bc8f-46bd9bf8e737"
+                },
+                {
+                  "id": "7f78f991-7bc1-4061-b477-b0998e345796",
+                  "name": "Creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"configs\": {\n      \"nulla1\": \"<string>\",\n      \"irure98\": \"<string>\"\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"notes\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"configMergeRule\": {\n      \"enim_1e\": \"<string>\",\n      \"nostrud_0d4\": \"<string>\",\n      \"consectetur_a77\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-7f78f991-7bc1-4061-b477-b0998e345796"
+                },
+                {
+                  "id": "942bac61-8627-4ec1-b42a-b1721b6d47ed",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"configs\": {\n      \"nulla1\": \"<string>\",\n      \"irure98\": \"<string>\"\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"notes\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"configMergeRule\": {\n      \"enim_1e\": \"<string>\",\n      \"nostrud_0d4\": \"<string>\",\n      \"consectetur_a77\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-942bac61-8627-4ec1-b42a-b1721b6d47ed"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:15.000Z",
+              "updatedAt": "2026-06-05T15:12:15.000Z",
+              "uid": "35240-ca04adae-b1e6-43ad-ae08-96b3498d6ebd"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a Spark configuration",
+              "id": "19cb6ab0-f2c4-4abf-a8c0-55f25f9f88fd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sparkconfigurations",
+                    ":sparkConfigurationName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-06-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "1eb267fc-9ffa-4bc9-ac77-a365faa3c014",
+                      "key": "sparkConfigurationName",
+                      "value": "<string>",
+                      "description": "(Required) The Spark configuration name."
+                    }
+                  ]
+                },
+                "description": "Deletes a Spark configuration."
+              },
+              "response": [
+                {
+                  "id": "4c3ade1d-be1e-4c8f-88fb-840c7fc049ab",
+                  "name": "Successfully deleted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-4c3ade1d-be1e-4c8f-88fb-840c7fc049ab"
+                },
+                {
+                  "id": "4d47c839-0efb-417f-8af0-577ae81f43da",
+                  "name": "Deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-4d47c839-0efb-417f-8af0-577ae81f43da"
+                },
+                {
+                  "id": "e9552356-4094-4b9e-aeff-c5af12ab3b5b",
+                  "name": "Not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-e9552356-4094-4b9e-aeff-c5af12ab3b5b"
+                },
+                {
+                  "id": "5a84f52e-7350-41b7-acfe-65bef1bea2b3",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sparkconfigurations/:sparkConfigurationName?api-version=2021-06-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sparkconfigurations",
+                        ":sparkConfigurationName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-06-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sparkConfigurationName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:15.000Z",
+                  "updatedAt": "2026-06-05T15:12:15.000Z",
+                  "uid": "35240-5a84f52e-7350-41b7-acfe-65bef1bea2b3"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:15.000Z",
+              "updatedAt": "2026-06-05T15:12:15.000Z",
+              "uid": "35240-19cb6ab0-f2c4-4abf-a8c0-55f25f9f88fd"
+            }
+          ],
+          "id": "d435fa75-08f3-4c4f-a61c-e032348cfa35",
+          "createdAt": "2026-06-05T15:12:15.000Z",
+          "updatedAt": "2026-06-05T15:12:15.000Z",
+          "uid": "35240-d435fa75-08f3-4c4f-a61c-e032348cfa35"
+        },
+        {
+          "name": "Azure Synapse Analytics List Spark configurations",
+          "id": "a62a5302-6491-4ee0-9d61-192e16ba302a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/sparkconfigurations?api-version=2021-06-01-preview",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "sparkconfigurations"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2021-06-01-preview"
+                }
+              ]
+            },
+            "description": "Lists Spark configurations in the workspace."
+          },
+          "response": [
+            {
+              "id": "db4a3afe-4836-4d85-b293-84e1404cf7dd",
+              "name": "Successfully retrieved the list.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sparkconfigurations?api-version=2021-06-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sparkconfigurations"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-06-01-preview"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"configs\": {\n          \"ipsumb2\": \"<string>\",\n          \"doloreba\": \"<string>\",\n          \"nisi62\": \"<string>\"\n        },\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"notes\": \"<string>\",\n        \"createdBy\": \"<string>\",\n        \"created\": \"<dateTime>\",\n        \"configMergeRule\": {\n          \"Duis_fc\": \"<string>\",\n          \"Lorem9\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"configs\": {\n          \"in_b\": \"<string>\",\n          \"et_f__\": \"<string>\"\n        },\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"notes\": \"<string>\",\n        \"createdBy\": \"<string>\",\n        \"created\": \"<dateTime>\",\n        \"configMergeRule\": {\n          \"deserunt_aa\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:12:15.000Z",
+              "updatedAt": "2026-06-05T15:12:15.000Z",
+              "uid": "35240-db4a3afe-4836-4d85-b293-84e1404cf7dd"
+            },
+            {
+              "id": "67f05d60-037b-4ee5-924f-e3d0f7507465",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sparkconfigurations?api-version=2021-06-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sparkconfigurations"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-06-01-preview"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:15.000Z",
+              "updatedAt": "2026-06-05T15:12:15.000Z",
+              "uid": "35240-67f05d60-037b-4ee5-924f-e3d0f7507465"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:15.000Z",
+          "updatedAt": "2026-06-05T15:12:15.000Z",
+          "uid": "35240-a62a5302-6491-4ee0-9d61-192e16ba302a"
+        }
+      ],
+      "id": "f24efdd5-37e2-4759-94f6-c244e032ee37",
+      "createdAt": "2026-06-05T15:12:15.000Z",
+      "updatedAt": "2026-06-05T15:12:15.000Z",
+      "uid": "35240-f24efdd5-37e2-4759-94f6-c244e032ee37"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

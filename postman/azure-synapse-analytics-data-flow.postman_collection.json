@@ -1,0 +1,1195 @@
+{
+  "info": {
+    "_postman_id": "9ccade9b-30a3-45f0-916e-05ead68c0643",
+    "name": "Azure Synapse Analytics - Data Flow API",
+    "description": "Create and manage data flows for visual data transformation logic. Data flows enable code-free data transformation at scale within Synapse pipelines.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:47.000Z",
+    "updatedAt": "2026-06-05T15:11:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9ccade9b-30a3-45f0-916e-05ead68c0643"
+  },
+  "item": [
+    {
+      "name": "dataflows",
+      "item": [
+        {
+          "name": "{dataFlowName}",
+          "item": [
+            {
+              "name": "rename",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Rename a data flow",
+                  "id": "f915ebd4-7b72-4040-adf8-3110b0b03e1f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"newName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName/rename?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName",
+                        "rename"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "70cbfa6d-3000-46b8-8a0c-8b596bbcbf29",
+                          "key": "dataFlowName",
+                          "value": "<string>",
+                          "description": "(Required) The data flow name."
+                        }
+                      ]
+                    },
+                    "description": "Renames a data flow."
+                  },
+                  "response": [
+                    {
+                      "id": "c89436ea-0646-4d75-bf2f-9797cbd97996",
+                      "name": "Successfully renamed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/dataflows/:dataFlowName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "dataflows",
+                            ":dataFlowName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "dataFlowName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:47.000Z",
+                      "updatedAt": "2026-06-05T15:11:47.000Z",
+                      "uid": "35240-c89436ea-0646-4d75-bf2f-9797cbd97996"
+                    },
+                    {
+                      "id": "e5e3290f-dd9b-4142-b37d-b6a5b1ea4a38",
+                      "name": "Rename accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/dataflows/:dataFlowName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "dataflows",
+                            ":dataFlowName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "dataFlowName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:47.000Z",
+                      "updatedAt": "2026-06-05T15:11:47.000Z",
+                      "uid": "35240-e5e3290f-dd9b-4142-b37d-b6a5b1ea4a38"
+                    },
+                    {
+                      "id": "868efc2c-c8fa-41b8-a43f-f8130ba30797",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/dataflows/:dataFlowName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "dataflows",
+                            ":dataFlowName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "dataFlowName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:47.000Z",
+                      "updatedAt": "2026-06-05T15:11:47.000Z",
+                      "uid": "35240-868efc2c-c8fa-41b8-a43f-f8130ba30797"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-f915ebd4-7b72-4040-adf8-3110b0b03e1f"
+                }
+              ],
+              "id": "2209e3f6-3fd3-4fb2-846a-adf30b80c198",
+              "createdAt": "2026-06-05T15:11:47.000Z",
+              "updatedAt": "2026-06-05T15:11:47.000Z",
+              "uid": "35240-2209e3f6-3fd3-4fb2-846a-adf30b80c198"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a data flow",
+              "id": "31ef4f94-9b70-4fea-b26a-89821c1ae40a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "37d39a4d-ca68-4b06-b4dc-f252a3f518a5",
+                      "key": "dataFlowName",
+                      "value": "<string>",
+                      "description": "(Required) The data flow name."
+                    }
+                  ]
+                },
+                "description": "Gets a data flow."
+              },
+              "response": [
+                {
+                  "id": "a29082ec-49de-4e21-966f-58925c59b68a",
+                  "name": "Successfully retrieved the data flow.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"<string>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ],\n      \"script\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-a29082ec-49de-4e21-966f-58925c59b68a"
+                },
+                {
+                  "id": "343a12ef-511e-4ccd-a945-29a2b3c5d44c",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-343a12ef-511e-4ccd-a945-29a2b3c5d44c"
+                },
+                {
+                  "id": "2e41e7f1-58cc-4ea3-9d9a-a674d3989b12",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-2e41e7f1-58cc-4ea3-9d9a-a674d3989b12"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:47.000Z",
+              "updatedAt": "2026-06-05T15:11:47.000Z",
+              "uid": "35240-31ef4f94-9b70-4fea-b26a-89821c1ae40a"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a data flow",
+              "id": "de4696d7-ec11-4312-ba43-9a7ffb0d6023",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"<string>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ],\n      \"script\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "fe62bde1-1b55-44ed-9880-8474199ac8a7",
+                      "key": "dataFlowName",
+                      "value": "<string>",
+                      "description": "(Required) The data flow name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a data flow."
+              },
+              "response": [
+                {
+                  "id": "2bf05653-962d-4f97-84fd-f980dcc6f94b",
+                  "name": "Successfully updated the data flow.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"<string>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ],\n      \"script\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"<string>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ],\n      \"script\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-2bf05653-962d-4f97-84fd-f980dcc6f94b"
+                },
+                {
+                  "id": "460695c0-9d48-4044-8427-8da8e120d09b",
+                  "name": "Data flow creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"<string>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ],\n      \"script\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-460695c0-9d48-4044-8427-8da8e120d09b"
+                },
+                {
+                  "id": "3590c8d5-8ebd-4718-b4ef-3c5c2348f05f",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"MappingDataFlow\",\n    \"description\": \"<string>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    },\n    \"typeProperties\": {\n      \"sources\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"sinks\": [\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        {\n          \"name\": \"<string>\",\n          \"dataset\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ],\n      \"transformations\": [\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ],\n      \"script\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-3590c8d5-8ebd-4718-b4ef-3c5c2348f05f"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:47.000Z",
+              "updatedAt": "2026-06-05T15:11:47.000Z",
+              "uid": "35240-de4696d7-ec11-4312-ba43-9a7ffb0d6023"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a data flow",
+              "id": "181e65c2-8b9d-4d11-8e65-cbca6c24c84c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dataflows",
+                    ":dataFlowName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "8966945e-187b-4002-9a90-91704eefafec",
+                      "key": "dataFlowName",
+                      "value": "<string>",
+                      "description": "(Required) The data flow name."
+                    }
+                  ]
+                },
+                "description": "Deletes a data flow."
+              },
+              "response": [
+                {
+                  "id": "6c5804bd-ecf7-4cc8-b00e-288d421a72ac",
+                  "name": "Successfully deleted the data flow.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-6c5804bd-ecf7-4cc8-b00e-288d421a72ac"
+                },
+                {
+                  "id": "6c61a4b0-6dfa-424b-bedd-12c097a78f13",
+                  "name": "Data flow deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-6c61a4b0-6dfa-424b-bedd-12c097a78f13"
+                },
+                {
+                  "id": "5c608942-cab5-4718-bc86-f2bc106c2c90",
+                  "name": "Data flow not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-5c608942-cab5-4718-bc86-f2bc106c2c90"
+                },
+                {
+                  "id": "2af95c25-5de2-4c94-b9a9-f588846129a2",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dataflows/:dataFlowName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dataflows",
+                        ":dataFlowName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "dataFlowName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:47.000Z",
+                  "updatedAt": "2026-06-05T15:11:47.000Z",
+                  "uid": "35240-2af95c25-5de2-4c94-b9a9-f588846129a2"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:47.000Z",
+              "updatedAt": "2026-06-05T15:11:47.000Z",
+              "uid": "35240-181e65c2-8b9d-4d11-8e65-cbca6c24c84c"
+            }
+          ],
+          "id": "dbe667ee-fa40-4521-a69a-767e45291936",
+          "createdAt": "2026-06-05T15:11:47.000Z",
+          "updatedAt": "2026-06-05T15:11:47.000Z",
+          "uid": "35240-dbe667ee-fa40-4521-a69a-767e45291936"
+        },
+        {
+          "name": "Azure Synapse Analytics List data flows",
+          "id": "df73fb18-b201-494e-80fa-3c46033b3f5c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dataflows?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dataflows"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Lists data flows in the workspace."
+          },
+          "response": [
+            {
+              "id": "a7602140-7914-4859-8735-01d732ac67d8",
+              "name": "Successfully retrieved the list of data flows.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dataflows?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dataflows"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"MappingDataFlow\",\n        \"description\": \"<string>\",\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        },\n        \"typeProperties\": {\n          \"sources\": [\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            },\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            }\n          ],\n          \"sinks\": [\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            },\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            }\n          ],\n          \"transformations\": [\n            {\n              \"name\": \"<string>\",\n              \"description\": \"<string>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"description\": \"<string>\"\n            }\n          ],\n          \"script\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"Flowlet\",\n        \"description\": \"<string>\",\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"folder\": {\n          \"name\": \"<string>\"\n        },\n        \"typeProperties\": {\n          \"sources\": [\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            },\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            }\n          ],\n          \"sinks\": [\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            },\n            {\n              \"name\": \"<string>\",\n              \"dataset\": {\n                \"referenceName\": \"<string>\",\n                \"type\": \"<string>\"\n              }\n            }\n          ],\n          \"transformations\": [\n            {\n              \"name\": \"<string>\",\n              \"description\": \"<string>\"\n            },\n            {\n              \"name\": \"<string>\",\n              \"description\": \"<string>\"\n            }\n          ],\n          \"script\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:47.000Z",
+              "updatedAt": "2026-06-05T15:11:47.000Z",
+              "uid": "35240-a7602140-7914-4859-8735-01d732ac67d8"
+            },
+            {
+              "id": "44243205-b22e-457e-986e-0fccdadaa1bc",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dataflows?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dataflows"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:47.000Z",
+              "updatedAt": "2026-06-05T15:11:47.000Z",
+              "uid": "35240-44243205-b22e-457e-986e-0fccdadaa1bc"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:47.000Z",
+          "updatedAt": "2026-06-05T15:11:47.000Z",
+          "uid": "35240-df73fb18-b201-494e-80fa-3c46033b3f5c"
+        }
+      ],
+      "id": "6d0d8780-9edd-46e4-b4a4-886c904ab7ac",
+      "createdAt": "2026-06-05T15:11:47.000Z",
+      "updatedAt": "2026-06-05T15:11:47.000Z",
+      "uid": "35240-6d0d8780-9edd-46e4-b4a4-886c904ab7ac"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

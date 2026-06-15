@@ -1,0 +1,162 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Linked Service API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "LinkedService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List linked services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkedservices",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists linked services in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a linked service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkedservices/:linkedServiceName",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkedServiceName",
+                "value": "",
+                "type": "path",
+                "description": "The linked service name."
+              }
+            ]
+          },
+          "docs": "Gets a linked service."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a linked service",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkedservices/:linkedServiceName",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkedServiceName",
+                "value": "",
+                "type": "path",
+                "description": "The linked service name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a linked service."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a linked service",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkedservices/:linkedServiceName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkedServiceName",
+                "value": "",
+                "type": "path",
+                "description": "The linked service name."
+              }
+            ]
+          },
+          "docs": "Deletes a linked service."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Rename a linked service",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkedservices/:linkedServiceName/rename",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkedServiceName",
+                "value": "",
+                "type": "path",
+                "description": "The linked service name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Renames a linked service."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

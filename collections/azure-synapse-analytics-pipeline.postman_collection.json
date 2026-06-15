@@ -1,0 +1,1619 @@
+{
+  "item": [
+    {
+      "id": "ac99ed8c-bbda-4911-86aa-77159c59ba5b",
+      "name": "Pipeline",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b04b49da-187a-4d8a-abbf-cbf87f3d8fd0",
+          "name": "Azure Synapse Analytics List pipelines",
+          "request": {
+            "name": "Azure Synapse Analytics List pipelines",
+            "description": {
+              "content": "Lists pipelines in the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pipelines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c58762e-176d-49cc-8722-76df27d89825",
+              "name": "Successfully retrieved the list of pipelines.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"description\": \"string\",\n        \"activities\": [\n          {\n            \"name\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"dependsOn\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"dependsOn\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"parameters\": {\n          \"key_0\": {\n            \"type\": \"Bool\",\n            \"defaultValue\": {}\n          },\n          \"key_1\": {\n            \"type\": \"Object\",\n            \"defaultValue\": {}\n          },\n          \"key_2\": {\n            \"type\": \"SecureString\",\n            \"defaultValue\": {}\n          }\n        },\n        \"variables\": {\n          \"key_0\": {\n            \"type\": \"Bool\",\n            \"defaultValue\": {}\n          },\n          \"key_1\": {\n            \"type\": \"String\",\n            \"defaultValue\": {}\n          }\n        },\n        \"concurrency\": 1841,\n        \"annotations\": [\n          \"string\",\n          \"string\"\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"etag\": \"string\",\n      \"properties\": {\n        \"description\": \"string\",\n        \"activities\": [\n          {\n            \"name\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"dependsOn\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"string\",\n            \"type\": \"string\",\n            \"description\": \"string\",\n            \"dependsOn\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          }\n        ],\n        \"parameters\": {\n          \"key_0\": {\n            \"type\": \"Object\",\n            \"defaultValue\": {}\n          },\n          \"key_1\": {\n            \"type\": \"String\",\n            \"defaultValue\": {}\n          },\n          \"key_2\": {\n            \"type\": \"String\",\n            \"defaultValue\": {}\n          },\n          \"key_3\": {\n            \"type\": \"SecureString\",\n            \"defaultValue\": {}\n          }\n        },\n        \"variables\": {\n          \"key_0\": {\n            \"type\": \"String\",\n            \"defaultValue\": {}\n          },\n          \"key_1\": {\n            \"type\": \"String\",\n            \"defaultValue\": {}\n          }\n        },\n        \"concurrency\": 4472,\n        \"annotations\": [\n          \"string\",\n          \"string\"\n        ],\n        \"folder\": {\n          \"name\": \"string\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "678bd82b-298f-4684-a8ed-082a96ceac64",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d277dca-fd28-438d-9034-1c9f3f3a3520",
+          "name": "Azure Synapse Analytics Get a pipeline",
+          "request": {
+            "name": "Azure Synapse Analytics Get a pipeline",
+            "description": {
+              "content": "Gets a pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pipelines",
+                ":pipelineName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The pipeline name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "ETag of the pipeline entity. Should only be specified for get. If the ETag matches the existing entity tag, or if * was provided, then no content will be returned.",
+                "key": "If-None-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3ed8dda-6d9c-45ee-aece-6b518dff2bfa",
+              "name": "Successfully retrieved the pipeline.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag of the pipeline entity. Should only be specified for get. If the ETag matches the existing entity tag, or if * was provided, then no content will be returned.",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"description\": \"string\",\n    \"activities\": [\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Completed\",\n              \"Failed\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Succeeded\",\n              \"Succeeded\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Completed\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Failed\",\n              \"Skipped\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"parameters\": {\n      \"key_0\": {\n        \"type\": \"Object\",\n        \"defaultValue\": {}\n      },\n      \"key_1\": {\n        \"type\": \"String\",\n        \"defaultValue\": {}\n      }\n    },\n    \"variables\": {\n      \"key_0\": {\n        \"type\": \"Array\",\n        \"defaultValue\": {}\n      }\n    },\n    \"concurrency\": 2040,\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33452209-7422-4b22-9065-bdb6dcb6cf3a",
+              "name": "Not modified.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag of the pipeline entity. Should only be specified for get. If the ETag matches the existing entity tag, or if * was provided, then no content will be returned.",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Modified",
+              "code": 304,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d2cb24c3-c755-4f0f-b992-be5c20370beb",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag of the pipeline entity. Should only be specified for get. If the ETag matches the existing entity tag, or if * was provided, then no content will be returned.",
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5db096fb-ab3a-48f6-9a72-54ef4a297fc7",
+          "name": "Azure Synapse Analytics Create or update a pipeline",
+          "request": {
+            "name": "Azure Synapse Analytics Create or update a pipeline",
+            "description": {
+              "content": "Creates or updates a pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pipelines",
+                ":pipelineName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The pipeline name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "ETag of the pipeline entity. Should only be specified for update, for which it should match existing entity or can be * for unconditional update.",
+                "key": "If-Match",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"activities\": [\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"<string>\",\n            \"dependencyConditions\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          {\n            \"activity\": \"<string>\",\n            \"dependencyConditions\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"<string>\",\n            \"dependencyConditions\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          {\n            \"activity\": \"<string>\",\n            \"dependencyConditions\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"parameters\": {\n      \"key_0\": {\n        \"type\": \"<string>\",\n        \"defaultValue\": {}\n      },\n      \"key_1\": {\n        \"type\": \"<string>\",\n        \"defaultValue\": {}\n      }\n    },\n    \"variables\": {\n      \"key_0\": {\n        \"type\": \"<string>\",\n        \"defaultValue\": {}\n      },\n      \"key_1\": {\n        \"type\": \"<string>\",\n        \"defaultValue\": {}\n      }\n    },\n    \"concurrency\": \"<integer>\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20ca0c36-eebf-42ad-a745-239f9d826a93",
+              "name": "Successfully updated the pipeline.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag of the pipeline entity. Should only be specified for update, for which it should match existing entity or can be * for unconditional update.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"description\": \"string\",\n    \"activities\": [\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Completed\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Completed\",\n              \"Succeeded\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Succeeded\",\n              \"Succeeded\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Failed\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"parameters\": {\n      \"key_0\": {\n        \"type\": \"Int\",\n        \"defaultValue\": {}\n      }\n    },\n    \"variables\": {\n      \"key_0\": {\n        \"type\": \"Bool\",\n        \"defaultValue\": {}\n      },\n      \"key_1\": {\n        \"type\": \"String\",\n        \"defaultValue\": {}\n      },\n      \"key_2\": {\n        \"type\": \"Bool\",\n        \"defaultValue\": {}\n      }\n    },\n    \"concurrency\": 9008,\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"etag\": \"string\",\n  \"properties\": {\n    \"description\": \"string\",\n    \"activities\": [\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Completed\",\n              \"Failed\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Succeeded\",\n              \"Succeeded\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Completed\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Failed\",\n              \"Skipped\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"parameters\": {\n      \"key_0\": {\n        \"type\": \"Object\",\n        \"defaultValue\": {}\n      },\n      \"key_1\": {\n        \"type\": \"String\",\n        \"defaultValue\": {}\n      }\n    },\n    \"variables\": {\n      \"key_0\": {\n        \"type\": \"Array\",\n        \"defaultValue\": {}\n      }\n    },\n    \"concurrency\": 2040,\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "31879497-20a9-4bc0-a6a3-b318e9cd4349",
+              "name": "Pipeline creation accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag of the pipeline entity. Should only be specified for update, for which it should match existing entity or can be * for unconditional update.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"description\": \"string\",\n    \"activities\": [\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Completed\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Completed\",\n              \"Succeeded\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Succeeded\",\n              \"Succeeded\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Failed\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"parameters\": {\n      \"key_0\": {\n        \"type\": \"Int\",\n        \"defaultValue\": {}\n      }\n    },\n    \"variables\": {\n      \"key_0\": {\n        \"type\": \"Bool\",\n        \"defaultValue\": {}\n      },\n      \"key_1\": {\n        \"type\": \"String\",\n        \"defaultValue\": {}\n      },\n      \"key_2\": {\n        \"type\": \"Bool\",\n        \"defaultValue\": {}\n      }\n    },\n    \"concurrency\": 9008,\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "46be848a-eeed-423d-bae4-23a785470e9e",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "ETag of the pipeline entity. Should only be specified for update, for which it should match existing entity or can be * for unconditional update.",
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"description\": \"string\",\n    \"activities\": [\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Completed\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Completed\",\n              \"Succeeded\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"type\": \"string\",\n        \"description\": \"string\",\n        \"dependsOn\": [\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Succeeded\",\n              \"Succeeded\"\n            ]\n          },\n          {\n            \"activity\": \"string\",\n            \"dependencyConditions\": [\n              \"Skipped\",\n              \"Failed\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"parameters\": {\n      \"key_0\": {\n        \"type\": \"Int\",\n        \"defaultValue\": {}\n      }\n    },\n    \"variables\": {\n      \"key_0\": {\n        \"type\": \"Bool\",\n        \"defaultValue\": {}\n      },\n      \"key_1\": {\n        \"type\": \"String\",\n        \"defaultValue\": {}\n      },\n      \"key_2\": {\n        \"type\": \"Bool\",\n        \"defaultValue\": {}\n      }\n    },\n    \"concurrency\": 9008,\n    \"annotations\": [\n      \"string\",\n      \"string\"\n    ],\n    \"folder\": {\n      \"name\": \"string\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7fe8b65-de17-4f3f-80ea-bd47b6bb89e3",
+          "name": "Azure Synapse Analytics Delete a pipeline",
+          "request": {
+            "name": "Azure Synapse Analytics Delete a pipeline",
+            "description": {
+              "content": "Deletes a pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pipelines",
+                ":pipelineName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The pipeline name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96808065-9b63-459d-8473-3fce0676ccda",
+              "name": "Successfully deleted the pipeline.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b068a2de-9703-43a1-a1db-636f10295351",
+              "name": "Pipeline deletion accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0479e196-37f7-44a6-a7c0-fdd5fd82d654",
+              "name": "Pipeline not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8f55c534-09e4-4f64-b17a-b7cd5037b57c",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fc171d7-7976-47f1-975e-20f252d05ed0",
+          "name": "Azure Synapse Analytics Rename a pipeline",
+          "request": {
+            "name": "Azure Synapse Analytics Rename a pipeline",
+            "description": {
+              "content": "Renames a pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pipelines",
+                ":pipelineName",
+                "rename"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The pipeline name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"newName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb2eb2e5-261c-4f89-8fa1-b67336ce6298",
+              "name": "Successfully renamed the pipeline.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9e90b658-32e1-4ff4-aadd-dd3da139be52",
+              "name": "Pipeline rename accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2243f7e6-5d1c-43e0-9ed9-3a1562d0ef7e",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName",
+                    "rename"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0521e38-a75f-4b64-9c5c-aa1696ead6b3",
+          "name": "Azure Synapse Analytics Create a pipeline run",
+          "request": {
+            "name": "Azure Synapse Analytics Create a pipeline run",
+            "description": {
+              "content": "Creates a run of a pipeline.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pipelines",
+                ":pipelineName",
+                "createRun"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "referencePipelineRunId",
+                  "value": "<string>",
+                  "description": "The pipeline run identifier. If specified, the new run will be grouped with the specified run."
+                },
+                {
+                  "disabled": false,
+                  "key": "isRecovery",
+                  "value": "<boolean>",
+                  "description": "Recovery mode flag. If true, the specified referenced pipeline run will be used for recovery."
+                },
+                {
+                  "disabled": false,
+                  "key": "startActivityName",
+                  "value": "<string>",
+                  "description": "In recovery mode, the rerun will start from this activity."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pipelineName",
+                  "description": "(Required) The pipeline name."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4578.015435003455\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bf86bdd8-cf8f-4af9-8457-1245afc2e6ea",
+              "name": "Pipeline run created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName",
+                    "createRun"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    },
+                    {
+                      "key": "referencePipelineRunId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isRecovery",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "startActivityName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 7817.406816579386,\n  \"key_1\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"runId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee9a7125-0ca3-4029-b0ee-adfe8e616f5b",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines",
+                    ":pipelineName",
+                    "createRun"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    },
+                    {
+                      "key": "referencePipelineRunId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isRecovery",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "startActivityName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pipelineName",
+                      "description": "(Required) The pipeline name."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 7817.406816579386,\n  \"key_1\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The workspace name.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myworkspace",
+      "key": "workspaceName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "149fd001-4d4a-4cef-bc1b-47ccf6a3920c",
+    "name": "Azure Synapse Analytics - Pipeline API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Create and manage data integration pipelines for ETL/ELT workflows. Supports orchestrating data movement and transformation activities across diverse data stores.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}

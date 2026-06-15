@@ -1,0 +1,2395 @@
+{
+  "item": [
+    {
+      "id": "852331a0-b854-4193-b031-9c19c33c9540",
+      "name": "SparkBatch",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "44c89d01-1703-434a-9d24-9e667725a8c7",
+          "name": "Azure Synapse Analytics List Spark batch jobs",
+          "request": {
+            "name": "Azure Synapse Analytics List Spark batch jobs",
+            "description": {
+              "content": "List all Spark batch jobs running against the Spark pool.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "batches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<integer>",
+                  "description": "Optional param specifying which index the list should begin from."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Optional param specifying the size of the returned list."
+                },
+                {
+                  "disabled": false,
+                  "key": "detailed",
+                  "value": "<boolean>",
+                  "description": "Optional query param specifying whether detailed response is returned beyond plain livy."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "078720c6-b8fc-47fe-b8af-cea40dd5d76e",
+              "name": "Successfully retrieved the list of batch jobs.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"from\": 2522,\n  \"total\": 9631,\n  \"sessions\": [\n    {\n      \"livyInfo\": {\n        \"currentState\": \"string\"\n      },\n      \"name\": \"string\",\n      \"workspaceName\": \"string\",\n      \"sparkPoolName\": \"string\",\n      \"submitterName\": \"string\",\n      \"submitterId\": \"string\",\n      \"artifactId\": \"string\",\n      \"jobType\": \"SparkBatch\",\n      \"result\": \"Succeeded\",\n      \"state\": \"string\",\n      \"id\": 878,\n      \"appId\": \"string\",\n      \"appInfo\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"log\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"livyInfo\": {\n        \"currentState\": \"string\"\n      },\n      \"name\": \"string\",\n      \"workspaceName\": \"string\",\n      \"sparkPoolName\": \"string\",\n      \"submitterName\": \"string\",\n      \"submitterId\": \"string\",\n      \"artifactId\": \"string\",\n      \"jobType\": \"SparkBatch\",\n      \"result\": \"Succeeded\",\n      \"state\": \"string\",\n      \"id\": 4021,\n      \"appId\": \"string\",\n      \"appInfo\": {\n        \"key_0\": \"string\"\n      },\n      \"log\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c547b343-a839-48a6-b331-68955c96a7ae",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bb08297-e835-48c0-aa4f-a6805f466d28",
+          "name": "Azure Synapse Analytics Create a Spark batch job",
+          "request": {
+            "name": "Azure Synapse Analytics Create a Spark batch job",
+            "description": {
+              "content": "Create new Spark batch job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "batches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "detailed",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"file\": \"<string>\",\n  \"className\": \"<string>\",\n  \"args\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"jars\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"pyFiles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"files\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"archives\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"conf\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"driverMemory\": \"<string>\",\n  \"driverCores\": \"<integer>\",\n  \"executorMemory\": \"<string>\",\n  \"executorCores\": \"<integer>\",\n  \"executorCount\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e754e003-fe33-4561-b94e-372f9b850b8b",
+              "name": "Successfully created the batch job.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"file\": \"<string>\",\n  \"className\": \"<string>\",\n  \"args\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"jars\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"pyFiles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"files\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"archives\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"conf\": {\n    \"key_0\": \"<string>\"\n  },\n  \"driverMemory\": \"<string>\",\n  \"driverCores\": \"<integer>\",\n  \"executorMemory\": \"<string>\",\n  \"executorCores\": \"<integer>\",\n  \"executorCount\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"livyInfo\": {\n    \"currentState\": \"string\"\n  },\n  \"name\": \"string\",\n  \"workspaceName\": \"string\",\n  \"sparkPoolName\": \"string\",\n  \"submitterName\": \"string\",\n  \"submitterId\": \"string\",\n  \"artifactId\": \"string\",\n  \"jobType\": \"SparkSession\",\n  \"result\": \"Uncertain\",\n  \"state\": \"string\",\n  \"id\": 5,\n  \"appId\": \"string\",\n  \"appInfo\": {\n    \"key_0\": \"string\"\n  },\n  \"log\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b200621-9166-4c1a-aff9-8d7dad7d19f2",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"file\": \"<string>\",\n  \"className\": \"<string>\",\n  \"args\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"jars\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"pyFiles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"files\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"archives\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"conf\": {\n    \"key_0\": \"<string>\"\n  },\n  \"driverMemory\": \"<string>\",\n  \"driverCores\": \"<integer>\",\n  \"executorMemory\": \"<string>\",\n  \"executorCores\": \"<integer>\",\n  \"executorCount\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07c7ef89-33fa-4ae2-b5cb-7b51a6fc455d",
+          "name": "Azure Synapse Analytics Get a Spark batch job",
+          "request": {
+            "name": "Azure Synapse Analytics Get a Spark batch job",
+            "description": {
+              "content": "Gets a single Spark batch job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "batches",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "detailed",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "batchId",
+                  "description": "(Required) Identifier for the batch job."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5cacccf9-012b-4548-933d-de4a86ea6df7",
+              "name": "Successfully retrieved the batch job.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "batchId",
+                      "description": "(Required) Identifier for the batch job."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"livyInfo\": {\n    \"currentState\": \"string\"\n  },\n  \"name\": \"string\",\n  \"workspaceName\": \"string\",\n  \"sparkPoolName\": \"string\",\n  \"submitterName\": \"string\",\n  \"submitterId\": \"string\",\n  \"artifactId\": \"string\",\n  \"jobType\": \"SparkSession\",\n  \"result\": \"Uncertain\",\n  \"state\": \"string\",\n  \"id\": 5,\n  \"appId\": \"string\",\n  \"appInfo\": {\n    \"key_0\": \"string\"\n  },\n  \"log\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "14a1ef55-1506-4615-bf2a-229267b0960c",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "batchId",
+                      "description": "(Required) Identifier for the batch job."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3a84a15-abb2-4812-98b2-0db53842a61a",
+          "name": "Azure Synapse Analytics Cancel a Spark batch job",
+          "request": {
+            "name": "Azure Synapse Analytics Cancel a Spark batch job",
+            "description": {
+              "content": "Cancels a running Spark batch job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "batches",
+                ":batchId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "batchId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d9201d5-8a0e-4b23-80b7-a9c82c959406",
+              "name": "Successfully cancelled the batch job.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "batchId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fe3a6b48-fa5d-4f62-a5f7-d8cfdeaa0db9",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "batches",
+                    ":batchId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "batchId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3fb805b9-d6da-4750-8de5-555c7b0c98bd",
+      "name": "SparkSession",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6c2e83ac-c378-4de4-96ed-d88d2ca8cfa0",
+          "name": "Azure Synapse Analytics List Spark sessions",
+          "request": {
+            "name": "Azure Synapse Analytics List Spark sessions",
+            "description": {
+              "content": "List all Spark sessions running against the Spark pool.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "detailed",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26622338-ef72-4b8d-b469-8b83bd015a4f",
+              "name": "Successfully retrieved the list of sessions.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"from\": 4578,\n  \"total\": 7358,\n  \"sessions\": [\n    {\n      \"livyInfo\": {\n        \"currentState\": \"string\"\n      },\n      \"name\": \"string\",\n      \"workspaceName\": \"string\",\n      \"sparkPoolName\": \"string\",\n      \"submitterName\": \"string\",\n      \"state\": \"string\",\n      \"id\": 4148,\n      \"appId\": \"string\",\n      \"appInfo\": {\n        \"key_0\": \"string\"\n      },\n      \"log\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"livyInfo\": {\n        \"currentState\": \"string\"\n      },\n      \"name\": \"string\",\n      \"workspaceName\": \"string\",\n      \"sparkPoolName\": \"string\",\n      \"submitterName\": \"string\",\n      \"state\": \"string\",\n      \"id\": 6300,\n      \"appId\": \"string\",\n      \"appInfo\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"log\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a34d75e9-fd7a-47df-87d5-30d927e86d04",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "from",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7183cc39-504c-453e-ab01-51f180d22850",
+          "name": "Azure Synapse Analytics Create a Spark session",
+          "request": {
+            "name": "Azure Synapse Analytics Create a Spark session",
+            "description": {
+              "content": "Create new Spark session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "sessions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "detailed",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"driverMemory\": \"<string>\",\n  \"driverCores\": \"<integer>\",\n  \"executorMemory\": \"<string>\",\n  \"executorCores\": \"<integer>\",\n  \"executorCount\": \"<integer>\",\n  \"conf\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bec0dbb0-4984-49fc-8c26-f745918276a4",
+              "name": "Successfully created the session.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"driverMemory\": \"<string>\",\n  \"driverCores\": \"<integer>\",\n  \"executorMemory\": \"<string>\",\n  \"executorCores\": \"<integer>\",\n  \"executorCount\": \"<integer>\",\n  \"conf\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"livyInfo\": {\n    \"currentState\": \"string\"\n  },\n  \"name\": \"string\",\n  \"workspaceName\": \"string\",\n  \"sparkPoolName\": \"string\",\n  \"submitterName\": \"string\",\n  \"state\": \"string\",\n  \"id\": 697,\n  \"appId\": \"string\",\n  \"appInfo\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"log\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "30a1447d-e843-45ea-89cc-cb23db0d0364",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"driverMemory\": \"<string>\",\n  \"driverCores\": \"<integer>\",\n  \"executorMemory\": \"<string>\",\n  \"executorCores\": \"<integer>\",\n  \"executorCount\": \"<integer>\",\n  \"conf\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "250cfc26-8ebf-433c-9306-e7f0310c295a",
+          "name": "Azure Synapse Analytics Get a Spark session",
+          "request": {
+            "name": "Azure Synapse Analytics Get a Spark session",
+            "description": {
+              "content": "Gets a single Spark session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "detailed",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff93ac00-59e2-4c9d-8382-edb91ad9bcad",
+              "name": "Successfully retrieved the session.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"livyInfo\": {\n    \"currentState\": \"string\"\n  },\n  \"name\": \"string\",\n  \"workspaceName\": \"string\",\n  \"sparkPoolName\": \"string\",\n  \"submitterName\": \"string\",\n  \"state\": \"string\",\n  \"id\": 697,\n  \"appId\": \"string\",\n  \"appInfo\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"log\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff850e81-fcf8-4878-87f9-996570bac75f",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "detailed",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33ee2ed1-a3d1-4f76-8280-46b44be62741",
+          "name": "Azure Synapse Analytics Cancel a Spark session",
+          "request": {
+            "name": "Azure Synapse Analytics Cancel a Spark session",
+            "description": {
+              "content": "Cancels a running Spark session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "sessions",
+                ":sessionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "af9223e5-d790-4329-923f-d749c3cca37f",
+              "name": "Successfully cancelled the session.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "65c07e63-7bcb-4d02-96a4-081a0f25068c",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58cbe6ef-1703-42f5-aaba-74fc0f2701b3",
+          "name": "Azure Synapse Analytics List Spark session statements",
+          "request": {
+            "name": "Azure Synapse Analytics List Spark session statements",
+            "description": {
+              "content": "Gets a list of statements within a Spark session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "sessions",
+                ":sessionId",
+                "statements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0e832043-f4bb-4423-b9b8-14419cbdadb1",
+              "name": "Successfully retrieved the statements.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId",
+                    "statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 2972,\n  \"statements\": [\n    {\n      \"id\": 7211,\n      \"code\": \"string\",\n      \"state\": \"string\",\n      \"output\": {\n        \"status\": \"string\",\n        \"executionCount\": 8621,\n        \"data\": {}\n      }\n    },\n    {\n      \"id\": 8382,\n      \"code\": \"string\",\n      \"state\": \"string\",\n      \"output\": {\n        \"status\": \"string\",\n        \"executionCount\": 9635,\n        \"data\": {}\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ea8cdf3-8c4c-469b-8a98-45c9ff9696e0",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId",
+                    "statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be82785f-c643-4e5a-a5c2-bd84e166c76b",
+          "name": "Azure Synapse Analytics Create a Spark statement",
+          "request": {
+            "name": "Azure Synapse Analytics Create a Spark statement",
+            "description": {
+              "content": "Create a statement within a Spark session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "sessions",
+                ":sessionId",
+                "statements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"kind\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e9a9fe9-3ad4-47f0-a15f-e5af79aa020d",
+              "name": "Successfully created the statement.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId",
+                    "statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"kind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3491,\n  \"code\": \"string\",\n  \"state\": \"string\",\n  \"output\": {\n    \"status\": \"string\",\n    \"executionCount\": 951,\n    \"data\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "86a1a8f1-ecf3-4c39-a2ee-0b16e0fa4cfb",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId",
+                    "statements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"kind\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7435e5f1-6329-47ab-aada-9de79d96fba5",
+          "name": "Azure Synapse Analytics Cancel a Spark statement",
+          "request": {
+            "name": "Azure Synapse Analytics Cancel a Spark statement",
+            "description": {
+              "content": "Kill a statement within a session.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "livyApi",
+                "versions",
+                ":sparkPoolName",
+                "sessions",
+                ":sessionId",
+                "statements",
+                ":statementId",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sparkPoolName",
+                  "description": "(Required) Name of the Spark pool."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "sessionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "statementId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "112c35e4-f4f6-462f-811b-b3d7feb430b1",
+              "name": "Successfully cancelled the statement.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId",
+                    "statements",
+                    ":statementId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "statementId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"msg\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e39cfa4-6220-4cd6-8483-bf2eeaa64a11",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "livyApi",
+                    "versions",
+                    ":sparkPoolName",
+                    "sessions",
+                    ":sessionId",
+                    "statements",
+                    ":statementId",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sparkPoolName",
+                      "description": "(Required) Name of the Spark pool."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "sessionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "statementId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The workspace name.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myworkspace",
+      "key": "workspaceName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "14d6b9f3-3c9e-4bf5-95e0-212c40c00203",
+    "name": "Azure Synapse Analytics - Spark Job API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Submit and manage Apache Spark batch jobs and interactive sessions. Provides operations for monitoring job status, retrieving logs, and cancelling running applications.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}

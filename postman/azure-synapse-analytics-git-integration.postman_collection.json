@@ -1,0 +1,231 @@
+{
+  "info": {
+    "_postman_id": "9fbb352b-17b6-4835-8478-0970a215cf74",
+    "name": "Azure Synapse Analytics - Git Integration API",
+    "description": "Manage Git repository integration for Synapse workspaces. Enables source control for workspace artifacts including pipelines, notebooks, and data flows through Git-based version control.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:54.000Z",
+    "updatedAt": "2026-06-05T15:11:54.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9fbb352b-17b6-4835-8478-0970a215cf74"
+  },
+  "item": [
+    {
+      "name": "getGitHubAccessToken",
+      "item": [
+        {
+          "name": "Azure Synapse Analytics Get GitHub access token",
+          "id": "d9372d61-7b3b-40bd-82b3-ed897cfbdd43",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"gitHubClientId\": \"<string>\",\n  \"gitHubAccessCode\": \"<string>\",\n  \"gitHubAccessTokenBaseUrl\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/getGitHubAccessToken?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "getGitHubAccessToken"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Get the GitHub access token for the workspace Git integration."
+          },
+          "response": [
+            {
+              "id": "49ccbb58-481c-4b3a-a634-a65551231431",
+              "name": "Successfully retrieved the GitHub access token.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gitHubClientId\": \"<string>\",\n  \"gitHubAccessCode\": \"<string>\",\n  \"gitHubAccessTokenBaseUrl\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/getGitHubAccessToken?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getGitHubAccessToken"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"gitHubAccessToken\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:55.000Z",
+              "updatedAt": "2026-06-05T15:11:55.000Z",
+              "uid": "35240-49ccbb58-481c-4b3a-a634-a65551231431"
+            },
+            {
+              "id": "d0920046-9a87-423f-a4bd-9046a6578c42",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"gitHubClientId\": \"<string>\",\n  \"gitHubAccessCode\": \"<string>\",\n  \"gitHubAccessTokenBaseUrl\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/getGitHubAccessToken?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "getGitHubAccessToken"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:55.000Z",
+              "updatedAt": "2026-06-05T15:11:55.000Z",
+              "uid": "35240-d0920046-9a87-423f-a4bd-9046a6578c42"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:55.000Z",
+          "updatedAt": "2026-06-05T15:11:55.000Z",
+          "uid": "35240-d9372d61-7b3b-40bd-82b3-ed897cfbdd43"
+        }
+      ],
+      "id": "0ababea9-70be-460e-be8c-ec38938b5d83",
+      "createdAt": "2026-06-05T15:11:55.000Z",
+      "updatedAt": "2026-06-05T15:11:55.000Z",
+      "uid": "35240-0ababea9-70be-460e-be8c-ec38938b5d83"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "info": {
+    "_postman_id": "b356e248-b266-4235-9e2e-49b0b36ab539",
+    "name": "Azure Synapse Analytics - Synapse Link API",
+    "description": "Manage Azure Synapse Link for real-time analytics over operational data. Enables hybrid transactional and analytical processing without impacting operational workloads.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:41.000Z",
+    "updatedAt": "2026-06-05T15:11:41.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b356e248-b266-4235-9e2e-49b0b36ab539"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Synapse",
+                          "item": [
+                            {
+                              "name": "workspaces",
+                              "item": [
+                                {
+                                  "name": "{workspaceName}",
+                                  "item": [
+                                    {
+                                      "name": "synapseLinks",
+                                      "item": [
+                                        {
+                                          "name": "Azure Synapse Analytics List Synapse Link configurations",
+                                          "id": "7e884f48-98c0-4dba-8446-be625f6b88e7",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/synapseLinks?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "workspaces",
+                                                ":workspaceName",
+                                                "synapseLinks"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "ca06d784-77ca-455e-9f6e-bdc25681e426",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "de814c87-f6d8-48ce-b2a9-20dbad83e054",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "a5ec82f8-719a-4009-8860-fcaf42ca7cbc",
+                                                  "key": "workspaceName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Returns a list of Synapse Link configurations in the workspace."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "69cec620-f071-4d5d-98af-c2622d8718ae",
+                                              "name": "Successfully retrieved the list of Synapse Link configurations.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/synapseLinks?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "synapseLinks"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"provisioningState\": \"<string>\",\n        \"sourceDatabase\": {\n          \"linkedServiceName\": \"<string>\",\n          \"databaseName\": \"<string>\"\n        },\n        \"targetDatabase\": {\n          \"sqlPoolName\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"provisioningState\": \"<string>\",\n        \"sourceDatabase\": {\n          \"linkedServiceName\": \"<string>\",\n          \"databaseName\": \"<string>\"\n        },\n        \"targetDatabase\": {\n          \"sqlPoolName\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                              "createdAt": "2026-06-05T15:11:42.000Z",
+                                              "updatedAt": "2026-06-05T15:11:42.000Z",
+                                              "uid": "35240-69cec620-f071-4d5d-98af-c2622d8718ae"
+                                            },
+                                            {
+                                              "id": "c2c52076-40b4-4b85-9754-70cab75af88a",
+                                              "name": "Error response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/synapseLinks?api-version=2021-06-01",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "synapseLinks"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                              "createdAt": "2026-06-05T15:11:42.000Z",
+                                              "updatedAt": "2026-06-05T15:11:42.000Z",
+                                              "uid": "35240-c2c52076-40b4-4b85-9754-70cab75af88a"
+                                            }
+                                          ],
+                                          "createdAt": "2026-06-05T15:11:42.000Z",
+                                          "updatedAt": "2026-06-05T15:11:42.000Z",
+                                          "uid": "35240-7e884f48-98c0-4dba-8446-be625f6b88e7"
+                                        }
+                                      ],
+                                      "id": "acfba806-6dc8-48a7-8a0b-bcdf37c6e7e7",
+                                      "createdAt": "2026-06-05T15:11:42.000Z",
+                                      "updatedAt": "2026-06-05T15:11:42.000Z",
+                                      "uid": "35240-acfba806-6dc8-48a7-8a0b-bcdf37c6e7e7"
+                                    }
+                                  ],
+                                  "id": "bc9a2d49-975c-4a12-a0e6-05350775c570",
+                                  "createdAt": "2026-06-05T15:11:42.000Z",
+                                  "updatedAt": "2026-06-05T15:11:42.000Z",
+                                  "uid": "35240-bc9a2d49-975c-4a12-a0e6-05350775c570"
+                                }
+                              ],
+                              "id": "23b0e1c2-59c0-4384-acaa-f540c0214ad2",
+                              "createdAt": "2026-06-05T15:11:42.000Z",
+                              "updatedAt": "2026-06-05T15:11:42.000Z",
+                              "uid": "35240-23b0e1c2-59c0-4384-acaa-f540c0214ad2"
+                            }
+                          ],
+                          "id": "66af0e4d-4aba-4ce6-8f60-37a52cc290fa",
+                          "createdAt": "2026-06-05T15:11:42.000Z",
+                          "updatedAt": "2026-06-05T15:11:42.000Z",
+                          "uid": "35240-66af0e4d-4aba-4ce6-8f60-37a52cc290fa"
+                        }
+                      ],
+                      "id": "7cf68eaf-aea1-4ede-acdf-b32b3942fa2c",
+                      "createdAt": "2026-06-05T15:11:42.000Z",
+                      "updatedAt": "2026-06-05T15:11:42.000Z",
+                      "uid": "35240-7cf68eaf-aea1-4ede-acdf-b32b3942fa2c"
+                    }
+                  ],
+                  "id": "1838b1c0-15b7-44ba-9ebe-4da029c30fdb",
+                  "createdAt": "2026-06-05T15:11:42.000Z",
+                  "updatedAt": "2026-06-05T15:11:42.000Z",
+                  "uid": "35240-1838b1c0-15b7-44ba-9ebe-4da029c30fdb"
+                }
+              ],
+              "id": "614fcad8-42b5-4261-bff2-bcf06b06c1e7",
+              "createdAt": "2026-06-05T15:11:42.000Z",
+              "updatedAt": "2026-06-05T15:11:42.000Z",
+              "uid": "35240-614fcad8-42b5-4261-bff2-bcf06b06c1e7"
+            }
+          ],
+          "id": "fcaa6a47-8515-43a6-832b-8e79b012538e",
+          "createdAt": "2026-06-05T15:11:42.000Z",
+          "updatedAt": "2026-06-05T15:11:42.000Z",
+          "uid": "35240-fcaa6a47-8515-43a6-832b-8e79b012538e"
+        }
+      ],
+      "id": "3cd63fd9-7f7d-4ad0-995a-13bb780fd3df",
+      "createdAt": "2026-06-05T15:11:42.000Z",
+      "updatedAt": "2026-06-05T15:11:42.000Z",
+      "uid": "35240-3cd63fd9-7f7d-4ad0-995a-13bb780fd3df"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

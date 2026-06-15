@@ -1,0 +1,1557 @@
+{
+  "info": {
+    "_postman_id": "65704005-d964-44e9-aed7-a7f36cb07aea",
+    "name": "Azure Synapse Analytics - Private Link Hubs API",
+    "description": "Manage private link hubs that enable connecting to Synapse Studio through Azure Private Link. Provides centralized private connectivity for workspace management operations.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:59.000Z",
+    "updatedAt": "2026-06-05T15:11:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-65704005-d964-44e9-aed7-a7f36cb07aea"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "providers",
+              "item": [
+                {
+                  "name": "Microsoft.Synapse",
+                  "item": [
+                    {
+                      "name": "privateLinkHubs",
+                      "item": [
+                        {
+                          "name": "Azure Synapse Analytics List private link hubs by subscription",
+                          "id": "8d2be5ab-7acd-4d66-a846-98813853931d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.Synapse/privateLinkHubs?api-version=2021-06-01",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "subscriptions",
+                                ":subscriptionId",
+                                "providers",
+                                "Microsoft.Synapse",
+                                "privateLinkHubs"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "api-version",
+                                  "value": "2021-06-01"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "633131e6-4ad8-4768-8abc-56b507beeaa2",
+                                  "key": "subscriptionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Returns a list of privateLinkHubs in a subscription."
+                          },
+                          "response": [
+                            {
+                              "id": "c2a9697e-f771-4a66-a73d-01866e624418",
+                              "name": "Successfully retrieved the list.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.Synapse/privateLinkHubs?api-version=2021-06-01",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "providers",
+                                    "Microsoft.Synapse",
+                                    "privateLinkHubs"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "api-version",
+                                      "value": "2021-06-01"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"nostrud475\": \"<string>\",\n        \"est61\": \"<string>\",\n        \"laborum_e\": \"<string>\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"<string>\",\n        \"privateEndpointConnections\": [\n          {\n            \"id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"in_d8\": \"<string>\",\n        \"velitb\": \"<string>\",\n        \"adipisicinge\": \"<string>\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"<string>\",\n        \"privateEndpointConnections\": [\n          {\n            \"id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                              "createdAt": "2026-06-05T15:11:59.000Z",
+                              "updatedAt": "2026-06-05T15:11:59.000Z",
+                              "uid": "35240-c2a9697e-f771-4a66-a73d-01866e624418"
+                            },
+                            {
+                              "id": "6b024b4e-6184-4ae4-81e0-a6800e1b39f2",
+                              "name": "Error response.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/providers/Microsoft.Synapse/privateLinkHubs?api-version=2021-06-01",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "providers",
+                                    "Microsoft.Synapse",
+                                    "privateLinkHubs"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "api-version",
+                                      "value": "2021-06-01"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                              "createdAt": "2026-06-05T15:11:59.000Z",
+                              "updatedAt": "2026-06-05T15:11:59.000Z",
+                              "uid": "35240-6b024b4e-6184-4ae4-81e0-a6800e1b39f2"
+                            }
+                          ],
+                          "createdAt": "2026-06-05T15:11:59.000Z",
+                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                          "uid": "35240-8d2be5ab-7acd-4d66-a846-98813853931d"
+                        }
+                      ],
+                      "id": "7496513e-999d-40f6-8d9c-31b5935823c2",
+                      "createdAt": "2026-06-05T15:11:59.000Z",
+                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                      "uid": "35240-7496513e-999d-40f6-8d9c-31b5935823c2"
+                    }
+                  ],
+                  "id": "e87ffa8a-635d-4fc5-8999-504496c99cf5",
+                  "createdAt": "2026-06-05T15:11:59.000Z",
+                  "updatedAt": "2026-06-05T15:11:59.000Z",
+                  "uid": "35240-e87ffa8a-635d-4fc5-8999-504496c99cf5"
+                }
+              ],
+              "id": "85e52b46-78e2-4380-823d-17ea64e30265",
+              "createdAt": "2026-06-05T15:11:59.000Z",
+              "updatedAt": "2026-06-05T15:11:59.000Z",
+              "uid": "35240-85e52b46-78e2-4380-823d-17ea64e30265"
+            },
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Synapse",
+                          "item": [
+                            {
+                              "name": "privateLinkHubs",
+                              "item": [
+                                {
+                                  "name": "{privateLinkHubName}",
+                                  "item": [
+                                    {
+                                      "name": "Azure Synapse Analytics Get a private link hub",
+                                      "id": "95811edd-c256-47d8-9666-2d6a1d0431da",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.Synapse",
+                                            "privateLinkHubs",
+                                            ":privateLinkHubName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "api-version",
+                                              "value": "2021-06-01"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "0d1ab139-12b4-4304-9f9f-65ea597fc632",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "3a0c4703-079a-4702-99e5-67c2939c7dd0",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "98ad0221-605b-47cc-9f50-23d9300451d5",
+                                              "key": "privateLinkHubName",
+                                              "value": "<string>",
+                                              "description": "(Required) Name of the private link hub."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Gets a privateLinkHub."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "8ae38988-0d3f-40ae-9de5-22b630922d2d",
+                                          "name": "Successfully retrieved.",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-8ae38988-0d3f-40ae-9de5-22b630922d2d"
+                                        },
+                                        {
+                                          "id": "2a09f64b-8ed9-45b2-ad53-923d82ff95d6",
+                                          "name": "Error response.",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-2a09f64b-8ed9-45b2-ad53-923d82ff95d6"
+                                        }
+                                      ],
+                                      "createdAt": "2026-06-05T15:11:59.000Z",
+                                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                                      "uid": "35240-95811edd-c256-47d8-9666-2d6a1d0431da"
+                                    },
+                                    {
+                                      "name": "Azure Synapse Analytics Create or update a private link hub",
+                                      "id": "17ac36f3-f4a3-4250-b2be-f660fae75bee",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "PUT",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.Synapse",
+                                            "privateLinkHubs",
+                                            ":privateLinkHubName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "api-version",
+                                              "value": "2021-06-01"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "a339a285-d123-47f8-a290-c0d77e7c4d2d",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "789613fc-04e3-46e7-8d34-c0f2754a60db",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "87a15d7e-e126-4b3d-988d-7d37a0070d6f",
+                                              "key": "privateLinkHubName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Creates or updates a privateLinkHub."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "7eb96de2-e77f-4944-9dd4-a6b0738fc3ae",
+                                          "name": "Successfully updated.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-7eb96de2-e77f-4944-9dd4-a6b0738fc3ae"
+                                        },
+                                        {
+                                          "id": "82f36d6f-bdb6-4621-9e13-0f4aafd8d704",
+                                          "name": "Successfully created.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Created",
+                                          "code": 201,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-82f36d6f-bdb6-4621-9e13-0f4aafd8d704"
+                                        },
+                                        {
+                                          "id": "1de93583-6a93-40af-89c5-2be7ee95873e",
+                                          "name": "Error response.",
+                                          "originalRequest": {
+                                            "method": "PUT",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-1de93583-6a93-40af-89c5-2be7ee95873e"
+                                        }
+                                      ],
+                                      "createdAt": "2026-06-05T15:11:59.000Z",
+                                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                                      "uid": "35240-17ac36f3-f4a3-4250-b2be-f660fae75bee"
+                                    },
+                                    {
+                                      "name": "Azure Synapse Analytics Update a private link hub",
+                                      "id": "4dec37c2-3cd4-4dc1-806c-05a3803f9703",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "PATCH",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"tags\": {\n    \"laborum_8f\": \"<string>\",\n    \"cillum_f9c\": \"<string>\"\n  }\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.Synapse",
+                                            "privateLinkHubs",
+                                            ":privateLinkHubName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "api-version",
+                                              "value": "2021-06-01"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "77a24b5b-aa93-42fe-b3da-5b414cc466e5",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "d95e4add-02b2-471c-9ad4-3b8587ecfabb",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "a2dc7a9b-b15f-4dfe-8420-473c451ccc5d",
+                                              "key": "privateLinkHubName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Updates a privateLinkHub."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "d1da344b-d180-451e-86d3-dd19e1275c18",
+                                          "name": "Successfully updated.",
+                                          "originalRequest": {
+                                            "method": "PATCH",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"tags\": {\n    \"laborum_8f\": \"<string>\",\n    \"cillum_f9c\": \"<string>\"\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"est_1ea\": \"<string>\",\n    \"minim_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"<string>\",\n    \"privateEndpointConnections\": [\n      {\n        \"id\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\"\n      }\n    ]\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-d1da344b-d180-451e-86d3-dd19e1275c18"
+                                        },
+                                        {
+                                          "id": "0bd5f205-cb8a-4fd8-b87a-bcd667ac6fa0",
+                                          "name": "Error response.",
+                                          "originalRequest": {
+                                            "method": "PATCH",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"tags\": {\n    \"laborum_8f\": \"<string>\",\n    \"cillum_f9c\": \"<string>\"\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-0bd5f205-cb8a-4fd8-b87a-bcd667ac6fa0"
+                                        }
+                                      ],
+                                      "createdAt": "2026-06-05T15:11:59.000Z",
+                                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                                      "uid": "35240-4dec37c2-3cd4-4dc1-806c-05a3803f9703"
+                                    },
+                                    {
+                                      "name": "Azure Synapse Analytics Delete a private link hub",
+                                      "id": "46d23d2a-f259-443e-b553-f60dcb9d15ea",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.Synapse",
+                                            "privateLinkHubs",
+                                            ":privateLinkHubName"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "api-version",
+                                              "value": "2021-06-01"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "b4f73aea-d904-4f50-85c7-ed631ac09c14",
+                                              "key": "subscriptionId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "ad6a0dd5-9b24-49de-a9f0-b59a286efd3a",
+                                              "key": "resourceGroupName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "b9b4658a-c90d-4cee-910f-b79d79eeca3e",
+                                              "key": "privateLinkHubName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Deletes a privateLinkHub."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "6adb1a4e-1bf9-486f-b6c6-fe4c9d42266e",
+                                          "name": "Successfully deleted.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-6adb1a4e-1bf9-486f-b6c6-fe4c9d42266e"
+                                        },
+                                        {
+                                          "id": "ce092ba8-5656-4366-89c2-a7a18a8812aa",
+                                          "name": "Deletion accepted.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Accepted",
+                                          "code": 202,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-ce092ba8-5656-4366-89c2-a7a18a8812aa"
+                                        },
+                                        {
+                                          "id": "3a1346b5-6639-4358-8521-d27e96bf1ace",
+                                          "name": "Not found.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "No Content",
+                                          "code": 204,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-3a1346b5-6639-4358-8521-d27e96bf1ace"
+                                        },
+                                        {
+                                          "id": "8e533718-9280-4b20-b603-87256133b877",
+                                          "name": "Error response.",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs/:privateLinkHubName?api-version=2021-06-01",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "privateLinkHubs",
+                                                ":privateLinkHubName"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "subscriptionId"
+                                                },
+                                                {
+                                                  "key": "resourceGroupName"
+                                                },
+                                                {
+                                                  "key": "privateLinkHubName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                          "createdAt": "2026-06-05T15:11:59.000Z",
+                                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                                          "uid": "35240-8e533718-9280-4b20-b603-87256133b877"
+                                        }
+                                      ],
+                                      "createdAt": "2026-06-05T15:11:59.000Z",
+                                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                                      "uid": "35240-46d23d2a-f259-443e-b553-f60dcb9d15ea"
+                                    }
+                                  ],
+                                  "id": "dcc8c5ed-0119-41e8-8035-63e183913069",
+                                  "createdAt": "2026-06-05T15:11:59.000Z",
+                                  "updatedAt": "2026-06-05T15:11:59.000Z",
+                                  "uid": "35240-dcc8c5ed-0119-41e8-8035-63e183913069"
+                                },
+                                {
+                                  "name": "Azure Synapse Analytics List private link hubs by resource group",
+                                  "id": "2e8bddce-8681-4fd6-9404-8bee0397b963",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs?api-version=2021-06-01",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "subscriptions",
+                                        ":subscriptionId",
+                                        "resourceGroups",
+                                        ":resourceGroupName",
+                                        "providers",
+                                        "Microsoft.Synapse",
+                                        "privateLinkHubs"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) ",
+                                          "key": "api-version",
+                                          "value": "2021-06-01"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "d21b6f61-b166-4bbe-b821-a455df696219",
+                                          "key": "subscriptionId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "a3e54190-26a6-4f33-a1fb-179815d95210",
+                                          "key": "resourceGroupName",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Returns a list of privateLinkHubs in a resource group."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "9ed2432d-6a67-4cfb-95c6-a2db39a52c6f",
+                                      "name": "Successfully retrieved the list.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs?api-version=2021-06-01",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.Synapse",
+                                            "privateLinkHubs"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "api-version",
+                                              "value": "2021-06-01"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "subscriptionId"
+                                            },
+                                            {
+                                              "key": "resourceGroupName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"nostrud475\": \"<string>\",\n        \"est61\": \"<string>\",\n        \"laborum_e\": \"<string>\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"<string>\",\n        \"privateEndpointConnections\": [\n          {\n            \"id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"in_d8\": \"<string>\",\n        \"velitb\": \"<string>\",\n        \"adipisicinge\": \"<string>\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"<string>\",\n        \"privateEndpointConnections\": [\n          {\n            \"id\": \"<string>\"\n          },\n          {\n            \"id\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+                                      "createdAt": "2026-06-05T15:11:59.000Z",
+                                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                                      "uid": "35240-9ed2432d-6a67-4cfb-95c6-a2db39a52c6f"
+                                    },
+                                    {
+                                      "id": "a160c214-8856-4643-bfe8-8d244f452cee",
+                                      "name": "Error response.",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/privateLinkHubs?api-version=2021-06-01",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "subscriptions",
+                                            ":subscriptionId",
+                                            "resourceGroups",
+                                            ":resourceGroupName",
+                                            "providers",
+                                            "Microsoft.Synapse",
+                                            "privateLinkHubs"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "(Required) ",
+                                              "key": "api-version",
+                                              "value": "2021-06-01"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "subscriptionId"
+                                            },
+                                            {
+                                              "key": "resourceGroupName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                      "createdAt": "2026-06-05T15:11:59.000Z",
+                                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                                      "uid": "35240-a160c214-8856-4643-bfe8-8d244f452cee"
+                                    }
+                                  ],
+                                  "createdAt": "2026-06-05T15:11:59.000Z",
+                                  "updatedAt": "2026-06-05T15:11:59.000Z",
+                                  "uid": "35240-2e8bddce-8681-4fd6-9404-8bee0397b963"
+                                }
+                              ],
+                              "id": "7e345361-1d3e-432d-a726-3c9182a5feb3",
+                              "createdAt": "2026-06-05T15:11:59.000Z",
+                              "updatedAt": "2026-06-05T15:11:59.000Z",
+                              "uid": "35240-7e345361-1d3e-432d-a726-3c9182a5feb3"
+                            }
+                          ],
+                          "id": "14006d40-4ee5-4022-89f2-bf9e7e7c9a51",
+                          "createdAt": "2026-06-05T15:11:59.000Z",
+                          "updatedAt": "2026-06-05T15:11:59.000Z",
+                          "uid": "35240-14006d40-4ee5-4022-89f2-bf9e7e7c9a51"
+                        }
+                      ],
+                      "id": "c91ec87b-cf26-43f9-bdbf-8848efd16cbb",
+                      "createdAt": "2026-06-05T15:11:59.000Z",
+                      "updatedAt": "2026-06-05T15:11:59.000Z",
+                      "uid": "35240-c91ec87b-cf26-43f9-bdbf-8848efd16cbb"
+                    }
+                  ],
+                  "id": "d885f03e-2b1d-4c51-bd03-efd96889f415",
+                  "createdAt": "2026-06-05T15:11:59.000Z",
+                  "updatedAt": "2026-06-05T15:11:59.000Z",
+                  "uid": "35240-d885f03e-2b1d-4c51-bd03-efd96889f415"
+                }
+              ],
+              "id": "842c8b1a-650d-4027-9b20-060b7d38af53",
+              "createdAt": "2026-06-05T15:11:59.000Z",
+              "updatedAt": "2026-06-05T15:11:59.000Z",
+              "uid": "35240-842c8b1a-650d-4027-9b20-060b7d38af53"
+            }
+          ],
+          "id": "4fa0f5e3-39bc-40c5-abc8-05eb0be32d72",
+          "createdAt": "2026-06-05T15:11:59.000Z",
+          "updatedAt": "2026-06-05T15:11:59.000Z",
+          "uid": "35240-4fa0f5e3-39bc-40c5-abc8-05eb0be32d72"
+        }
+      ],
+      "id": "f631cf54-3f8d-4392-a156-7f4bbe277895",
+      "createdAt": "2026-06-05T15:11:59.000Z",
+      "updatedAt": "2026-06-05T15:11:59.000Z",
+      "uid": "35240-f631cf54-3f8d-4392-a156-7f4bbe277895"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}

@@ -1,0 +1,1195 @@
+{
+  "info": {
+    "_postman_id": "c010d14d-639c-4095-9cf0-160c57eaeeff",
+    "name": "Azure Synapse Analytics - SQL Script API",
+    "description": "Create, update, list, and delete SQL scripts within a Synapse workspace. SQL scripts can target both dedicated and serverless SQL pools for querying and data management.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:48.000Z",
+    "updatedAt": "2026-06-05T15:11:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c010d14d-639c-4095-9cf0-160c57eaeeff"
+  },
+  "item": [
+    {
+      "name": "sqlScripts",
+      "item": [
+        {
+          "name": "{sqlScriptName}",
+          "item": [
+            {
+              "name": "rename",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Rename a SQL script",
+                  "id": "22306681-94fd-474d-87ca-4cf6fc8f3e30",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"newName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName/rename?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName",
+                        "rename"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "fad18415-bd97-482f-94f6-5bf7810acfa5",
+                          "key": "sqlScriptName",
+                          "value": "<string>",
+                          "description": "(Required) The SQL script name."
+                        }
+                      ]
+                    },
+                    "description": "Renames a SQL script."
+                  },
+                  "response": [
+                    {
+                      "id": "7bb05021-b927-4451-8125-2b7b40e750de",
+                      "name": "Successfully renamed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sqlScripts",
+                            ":sqlScriptName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "sqlScriptName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:48.000Z",
+                      "updatedAt": "2026-06-05T15:11:48.000Z",
+                      "uid": "35240-7bb05021-b927-4451-8125-2b7b40e750de"
+                    },
+                    {
+                      "id": "8ee985e9-5d98-4273-ba2d-91f58d388f6b",
+                      "name": "Rename accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sqlScripts",
+                            ":sqlScriptName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "sqlScriptName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:48.000Z",
+                      "updatedAt": "2026-06-05T15:11:48.000Z",
+                      "uid": "35240-8ee985e9-5d98-4273-ba2d-91f58d388f6b"
+                    },
+                    {
+                      "id": "ec43175d-67dc-441a-a4a7-586595515c09",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "sqlScripts",
+                            ":sqlScriptName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "sqlScriptName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:48.000Z",
+                      "updatedAt": "2026-06-05T15:11:48.000Z",
+                      "uid": "35240-ec43175d-67dc-441a-a4a7-586595515c09"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-22306681-94fd-474d-87ca-4cf6fc8f3e30"
+                }
+              ],
+              "id": "55fd7f56-f2dc-42c8-b02d-bdc866cb7f29",
+              "createdAt": "2026-06-05T15:11:48.000Z",
+              "updatedAt": "2026-06-05T15:11:48.000Z",
+              "uid": "35240-55fd7f56-f2dc-42c8-b02d-bdc866cb7f29"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a SQL script",
+              "id": "8b5cb2ca-283c-4989-be01-573635c2c4e8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sqlScripts",
+                    ":sqlScriptName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "558b5b9d-de24-4885-8fed-f1ce063de281",
+                      "key": "sqlScriptName",
+                      "value": "<string>",
+                      "description": "(Required) The SQL script name."
+                    }
+                  ]
+                },
+                "description": "Gets a SQL script."
+              },
+              "response": [
+                {
+                  "id": "a8115482-c953-45f6-b7fe-fe5507170bc0",
+                  "name": "Successfully retrieved the SQL script.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"content\": {\n      \"query\": \"<string>\",\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"type\": \"SqlPool\"\n      },\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"resultLimit\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"type\": \"SqlQuery\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-a8115482-c953-45f6-b7fe-fe5507170bc0"
+                },
+                {
+                  "id": "e7fc281f-d424-4e15-a71f-bcd62bd93d9b",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-e7fc281f-d424-4e15-a71f-bcd62bd93d9b"
+                },
+                {
+                  "id": "c03254bf-60a9-4bf9-92b2-c56869f96e08",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-c03254bf-60a9-4bf9-92b2-c56869f96e08"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:48.000Z",
+              "updatedAt": "2026-06-05T15:11:48.000Z",
+              "uid": "35240-8b5cb2ca-283c-4989-be01-573635c2c4e8"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a SQL script",
+              "id": "9ae00aca-9958-468a-a273-092a2544e892",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"content\": {\n      \"query\": \"<string>\",\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"type\": \"SqlPool\"\n      },\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"resultLimit\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"type\": \"SqlQuery\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sqlScripts",
+                    ":sqlScriptName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "31cb108b-50ea-4c79-83fb-87075e5bf557",
+                      "key": "sqlScriptName",
+                      "value": "<string>",
+                      "description": "(Required) The SQL script name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a SQL script."
+              },
+              "response": [
+                {
+                  "id": "7f5d9fda-95dd-4e26-ae04-4d57c4b9d28c",
+                  "name": "Successfully updated the SQL script.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"content\": {\n      \"query\": \"<string>\",\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"type\": \"SqlPool\"\n      },\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"resultLimit\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"type\": \"SqlQuery\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"content\": {\n      \"query\": \"<string>\",\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"type\": \"SqlPool\"\n      },\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"resultLimit\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"type\": \"SqlQuery\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-7f5d9fda-95dd-4e26-ae04-4d57c4b9d28c"
+                },
+                {
+                  "id": "57860b42-fd59-4e22-a275-893c5a9f31b0",
+                  "name": "SQL script creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"content\": {\n      \"query\": \"<string>\",\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"type\": \"SqlPool\"\n      },\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"resultLimit\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"type\": \"SqlQuery\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-57860b42-fd59-4e22-a275-893c5a9f31b0"
+                },
+                {
+                  "id": "f19c755a-7bbe-412d-abc2-210b8c374026",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"content\": {\n      \"query\": \"<string>\",\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"type\": \"SqlPool\"\n      },\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"resultLimit\": \"<integer>\"\n    },\n    \"description\": \"<string>\",\n    \"type\": \"SqlQuery\",\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-f19c755a-7bbe-412d-abc2-210b8c374026"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:48.000Z",
+              "updatedAt": "2026-06-05T15:11:48.000Z",
+              "uid": "35240-9ae00aca-9958-468a-a273-092a2544e892"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a SQL script",
+              "id": "ea082482-cc6c-4b7f-bbf8-a30ae8fd2ddb",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sqlScripts",
+                    ":sqlScriptName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "457325e1-0be8-464e-a8d9-d46fdecf63ba",
+                      "key": "sqlScriptName",
+                      "value": "<string>",
+                      "description": "(Required) The SQL script name."
+                    }
+                  ]
+                },
+                "description": "Deletes a SQL script."
+              },
+              "response": [
+                {
+                  "id": "2b9b68a6-226f-43e6-80d9-2f80e1c929a3",
+                  "name": "Successfully deleted the SQL script.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-2b9b68a6-226f-43e6-80d9-2f80e1c929a3"
+                },
+                {
+                  "id": "06d71d38-f7c3-42cd-82c9-fb17dcd9627f",
+                  "name": "SQL script deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-06d71d38-f7c3-42cd-82c9-fb17dcd9627f"
+                },
+                {
+                  "id": "58682664-491e-43a5-91b2-8ce26d9a752e",
+                  "name": "SQL script not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-58682664-491e-43a5-91b2-8ce26d9a752e"
+                },
+                {
+                  "id": "dd44a2f7-da5d-4b4c-98df-976d00357fec",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/sqlScripts/:sqlScriptName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "sqlScripts",
+                        ":sqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "sqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:48.000Z",
+                  "updatedAt": "2026-06-05T15:11:48.000Z",
+                  "uid": "35240-dd44a2f7-da5d-4b4c-98df-976d00357fec"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:48.000Z",
+              "updatedAt": "2026-06-05T15:11:48.000Z",
+              "uid": "35240-ea082482-cc6c-4b7f-bbf8-a30ae8fd2ddb"
+            }
+          ],
+          "id": "5ba80376-42ba-4dd1-9709-ecc282ca2c6c",
+          "createdAt": "2026-06-05T15:11:48.000Z",
+          "updatedAt": "2026-06-05T15:11:48.000Z",
+          "uid": "35240-5ba80376-42ba-4dd1-9709-ecc282ca2c6c"
+        },
+        {
+          "name": "Azure Synapse Analytics List SQL scripts",
+          "id": "6dcae4ca-3b26-4cf7-b573-c2c51983cd65",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/sqlScripts?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "sqlScripts"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Lists SQL scripts in the workspace."
+          },
+          "response": [
+            {
+              "id": "7e0690af-fa28-407c-aeef-6ac984a317ef",
+              "name": "Successfully retrieved the list of SQL scripts.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sqlScripts?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sqlScripts"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"content\": {\n          \"query\": \"<string>\",\n          \"currentConnection\": {\n            \"name\": \"<string>\",\n            \"type\": \"SqlPool\"\n          },\n          \"metadata\": {\n            \"language\": \"<string>\"\n          },\n          \"resultLimit\": \"<integer>\"\n        },\n        \"description\": \"<string>\",\n        \"type\": \"SqlQuery\",\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"content\": {\n          \"query\": \"<string>\",\n          \"currentConnection\": {\n            \"name\": \"<string>\",\n            \"type\": \"SqlOnDemand\"\n          },\n          \"metadata\": {\n            \"language\": \"<string>\"\n          },\n          \"resultLimit\": \"<integer>\"\n        },\n        \"description\": \"<string>\",\n        \"type\": \"SqlQuery\",\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:48.000Z",
+              "updatedAt": "2026-06-05T15:11:48.000Z",
+              "uid": "35240-7e0690af-fa28-407c-aeef-6ac984a317ef"
+            },
+            {
+              "id": "03b2aa7d-6dcb-4fbd-8297-4bf35c971207",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sqlScripts?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sqlScripts"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:48.000Z",
+              "updatedAt": "2026-06-05T15:11:48.000Z",
+              "uid": "35240-03b2aa7d-6dcb-4fbd-8297-4bf35c971207"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:48.000Z",
+          "updatedAt": "2026-06-05T15:11:48.000Z",
+          "uid": "35240-6dcae4ca-3b26-4cf7-b573-c2c51983cd65"
+        }
+      ],
+      "id": "9e1539c1-284c-4427-bb20-06e02ef0d124",
+      "createdAt": "2026-06-05T15:11:48.000Z",
+      "updatedAt": "2026-06-05T15:11:48.000Z",
+      "uid": "35240-9e1539c1-284c-4427-bb20-06e02ef0d124"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

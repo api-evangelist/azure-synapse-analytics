@@ -1,0 +1,151 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RoleAssignments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List role assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/roleAssignments",
+            "headers": [
+              {
+                "name": "x-ms-continuation",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "query",
+                "description": "Synapse Built-In Role Id."
+              },
+              {
+                "name": "principalId",
+                "value": "",
+                "type": "query",
+                "description": "Object ID of the AAD principal or security-group."
+              },
+              {
+                "name": "scope",
+                "value": "",
+                "type": "query",
+                "description": "Scope of the Synapse Built-In Role."
+              }
+            ]
+          },
+          "docs": "List role assignments."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get role assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/roleAssignments/:roleAssignmentId",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "roleAssignmentId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the role assignment."
+              }
+            ]
+          },
+          "docs": "Get role assignment by role assignment Id."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create role assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/roleAssignments/:roleAssignmentId",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "roleAssignmentId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the role assignment."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create role assignment."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete role assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/roleAssignments/:roleAssignmentId",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "roleAssignmentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "scope",
+                "value": "",
+                "type": "query",
+                "description": "Scope of the Synapse Built-In Role."
+              }
+            ]
+          },
+          "docs": "Delete role assignment by role assignment Id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

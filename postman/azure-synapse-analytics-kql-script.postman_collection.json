@@ -1,0 +1,1117 @@
+{
+  "info": {
+    "_postman_id": "1cc50120-9ba6-4941-b8cd-e345369ea04c",
+    "name": "Azure Synapse Analytics - KQL Script API",
+    "description": "Create and manage KQL (Kusto Query Language) scripts for querying Data Explorer pools. Supports authoring and storing KQL queries as workspace artifacts.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:12:18.000Z",
+    "updatedAt": "2026-06-05T15:12:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1cc50120-9ba6-4941-b8cd-e345369ea04c"
+  },
+  "item": [
+    {
+      "name": "kqlScripts",
+      "item": [
+        {
+          "name": "{kqlScriptName}",
+          "item": [
+            {
+              "name": "rename",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Rename a KQL script",
+                  "id": "04bddaea-9100-4d88-9c60-ef9817493ac9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"newName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName/rename?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName",
+                        "rename"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "19a35a25-0e74-4238-912c-ff041cac767b",
+                          "key": "kqlScriptName",
+                          "value": "<string>",
+                          "description": "(Required) KQL script name."
+                        }
+                      ]
+                    },
+                    "description": "Rename a KQL script."
+                  },
+                  "response": [
+                    {
+                      "id": "6029b02a-8c14-45a7-8d58-2ca9a970ae6e",
+                      "name": "Successfully renamed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName/rename?api-version=2021-11-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "kqlScripts",
+                            ":kqlScriptName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-11-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "kqlScriptName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:12:19.000Z",
+                      "updatedAt": "2026-06-05T15:12:19.000Z",
+                      "uid": "35240-6029b02a-8c14-45a7-8d58-2ca9a970ae6e"
+                    },
+                    {
+                      "id": "153e3828-e287-40e4-b03b-b0b29000947a",
+                      "name": "Rename accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName/rename?api-version=2021-11-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "kqlScripts",
+                            ":kqlScriptName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-11-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "kqlScriptName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:12:19.000Z",
+                      "updatedAt": "2026-06-05T15:12:19.000Z",
+                      "uid": "35240-153e3828-e287-40e4-b03b-b0b29000947a"
+                    },
+                    {
+                      "id": "2dedc33b-de9f-4ccc-9816-ffb16301a745",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName/rename?api-version=2021-11-01-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "kqlScripts",
+                            ":kqlScriptName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2021-11-01-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "kqlScriptName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:12:19.000Z",
+                      "updatedAt": "2026-06-05T15:12:19.000Z",
+                      "uid": "35240-2dedc33b-de9f-4ccc-9816-ffb16301a745"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-04bddaea-9100-4d88-9c60-ef9817493ac9"
+                }
+              ],
+              "id": "960097d7-835e-4066-b9e4-611ed08be494",
+              "createdAt": "2026-06-05T15:12:19.000Z",
+              "updatedAt": "2026-06-05T15:12:19.000Z",
+              "uid": "35240-960097d7-835e-4066-b9e4-611ed08be494"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a KQL script",
+              "id": "a4b9dd9b-2b5d-4d8b-a84c-046540665efa",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kqlScripts",
+                    ":kqlScriptName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-11-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "8ee06a26-543b-495c-9aa3-8ebd6f87f906",
+                      "key": "kqlScriptName",
+                      "value": "<string>",
+                      "description": "(Required) KQL script name."
+                    }
+                  ]
+                },
+                "description": "Get KQL script by name."
+              },
+              "response": [
+                {
+                  "id": "d12ef5b5-9980-450e-a8d6-db79941f82f2",
+                  "name": "Successfully retrieved.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"content\": {\n      \"query\": \"<string>\",\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"databaseName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-d12ef5b5-9980-450e-a8d6-db79941f82f2"
+                },
+                {
+                  "id": "80923097-ebf7-4db0-bbd9-6b96fe4a61b1",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-80923097-ebf7-4db0-bbd9-6b96fe4a61b1"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:19.000Z",
+              "updatedAt": "2026-06-05T15:12:19.000Z",
+              "uid": "35240-a4b9dd9b-2b5d-4d8b-a84c-046540665efa"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a KQL script",
+              "id": "cd318f36-63aa-4448-ba51-3ee2b2ae6569",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"content\": {\n      \"query\": \"<string>\",\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"databaseName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kqlScripts",
+                    ":kqlScriptName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-11-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "1aac3ff7-ff4b-4df0-bca4-b9ada66910ea",
+                      "key": "kqlScriptName",
+                      "value": "<string>",
+                      "description": "(Required) KQL script name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a KQL Script."
+              },
+              "response": [
+                {
+                  "id": "a35e94d8-b4bf-419d-833a-53388704576d",
+                  "name": "Successfully updated.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"content\": {\n      \"query\": \"<string>\",\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"databaseName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"content\": {\n      \"query\": \"<string>\",\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"databaseName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-a35e94d8-b4bf-419d-833a-53388704576d"
+                },
+                {
+                  "id": "16484d3d-a790-434c-8aa6-90c526347c56",
+                  "name": "Creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"content\": {\n      \"query\": \"<string>\",\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"databaseName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-16484d3d-a790-434c-8aa6-90c526347c56"
+                },
+                {
+                  "id": "5974e511-6163-4d07-964e-4fec3038bbe8",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"description\": \"<string>\",\n    \"content\": {\n      \"query\": \"<string>\",\n      \"metadata\": {\n        \"language\": \"<string>\"\n      },\n      \"currentConnection\": {\n        \"name\": \"<string>\",\n        \"databaseName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"folder\": {\n      \"name\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-5974e511-6163-4d07-964e-4fec3038bbe8"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:19.000Z",
+              "updatedAt": "2026-06-05T15:12:19.000Z",
+              "uid": "35240-cd318f36-63aa-4448-ba51-3ee2b2ae6569"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a KQL script",
+              "id": "0bfaf13a-5cc2-48d5-817c-b6754ae283c4",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kqlScripts",
+                    ":kqlScriptName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-11-01-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "cb25d4a9-7fd3-4253-9f19-a634e8270a49",
+                      "key": "kqlScriptName",
+                      "value": "<string>",
+                      "description": "(Required) KQL script name."
+                    }
+                  ]
+                },
+                "description": "Delete KQL script by name."
+              },
+              "response": [
+                {
+                  "id": "57e902f2-22e7-4173-b93a-09edba020057",
+                  "name": "Successfully deleted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-57e902f2-22e7-4173-b93a-09edba020057"
+                },
+                {
+                  "id": "1fba66e9-24b3-44cc-96c3-7fb8c0804690",
+                  "name": "Deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-1fba66e9-24b3-44cc-96c3-7fb8c0804690"
+                },
+                {
+                  "id": "9157f664-eeca-4c79-bd8c-1660ec0f86e7",
+                  "name": "Not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-9157f664-eeca-4c79-bd8c-1660ec0f86e7"
+                },
+                {
+                  "id": "528f85ed-6f4b-4038-91de-85063218ed9a",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/kqlScripts/:kqlScriptName?api-version=2021-11-01-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "kqlScripts",
+                        ":kqlScriptName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2021-11-01-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "kqlScriptName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:19.000Z",
+                  "updatedAt": "2026-06-05T15:12:19.000Z",
+                  "uid": "35240-528f85ed-6f4b-4038-91de-85063218ed9a"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:19.000Z",
+              "updatedAt": "2026-06-05T15:12:19.000Z",
+              "uid": "35240-0bfaf13a-5cc2-48d5-817c-b6754ae283c4"
+            }
+          ],
+          "id": "fd090153-9bd6-4332-8298-c51cd8318a67",
+          "createdAt": "2026-06-05T15:12:19.000Z",
+          "updatedAt": "2026-06-05T15:12:19.000Z",
+          "uid": "35240-fd090153-9bd6-4332-8298-c51cd8318a67"
+        },
+        {
+          "name": "Azure Synapse Analytics List KQL scripts",
+          "id": "99940720-a8ad-42bf-ac5e-665f893f00df",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/kqlScripts?api-version=2021-11-01-preview",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "kqlScripts"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2021-11-01-preview"
+                }
+              ]
+            },
+            "description": "Get all KQL scripts in the workspace."
+          },
+          "response": [
+            {
+              "id": "f2028f8c-bc95-4750-a894-a1bba5369326",
+              "name": "Successfully retrieved the list.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/kqlScripts?api-version=2021-11-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kqlScripts"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-11-01-preview"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"content\": {\n          \"query\": \"<string>\",\n          \"metadata\": {\n            \"language\": \"<string>\"\n          },\n          \"currentConnection\": {\n            \"name\": \"<string>\",\n            \"databaseName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"description\": \"<string>\",\n        \"content\": {\n          \"query\": \"<string>\",\n          \"metadata\": {\n            \"language\": \"<string>\"\n          },\n          \"currentConnection\": {\n            \"name\": \"<string>\",\n            \"databaseName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        \"folder\": {\n          \"name\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:12:19.000Z",
+              "updatedAt": "2026-06-05T15:12:19.000Z",
+              "uid": "35240-f2028f8c-bc95-4750-a894-a1bba5369326"
+            },
+            {
+              "id": "29358ba5-2ef7-4167-ab8a-f8a2a5cf2bef",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/kqlScripts?api-version=2021-11-01-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "kqlScripts"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2021-11-01-preview"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:19.000Z",
+              "updatedAt": "2026-06-05T15:12:19.000Z",
+              "uid": "35240-29358ba5-2ef7-4167-ab8a-f8a2a5cf2bef"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:19.000Z",
+          "updatedAt": "2026-06-05T15:12:19.000Z",
+          "uid": "35240-99940720-a8ad-42bf-ac5e-665f893f00df"
+        }
+      ],
+      "id": "3e26f004-e98e-4d0c-b34c-1d2d4660d07a",
+      "createdAt": "2026-06-05T15:12:19.000Z",
+      "updatedAt": "2026-06-05T15:12:19.000Z",
+      "uid": "35240-3e26f004-e98e-4d0c-b34c-1d2d4660d07a"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

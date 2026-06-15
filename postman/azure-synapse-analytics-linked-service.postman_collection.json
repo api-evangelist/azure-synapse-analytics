@@ -1,0 +1,1195 @@
+{
+  "info": {
+    "_postman_id": "c7032b22-e191-47b6-9638-70bbd4938eda",
+    "name": "Azure Synapse Analytics - Linked Service API",
+    "description": "Create and manage linked services that define connection information to external data sources. Linked services act as connection strings for integrating with databases, storage, and other services.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:45.000Z",
+    "updatedAt": "2026-06-05T15:11:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c7032b22-e191-47b6-9638-70bbd4938eda"
+  },
+  "item": [
+    {
+      "name": "linkedservices",
+      "item": [
+        {
+          "name": "{linkedServiceName}",
+          "item": [
+            {
+              "name": "rename",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Rename a linked service",
+                  "id": "0198be9e-4c21-4c2b-bccb-e2392761340b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"newName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName/rename?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName",
+                        "rename"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "88ee3b59-874a-4e00-9fa8-62b4388e7ff7",
+                          "key": "linkedServiceName",
+                          "value": "<string>",
+                          "description": "(Required) The linked service name."
+                        }
+                      ]
+                    },
+                    "description": "Renames a linked service."
+                  },
+                  "response": [
+                    {
+                      "id": "6cc9e53a-0486-4682-b696-7e6300818fff",
+                      "name": "Successfully renamed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/linkedservices/:linkedServiceName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkedservices",
+                            ":linkedServiceName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkedServiceName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:46.000Z",
+                      "updatedAt": "2026-06-05T15:11:46.000Z",
+                      "uid": "35240-6cc9e53a-0486-4682-b696-7e6300818fff"
+                    },
+                    {
+                      "id": "c7d40077-7001-4668-a914-124442b36238",
+                      "name": "Rename accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/linkedservices/:linkedServiceName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkedservices",
+                            ":linkedServiceName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkedServiceName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:46.000Z",
+                      "updatedAt": "2026-06-05T15:11:46.000Z",
+                      "uid": "35240-c7d40077-7001-4668-a914-124442b36238"
+                    },
+                    {
+                      "id": "d1ef0a01-2cdb-45ed-92eb-375795704bb2",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"newName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/linkedservices/:linkedServiceName/rename?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkedservices",
+                            ":linkedServiceName",
+                            "rename"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkedServiceName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:46.000Z",
+                      "updatedAt": "2026-06-05T15:11:46.000Z",
+                      "uid": "35240-d1ef0a01-2cdb-45ed-92eb-375795704bb2"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-0198be9e-4c21-4c2b-bccb-e2392761340b"
+                }
+              ],
+              "id": "f48a2962-35c5-42bd-b93c-7655d275e8ab",
+              "createdAt": "2026-06-05T15:11:46.000Z",
+              "updatedAt": "2026-06-05T15:11:46.000Z",
+              "uid": "35240-f48a2962-35c5-42bd-b93c-7655d275e8ab"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a linked service",
+              "id": "571e443b-258b-43a0-a630-ec8081a5e973",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkedservices",
+                    ":linkedServiceName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "593975a9-1596-4a90-b6e4-3f6941ec3286",
+                      "key": "linkedServiceName",
+                      "value": "<string>",
+                      "description": "(Required) The linked service name."
+                    }
+                  ]
+                },
+                "description": "Gets a linked service."
+              },
+              "response": [
+                {
+                  "id": "d73b8022-8a0a-44a1-97eb-a4d360c157b7",
+                  "name": "Successfully retrieved the linked service.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"connectVia\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"parameters\": {\n      \"adipisicing_3\": {},\n      \"ad48\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"typeProperties\": {}\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-d73b8022-8a0a-44a1-97eb-a4d360c157b7"
+                },
+                {
+                  "id": "b06c4daf-cde8-4945-bd5c-5f13aada342f",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-b06c4daf-cde8-4945-bd5c-5f13aada342f"
+                },
+                {
+                  "id": "d7c968a5-0317-4004-b189-45c66da515ae",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-d7c968a5-0317-4004-b189-45c66da515ae"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:46.000Z",
+              "updatedAt": "2026-06-05T15:11:46.000Z",
+              "uid": "35240-571e443b-258b-43a0-a630-ec8081a5e973"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a linked service",
+              "id": "4f9e37b4-9fa0-49a2-abb5-02f660959a53",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"connectVia\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"parameters\": {\n      \"adipisicing_3\": {},\n      \"ad48\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"typeProperties\": {}\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkedservices",
+                    ":linkedServiceName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "dc7d034f-a11c-49df-9330-977ec8addaa7",
+                      "key": "linkedServiceName",
+                      "value": "<string>",
+                      "description": "(Required) The linked service name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a linked service."
+              },
+              "response": [
+                {
+                  "id": "b32cd640-f7fa-4196-b090-28e2c0be1017",
+                  "name": "Successfully updated the linked service.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"connectVia\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"parameters\": {\n      \"adipisicing_3\": {},\n      \"ad48\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"typeProperties\": {}\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"connectVia\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"parameters\": {\n      \"adipisicing_3\": {},\n      \"ad48\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"typeProperties\": {}\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-b32cd640-f7fa-4196-b090-28e2c0be1017"
+                },
+                {
+                  "id": "98f42491-d98b-4e27-a38b-6e1f72d87d63",
+                  "name": "Linked service creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"connectVia\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"parameters\": {\n      \"adipisicing_3\": {},\n      \"ad48\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"typeProperties\": {}\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-98f42491-d98b-4e27-a38b-6e1f72d87d63"
+                },
+                {
+                  "id": "224cf61b-e767-4983-8a21-dd42dd69bc59",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"connectVia\": {\n      \"referenceName\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    \"parameters\": {\n      \"adipisicing_3\": {},\n      \"ad48\": {}\n    },\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"typeProperties\": {}\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-224cf61b-e767-4983-8a21-dd42dd69bc59"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:46.000Z",
+              "updatedAt": "2026-06-05T15:11:46.000Z",
+              "uid": "35240-4f9e37b4-9fa0-49a2-abb5-02f660959a53"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a linked service",
+              "id": "c6ad405f-84fb-42c5-8093-27d4354cb668",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkedservices",
+                    ":linkedServiceName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "ece7981e-436f-4239-b878-e18cb612b71e",
+                      "key": "linkedServiceName",
+                      "value": "<string>",
+                      "description": "(Required) The linked service name."
+                    }
+                  ]
+                },
+                "description": "Deletes a linked service."
+              },
+              "response": [
+                {
+                  "id": "80b24c54-f047-4957-aebc-60f10e29be8e",
+                  "name": "Successfully deleted the linked service.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-80b24c54-f047-4957-aebc-60f10e29be8e"
+                },
+                {
+                  "id": "2499a404-2c53-43f7-88d6-0c63158a87ff",
+                  "name": "Linked service deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-2499a404-2c53-43f7-88d6-0c63158a87ff"
+                },
+                {
+                  "id": "ff0be83c-bf6d-4993-8dfc-fd41e988f11b",
+                  "name": "Linked service not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-ff0be83c-bf6d-4993-8dfc-fd41e988f11b"
+                },
+                {
+                  "id": "7dd0dd7d-9e38-44e9-b7b5-585239113b64",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkedservices/:linkedServiceName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkedservices",
+                        ":linkedServiceName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkedServiceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:46.000Z",
+                  "updatedAt": "2026-06-05T15:11:46.000Z",
+                  "uid": "35240-7dd0dd7d-9e38-44e9-b7b5-585239113b64"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:46.000Z",
+              "updatedAt": "2026-06-05T15:11:46.000Z",
+              "uid": "35240-c6ad405f-84fb-42c5-8093-27d4354cb668"
+            }
+          ],
+          "id": "6698280f-984c-43f5-bde1-ab4d55fb8910",
+          "createdAt": "2026-06-05T15:11:46.000Z",
+          "updatedAt": "2026-06-05T15:11:46.000Z",
+          "uid": "35240-6698280f-984c-43f5-bde1-ab4d55fb8910"
+        },
+        {
+          "name": "Azure Synapse Analytics List linked services",
+          "id": "2f1151de-8176-492f-8f11-7641c5840529",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/linkedservices?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "linkedservices"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Lists linked services in the workspace."
+          },
+          "response": [
+            {
+              "id": "59a45440-4275-4779-b8d6-a0c01a79cb2a",
+              "name": "Successfully retrieved the list of linked services.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkedservices?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkedservices"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"connectVia\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"sintd5b\": {},\n          \"ea187\": {}\n        },\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"typeProperties\": {}\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"connectVia\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"ad40f\": {},\n          \"est_b44\": {},\n          \"Utd85\": {}\n        },\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"typeProperties\": {}\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:46.000Z",
+              "updatedAt": "2026-06-05T15:11:46.000Z",
+              "uid": "35240-59a45440-4275-4779-b8d6-a0c01a79cb2a"
+            },
+            {
+              "id": "7204c13b-7e8e-44b9-935a-1d521ca50bc1",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkedservices?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkedservices"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:46.000Z",
+              "updatedAt": "2026-06-05T15:11:46.000Z",
+              "uid": "35240-7204c13b-7e8e-44b9-935a-1d521ca50bc1"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:46.000Z",
+          "updatedAt": "2026-06-05T15:11:46.000Z",
+          "uid": "35240-2f1151de-8176-492f-8f11-7641c5840529"
+        }
+      ],
+      "id": "1485ef35-2f4b-42fc-871d-af7dd590fd35",
+      "createdAt": "2026-06-05T15:11:46.000Z",
+      "updatedAt": "2026-06-05T15:11:46.000Z",
+      "uid": "35240-1485ef35-2f4b-42fc-871d-af7dd590fd35"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

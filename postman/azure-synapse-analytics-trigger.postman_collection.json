@@ -1,0 +1,1853 @@
+{
+  "info": {
+    "_postman_id": "9b615ea1-0fc7-4a62-a74f-9b03fcd14b07",
+    "name": "Azure Synapse Analytics - Trigger API",
+    "description": "Create and manage triggers that orchestrate pipeline execution. Supports schedule-based, tumbling window, and event-based triggers for automated workflow execution.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:11:49.000Z",
+    "updatedAt": "2026-06-05T15:11:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9b615ea1-0fc7-4a62-a74f-9b03fcd14b07"
+  },
+  "item": [
+    {
+      "name": "triggers",
+      "item": [
+        {
+          "name": "{triggerName}",
+          "item": [
+            {
+              "name": "subscribeToEvents",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Subscribe trigger to events",
+                  "id": "926bae90-2cc5-473e-a859-18a661cf42e6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName/subscribeToEvents?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName",
+                        "subscribeToEvents"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "39f0435d-4623-4db4-9705-18fefa2bedd9",
+                          "key": "triggerName",
+                          "value": "<string>",
+                          "description": "(Required) The trigger name."
+                        }
+                      ]
+                    },
+                    "description": "Subscribe event trigger to events."
+                  },
+                  "response": [
+                    {
+                      "id": "14055e68-0b6f-4c5c-8800-0ddbfeea7e94",
+                      "name": "Successfully subscribed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/subscribeToEvents?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "subscribeToEvents"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"triggerName\": \"<string>\",\n  \"status\": \"Provisioning\"\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-14055e68-0b6f-4c5c-8800-0ddbfeea7e94"
+                    },
+                    {
+                      "id": "9129bb06-c988-436c-bde5-6ff91d9ee521",
+                      "name": "Subscription accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/subscribeToEvents?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "subscribeToEvents"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-9129bb06-c988-436c-bde5-6ff91d9ee521"
+                    },
+                    {
+                      "id": "602422ea-5b60-4024-9b8b-967552fa3913",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/subscribeToEvents?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "subscribeToEvents"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-602422ea-5b60-4024-9b8b-967552fa3913"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-926bae90-2cc5-473e-a859-18a661cf42e6"
+                }
+              ],
+              "id": "29ed1871-7a4a-4558-8394-09c933903395",
+              "createdAt": "2026-06-05T15:11:49.000Z",
+              "updatedAt": "2026-06-05T15:11:49.000Z",
+              "uid": "35240-29ed1871-7a4a-4558-8394-09c933903395"
+            },
+            {
+              "name": "getEventSubscriptionStatus",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Get trigger event subscription status",
+                  "id": "51ffcde5-7f50-4280-9121-ed4d572fe5f2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName/getEventSubscriptionStatus?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName",
+                        "getEventSubscriptionStatus"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "9323dbd8-c682-4a8f-9c9d-f80b3b86a7bd",
+                          "key": "triggerName",
+                          "value": "<string>",
+                          "description": "(Required) The trigger name."
+                        }
+                      ]
+                    },
+                    "description": "Get a trigger event subscription status."
+                  },
+                  "response": [
+                    {
+                      "id": "3e4068dd-66b4-4c90-baf9-2a1c8b35b5a8",
+                      "name": "Successfully retrieved status.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/getEventSubscriptionStatus?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "getEventSubscriptionStatus"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"triggerName\": \"<string>\",\n  \"status\": \"Provisioning\"\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-3e4068dd-66b4-4c90-baf9-2a1c8b35b5a8"
+                    },
+                    {
+                      "id": "9d401528-0fb7-43c3-8627-522b89aef5b2",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/getEventSubscriptionStatus?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "getEventSubscriptionStatus"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-9d401528-0fb7-43c3-8627-522b89aef5b2"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-51ffcde5-7f50-4280-9121-ed4d572fe5f2"
+                }
+              ],
+              "id": "970dc7ff-4425-4b29-ad13-f39f57ab3c94",
+              "createdAt": "2026-06-05T15:11:49.000Z",
+              "updatedAt": "2026-06-05T15:11:49.000Z",
+              "uid": "35240-970dc7ff-4425-4b29-ad13-f39f57ab3c94"
+            },
+            {
+              "name": "unsubscribeFromEvents",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Unsubscribe trigger from events",
+                  "id": "afbd46d7-c8d0-4dd2-b873-77862fa4e8bc",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName/unsubscribeFromEvents?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName",
+                        "unsubscribeFromEvents"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "e79be743-79fd-4be2-b108-b198bae84bf4",
+                          "key": "triggerName",
+                          "value": "<string>",
+                          "description": "(Required) The trigger name."
+                        }
+                      ]
+                    },
+                    "description": "Unsubscribe event trigger from events."
+                  },
+                  "response": [
+                    {
+                      "id": "d5a1e3af-42be-40af-8b8e-04c55c894a15",
+                      "name": "Successfully unsubscribed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/unsubscribeFromEvents?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "unsubscribeFromEvents"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"triggerName\": \"<string>\",\n  \"status\": \"Provisioning\"\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-d5a1e3af-42be-40af-8b8e-04c55c894a15"
+                    },
+                    {
+                      "id": "3d04c1d1-c2d0-437b-8df7-94d3bab44607",
+                      "name": "Unsubscription accepted.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/unsubscribeFromEvents?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "unsubscribeFromEvents"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Accepted",
+                      "code": 202,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-3d04c1d1-c2d0-437b-8df7-94d3bab44607"
+                    },
+                    {
+                      "id": "0a0d590d-ff1f-416b-b655-83c500b80427",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/unsubscribeFromEvents?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "unsubscribeFromEvents"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-0a0d590d-ff1f-416b-b655-83c500b80427"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-afbd46d7-c8d0-4dd2-b873-77862fa4e8bc"
+                }
+              ],
+              "id": "16ab0560-953c-48da-91f7-ad978d494af5",
+              "createdAt": "2026-06-05T15:11:49.000Z",
+              "updatedAt": "2026-06-05T15:11:49.000Z",
+              "uid": "35240-16ab0560-953c-48da-91f7-ad978d494af5"
+            },
+            {
+              "name": "start",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Start a trigger",
+                  "id": "ff5627b8-e3de-4ab4-9a1d-524147f5ce32",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName/start?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName",
+                        "start"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "9a0e4170-9fce-4618-9909-9a9b5ced64a3",
+                          "key": "triggerName",
+                          "value": "<string>",
+                          "description": "(Required) The trigger name."
+                        }
+                      ]
+                    },
+                    "description": "Starts a trigger."
+                  },
+                  "response": [
+                    {
+                      "id": "a829e72c-d58e-465a-981f-917cd1f0f847",
+                      "name": "Successfully started the trigger.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/start?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "start"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-a829e72c-d58e-465a-981f-917cd1f0f847"
+                    },
+                    {
+                      "id": "04aaa5b4-d433-4f27-9992-0e68f8bc5716",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/start?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "start"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-04aaa5b4-d433-4f27-9992-0e68f8bc5716"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-ff5627b8-e3de-4ab4-9a1d-524147f5ce32"
+                }
+              ],
+              "id": "672e8832-ca07-4c0f-9222-3cc24b189c2a",
+              "createdAt": "2026-06-05T15:11:49.000Z",
+              "updatedAt": "2026-06-05T15:11:49.000Z",
+              "uid": "35240-672e8832-ca07-4c0f-9222-3cc24b189c2a"
+            },
+            {
+              "name": "stop",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Stop a trigger",
+                  "id": "7babc9d4-2ccf-49f0-90c6-0c5323b2e861",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName/stop?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName",
+                        "stop"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "b0231661-d3c9-4e41-a242-6acfb2c0ca03",
+                          "key": "triggerName",
+                          "value": "<string>",
+                          "description": "(Required) The trigger name."
+                        }
+                      ]
+                    },
+                    "description": "Stops a trigger."
+                  },
+                  "response": [
+                    {
+                      "id": "5fc962e7-12b4-48d1-910b-f01d8da58f73",
+                      "name": "Successfully stopped the trigger.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/stop?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "stop"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-5fc962e7-12b4-48d1-910b-f01d8da58f73"
+                    },
+                    {
+                      "id": "215b883a-0f1e-483b-a14b-51862c1f6ad6",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/triggers/:triggerName/stop?api-version=2020-12-01",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "triggers",
+                            ":triggerName",
+                            "stop"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2020-12-01"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "triggerName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:11:50.000Z",
+                      "updatedAt": "2026-06-05T15:11:50.000Z",
+                      "uid": "35240-215b883a-0f1e-483b-a14b-51862c1f6ad6"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-7babc9d4-2ccf-49f0-90c6-0c5323b2e861"
+                }
+              ],
+              "id": "f3b1bf9c-ab8c-45b3-86ba-0139d089848f",
+              "createdAt": "2026-06-05T15:11:49.000Z",
+              "updatedAt": "2026-06-05T15:11:49.000Z",
+              "uid": "35240-f3b1bf9c-ab8c-45b3-86ba-0139d089848f"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a trigger",
+              "id": "193e86c8-568c-4f75-a231-01079519aa4d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "If-None-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "triggers",
+                    ":triggerName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "6211e7b7-523d-45b5-b982-f085cbc15924",
+                      "key": "triggerName",
+                      "value": "<string>",
+                      "description": "(Required) The trigger name."
+                    }
+                  ]
+                },
+                "description": "Gets a trigger."
+              },
+              "response": [
+                {
+                  "id": "293cb4fe-31c0-4165-9620-511ec7cbd788",
+                  "name": "Successfully retrieved the trigger.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"runtimeState\": \"Started\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pipelines\": [\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"deserunt_95d\": -20998682,\n          \"ametb\": 56235235.5182454,\n          \"ad532\": \"sed c\"\n        }\n      },\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"cupidatat4b\": \"dolor eiusmod laborum\",\n          \"eiusmod_34\": false,\n          \"aliquipe0\": 90718801,\n          \"Duis0b1\": false\n        }\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-293cb4fe-31c0-4165-9620-511ec7cbd788"
+                },
+                {
+                  "id": "49d556c4-b937-4d74-8d53-782dde7d07e1",
+                  "name": "Not modified.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Modified",
+                  "code": 304,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-49d556c4-b937-4d74-8d53-782dde7d07e1"
+                },
+                {
+                  "id": "003a969c-7084-4d1a-a8a5-6fa583d507ec",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "If-None-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-003a969c-7084-4d1a-a8a5-6fa583d507ec"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:50.000Z",
+              "updatedAt": "2026-06-05T15:11:50.000Z",
+              "uid": "35240-193e86c8-568c-4f75-a231-01079519aa4d"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a trigger",
+              "id": "4ac8b3c7-603a-441c-8bee-f520373fc345",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "If-Match",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"runtimeState\": \"Started\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pipelines\": [\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"deserunt_95d\": -20998682,\n          \"ametb\": 56235235.5182454,\n          \"ad532\": \"sed c\"\n        }\n      },\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"cupidatat4b\": \"dolor eiusmod laborum\",\n          \"eiusmod_34\": false,\n          \"aliquipe0\": 90718801,\n          \"Duis0b1\": false\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "triggers",
+                    ":triggerName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "627899e5-7571-4c67-b421-b437560306fa",
+                      "key": "triggerName",
+                      "value": "<string>",
+                      "description": "(Required) The trigger name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a trigger."
+              },
+              "response": [
+                {
+                  "id": "3756cc4e-c9fd-4bdd-9a3b-38b32840667a",
+                  "name": "Successfully updated the trigger.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"runtimeState\": \"Started\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pipelines\": [\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"deserunt_95d\": -20998682,\n          \"ametb\": 56235235.5182454,\n          \"ad532\": \"sed c\"\n        }\n      },\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"cupidatat4b\": \"dolor eiusmod laborum\",\n          \"eiusmod_34\": false,\n          \"aliquipe0\": 90718801,\n          \"Duis0b1\": false\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"runtimeState\": \"Started\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pipelines\": [\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"deserunt_95d\": -20998682,\n          \"ametb\": 56235235.5182454,\n          \"ad532\": \"sed c\"\n        }\n      },\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"cupidatat4b\": \"dolor eiusmod laborum\",\n          \"eiusmod_34\": false,\n          \"aliquipe0\": 90718801,\n          \"Duis0b1\": false\n        }\n      }\n    ]\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-3756cc4e-c9fd-4bdd-9a3b-38b32840667a"
+                },
+                {
+                  "id": "4215283f-1d54-4a8a-916b-ed63ce712eeb",
+                  "name": "Trigger creation accepted.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"runtimeState\": \"Started\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pipelines\": [\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"deserunt_95d\": -20998682,\n          \"ametb\": 56235235.5182454,\n          \"ad532\": \"sed c\"\n        }\n      },\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"cupidatat4b\": \"dolor eiusmod laborum\",\n          \"eiusmod_34\": false,\n          \"aliquipe0\": 90718801,\n          \"Duis0b1\": false\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-4215283f-1d54-4a8a-916b-ed63ce712eeb"
+                },
+                {
+                  "id": "9576cc33-75e6-42b9-b8c1-913710669f0d",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "If-Match",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"type\": \"<string>\",\n    \"description\": \"<string>\",\n    \"runtimeState\": \"Started\",\n    \"annotations\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"pipelines\": [\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"deserunt_95d\": -20998682,\n          \"ametb\": 56235235.5182454,\n          \"ad532\": \"sed c\"\n        }\n      },\n      {\n        \"pipelineReference\": {\n          \"referenceName\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        \"parameters\": {\n          \"cupidatat4b\": \"dolor eiusmod laborum\",\n          \"eiusmod_34\": false,\n          \"aliquipe0\": 90718801,\n          \"Duis0b1\": false\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-9576cc33-75e6-42b9-b8c1-913710669f0d"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:50.000Z",
+              "updatedAt": "2026-06-05T15:11:50.000Z",
+              "uid": "35240-4ac8b3c7-603a-441c-8bee-f520373fc345"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a trigger",
+              "id": "483ff5db-2ce2-4d6b-8d20-3986ede0a6e8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "triggers",
+                    ":triggerName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "8878f03b-9706-4b33-8ce3-cde8e4da8b4c",
+                      "key": "triggerName",
+                      "value": "<string>",
+                      "description": "(Required) The trigger name."
+                    }
+                  ]
+                },
+                "description": "Deletes a trigger."
+              },
+              "response": [
+                {
+                  "id": "27f5a1fa-e097-4fde-9aa1-7dc06dbfcef8",
+                  "name": "Successfully deleted the trigger.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-27f5a1fa-e097-4fde-9aa1-7dc06dbfcef8"
+                },
+                {
+                  "id": "aa829872-5eb3-4997-b00b-313159ac646e",
+                  "name": "Trigger deletion accepted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Accepted",
+                  "code": 202,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-aa829872-5eb3-4997-b00b-313159ac646e"
+                },
+                {
+                  "id": "9bcdd57c-77dd-497f-a637-b5c4e25b56d9",
+                  "name": "Trigger not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-9bcdd57c-77dd-497f-a637-b5c4e25b56d9"
+                },
+                {
+                  "id": "bfd8c9e2-437a-4831-8843-84928f1b4cbe",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/triggers/:triggerName?api-version=2020-12-01",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "triggers",
+                        ":triggerName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2020-12-01"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "triggerName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:11:50.000Z",
+                  "updatedAt": "2026-06-05T15:11:50.000Z",
+                  "uid": "35240-bfd8c9e2-437a-4831-8843-84928f1b4cbe"
+                }
+              ],
+              "createdAt": "2026-06-05T15:11:50.000Z",
+              "updatedAt": "2026-06-05T15:11:50.000Z",
+              "uid": "35240-483ff5db-2ce2-4d6b-8d20-3986ede0a6e8"
+            }
+          ],
+          "id": "8e2d7c65-5601-4a6e-bc2c-19fbf5b86f6e",
+          "createdAt": "2026-06-05T15:11:49.000Z",
+          "updatedAt": "2026-06-05T15:11:49.000Z",
+          "uid": "35240-8e2d7c65-5601-4a6e-bc2c-19fbf5b86f6e"
+        },
+        {
+          "name": "Azure Synapse Analytics List triggers",
+          "id": "10729fc1-e3ab-4077-bf69-aaf181b0fca6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/triggers?api-version=2020-12-01",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "triggers"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2020-12-01"
+                }
+              ]
+            },
+            "description": "Lists triggers in the workspace."
+          },
+          "response": [
+            {
+              "id": "858c311d-ec17-4723-8e85-33bc07f3306c",
+              "name": "Successfully retrieved the list of triggers.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/triggers?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "triggers"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"runtimeState\": \"Stopped\",\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"pipelines\": [\n          {\n            \"pipelineReference\": {\n              \"referenceName\": \"<string>\",\n              \"type\": \"<string>\"\n            },\n            \"parameters\": {\n              \"enim34_\": 44443527.71173978\n            }\n          },\n          {\n            \"pipelineReference\": {\n              \"referenceName\": \"<string>\",\n              \"type\": \"<string>\"\n            },\n            \"parameters\": {\n              \"amet_cd\": -14008828,\n              \"nulla586\": false\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"type\": \"<string>\",\n        \"description\": \"<string>\",\n        \"runtimeState\": \"Disabled\",\n        \"annotations\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"pipelines\": [\n          {\n            \"pipelineReference\": {\n              \"referenceName\": \"<string>\",\n              \"type\": \"<string>\"\n            },\n            \"parameters\": {\n              \"dolor8\": \"adipisicing et reprehenderit quis dolor\",\n              \"tempor3be\": false\n            }\n          },\n          {\n            \"pipelineReference\": {\n              \"referenceName\": \"<string>\",\n              \"type\": \"<string>\"\n            },\n            \"parameters\": {\n              \"ullamco1\": \"Excepteur proident mollit fugiat\",\n              \"dolor1d\": -64787303\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:11:50.000Z",
+              "updatedAt": "2026-06-05T15:11:50.000Z",
+              "uid": "35240-858c311d-ec17-4723-8e85-33bc07f3306c"
+            },
+            {
+              "id": "9295bcfb-5dae-476f-8377-179f73aeed43",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/triggers?api-version=2020-12-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "triggers"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:11:50.000Z",
+              "updatedAt": "2026-06-05T15:11:50.000Z",
+              "uid": "35240-9295bcfb-5dae-476f-8377-179f73aeed43"
+            }
+          ],
+          "createdAt": "2026-06-05T15:11:50.000Z",
+          "updatedAt": "2026-06-05T15:11:50.000Z",
+          "uid": "35240-10729fc1-e3ab-4077-bf69-aaf181b0fca6"
+        }
+      ],
+      "id": "90b6765f-01cc-475e-922b-1d78696d2e4e",
+      "createdAt": "2026-06-05T15:11:49.000Z",
+      "updatedAt": "2026-06-05T15:11:49.000Z",
+      "uid": "35240-90b6765f-01cc-475e-922b-1d78696d2e4e"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

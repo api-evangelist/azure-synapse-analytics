@@ -1,0 +1,218 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Link Connection API",
+    "version": "2023-04-18-preview"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "LinkConnection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List link connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List link connections in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a link connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections/:linkConnectionName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkConnectionName",
+                "value": "",
+                "type": "path",
+                "description": "The link connection name."
+              }
+            ]
+          },
+          "docs": "Get a link connection."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a link connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections/:linkConnectionName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkConnectionName",
+                "value": "",
+                "type": "path",
+                "description": "The link connection name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a link connection."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a link connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections/:linkConnectionName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkConnectionName",
+                "value": "",
+                "type": "path",
+                "description": "The link connection name."
+              }
+            ]
+          },
+          "docs": "Delete a link connection."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Start a link connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections/:linkConnectionName/start",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkConnectionName",
+                "value": "",
+                "type": "path",
+                "description": "The link connection name."
+              }
+            ]
+          },
+          "docs": "Start a link connection to begin data replication."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Stop a link connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections/:linkConnectionName/stop",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkConnectionName",
+                "value": "",
+                "type": "path",
+                "description": "The link connection name."
+              }
+            ]
+          },
+          "docs": "Stop a link connection."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get link connection detailed status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections/:linkConnectionName/detailedstatus",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkConnectionName",
+                "value": "",
+                "type": "path",
+                "description": "The link connection name."
+              }
+            ]
+          },
+          "docs": "Get the detailed status of a link connection."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List link tables",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/linkconnections/:linkConnectionName/linktables",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkConnectionName",
+                "value": "",
+                "type": "path",
+                "description": "The link connection name."
+              }
+            ]
+          },
+          "docs": "List the link tables of a link connection."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

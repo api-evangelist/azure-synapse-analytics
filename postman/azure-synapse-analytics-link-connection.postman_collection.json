@@ -1,0 +1,1406 @@
+{
+  "info": {
+    "_postman_id": "3dcc3726-5497-4cec-a7d6-35d9025265c4",
+    "name": "Azure Synapse Analytics - Link Connection API",
+    "description": "Manage Synapse Link connections for continuous data replication from operational databases. Supports configuring and monitoring real-time data synchronization from sources like Azure Cosmos DB and Azure SQL.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:12:19.000Z",
+    "updatedAt": "2026-06-05T15:12:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3dcc3726-5497-4cec-a7d6-35d9025265c4"
+  },
+  "item": [
+    {
+      "name": "linkconnections",
+      "item": [
+        {
+          "name": "{linkConnectionName}",
+          "item": [
+            {
+              "name": "start",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Start a link connection",
+                  "id": "3fde089c-d207-42fe-9790-1398a7b24226",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/start?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName",
+                        "start"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "ef32411d-cb21-425f-b48f-d0a29786158e",
+                          "key": "linkConnectionName",
+                          "value": "<string>",
+                          "description": "(Required) The link connection name."
+                        }
+                      ]
+                    },
+                    "description": "Start a link connection to begin data replication."
+                  },
+                  "response": [
+                    {
+                      "id": "29dde958-cf49-47a7-acd2-0d82136a77dc",
+                      "name": "Successfully started.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/start?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "start"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-29dde958-cf49-47a7-acd2-0d82136a77dc"
+                    },
+                    {
+                      "id": "b845dddc-25c8-4494-9ff4-7ff229760979",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/start?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "start"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-b845dddc-25c8-4494-9ff4-7ff229760979"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-3fde089c-d207-42fe-9790-1398a7b24226"
+                }
+              ],
+              "id": "cf29a8a5-ddb1-4336-bc53-e4b63288a54c",
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-cf29a8a5-ddb1-4336-bc53-e4b63288a54c"
+            },
+            {
+              "name": "stop",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Stop a link connection",
+                  "id": "1ba79951-9046-40de-94a2-d43d404bd7b0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/stop?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName",
+                        "stop"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "3d609f4b-00f5-42a8-9d5e-57bee861c547",
+                          "key": "linkConnectionName",
+                          "value": "<string>",
+                          "description": "(Required) The link connection name."
+                        }
+                      ]
+                    },
+                    "description": "Stop a link connection."
+                  },
+                  "response": [
+                    {
+                      "id": "f30ae63b-b8bb-45c0-92c9-a731a57f0cf9",
+                      "name": "Successfully stopped.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/stop?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "stop"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-f30ae63b-b8bb-45c0-92c9-a731a57f0cf9"
+                    },
+                    {
+                      "id": "130f4b8e-78de-4156-83c3-483a2c36a7e8",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/stop?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "stop"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-130f4b8e-78de-4156-83c3-483a2c36a7e8"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-1ba79951-9046-40de-94a2-d43d404bd7b0"
+                }
+              ],
+              "id": "ebe840b1-dbe2-4084-b4ca-c6cf87e1c47e",
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-ebe840b1-dbe2-4084-b4ca-c6cf87e1c47e"
+            },
+            {
+              "name": "detailedstatus",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics Get link connection detailed status",
+                  "id": "0a156404-5542-4804-970a-bede6396aebc",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/detailedstatus?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName",
+                        "detailedstatus"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "d27a2a12-d359-4ab6-9753-79e3bd0af13d",
+                          "key": "linkConnectionName",
+                          "value": "<string>",
+                          "description": "(Required) The link connection name."
+                        }
+                      ]
+                    },
+                    "description": "Get the detailed status of a link connection."
+                  },
+                  "response": [
+                    {
+                      "id": "7f2b276a-a207-4992-90ec-f3a8f966b146",
+                      "name": "Successfully retrieved.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/detailedstatus?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "detailedstatus"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"isApplyingChanges\": \"<boolean>\",\n  \"isPartiallyFailed\": \"<boolean>\",\n  \"startTime\": \"<dateTime>\",\n  \"stopTime\": \"<dateTime>\",\n  \"status\": \"<string>\",\n  \"continuousRunId\": \"<string>\",\n  \"error\": {}\n}",
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-7f2b276a-a207-4992-90ec-f3a8f966b146"
+                    },
+                    {
+                      "id": "33208b91-f153-4300-9f74-33d3e214f65f",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/detailedstatus?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "detailedstatus"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-33208b91-f153-4300-9f74-33d3e214f65f"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-0a156404-5542-4804-970a-bede6396aebc"
+                }
+              ],
+              "id": "385e3ac9-2a58-4c1f-a67d-03c5cf0dc717",
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-385e3ac9-2a58-4c1f-a67d-03c5cf0dc717"
+            },
+            {
+              "name": "linktables",
+              "item": [
+                {
+                  "name": "Azure Synapse Analytics List link tables",
+                  "id": "cddce8a3-ff02-4c7d-bbd0-6ebf968aef5f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/linktables?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName",
+                        "linktables"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "d500c9f3-c304-4e1b-a4ba-682b5835547c",
+                          "key": "linkConnectionName",
+                          "value": "<string>",
+                          "description": "(Required) The link connection name."
+                        }
+                      ]
+                    },
+                    "description": "List the link tables of a link connection."
+                  },
+                  "response": [
+                    {
+                      "id": "889b332c-db25-44db-837e-5ed2f71f8119",
+                      "name": "Successfully retrieved.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/linktables?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "linktables"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"source\": {\n        \"tableName\": \"<string>\",\n        \"schemaName\": \"<string>\"\n      },\n      \"target\": {\n        \"tableName\": \"<string>\",\n        \"schemaName\": \"<string>\",\n        \"distributionOptions\": {}\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"source\": {\n        \"tableName\": \"<string>\",\n        \"schemaName\": \"<string>\"\n      },\n      \"target\": {\n        \"tableName\": \"<string>\",\n        \"schemaName\": \"<string>\",\n        \"distributionOptions\": {}\n      }\n    }\n  ]\n}",
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-889b332c-db25-44db-837e-5ed2f71f8119"
+                    },
+                    {
+                      "id": "6d03ea74-6ffe-4744-80d6-bcaccd13e4df",
+                      "name": "Error response.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/linkconnections/:linkConnectionName/linktables?api-version=2023-04-18-preview",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "linkconnections",
+                            ":linkConnectionName",
+                            "linktables"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) ",
+                              "key": "api-version",
+                              "value": "2023-04-18-preview"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "linkConnectionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-06-05T15:12:20.000Z",
+                      "updatedAt": "2026-06-05T15:12:20.000Z",
+                      "uid": "35240-6d03ea74-6ffe-4744-80d6-bcaccd13e4df"
+                    }
+                  ],
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-cddce8a3-ff02-4c7d-bbd0-6ebf968aef5f"
+                }
+              ],
+              "id": "f983c518-9934-4300-a88a-96f474d07165",
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-f983c518-9934-4300-a88a-96f474d07165"
+            },
+            {
+              "name": "Azure Synapse Analytics Get a link connection",
+              "id": "62954711-5480-40f4-9553-7f59450ecf01",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkconnections",
+                    ":linkConnectionName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2023-04-18-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "03ce828c-c791-4df3-b2f1-fd9347ed07d2",
+                      "key": "linkConnectionName",
+                      "value": "<string>",
+                      "description": "(Required) The link connection name."
+                    }
+                  ]
+                },
+                "description": "Get a link connection."
+              },
+              "response": [
+                {
+                  "id": "675be4e3-685b-41d6-a095-26d585a6badd",
+                  "name": "Successfully retrieved.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkConnectionName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"sourceDatabase\": {\n      \"typeProperties\": {\n        \"resourceId\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"targetDatabase\": {\n      \"typeProperties\": {\n        \"linkedServiceTarget\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"compute\": {\n      \"coreCount\": \"<integer>\",\n      \"computeType\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-675be4e3-685b-41d6-a095-26d585a6badd"
+                },
+                {
+                  "id": "5635fee8-c4c3-45a8-a794-9e3ec6847b37",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkConnectionName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-5635fee8-c4c3-45a8-a794-9e3ec6847b37"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-62954711-5480-40f4-9553-7f59450ecf01"
+            },
+            {
+              "name": "Azure Synapse Analytics Create or update a link connection",
+              "id": "d798205e-69f6-49ff-a7be-26740ea22ed1",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"sourceDatabase\": {\n      \"typeProperties\": {\n        \"resourceId\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"targetDatabase\": {\n      \"typeProperties\": {\n        \"linkedServiceTarget\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"compute\": {\n      \"coreCount\": \"<integer>\",\n      \"computeType\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkconnections",
+                    ":linkConnectionName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2023-04-18-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "2fbe7ff0-26c2-47f7-9eed-8b6b8174805f",
+                      "key": "linkConnectionName",
+                      "value": "<string>",
+                      "description": "(Required) The link connection name."
+                    }
+                  ]
+                },
+                "description": "Creates or updates a link connection."
+              },
+              "response": [
+                {
+                  "id": "c53b62fa-3cdd-4013-a71b-88c50e821601",
+                  "name": "Successfully updated.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"sourceDatabase\": {\n      \"typeProperties\": {\n        \"resourceId\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"targetDatabase\": {\n      \"typeProperties\": {\n        \"linkedServiceTarget\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"compute\": {\n      \"coreCount\": \"<integer>\",\n      \"computeType\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkConnectionName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"sourceDatabase\": {\n      \"typeProperties\": {\n        \"resourceId\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"targetDatabase\": {\n      \"typeProperties\": {\n        \"linkedServiceTarget\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"compute\": {\n      \"coreCount\": \"<integer>\",\n      \"computeType\": \"<string>\"\n    }\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-c53b62fa-3cdd-4013-a71b-88c50e821601"
+                },
+                {
+                  "id": "83ed1d6d-0c44-4509-b398-60c4466fb471",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"properties\": {\n    \"sourceDatabase\": {\n      \"typeProperties\": {\n        \"resourceId\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"targetDatabase\": {\n      \"typeProperties\": {\n        \"linkedServiceTarget\": \"<string>\"\n      },\n      \"linkedService\": {\n        \"referenceName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    },\n    \"compute\": {\n      \"coreCount\": \"<integer>\",\n      \"computeType\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkConnectionName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-83ed1d6d-0c44-4509-b398-60c4466fb471"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-d798205e-69f6-49ff-a7be-26740ea22ed1"
+            },
+            {
+              "name": "Azure Synapse Analytics Delete a link connection",
+              "id": "1fb77c36-21b9-40e7-84ab-3b7cfa4b9547",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkconnections",
+                    ":linkConnectionName"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2023-04-18-preview"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "de42728f-30c6-4d84-a379-68dc3026d0ed",
+                      "key": "linkConnectionName",
+                      "value": "<string>",
+                      "description": "(Required) The link connection name."
+                    }
+                  ]
+                },
+                "description": "Delete a link connection."
+              },
+              "response": [
+                {
+                  "id": "5625897c-b92e-4ce4-b923-99427c6ed7fc",
+                  "name": "Successfully deleted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkConnectionName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-5625897c-b92e-4ce4-b923-99427c6ed7fc"
+                },
+                {
+                  "id": "bcb597a9-fe85-4466-ae78-b9f96c145a90",
+                  "name": "Not found.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkConnectionName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-bcb597a9-fe85-4466-ae78-b9f96c145a90"
+                },
+                {
+                  "id": "4c68c0ef-7d6d-4eac-b27c-99da66a3ddd9",
+                  "name": "Error response.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/linkconnections/:linkConnectionName?api-version=2023-04-18-preview",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "linkconnections",
+                        ":linkConnectionName"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) ",
+                          "key": "api-version",
+                          "value": "2023-04-18-preview"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "linkConnectionName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-06-05T15:12:20.000Z",
+                  "updatedAt": "2026-06-05T15:12:20.000Z",
+                  "uid": "35240-4c68c0ef-7d6d-4eac-b27c-99da66a3ddd9"
+                }
+              ],
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-1fb77c36-21b9-40e7-84ab-3b7cfa4b9547"
+            }
+          ],
+          "id": "0ce6bac7-1bc2-4e46-b867-0be03d834316",
+          "createdAt": "2026-06-05T15:12:20.000Z",
+          "updatedAt": "2026-06-05T15:12:20.000Z",
+          "uid": "35240-0ce6bac7-1bc2-4e46-b867-0be03d834316"
+        },
+        {
+          "name": "Azure Synapse Analytics List link connections",
+          "id": "88eb6834-4259-4b74-8d40-e86bae78e3a7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/linkconnections?api-version=2023-04-18-preview",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "linkconnections"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "api-version",
+                  "value": "2023-04-18-preview"
+                }
+              ]
+            },
+            "description": "List link connections in the workspace."
+          },
+          "response": [
+            {
+              "id": "825fadef-7db8-4564-8e0e-b405815b6d8c",
+              "name": "Successfully retrieved the list.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkconnections?api-version=2023-04-18-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkconnections"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2023-04-18-preview"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"sourceDatabase\": {\n          \"typeProperties\": {\n            \"resourceId\": \"<string>\"\n          },\n          \"linkedService\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        \"targetDatabase\": {\n          \"typeProperties\": {\n            \"linkedServiceTarget\": \"<string>\"\n          },\n          \"linkedService\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        \"compute\": {\n          \"coreCount\": \"<integer>\",\n          \"computeType\": \"<string>\"\n        }\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"properties\": {\n        \"sourceDatabase\": {\n          \"typeProperties\": {\n            \"resourceId\": \"<string>\"\n          },\n          \"linkedService\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        \"targetDatabase\": {\n          \"typeProperties\": {\n            \"linkedServiceTarget\": \"<string>\"\n          },\n          \"linkedService\": {\n            \"referenceName\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        },\n        \"compute\": {\n          \"coreCount\": \"<integer>\",\n          \"computeType\": \"<string>\"\n        }\n      }\n    }\n  ],\n  \"nextLink\": \"<string>\"\n}",
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-825fadef-7db8-4564-8e0e-b405815b6d8c"
+            },
+            {
+              "id": "cfabdc83-8165-44dd-9497-ebb5dd6ac699",
+              "name": "Error response.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/linkconnections?api-version=2023-04-18-preview",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "linkconnections"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "api-version",
+                      "value": "2023-04-18-preview"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-06-05T15:12:20.000Z",
+              "updatedAt": "2026-06-05T15:12:20.000Z",
+              "uid": "35240-cfabdc83-8165-44dd-9497-ebb5dd6ac699"
+            }
+          ],
+          "createdAt": "2026-06-05T15:12:20.000Z",
+          "updatedAt": "2026-06-05T15:12:20.000Z",
+          "uid": "35240-88eb6834-4259-4b74-8d40-e86bae78e3a7"
+        }
+      ],
+      "id": "b6742367-25d4-4fc5-8f40-b0cd8fb9642c",
+      "createdAt": "2026-06-05T15:12:20.000Z",
+      "updatedAt": "2026-06-05T15:12:20.000Z",
+      "uid": "35240-b6742367-25d4-4fc5-8f40-b0cd8fb9642c"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "workspaceName",
+      "value": "myworkspace"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net"
+    }
+  ]
+}

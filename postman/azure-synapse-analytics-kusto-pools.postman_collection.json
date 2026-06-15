@@ -1,0 +1,1612 @@
+{
+  "info": {
+    "_postman_id": "201c1dd4-3544-4cda-a9c1-e569b1930f92",
+    "name": "Azure Synapse Analytics - Kusto Pools API",
+    "description": "Manage Data Explorer (Kusto) pools within a Synapse workspace for real-time log and telemetry analytics. Supports creating pools, databases, and managing data connections.\n\nContact Support:\n Name: Microsoft Azure Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-06-05T15:12:00.000Z",
+    "updatedAt": "2026-06-05T15:12:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-201c1dd4-3544-4cda-a9c1-e569b1930f92"
+  },
+  "item": [
+    {
+      "name": "subscriptions",
+      "item": [
+        {
+          "name": "{subscriptionId}",
+          "item": [
+            {
+              "name": "resourceGroups",
+              "item": [
+                {
+                  "name": "{resourceGroupName}",
+                  "item": [
+                    {
+                      "name": "providers",
+                      "item": [
+                        {
+                          "name": "Microsoft.Synapse",
+                          "item": [
+                            {
+                              "name": "workspaces",
+                              "item": [
+                                {
+                                  "name": "{workspaceName}",
+                                  "item": [
+                                    {
+                                      "name": "kustoPools",
+                                      "item": [
+                                        {
+                                          "name": "{kustoPoolName}",
+                                          "item": [
+                                            {
+                                              "name": "Azure Synapse Analytics Get a Kusto pool",
+                                              "id": "f89c5a0a-ae7e-4785-a016-44ae2a34dd7e",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "kustoPools",
+                                                    ":kustoPoolName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01-preview"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "6eba5872-560d-483c-b3ea-6b174ed788aa",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "ebb76a19-9bde-436f-bf38-df2bc8a3a267",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "e008df71-81a2-4a06-a300-f22dbd6cdd8d",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "f5ad8055-f9bf-4974-be82-6aa437a50b5a",
+                                                      "key": "kustoPoolName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the Kusto pool."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Gets a Kusto pool."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "8116e602-f221-4c10-aead-6af66dbd178c",
+                                                  "name": "Successfully retrieved.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-8116e602-f221-4c10-aead-6af66dbd178c"
+                                                },
+                                                {
+                                                  "id": "7b55ba50-fff4-48bd-84ae-16b33ee55f4c",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "GET",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-7b55ba50-fff4-48bd-84ae-16b33ee55f4c"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:12:00.000Z",
+                                              "updatedAt": "2026-06-05T15:12:00.000Z",
+                                              "uid": "35240-f89c5a0a-ae7e-4785-a016-44ae2a34dd7e"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Create or update a Kusto pool",
+                                              "id": "ec97efa3-f865-4d2a-be4e-bed3a4539a0c",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PUT",
+                                                "header": [
+                                                  {
+                                                    "key": "If-Match",
+                                                    "value": "<string>"
+                                                  },
+                                                  {
+                                                    "key": "If-None-Match",
+                                                    "value": "<string>"
+                                                  },
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "kustoPools",
+                                                    ":kustoPoolName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01-preview"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "44123cc9-ea71-40ca-b2a0-ced2e6221391",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "e2e98e7c-2029-46cd-842d-71c429cb0958",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "f44230bc-15d8-43bb-942f-8a8854ea5e51",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "078b5c53-efa6-4f1e-babf-aa4e0c8b0f5e",
+                                                      "key": "kustoPoolName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the Kusto pool."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Create or update a Kusto pool."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "924bfed5-5acb-4e26-8294-8bb64c3542f9",
+                                                  "name": "Successfully updated.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "If-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "If-None-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-924bfed5-5acb-4e26-8294-8bb64c3542f9"
+                                                },
+                                                {
+                                                  "id": "52c134b1-aac9-4f86-a648-453a9985fbec",
+                                                  "name": "Successfully created.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "If-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "If-None-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Created",
+                                                  "code": 201,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-52c134b1-aac9-4f86-a648-453a9985fbec"
+                                                },
+                                                {
+                                                  "id": "c97196a6-1969-4ac4-8b4b-ad3efab50bfe",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "PUT",
+                                                    "header": [
+                                                      {
+                                                        "key": "If-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "If-None-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-c97196a6-1969-4ac4-8b4b-ad3efab50bfe"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:12:00.000Z",
+                                              "updatedAt": "2026-06-05T15:12:00.000Z",
+                                              "uid": "35240-ec97efa3-f865-4d2a-be4e-bed3a4539a0c"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Update a Kusto pool",
+                                              "id": "c568aac4-4a5a-4403-95dd-986ea9c1543c",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "PATCH",
+                                                "header": [
+                                                  {
+                                                    "key": "If-Match",
+                                                    "value": "<string>"
+                                                  },
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "raw",
+                                                  "raw": "{\n  \"tags\": {\n    \"dolore0\": \"<string>\",\n    \"reprehenderitf_\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\"\n  },\n  \"properties\": {\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": \"<boolean>\",\n    \"enablePurge\": \"<boolean>\"\n  }\n}",
+                                                  "options": {
+                                                    "raw": {
+                                                      "headerFamily": "json",
+                                                      "language": "json"
+                                                    }
+                                                  }
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "kustoPools",
+                                                    ":kustoPoolName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01-preview"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "8c4719a3-b4f4-4366-a6fa-3b0ac2e31f43",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "7665d38f-0ee8-4ba1-9301-3e4eae7b184c",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "6dd2e969-6b0f-4b03-bb2c-40167efd2cb6",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "8357af82-4e75-4ece-b022-a75272fe0b0c",
+                                                      "key": "kustoPoolName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the Kusto pool."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Update a Kusto pool."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "81fef0b9-d456-46fd-889c-0c42c1cc3029",
+                                                  "name": "Successfully updated.",
+                                                  "originalRequest": {
+                                                    "method": "PATCH",
+                                                    "header": [
+                                                      {
+                                                        "key": "If-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"tags\": {\n    \"dolore0\": \"<string>\",\n    \"reprehenderitf_\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\"\n  },\n  \"properties\": {\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": \"<boolean>\",\n    \"enablePurge\": \"<boolean>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"eiusmod_66\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"Compute optimized\",\n    \"size\": \"Small\",\n    \"capacity\": \"<integer>\"\n  },\n  \"etag\": \"<string>\",\n  \"properties\": {\n    \"state\": \"Updating\",\n    \"provisioningState\": \"<string>\",\n    \"uri\": \"<string>\",\n    \"dataIngestionUri\": \"<string>\",\n    \"stateReason\": \"<string>\",\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": false,\n    \"enablePurge\": false,\n    \"workspaceUID\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-81fef0b9-d456-46fd-889c-0c42c1cc3029"
+                                                },
+                                                {
+                                                  "id": "b41229bf-322a-4177-a987-3893750323f8",
+                                                  "name": "Update accepted.",
+                                                  "originalRequest": {
+                                                    "method": "PATCH",
+                                                    "header": [
+                                                      {
+                                                        "key": "If-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"tags\": {\n    \"dolore0\": \"<string>\",\n    \"reprehenderitf_\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\"\n  },\n  \"properties\": {\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": \"<boolean>\",\n    \"enablePurge\": \"<boolean>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-b41229bf-322a-4177-a987-3893750323f8"
+                                                },
+                                                {
+                                                  "id": "3b7ad79d-af56-40b8-893e-aad63da4add4",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "PATCH",
+                                                    "header": [
+                                                      {
+                                                        "key": "If-Match",
+                                                        "value": "<string>"
+                                                      },
+                                                      {
+                                                        "key": "Content-Type",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "body": {
+                                                      "mode": "raw",
+                                                      "raw": "{\n  \"tags\": {\n    \"dolore0\": \"<string>\",\n    \"reprehenderitf_\": \"<string>\"\n  },\n  \"sku\": {\n    \"name\": \"<string>\",\n    \"capacity\": \"<integer>\",\n    \"size\": \"<string>\"\n  },\n  \"properties\": {\n    \"optimizedAutoscale\": {\n      \"version\": \"<integer>\",\n      \"isEnabled\": \"<boolean>\",\n      \"minimum\": \"<integer>\",\n      \"maximum\": \"<integer>\"\n    },\n    \"enableStreamingIngest\": \"<boolean>\",\n    \"enablePurge\": \"<boolean>\"\n  }\n}",
+                                                      "options": {
+                                                        "raw": {
+                                                          "headerFamily": "json",
+                                                          "language": "json"
+                                                        }
+                                                      }
+                                                    },
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-3b7ad79d-af56-40b8-893e-aad63da4add4"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:12:00.000Z",
+                                              "updatedAt": "2026-06-05T15:12:00.000Z",
+                                              "uid": "35240-c568aac4-4a5a-4403-95dd-986ea9c1543c"
+                                            },
+                                            {
+                                              "name": "Azure Synapse Analytics Delete a Kusto pool",
+                                              "id": "69a551cd-b01d-40e5-8df6-8174e9e1b9b3",
+                                              "protocolProfileBehavior": {
+                                                "disableBodyPruning": true
+                                              },
+                                              "request": {
+                                                "method": "DELETE",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "kustoPools",
+                                                    ":kustoPoolName"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01-preview"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "id": "e23d685e-6d57-4288-8b55-9cbd0069ccb6",
+                                                      "key": "subscriptionId",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "af1d1fa6-0ef7-4426-9476-160fcd3abc75",
+                                                      "key": "resourceGroupName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "06e60b7f-0f00-403d-b213-bfded3d98c6b",
+                                                      "key": "workspaceName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) "
+                                                    },
+                                                    {
+                                                      "id": "804d2064-d951-44f5-a832-f7a1c91a222d",
+                                                      "key": "kustoPoolName",
+                                                      "value": "<string>",
+                                                      "description": "(Required) The name of the Kusto pool."
+                                                    }
+                                                  ]
+                                                },
+                                                "description": "Deletes a Kusto pool."
+                                              },
+                                              "response": [
+                                                {
+                                                  "id": "de611001-54cc-48a5-964a-ee1eab0f12b4",
+                                                  "name": "Successfully deleted.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "OK",
+                                                  "code": 200,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-de611001-54cc-48a5-964a-ee1eab0f12b4"
+                                                },
+                                                {
+                                                  "id": "fcc6840a-7be8-4b9e-b938-542c6ad8506f",
+                                                  "name": "Deletion accepted.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Accepted",
+                                                  "code": 202,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-fcc6840a-7be8-4b9e-b938-542c6ad8506f"
+                                                },
+                                                {
+                                                  "id": "90030256-f0ad-4180-8a2a-32607d587da0",
+                                                  "name": "Not found.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "No Content",
+                                                  "code": 204,
+                                                  "_postman_previewlanguage": "text",
+                                                  "header": [],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": null,
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-90030256-f0ad-4180-8a2a-32607d587da0"
+                                                },
+                                                {
+                                                  "id": "3e87af11-11e6-4e05-8573-9044c51ebe9a",
+                                                  "name": "Error response.",
+                                                  "originalRequest": {
+                                                    "method": "DELETE",
+                                                    "header": [
+                                                      {
+                                                        "key": "Accept",
+                                                        "value": "application/json"
+                                                      },
+                                                      {
+                                                        "description": "Added as a part of security scheme: oauth2",
+                                                        "key": "Authorization",
+                                                        "value": "<token>"
+                                                      }
+                                                    ],
+                                                    "url": {
+                                                      "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools/:kustoPoolName?api-version=2021-06-01-preview",
+                                                      "host": [
+                                                        "{{baseUrl}}"
+                                                      ],
+                                                      "path": [
+                                                        "subscriptions",
+                                                        ":subscriptionId",
+                                                        "resourceGroups",
+                                                        ":resourceGroupName",
+                                                        "providers",
+                                                        "Microsoft.Synapse",
+                                                        "workspaces",
+                                                        ":workspaceName",
+                                                        "kustoPools",
+                                                        ":kustoPoolName"
+                                                      ],
+                                                      "query": [
+                                                        {
+                                                          "description": "(Required) ",
+                                                          "key": "api-version",
+                                                          "value": "2021-06-01-preview"
+                                                        }
+                                                      ],
+                                                      "variable": [
+                                                        {
+                                                          "key": "subscriptionId"
+                                                        },
+                                                        {
+                                                          "key": "resourceGroupName"
+                                                        },
+                                                        {
+                                                          "key": "workspaceName"
+                                                        },
+                                                        {
+                                                          "key": "kustoPoolName"
+                                                        }
+                                                      ]
+                                                    }
+                                                  },
+                                                  "status": "Internal Server Error",
+                                                  "code": 500,
+                                                  "_postman_previewlanguage": "json",
+                                                  "header": [
+                                                    {
+                                                      "key": "Content-Type",
+                                                      "value": "application/json"
+                                                    }
+                                                  ],
+                                                  "cookie": [],
+                                                  "responseTime": null,
+                                                  "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                                  "createdAt": "2026-06-05T15:12:01.000Z",
+                                                  "updatedAt": "2026-06-05T15:12:01.000Z",
+                                                  "uid": "35240-3e87af11-11e6-4e05-8573-9044c51ebe9a"
+                                                }
+                                              ],
+                                              "createdAt": "2026-06-05T15:12:00.000Z",
+                                              "updatedAt": "2026-06-05T15:12:00.000Z",
+                                              "uid": "35240-69a551cd-b01d-40e5-8df6-8174e9e1b9b3"
+                                            }
+                                          ],
+                                          "id": "c0073714-95f9-4ab2-bcc0-2a44c778d25f",
+                                          "createdAt": "2026-06-05T15:12:00.000Z",
+                                          "updatedAt": "2026-06-05T15:12:00.000Z",
+                                          "uid": "35240-c0073714-95f9-4ab2-bcc0-2a44c778d25f"
+                                        },
+                                        {
+                                          "name": "Azure Synapse Analytics List Kusto pools",
+                                          "id": "84c4486a-f093-4235-886b-6efde941c797",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools?api-version=2021-06-01-preview",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "subscriptions",
+                                                ":subscriptionId",
+                                                "resourceGroups",
+                                                ":resourceGroupName",
+                                                "providers",
+                                                "Microsoft.Synapse",
+                                                "workspaces",
+                                                ":workspaceName",
+                                                "kustoPools"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "(Required) ",
+                                                  "key": "api-version",
+                                                  "value": "2021-06-01-preview"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "cf787a37-cb13-4282-a8fa-12a5d9cb7a48",
+                                                  "key": "subscriptionId",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "d4696db2-f4a3-4144-8b1e-7ac9ba36f2b6",
+                                                  "key": "resourceGroupName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "e087c210-5261-4d44-88f9-d00494062623",
+                                                  "key": "workspaceName",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "List all Kusto pools in a workspace."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "e42feee0-07cb-4945-aab0-6adf14f7035c",
+                                              "name": "Successfully retrieved the list of Kusto pools.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools?api-version=2021-06-01-preview",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "kustoPools"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01-preview"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "OK",
+                                              "code": 200,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"value\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"ex_b3\": \"<string>\"\n      },\n      \"sku\": {\n        \"name\": \"Compute optimized\",\n        \"size\": \"Small\",\n        \"capacity\": \"<integer>\"\n      },\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"state\": \"Stopping\",\n        \"provisioningState\": \"<string>\",\n        \"uri\": \"<string>\",\n        \"dataIngestionUri\": \"<string>\",\n        \"stateReason\": \"<string>\",\n        \"optimizedAutoscale\": {\n          \"version\": \"<integer>\",\n          \"isEnabled\": \"<boolean>\",\n          \"minimum\": \"<integer>\",\n          \"maximum\": \"<integer>\"\n        },\n        \"enableStreamingIngest\": false,\n        \"enablePurge\": false,\n        \"workspaceUID\": \"<string>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"location\": \"<string>\",\n      \"tags\": {\n        \"Ut_75\": \"<string>\"\n      },\n      \"sku\": {\n        \"name\": \"Compute optimized\",\n        \"size\": \"Small\",\n        \"capacity\": \"<integer>\"\n      },\n      \"etag\": \"<string>\",\n      \"properties\": {\n        \"state\": \"Running\",\n        \"provisioningState\": \"<string>\",\n        \"uri\": \"<string>\",\n        \"dataIngestionUri\": \"<string>\",\n        \"stateReason\": \"<string>\",\n        \"optimizedAutoscale\": {\n          \"version\": \"<integer>\",\n          \"isEnabled\": \"<boolean>\",\n          \"minimum\": \"<integer>\",\n          \"maximum\": \"<integer>\"\n        },\n        \"enableStreamingIngest\": false,\n        \"enablePurge\": false,\n        \"workspaceUID\": \"<string>\"\n      }\n    }\n  ]\n}",
+                                              "createdAt": "2026-06-05T15:12:01.000Z",
+                                              "updatedAt": "2026-06-05T15:12:01.000Z",
+                                              "uid": "35240-e42feee0-07cb-4945-aab0-6adf14f7035c"
+                                            },
+                                            {
+                                              "id": "485102fe-e860-48b1-8b73-8ad64aa82c2d",
+                                              "name": "Error response.",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Synapse/workspaces/:workspaceName/kustoPools?api-version=2021-06-01-preview",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "subscriptions",
+                                                    ":subscriptionId",
+                                                    "resourceGroups",
+                                                    ":resourceGroupName",
+                                                    "providers",
+                                                    "Microsoft.Synapse",
+                                                    "workspaces",
+                                                    ":workspaceName",
+                                                    "kustoPools"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "description": "(Required) ",
+                                                      "key": "api-version",
+                                                      "value": "2021-06-01-preview"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "subscriptionId"
+                                                    },
+                                                    {
+                                                      "key": "resourceGroupName"
+                                                    },
+                                                    {
+                                                      "key": "workspaceName"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"error\": {\n    \"code\": \"<string>\",\n    \"message\": \"<string>\"\n  }\n}",
+                                              "createdAt": "2026-06-05T15:12:01.000Z",
+                                              "updatedAt": "2026-06-05T15:12:01.000Z",
+                                              "uid": "35240-485102fe-e860-48b1-8b73-8ad64aa82c2d"
+                                            }
+                                          ],
+                                          "createdAt": "2026-06-05T15:12:00.000Z",
+                                          "updatedAt": "2026-06-05T15:12:00.000Z",
+                                          "uid": "35240-84c4486a-f093-4235-886b-6efde941c797"
+                                        }
+                                      ],
+                                      "id": "7381e4be-6c1c-4be9-acc4-7bceefb888b5",
+                                      "createdAt": "2026-06-05T15:12:00.000Z",
+                                      "updatedAt": "2026-06-05T15:12:00.000Z",
+                                      "uid": "35240-7381e4be-6c1c-4be9-acc4-7bceefb888b5"
+                                    }
+                                  ],
+                                  "id": "33783036-55c3-487c-b546-9ea0bd80b818",
+                                  "createdAt": "2026-06-05T15:12:00.000Z",
+                                  "updatedAt": "2026-06-05T15:12:00.000Z",
+                                  "uid": "35240-33783036-55c3-487c-b546-9ea0bd80b818"
+                                }
+                              ],
+                              "id": "3b861e10-0a14-47dc-bfc2-7d187ba0759a",
+                              "createdAt": "2026-06-05T15:12:00.000Z",
+                              "updatedAt": "2026-06-05T15:12:00.000Z",
+                              "uid": "35240-3b861e10-0a14-47dc-bfc2-7d187ba0759a"
+                            }
+                          ],
+                          "id": "5d75ce71-ef5b-411b-9270-59a00022f44e",
+                          "createdAt": "2026-06-05T15:12:00.000Z",
+                          "updatedAt": "2026-06-05T15:12:00.000Z",
+                          "uid": "35240-5d75ce71-ef5b-411b-9270-59a00022f44e"
+                        }
+                      ],
+                      "id": "3050423b-8a3f-4232-b495-d4a397cfc5fb",
+                      "createdAt": "2026-06-05T15:12:00.000Z",
+                      "updatedAt": "2026-06-05T15:12:00.000Z",
+                      "uid": "35240-3050423b-8a3f-4232-b495-d4a397cfc5fb"
+                    }
+                  ],
+                  "id": "86ff7cd0-8653-48bd-a93f-8e0c38898519",
+                  "createdAt": "2026-06-05T15:12:00.000Z",
+                  "updatedAt": "2026-06-05T15:12:00.000Z",
+                  "uid": "35240-86ff7cd0-8653-48bd-a93f-8e0c38898519"
+                }
+              ],
+              "id": "025077ce-2a6b-4154-b247-27fb19155ed0",
+              "createdAt": "2026-06-05T15:12:00.000Z",
+              "updatedAt": "2026-06-05T15:12:00.000Z",
+              "uid": "35240-025077ce-2a6b-4154-b247-27fb19155ed0"
+            }
+          ],
+          "id": "9931edfc-9c14-45b0-b330-0127ae76f0dc",
+          "createdAt": "2026-06-05T15:12:00.000Z",
+          "updatedAt": "2026-06-05T15:12:00.000Z",
+          "uid": "35240-9931edfc-9c14-45b0-b330-0127ae76f0dc"
+        }
+      ],
+      "id": "826ce74a-f36c-4bb8-a571-42cf8556c8c1",
+      "createdAt": "2026-06-05T15:12:00.000Z",
+      "updatedAt": "2026-06-05T15:12:00.000Z",
+      "uid": "35240-826ce74a-f36c-4bb8-a571-42cf8556c8c1"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://management.azure.com"
+    }
+  ]
+}
