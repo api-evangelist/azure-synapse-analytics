@@ -695,45 +695,42 @@ apis:
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/azure-synapse-analytics/overview
-  - type: ArazzoWorkflows
-    url: arazzo/
-    workflows:
-      - url: arazzo/microsoft-azure-synapse-analytics-build-data-integration-pipeline-workflow.yml
-        name: Azure Synapse Analytics Build Data Integration Pipeline
-        summary: Stand up a linked service, a dataset, a pipeline, and trigger a run.
-      - url: arazzo/microsoft-azure-synapse-analytics-deploy-and-run-pipeline-workflow.yml
-        name: Azure Synapse Analytics Deploy and Run Pipeline
-        summary: Create or update a pipeline, confirm it persisted, then trigger a run.
-      - url: arazzo/microsoft-azure-synapse-analytics-deploy-and-start-trigger-workflow.yml
-        name: Azure Synapse Analytics Deploy and Start Trigger
-        summary: Create or update a trigger, confirm it persisted, then start it.
-      - url: arazzo/microsoft-azure-synapse-analytics-deploy-execute-spark-job-definition-workflow.yml
-        name: Azure Synapse Analytics Deploy and Execute Spark Job Definition
-        summary: Publish a Spark job definition, execute it, and poll the resulting batch.
-      - url: arazzo/microsoft-azure-synapse-analytics-open-spark-session-and-run-statement-workflow.yml
-        name: Azure Synapse Analytics Open Spark Session and Run Statement
-        summary: Create an interactive Spark session, wait until idle, then run a statement.
-      - url: arazzo/microsoft-azure-synapse-analytics-provision-and-resume-sql-pool-workflow.yml
-        name: Azure Synapse Analytics Provision and Resume SQL Pool
-        summary: Create a dedicated SQL pool, resume its compute, and confirm its state.
-      - url: arazzo/microsoft-azure-synapse-analytics-provision-linked-service-and-dataset-workflow.yml
-        name: Azure Synapse Analytics Provision Linked Service and Dataset
-        summary: Create a linked service, confirm it, then create a dataset bound to it.
-      - url: arazzo/microsoft-azure-synapse-analytics-provision-spark-pool-workflow.yml
-        name: Azure Synapse Analytics Provision Spark Pool
-        summary: Create or update an Apache Spark (big data) pool and confirm its state.
-      - url: arazzo/microsoft-azure-synapse-analytics-publish-and-verify-notebook-workflow.yml
-        name: Azure Synapse Analytics Publish and Verify Notebook
-        summary: Create or update a Synapse notebook, then read it back to verify it.
-      - url: arazzo/microsoft-azure-synapse-analytics-publish-and-verify-sql-script-workflow.yml
-        name: Azure Synapse Analytics Publish and Verify SQL Script
-        summary: Create or update a SQL script artifact, then read it back to verify it.
-      - url: arazzo/microsoft-azure-synapse-analytics-submit-and-poll-spark-batch-job-workflow.yml
-        name: Azure Synapse Analytics Submit and Poll Spark Batch Job
-        summary: Submit a Spark batch job to a pool and poll until it reaches a result.
-      - url: arazzo/microsoft-azure-synapse-analytics-subscribe-trigger-to-events-workflow.yml
-        name: Azure Synapse Analytics Subscribe Trigger to Events
-        summary: Subscribe an event trigger to its events and poll until the status settles.
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-build-data-integration-pipeline-workflow.yml
+    name: Azure Synapse Analytics Build Data Integration Pipeline
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-deploy-and-run-pipeline-workflow.yml
+    name: Azure Synapse Analytics Deploy and Run Pipeline
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-deploy-and-start-trigger-workflow.yml
+    name: Azure Synapse Analytics Deploy and Start Trigger
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-deploy-execute-spark-job-definition-workflow.yml
+    name: Azure Synapse Analytics Deploy and Execute Spark Job Definition
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-open-spark-session-and-run-statement-workflow.yml
+    name: Azure Synapse Analytics Open Spark Session and Run Statement
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-provision-and-resume-sql-pool-workflow.yml
+    name: Azure Synapse Analytics Provision and Resume SQL Pool
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-provision-linked-service-and-dataset-workflow.yml
+    name: Azure Synapse Analytics Provision Linked Service and Dataset
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-provision-spark-pool-workflow.yml
+    name: Azure Synapse Analytics Provision Spark Pool
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-publish-and-verify-notebook-workflow.yml
+    name: Azure Synapse Analytics Publish and Verify Notebook
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-publish-and-verify-sql-script-workflow.yml
+    name: Azure Synapse Analytics Publish and Verify SQL Script
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-submit-and-poll-spark-batch-job-workflow.yml
+    name: Azure Synapse Analytics Submit and Poll Spark Batch Job
+  - type: Arazzo
+    url: arazzo/microsoft-azure-synapse-analytics-subscribe-trigger-to-events-workflow.yml
+    name: Azure Synapse Analytics Subscribe Trigger to Events
   - type: Portal
     url: https://portal.azure.com/
   - type: Documentation
@@ -778,7 +775,7 @@ common:
     url: https://azure.microsoft.com/en-us/products/synapse-analytics
   - type: Login
     url: https://portal.azure.com/
-  - type: SignUp
+  - type: Signup
     url: https://azure.microsoft.com/en-us/free/
 maintainers:
   - FN: Kin Lane

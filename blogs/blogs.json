@@ -2,11 +2,11 @@
   "repo": "microsoft-azure-synapse-analytics",
   "feeds": [
     {
-      "source": "https://techcommunity.microsoft.com/category/azuredatabases/blog/azuresynapseanalyticsblog",
-      "feed_url": "https://techcommunity.microsoft.com/category/azuredatabases/blog/azuresynapseanalyticsblog",
+      "source": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=azuresynapseanalyticsblog",
+      "feed_url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=azuresynapseanalyticsblog",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "feed"
     },
     {
       "source": "https://learn.microsoft.com/en-us/azure/synapse-analytics/whats-new",
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z"
 }
