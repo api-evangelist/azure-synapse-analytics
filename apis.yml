@@ -693,6 +693,8 @@ apis:
       - type: JSONLD
         url: json-ld/azure-synapse-analytics-context.jsonld
 common:
+  - type: OAuthScopes
+    url: scopes/microsoft-azure-synapse-analytics-scopes.yml
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/azure-synapse-analytics/overview
   - type: Arazzo
