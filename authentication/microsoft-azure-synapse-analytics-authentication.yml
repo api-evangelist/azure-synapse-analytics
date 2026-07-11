@@ -1,0 +1,52 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/azure-synapse-analytics-access-control-openapi.yml, openapi/azure-synapse-analytics-azure-ad-only-auth-openapi.yml,
+  openapi/azure-synapse-analytics-credential-openapi.yml, openapi/azure-synapse-analytics-data-flow-debug-session-openapi.yml,
+  openapi/azure-synapse-analytics-data-flow-openapi.yml, openapi/azure-synapse-analytics-dataset-openapi.yml,
+  openapi/azure-synapse-analytics-firewall-rules-openapi.yml, openapi/azure-synapse-analytics-git-integration-openapi.yml,
+  openapi/azure-synapse-analytics-integration-runtimes-openapi.yml, openapi/azure-synapse-analytics-keys-openapi.yml,
+  openapi/azure-synapse-analytics-kql-script-openapi.yml, openapi/azure-synapse-analytics-kusto-pools-openapi.yml
+  ...
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - implicit
+schemes:
+- name: azure_auth
+  type: oauth2
+  flows:
+  - flow: implicit
+    authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+    scopes: 1
+  sources:
+  - openapi/azure-synapse-analytics-access-control-openapi.yml
+  - openapi/azure-synapse-analytics-azure-ad-only-auth-openapi.yml
+  - openapi/azure-synapse-analytics-credential-openapi.yml
+  - openapi/azure-synapse-analytics-data-flow-debug-session-openapi.yml
+  - openapi/azure-synapse-analytics-data-flow-openapi.yml
+  - openapi/azure-synapse-analytics-dataset-openapi.yml
+  - openapi/azure-synapse-analytics-firewall-rules-openapi.yml
+  - openapi/azure-synapse-analytics-git-integration-openapi.yml
+  - openapi/azure-synapse-analytics-integration-runtimes-openapi.yml
+  - openapi/azure-synapse-analytics-keys-openapi.yml
+  - openapi/azure-synapse-analytics-kql-script-openapi.yml
+  - openapi/azure-synapse-analytics-kusto-pools-openapi.yml
+  - openapi/azure-synapse-analytics-library-openapi.yml
+  - openapi/azure-synapse-analytics-link-connection-openapi.yml
+  - openapi/azure-synapse-analytics-linked-service-openapi.yml
+  - openapi/azure-synapse-analytics-managed-private-endpoints-openapi.yml
+  - openapi/azure-synapse-analytics-monitoring-openapi.yml
+  - openapi/azure-synapse-analytics-notebook-openapi.yml
+  - openapi/azure-synapse-analytics-pipeline-openapi.yml
+  - openapi/azure-synapse-analytics-private-endpoint-connections-openapi.yml
+  - openapi/azure-synapse-analytics-private-link-hubs-openapi.yml
+  - openapi/azure-synapse-analytics-spark-configuration-openapi.yml
+  - openapi/azure-synapse-analytics-spark-job-definition-openapi.yml
+  - openapi/azure-synapse-analytics-spark-job-openapi.yml
+  - openapi/azure-synapse-analytics-spark-pools-openapi.yml
+  - openapi/azure-synapse-analytics-sql-pools-openapi.yml
+  - openapi/azure-synapse-analytics-sql-script-openapi.yml
+  - openapi/azure-synapse-analytics-synapse-link-openapi.yml
+  - openapi/azure-synapse-analytics-trigger-openapi.yml
+  - openapi/azure-synapse-analytics-workspace-openapi.yml

@@ -693,6 +693,10 @@ apis:
       - type: JSONLD
         url: json-ld/azure-synapse-analytics-context.jsonld
 common:
+  - type: DomainSecurity
+    url: security/microsoft-azure-synapse-analytics-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-azure-synapse-analytics-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-azure-synapse-analytics-scopes.yml
   - type: PostmanWorkspace
