@@ -693,6 +693,8 @@ apis:
       - type: JSONLD
         url: json-ld/azure-synapse-analytics-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-azure-synapse-analytics-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-azure-synapse-analytics-domain-security.yml
   - type: Authentication
