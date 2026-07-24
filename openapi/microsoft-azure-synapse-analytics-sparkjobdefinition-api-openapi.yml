@@ -1,0 +1,361 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SparkJobDefinition API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: SparkJobDefinition
+paths:
+  /sparkJobDefinitions:
+    get:
+      operationId: SparkJobDefinition_GetSparkJobDefinitionsByWorkspace
+      summary: Azure Synapse Analytics List Spark job definitions
+      description: Lists Spark job definitions in the workspace.
+      tags:
+      - SparkJobDefinition
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkJobDefinitionListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /sparkJobDefinitions/{sparkJobDefinitionName}:
+    get:
+      operationId: SparkJobDefinition_GetSparkJobDefinition
+      summary: Azure Synapse Analytics Get a Spark job definition
+      description: Gets a Spark job definition.
+      tags:
+      - SparkJobDefinition
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkJobDefinitionNameParameter'
+      - name: If-None-Match
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkJobDefinitionResource'
+        '304':
+          description: Not modified.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: SparkJobDefinition_CreateOrUpdateSparkJobDefinition
+      summary: Azure Synapse Analytics Create or update a Spark job definition
+      description: Creates or updates a Spark job definition.
+      tags:
+      - SparkJobDefinition
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkJobDefinitionNameParameter'
+      - name: If-Match
+        in: header
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SparkJobDefinitionResource'
+      responses:
+        '200':
+          description: Successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkJobDefinitionResource'
+        '202':
+          description: Creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: SparkJobDefinition_DeleteSparkJobDefinition
+      summary: Azure Synapse Analytics Delete a Spark job definition
+      description: Deletes a Spark job definition.
+      tags:
+      - SparkJobDefinition
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkJobDefinitionNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted.
+        '202':
+          description: Deletion accepted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /sparkJobDefinitions/{sparkJobDefinitionName}/rename:
+    post:
+      operationId: SparkJobDefinition_RenameSparkJobDefinition
+      summary: Azure Synapse Analytics Rename a Spark job definition
+      description: Renames a Spark job definition.
+      tags:
+      - SparkJobDefinition
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkJobDefinitionNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArtifactRenameRequest'
+      responses:
+        '200':
+          description: Successfully renamed.
+        '202':
+          description: Rename accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /sparkJobDefinitions/{sparkJobDefinitionName}/execute:
+    post:
+      operationId: SparkJobDefinition_ExecuteSparkJobDefinition
+      summary: Azure Synapse Analytics Execute a Spark job definition
+      description: Executes the Spark job definition.
+      tags:
+      - SparkJobDefinition
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkJobDefinitionNameParameter'
+      responses:
+        '200':
+          description: Successfully submitted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkBatchJob'
+        '202':
+          description: Execution accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /sparkJobDefinitions/{sparkJobDefinitionName}/debug:
+    post:
+      operationId: SparkJobDefinition_DebugSparkJobDefinition
+      summary: Azure Synapse Analytics Debug a Spark job definition
+      description: Debug the Spark job definition.
+      tags:
+      - SparkJobDefinition
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkJobDefinitionNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SparkJobDefinitionResource'
+      responses:
+        '200':
+          description: Successfully submitted debug.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkBatchJob'
+        '202':
+          description: Debug accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    SparkJobDefinition:
+      type: object
+      required:
+      - targetBigDataPool
+      - jobProperties
+      properties:
+        description:
+          type: string
+        targetBigDataPool:
+          type: object
+          properties:
+            referenceName:
+              type: string
+            type:
+              type: string
+        requiredSparkVersion:
+          type: string
+        language:
+          type: string
+        jobProperties:
+          type: object
+          required:
+          - name
+          - file
+          properties:
+            name:
+              type: string
+            file:
+              type: string
+            className:
+              type: string
+            conf:
+              type: object
+              additionalProperties:
+                type: string
+            args:
+              type: array
+              items:
+                type: string
+            jars:
+              type: array
+              items:
+                type: string
+            pyFiles:
+              type: array
+              items:
+                type: string
+            files:
+              type: array
+              items:
+                type: string
+            driverMemory:
+              type: string
+            driverCores:
+              type: integer
+            executorMemory:
+              type: string
+            executorCores:
+              type: integer
+            numExecutors:
+              type: integer
+        folder:
+          type: object
+          properties:
+            name:
+              type: string
+    SparkBatchJob:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        state:
+          type: string
+        appId:
+          type: string
+        log:
+          type: array
+          items:
+            type: string
+    ArtifactRenameRequest:
+      type: object
+      properties:
+        newName:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    SparkJobDefinitionResource:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/SparkJobDefinition'
+    SparkJobDefinitionListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/SparkJobDefinitionResource'
+        nextLink:
+          type: string
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+    SparkJobDefinitionNameParameter:
+      name: sparkJobDefinitionName
+      in: path
+      required: true
+      description: The Spark job definition name.
+      schema:
+        type: string
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

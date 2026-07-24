@@ -1,0 +1,186 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications WorkspaceAadAdmins API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: WorkspaceAadAdmins
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/administrators/activeDirectory
+  : get:
+      operationId: WorkspaceAadAdmins_Get
+      summary: Azure Synapse Analytics Get workspace Active Directory admin
+      description: Gets a workspace active directory admin.
+      tags:
+      - WorkspaceAadAdmins
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the workspace AAD admin.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceAadAdminInfo'
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: WorkspaceAadAdmins_CreateOrUpdate
+      summary: Azure Synapse Analytics Create or update workspace Active Directory admin
+      description: Creates or updates a workspace active directory admin.
+      tags:
+      - WorkspaceAadAdmins
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkspaceAadAdminInfo'
+      responses:
+        '200':
+          description: Successfully updated the workspace AAD admin.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkspaceAadAdminInfo'
+        '202':
+          description: Accepted.
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: WorkspaceAadAdmins_Delete
+      summary: Azure Synapse Analytics Delete workspace Active Directory admin
+      description: Deletes a workspace active directory admin.
+      tags:
+      - WorkspaceAadAdmins
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the workspace AAD admin.
+        '202':
+          description: Accepted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response describing why the operation failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    WorkspaceAadAdminInfo:
+      type: object
+      description: Workspace active directory admin.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            tenantId:
+              type: string
+              description: Tenant ID of the workspace active directory administrator.
+            login:
+              type: string
+              description: Login name of the workspace active directory administrator.
+            administratorType:
+              type: string
+              description: Workspace active directory administrator type.
+            sid:
+              type: string
+              description: Object ID of the workspace active directory administrator.
+    ErrorResponse:
+      type: object
+      description: Error response from the Azure Synapse service.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Error message.
+  parameters:
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The ID of the target subscription.
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
+        default: '2021-06-01'
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      description: The name of the workspace.
+      schema:
+        type: string
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

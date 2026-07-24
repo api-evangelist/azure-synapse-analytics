@@ -1,0 +1,251 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SparkConfiguration API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: SparkConfiguration
+paths:
+  /sparkconfigurations:
+    get:
+      operationId: SparkConfiguration_GetSparkConfigurationsByWorkspace
+      summary: Azure Synapse Analytics List Spark configurations
+      description: Lists Spark configurations in the workspace.
+      tags:
+      - SparkConfiguration
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkConfigurationListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /sparkconfigurations/{sparkConfigurationName}:
+    get:
+      operationId: SparkConfiguration_GetSparkConfiguration
+      summary: Azure Synapse Analytics Get a Spark configuration
+      description: Gets a Spark configuration.
+      tags:
+      - SparkConfiguration
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkConfigurationNameParameter'
+      - name: If-None-Match
+        in: header
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkConfigurationResource'
+        '304':
+          description: Not modified.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: SparkConfiguration_CreateOrUpdateSparkConfiguration
+      summary: Azure Synapse Analytics Create or update a Spark configuration
+      description: Creates or updates a Spark configuration.
+      tags:
+      - SparkConfiguration
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkConfigurationNameParameter'
+      - name: If-Match
+        in: header
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SparkConfigurationResource'
+      responses:
+        '200':
+          description: Successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SparkConfigurationResource'
+        '202':
+          description: Creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: SparkConfiguration_DeleteSparkConfiguration
+      summary: Azure Synapse Analytics Delete a Spark configuration
+      description: Deletes a Spark configuration.
+      tags:
+      - SparkConfiguration
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkConfigurationNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted.
+        '202':
+          description: Deletion accepted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /sparkconfigurations/{sparkConfigurationName}/rename:
+    post:
+      operationId: SparkConfiguration_RenameSparkConfiguration
+      summary: Azure Synapse Analytics Rename a Spark configuration
+      description: Renames a Spark configuration.
+      tags:
+      - SparkConfiguration
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SparkConfigurationNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArtifactRenameRequest'
+      responses:
+        '200':
+          description: Successfully renamed.
+        '202':
+          description: Rename accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    SparkConfigurationListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/SparkConfigurationResource'
+        nextLink:
+          type: string
+    SparkConfiguration:
+      type: object
+      properties:
+        description:
+          type: string
+        configs:
+          type: object
+          additionalProperties:
+            type: string
+          description: Spark configuration key-value pairs.
+        annotations:
+          type: array
+          items:
+            type: string
+        notes:
+          type: string
+        createdBy:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        configMergeRule:
+          type: object
+          additionalProperties:
+            type: string
+    ArtifactRenameRequest:
+      type: object
+      properties:
+        newName:
+          type: string
+    SparkConfigurationResource:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/SparkConfiguration'
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+  parameters:
+    SparkConfigurationNameParameter:
+      name: sparkConfigurationName
+      in: path
+      required: true
+      description: The Spark configuration name.
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: 2021-06-01-preview
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

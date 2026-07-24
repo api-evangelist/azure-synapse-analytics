@@ -1,0 +1,190 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SqlPoolRestorePoints API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: SqlPoolRestorePoints
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/restorePoints
+  : get:
+      operationId: SqlPoolRestorePoints_List
+      summary: Azure Synapse Analytics List SQL pool restore points
+      description: Get a list of available restore points for a SQL pool.
+      tags:
+      - SqlPoolRestorePoints
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      - $ref: '#/components/parameters/SqlPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved restore points.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestorePointListResult'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      operationId: SqlPoolRestorePoints_Create
+      summary: Azure Synapse Analytics Create a SQL pool restore point
+      description: Creates a restore point for a SQL pool.
+      tags:
+      - SqlPoolRestorePoints
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      - $ref: '#/components/parameters/SqlPoolNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSqlPoolRestorePointDefinition'
+      responses:
+        '200':
+          description: Successfully created restore point.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestorePoint'
+        '202':
+          description: Restore point creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  parameters:
+    SqlPoolNameParameter:
+      name: sqlPoolName
+      in: path
+      required: true
+      description: SQL pool name.
+      schema:
+        type: string
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    CreateSqlPoolRestorePointDefinition:
+      type: object
+      required:
+      - restorePointLabel
+      properties:
+        restorePointLabel:
+          type: string
+          description: The restore point label.
+    RestorePointListResult:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestorePoint'
+        nextLink:
+          type: string
+          readOnly: true
+    ErrorResponse:
+      type: object
+      description: Error response.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    RestorePoint:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        location:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            restorePointType:
+              type: string
+              enum:
+              - CONTINUOUS
+              - DISCRETE
+              readOnly: true
+            earliestRestoreDate:
+              type: string
+              format: date-time
+              readOnly: true
+            restorePointCreationDate:
+              type: string
+              format: date-time
+              readOnly: true
+            restorePointLabel:
+              type: string
+              readOnly: true
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

@@ -1,0 +1,179 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SqlPoolTransparentDataEncryption API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: SqlPoolTransparentDataEncryption
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/sqlPools/{sqlPoolName}/transparentDataEncryption/{transparentDataEncryptionName}
+  : get:
+      operationId: SqlPoolTransparentDataEncryptions_Get
+      summary: Azure Synapse Analytics Get SQL pool transparent data encryption
+      description: Get a SQL pool transparent data encryption configuration.
+      tags:
+      - SqlPoolTransparentDataEncryption
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      - $ref: '#/components/parameters/SqlPoolNameParameter'
+      - name: transparentDataEncryptionName
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - current
+      responses:
+        '200':
+          description: Successfully retrieved TDE configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransparentDataEncryption'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: SqlPoolTransparentDataEncryptions_CreateOrUpdate
+      summary: Azure Synapse Analytics Create or update SQL pool transparent data encryption
+      description: Creates or updates a SQL pool transparent data encryption configuration.
+      tags:
+      - SqlPoolTransparentDataEncryption
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      - $ref: '#/components/parameters/SqlPoolNameParameter'
+      - name: transparentDataEncryptionName
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - current
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransparentDataEncryption'
+      responses:
+        '200':
+          description: Successfully updated TDE configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransparentDataEncryption'
+        '201':
+          description: Created TDE configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransparentDataEncryption'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  parameters:
+    SqlPoolNameParameter:
+      name: sqlPoolName
+      in: path
+      required: true
+      description: SQL pool name.
+      schema:
+        type: string
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      description: Error response.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    TransparentDataEncryption:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        location:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            status:
+              type: string
+              description: The status of the TDE.
+              enum:
+              - Enabled
+              - Disabled
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

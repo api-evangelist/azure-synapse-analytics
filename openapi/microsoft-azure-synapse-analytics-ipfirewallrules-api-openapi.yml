@@ -1,0 +1,291 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications IpFirewallRules API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: IpFirewallRules
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules
+  : get:
+      operationId: IpFirewallRules_ListByWorkspace
+      summary: Azure Synapse Analytics List firewall rules
+      description: Returns a list of firewall rules.
+      tags:
+      - IpFirewallRules
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IpFirewallRuleInfoListResult'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/firewallRules/{ruleName}
+  : get:
+      operationId: IpFirewallRules_Get
+      summary: Azure Synapse Analytics Get a firewall rule
+      description: Get a firewall rule.
+      tags:
+      - IpFirewallRules
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      - name: ruleName
+        in: path
+        required: true
+        description: The IP firewall rule name.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successfully retrieved the firewall rule.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IpFirewallRuleInfo'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: IpFirewallRules_CreateOrUpdate
+      summary: Azure Synapse Analytics Create or update a firewall rule
+      description: Creates or updates a firewall rule.
+      tags:
+      - IpFirewallRules
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      - name: ruleName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IpFirewallRuleInfo'
+      responses:
+        '200':
+          description: Successfully updated the firewall rule.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IpFirewallRuleInfo'
+        '201':
+          description: Successfully created the firewall rule.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IpFirewallRuleInfo'
+        '202':
+          description: Firewall rule creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: IpFirewallRules_Delete
+      summary: Azure Synapse Analytics Delete a firewall rule
+      description: Deletes a firewall rule.
+      tags:
+      - IpFirewallRules
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      - name: ruleName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successfully deleted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IpFirewallRuleInfo'
+        '202':
+          description: Deletion accepted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/replaceAllIpFirewallRules
+  : post:
+      operationId: IpFirewallRules_ReplaceAll
+      summary: Azure Synapse Analytics Replace all firewall rules
+      description: Replaces firewall rules.
+      tags:
+      - IpFirewallRules
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/SubscriptionIdParameter'
+      - $ref: '#/components/parameters/ResourceGroupNameParameter'
+      - $ref: '#/components/parameters/WorkspaceNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReplaceAllIpFirewallRulesRequest'
+      responses:
+        '200':
+          description: Successfully replaced firewall rules.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReplaceAllFirewallRulesOperationResponse'
+        '202':
+          description: Replace accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  parameters:
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    ReplaceAllFirewallRulesOperationResponse:
+      type: object
+      properties:
+        operationId:
+          type: string
+    IpFirewallRuleInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            endIpAddress:
+              type: string
+              description: The end IP address of the firewall rule (IPv4 format).
+            provisioningState:
+              type: string
+              readOnly: true
+              enum:
+              - Provisioning
+              - Succeeded
+              - Deleting
+              - Failed
+              - DeleteError
+            startIpAddress:
+              type: string
+              description: The start IP address of the firewall rule (IPv4 format).
+    ReplaceAllIpFirewallRulesRequest:
+      type: object
+      properties:
+        ipFirewallRules:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              startIpAddress:
+                type: string
+              endIpAddress:
+                type: string
+    IpFirewallRuleInfoListResult:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/IpFirewallRuleInfo'
+        nextLink:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

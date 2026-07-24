@@ -1,0 +1,346 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications LinkConnection API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: LinkConnection
+paths:
+  /linkconnections:
+    get:
+      operationId: LinkConnection_ListByWorkspace
+      summary: Azure Synapse Analytics List link connections
+      description: List link connections in the workspace.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkConnectionListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /linkconnections/{linkConnectionName}:
+    get:
+      operationId: LinkConnection_Get
+      summary: Azure Synapse Analytics Get a link connection
+      description: Get a link connection.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/LinkConnectionNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkConnectionResource'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: LinkConnection_CreateOrUpdate
+      summary: Azure Synapse Analytics Create or update a link connection
+      description: Creates or updates a link connection.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/LinkConnectionNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LinkConnectionResource'
+      responses:
+        '200':
+          description: Successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkConnectionResource'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: LinkConnection_Delete
+      summary: Azure Synapse Analytics Delete a link connection
+      description: Delete a link connection.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/LinkConnectionNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /linkconnections/{linkConnectionName}/start:
+    post:
+      operationId: LinkConnection_Start
+      summary: Azure Synapse Analytics Start a link connection
+      description: Start a link connection to begin data replication.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/LinkConnectionNameParameter'
+      responses:
+        '200':
+          description: Successfully started.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /linkconnections/{linkConnectionName}/stop:
+    post:
+      operationId: LinkConnection_Stop
+      summary: Azure Synapse Analytics Stop a link connection
+      description: Stop a link connection.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/LinkConnectionNameParameter'
+      responses:
+        '200':
+          description: Successfully stopped.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /linkconnections/{linkConnectionName}/detailedstatus:
+    get:
+      operationId: LinkConnection_GetDetailedStatus
+      summary: Azure Synapse Analytics Get link connection detailed status
+      description: Get the detailed status of a link connection.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/LinkConnectionNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkConnectionDetailedStatus'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /linkconnections/{linkConnectionName}/linktables:
+    get:
+      operationId: LinkConnection_ListLinkTables
+      summary: Azure Synapse Analytics List link tables
+      description: List the link tables of a link connection.
+      tags:
+      - LinkConnection
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      - $ref: '#/components/parameters/LinkConnectionNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkTableListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    LinkConnectionDetailedStatus:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        isApplyingChanges:
+          type: boolean
+        isPartiallyFailed:
+          type: boolean
+        startTime:
+          type: string
+          format: date-time
+        stopTime:
+          type: string
+          format: date-time
+        status:
+          type: string
+        continuousRunId:
+          type: string
+        error:
+          type: object
+    LinkConnectionListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/LinkConnectionResource'
+        nextLink:
+          type: string
+    LinkConnectionResource:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            sourceDatabase:
+              type: object
+              properties:
+                typeProperties:
+                  type: object
+                  properties:
+                    resourceId:
+                      type: string
+                linkedService:
+                  type: object
+                  properties:
+                    referenceName:
+                      type: string
+                    type:
+                      type: string
+            targetDatabase:
+              type: object
+              properties:
+                typeProperties:
+                  type: object
+                  properties:
+                    linkedServiceTarget:
+                      type: string
+                linkedService:
+                  type: object
+                  properties:
+                    referenceName:
+                      type: string
+                    type:
+                      type: string
+            compute:
+              type: object
+              properties:
+                coreCount:
+                  type: integer
+                computeType:
+                  type: string
+    LinkTableListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              source:
+                type: object
+                properties:
+                  tableName:
+                    type: string
+                  schemaName:
+                    type: string
+              target:
+                type: object
+                properties:
+                  tableName:
+                    type: string
+                  schemaName:
+                    type: string
+                  distributionOptions:
+                    type: object
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: 2023-04-18-preview
+    LinkConnectionNameParameter:
+      name: linkConnectionName
+      in: path
+      required: true
+      description: The link connection name.
+      schema:
+        type: string
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account

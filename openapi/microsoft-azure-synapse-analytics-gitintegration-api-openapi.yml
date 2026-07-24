@@ -1,0 +1,102 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications GitIntegration API
+  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+- url: https://{workspaceName}.dev.azuresynapse.net
+  description: Synapse Data Plane
+  variables:
+    workspaceName:
+      description: The workspace name.
+      default: myworkspace
+security:
+- azure_auth:
+  - user_impersonation
+tags:
+- name: GitIntegration
+paths:
+  /getGitHubAccessToken:
+    post:
+      operationId: WorkspaceGitRepoManagement_GetGitHubAccessToken
+      summary: Azure Synapse Analytics Get GitHub access token
+      description: Get the GitHub access token for the workspace Git integration.
+      tags:
+      - GitIntegration
+      parameters:
+      - $ref: '#/components/parameters/ApiVersionParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GitHubAccessTokenRequest'
+      responses:
+        '200':
+          description: Successfully retrieved the GitHub access token.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GitHubAccessTokenResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    GitHubAccessTokenResponse:
+      type: object
+      properties:
+        gitHubAccessToken:
+          type: string
+          description: The GitHub access token.
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    GitHubAccessTokenRequest:
+      type: object
+      required:
+      - gitHubClientId
+      - gitHubAccessCode
+      - gitHubAccessTokenBaseUrl
+      properties:
+        gitHubClientId:
+          type: string
+          description: The GitHub Client Id.
+        gitHubAccessCode:
+          type: string
+          description: The GitHub Access code.
+        gitHubAccessTokenBaseUrl:
+          type: string
+          description: The GitHub access token base URL.
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
