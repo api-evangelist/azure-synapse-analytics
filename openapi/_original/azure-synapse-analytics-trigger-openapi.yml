@@ -1,0 +1,356 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Trigger API
+  description: >-
+    Create and manage triggers that orchestrate pipeline execution. Supports
+    schedule-based, tumbling window, and event-based triggers for automated
+    workflow execution.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /triggers:
+    get:
+      operationId: Trigger_GetTriggersByWorkspace
+      summary: Azure Synapse Analytics List triggers
+      description: Lists triggers in the workspace.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of triggers.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /triggers/{triggerName}:
+    get:
+      operationId: Trigger_GetTrigger
+      summary: Azure Synapse Analytics Get a trigger
+      description: Gets a trigger.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+        - name: If-None-Match
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the trigger.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerResource'
+        '304':
+          description: Not modified.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: Trigger_CreateOrUpdateTrigger
+      summary: Azure Synapse Analytics Create or update a trigger
+      description: Creates or updates a trigger.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+        - name: If-Match
+          in: header
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TriggerResource'
+      responses:
+        '200':
+          description: Successfully updated the trigger.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerResource'
+        '202':
+          description: Trigger creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: Trigger_DeleteTrigger
+      summary: Azure Synapse Analytics Delete a trigger
+      description: Deletes a trigger.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the trigger.
+        '202':
+          description: Trigger deletion accepted.
+        '204':
+          description: Trigger not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /triggers/{triggerName}/subscribeToEvents:
+    post:
+      operationId: Trigger_SubscribeTriggerToEvents
+      summary: Azure Synapse Analytics Subscribe trigger to events
+      description: Subscribe event trigger to events.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+      responses:
+        '200':
+          description: Successfully subscribed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerSubscriptionOperationStatus'
+        '202':
+          description: Subscription accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /triggers/{triggerName}/getEventSubscriptionStatus:
+    post:
+      operationId: Trigger_GetEventSubscriptionStatus
+      summary: Azure Synapse Analytics Get trigger event subscription status
+      description: Get a trigger event subscription status.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved status.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerSubscriptionOperationStatus'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /triggers/{triggerName}/unsubscribeFromEvents:
+    post:
+      operationId: Trigger_UnsubscribeTriggerFromEvents
+      summary: Azure Synapse Analytics Unsubscribe trigger from events
+      description: Unsubscribe event trigger from events.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+      responses:
+        '200':
+          description: Successfully unsubscribed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerSubscriptionOperationStatus'
+        '202':
+          description: Unsubscription accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /triggers/{triggerName}/start:
+    post:
+      operationId: Trigger_StartTrigger
+      summary: Azure Synapse Analytics Start a trigger
+      description: Starts a trigger.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+      responses:
+        '200':
+          description: Successfully started the trigger.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /triggers/{triggerName}/stop:
+    post:
+      operationId: Trigger_StopTrigger
+      summary: Azure Synapse Analytics Stop a trigger
+      description: Stops a trigger.
+      tags:
+        - Trigger
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/TriggerNameParameter'
+      responses:
+        '200':
+          description: Successfully stopped the trigger.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+    TriggerNameParameter:
+      name: triggerName
+      in: path
+      required: true
+      description: The trigger name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    TriggerListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/TriggerResource'
+        nextLink:
+          type: string
+    TriggerResource:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/Trigger'
+    Trigger:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          description: Trigger type.
+        description:
+          type: string
+        runtimeState:
+          type: string
+          readOnly: true
+          enum:
+            - Started
+            - Stopped
+            - Disabled
+        annotations:
+          type: array
+          items:
+            type: string
+        pipelines:
+          type: array
+          items:
+            type: object
+            properties:
+              pipelineReference:
+                type: object
+                properties:
+                  referenceName:
+                    type: string
+                  type:
+                    type: string
+              parameters:
+                type: object
+                additionalProperties: true
+    TriggerSubscriptionOperationStatus:
+      type: object
+      properties:
+        triggerName:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+          enum:
+            - Enabled
+            - Provisioning
+            - Deprovisioning
+            - Disabled
+            - Unknown
+tags:
+  - name: Trigger

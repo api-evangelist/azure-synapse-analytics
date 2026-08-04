@@ -1,0 +1,396 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Spark Pools API
+  description: >-
+    Manage Apache Spark pools for big data processing including pool creation,
+    auto-scaling configuration, and Spark runtime version management.
+  version: '2021-06-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://management.azure.com
+    description: Azure Resource Manager
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/bigDataPools
+  : get:
+      operationId: BigDataPools_ListByWorkspace
+      summary: Azure Synapse Analytics List Spark pools by workspace
+      description: List all Big Data pools within a workspace.
+      tags:
+        - BigDataPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of Spark pools.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BigDataPoolResourceInfoListResult'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/bigDataPools/{bigDataPoolName}
+  : get:
+      operationId: BigDataPools_Get
+      summary: Azure Synapse Analytics Get a Spark pool
+      description: Get a Big Data pool.
+      tags:
+        - BigDataPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/BigDataPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the Spark pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BigDataPoolResourceInfo'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: BigDataPools_CreateOrUpdate
+      summary: Azure Synapse Analytics Create or update a Spark pool
+      description: Create a new Big Data pool or update an existing one.
+      tags:
+        - BigDataPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/BigDataPoolNameParameter'
+        - name: force
+          in: query
+          description: Whether to stop any running jobs in the Big Data pool.
+          schema:
+            type: boolean
+            default: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BigDataPoolResourceInfo'
+      responses:
+        '200':
+          description: Successfully updated the Spark pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BigDataPoolResourceInfo'
+        '202':
+          description: Spark pool creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    patch:
+      operationId: BigDataPools_Update
+      summary: Azure Synapse Analytics Update a Spark pool
+      description: Patch a Big Data pool.
+      tags:
+        - BigDataPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/BigDataPoolNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BigDataPoolPatchInfo'
+      responses:
+        '200':
+          description: Successfully updated the Spark pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BigDataPoolResourceInfo'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: BigDataPools_Delete
+      summary: Azure Synapse Analytics Delete a Spark pool
+      description: Delete a Big Data pool from the workspace.
+      tags:
+        - BigDataPools
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - $ref: '#/components/parameters/BigDataPoolNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the Spark pool.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BigDataPoolResourceInfo'
+        '202':
+          description: Spark pool deletion accepted.
+        '204':
+          description: Spark pool not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+    BigDataPoolNameParameter:
+      name: bigDataPoolName
+      in: path
+      required: true
+      description: Big Data pool name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    BigDataPoolResourceInfoListResult:
+      type: object
+      description: Collection of Big Data pool resources.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/BigDataPoolResourceInfo'
+        nextLink:
+          type: string
+    BigDataPoolResourceInfo:
+      type: object
+      description: A Big Data pool resource.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        location:
+          type: string
+          description: The geo-location where the resource lives.
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+        properties:
+          $ref: '#/components/schemas/BigDataPoolResourceProperties'
+    BigDataPoolResourceProperties:
+      type: object
+      description: Properties of a Big Data pool.
+      properties:
+        provisioningState:
+          type: string
+          description: The state of the Big Data pool.
+          readOnly: true
+        autoScale:
+          $ref: '#/components/schemas/AutoScaleProperties'
+        creationDate:
+          type: string
+          format: date-time
+          readOnly: true
+        autoPause:
+          $ref: '#/components/schemas/AutoPauseProperties'
+        isComputeIsolationEnabled:
+          type: boolean
+          description: Whether compute isolation is enabled.
+        sessionLevelPackagesEnabled:
+          type: boolean
+          description: Whether session level packages are enabled.
+        cacheSize:
+          type: integer
+          readOnly: true
+        dynamicExecutorAllocation:
+          $ref: '#/components/schemas/DynamicExecutorAllocation'
+        sparkEventsFolder:
+          type: string
+          description: The Spark events folder.
+        nodeCount:
+          type: integer
+          description: The number of nodes.
+        customLibraries:
+          type: array
+          items:
+            $ref: '#/components/schemas/LibraryInfo'
+        sparkConfigProperties:
+          $ref: '#/components/schemas/SparkConfigProperties'
+        sparkVersion:
+          type: string
+          description: The Apache Spark version.
+        defaultSparkLogFolder:
+          type: string
+          description: The default folder where Spark logs will be written.
+        nodeSize:
+          type: string
+          description: The level of compute power.
+          enum:
+            - None
+            - Small
+            - Medium
+            - Large
+            - XLarge
+            - XXLarge
+            - XXXLarge
+        nodeSizeFamily:
+          type: string
+          description: The kind of nodes.
+          enum:
+            - None
+            - MemoryOptimized
+            - HardwareAcceleratedFPGA
+            - HardwareAcceleratedGPU
+    BigDataPoolPatchInfo:
+      type: object
+      description: Properties for updating a Big Data pool.
+      properties:
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+    AutoScaleProperties:
+      type: object
+      description: Auto-scale properties of a Big Data pool.
+      properties:
+        minNodeCount:
+          type: integer
+          description: The minimum number of nodes.
+        enabled:
+          type: boolean
+          description: Whether auto-scaling is enabled.
+        maxNodeCount:
+          type: integer
+          description: The maximum number of nodes.
+    AutoPauseProperties:
+      type: object
+      description: Auto-pause properties of a Big Data pool.
+      properties:
+        delayInMinutes:
+          type: integer
+          description: Number of minutes of idle time before auto-pause.
+        enabled:
+          type: boolean
+          description: Whether auto-pausing is enabled.
+    DynamicExecutorAllocation:
+      type: object
+      description: Dynamic executor allocation.
+      properties:
+        enabled:
+          type: boolean
+          description: Whether dynamic executor allocation is enabled.
+        minExecutors:
+          type: integer
+          description: Minimum number of executors.
+        maxExecutors:
+          type: integer
+          description: Maximum number of executors.
+    LibraryInfo:
+      type: object
+      description: Library information.
+      properties:
+        name:
+          type: string
+        path:
+          type: string
+        containerName:
+          type: string
+        type:
+          type: string
+    SparkConfigProperties:
+      type: object
+      description: Spark configuration file properties.
+      properties:
+        time:
+          type: string
+          format: date-time
+          readOnly: true
+        content:
+          type: string
+          description: The content of the Spark configuration.
+        filename:
+          type: string
+          description: The filename of the Spark configuration.
+        configurationType:
+          type: string
+          enum:
+            - File
+            - Artifact
+tags:
+  - name: BigDataPools

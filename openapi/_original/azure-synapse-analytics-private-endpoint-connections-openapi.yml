@@ -1,0 +1,244 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Private Endpoint Connections API
+  description: >-
+    Manage private endpoint connections to Synapse workspaces. Enables approval
+    and management of private link connections for secure access from virtual
+    networks.
+  version: '2021-06-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://management.azure.com
+    description: Azure Resource Manager
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/privateEndpointConnections
+  : get:
+      operationId: PrivateEndpointConnections_List
+      summary: Azure Synapse Analytics List private endpoint connections
+      description: Lists private endpoint connections in a workspace.
+      tags:
+        - PrivateEndpointConnections
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateEndpointConnectionList'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  ? /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Synapse/workspaces/{workspaceName}/privateEndpointConnections/{privateEndpointConnectionName}
+  : get:
+      operationId: PrivateEndpointConnections_Get
+      summary: Azure Synapse Analytics Get a private endpoint connection
+      description: Gets a private endpoint connection.
+      tags:
+        - PrivateEndpointConnections
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - name: privateEndpointConnectionName
+          in: path
+          required: true
+          description: The name of the private endpoint connection.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateEndpointConnection'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: PrivateEndpointConnections_Create
+      summary: Azure Synapse Analytics Approve or reject a private endpoint connection
+      description: Approve or reject a private endpoint connection.
+      tags:
+        - PrivateEndpointConnections
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - name: privateEndpointConnectionName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrivateEndpointConnection'
+      responses:
+        '200':
+          description: Successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateEndpointConnection'
+        '201':
+          description: Successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrivateEndpointConnection'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: PrivateEndpointConnections_Delete
+      summary: Azure Synapse Analytics Delete a private endpoint connection
+      description: Delete a private endpoint connection.
+      tags:
+        - PrivateEndpointConnections
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/SubscriptionIdParameter'
+        - $ref: '#/components/parameters/ResourceGroupNameParameter'
+        - $ref: '#/components/parameters/WorkspaceNameParameter'
+        - name: privateEndpointConnectionName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully deleted.
+        '202':
+          description: Deletion accepted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    PrivateEndpointConnectionList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrivateEndpointConnection'
+        nextLink:
+          type: string
+    PrivateEndpointConnection:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            privateEndpoint:
+              type: object
+              properties:
+                id:
+                  type: string
+                  readOnly: true
+            privateLinkServiceConnectionState:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: The connection state status.
+                  enum:
+                    - Approved
+                    - Pending
+                    - Rejected
+                    - Disconnected
+                description:
+                  type: string
+                actionsRequired:
+                  type: string
+                  readOnly: true
+            provisioningState:
+              type: string
+              readOnly: true
+tags:
+  - name: PrivateEndpointConnections

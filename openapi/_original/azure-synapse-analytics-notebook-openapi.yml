@@ -1,0 +1,326 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Notebook API
+  description: >-
+    Create, update, list, and delete notebooks within a Synapse workspace.
+    Notebooks support interactive data exploration using Python, Scala, SQL,
+    and .NET languages.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        description: The workspace name.
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /notebooks:
+    get:
+      operationId: Notebook_GetNotebooksByWorkspace
+      summary: Azure Synapse Analytics List notebooks
+      description: Lists notebooks in the workspace.
+      tags:
+        - Notebook
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list of notebooks.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotebookListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /notebooks/summary:
+    get:
+      operationId: Notebook_GetNotebookSummaryByWorkSpace
+      summary: Azure Synapse Analytics List notebook summaries
+      description: Lists a summary of notebooks in the workspace.
+      tags:
+        - Notebook
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the notebook summaries.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotebookListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /notebooks/{notebookName}:
+    get:
+      operationId: Notebook_GetNotebook
+      summary: Azure Synapse Analytics Get a notebook
+      description: Gets a notebook.
+      tags:
+        - Notebook
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/NotebookNameParameter'
+        - name: If-None-Match
+          in: header
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully retrieved the notebook.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotebookResource'
+        '304':
+          description: Not modified.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: Notebook_CreateOrUpdateNotebook
+      summary: Azure Synapse Analytics Create or update a notebook
+      description: Creates or updates a notebook.
+      tags:
+        - Notebook
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/NotebookNameParameter'
+        - name: If-Match
+          in: header
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotebookResource'
+      responses:
+        '200':
+          description: Successfully updated the notebook.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotebookResource'
+        '202':
+          description: Notebook creation accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: Notebook_DeleteNotebook
+      summary: Azure Synapse Analytics Delete a notebook
+      description: Deletes a notebook.
+      tags:
+        - Notebook
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/NotebookNameParameter'
+      responses:
+        '200':
+          description: Successfully deleted the notebook.
+        '202':
+          description: Notebook deletion accepted.
+        '204':
+          description: Notebook not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /notebooks/{notebookName}/rename:
+    post:
+      operationId: Notebook_RenameNotebook
+      summary: Azure Synapse Analytics Rename a notebook
+      description: Renames a notebook.
+      tags:
+        - Notebook
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/NotebookNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArtifactRenameRequest'
+      responses:
+        '200':
+          description: Successfully renamed the notebook.
+        '202':
+          description: Notebook rename accepted.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+    NotebookNameParameter:
+      name: notebookName
+      in: path
+      required: true
+      description: The notebook name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    NotebookListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotebookResource'
+        nextLink:
+          type: string
+    NotebookResource:
+      type: object
+      description: Notebook resource.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/Notebook'
+    Notebook:
+      type: object
+      description: Notebook definition.
+      properties:
+        description:
+          type: string
+        nbformat:
+          type: integer
+          description: Notebook format major version number.
+        nbformat_minor:
+          type: integer
+          description: Notebook format minor version number.
+        bigDataPool:
+          type: object
+          properties:
+            referenceName:
+              type: string
+            type:
+              type: string
+        sessionProperties:
+          type: object
+          properties:
+            driverMemory:
+              type: string
+            driverCores:
+              type: integer
+            executorMemory:
+              type: string
+            executorCores:
+              type: integer
+            numExecutors:
+              type: integer
+        metadata:
+          type: object
+          properties:
+            kernelspec:
+              type: object
+              properties:
+                name:
+                  type: string
+                display_name:
+                  type: string
+            language_info:
+              type: object
+              properties:
+                name:
+                  type: string
+        cells:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotebookCell'
+        folder:
+          type: object
+          properties:
+            name:
+              type: string
+    NotebookCell:
+      type: object
+      description: Notebook cell definition.
+      properties:
+        cell_type:
+          type: string
+          description: The cell type.
+        source:
+          type: array
+          items:
+            type: string
+          description: Contents of the cell.
+        metadata:
+          type: object
+          description: Cell metadata.
+        outputs:
+          type: array
+          items:
+            type: object
+          description: Cell outputs.
+    ArtifactRenameRequest:
+      type: object
+      properties:
+        newName:
+          type: string
+tags:
+  - name: Notebook

@@ -1,0 +1,145 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Integration Runtimes API
+  description: >-
+    Manage integration runtimes that provide the compute infrastructure for
+    data integration activities. Supports Azure-hosted, self-hosted, and
+    Azure-SSIS integration runtime types.
+  version: '2020-12-01'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /integrationRuntimes:
+    get:
+      operationId: IntegrationRuntimes_List
+      summary: Azure Synapse Analytics List integration runtimes
+      description: List integration runtimes in the workspace.
+      tags:
+        - IntegrationRuntimes
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntegrationRuntimeListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /integrationRuntimes/{integrationRuntimeName}:
+    get:
+      operationId: IntegrationRuntimes_Get
+      summary: Azure Synapse Analytics Get an integration runtime
+      description: Get an integration runtime.
+      tags:
+        - IntegrationRuntimes
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/IntegrationRuntimeNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IntegrationRuntimeResource'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
+    IntegrationRuntimeNameParameter:
+      name: integrationRuntimeName
+      in: path
+      required: true
+      description: Integration runtime name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    IntegrationRuntimeListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/IntegrationRuntimeResource'
+        nextLink:
+          type: string
+    IntegrationRuntimeResource:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/IntegrationRuntime'
+    IntegrationRuntime:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          description: Type of integration runtime.
+          enum:
+            - Managed
+            - SelfHosted
+        description:
+          type: string
+tags:
+  - name: IntegrationRuntimes

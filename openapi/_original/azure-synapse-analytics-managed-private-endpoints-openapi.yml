@@ -1,0 +1,214 @@
+openapi: 3.1.0
+info:
+  title: Azure Synapse Analytics - Managed Private Endpoints API
+  description: >-
+    Create and manage managed private endpoints within a Synapse managed virtual
+    network. Enables secure, private connectivity to Azure resources without
+    exposing traffic to the public internet.
+  version: '2021-06-01-preview'
+  contact:
+    name: Microsoft Azure Support
+    url: https://azure.microsoft.com/en-us/support/
+  license:
+    name: Microsoft
+    url: https://azure.microsoft.com/en-us/support/legal/
+servers:
+  - url: https://{workspaceName}.dev.azuresynapse.net
+    description: Synapse Data Plane
+    variables:
+      workspaceName:
+        default: myworkspace
+security:
+  - azure_auth:
+      - user_impersonation
+paths:
+  /managedVirtualNetworks/{managedVirtualNetworkName}/managedPrivateEndpoints:
+    get:
+      operationId: ManagedPrivateEndpoints_List
+      summary: Azure Synapse Analytics List managed private endpoints
+      description: List managed private endpoints in a managed virtual network.
+      tags:
+        - ManagedPrivateEndpoints
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/ManagedVirtualNetworkNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved the list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedPrivateEndpointListResponse'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /managedVirtualNetworks/{managedVirtualNetworkName}/managedPrivateEndpoints/{managedPrivateEndpointName}:
+    get:
+      operationId: ManagedPrivateEndpoints_Get
+      summary: Azure Synapse Analytics Get a managed private endpoint
+      description: Get a managed private endpoint.
+      tags:
+        - ManagedPrivateEndpoints
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/ManagedVirtualNetworkNameParameter'
+        - $ref: '#/components/parameters/ManagedPrivateEndpointNameParameter'
+      responses:
+        '200':
+          description: Successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedPrivateEndpoint'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      operationId: ManagedPrivateEndpoints_Create
+      summary: Azure Synapse Analytics Create a managed private endpoint
+      description: Create a managed private endpoint.
+      tags:
+        - ManagedPrivateEndpoints
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/ManagedVirtualNetworkNameParameter'
+        - $ref: '#/components/parameters/ManagedPrivateEndpointNameParameter'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagedPrivateEndpoint'
+      responses:
+        '200':
+          description: Successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedPrivateEndpoint'
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      operationId: ManagedPrivateEndpoints_Delete
+      summary: Azure Synapse Analytics Delete a managed private endpoint
+      description: Delete a managed private endpoint.
+      tags:
+        - ManagedPrivateEndpoints
+      parameters:
+        - $ref: '#/components/parameters/ApiVersionParameter'
+        - $ref: '#/components/parameters/ManagedVirtualNetworkNameParameter'
+        - $ref: '#/components/parameters/ManagedPrivateEndpointNameParameter'
+      responses:
+        '202':
+          description: Deletion accepted.
+        '204':
+          description: Not found.
+        default:
+          description: Error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  securitySchemes:
+    azure_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
+          scopes:
+            user_impersonation: impersonate your user account
+  parameters:
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01-preview'
+    ManagedVirtualNetworkNameParameter:
+      name: managedVirtualNetworkName
+      in: path
+      required: true
+      description: Managed virtual network name.
+      schema:
+        type: string
+    ManagedPrivateEndpointNameParameter:
+      name: managedPrivateEndpointName
+      in: path
+      required: true
+      description: Managed private endpoint name.
+      schema:
+        type: string
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    ManagedPrivateEndpointListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/ManagedPrivateEndpoint'
+        nextLink:
+          type: string
+    ManagedPrivateEndpoint:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        properties:
+          type: object
+          properties:
+            privateLinkResourceId:
+              type: string
+              description: The ARM resource ID of the resource to which the managed private endpoint connects.
+            groupId:
+              type: string
+              description: The groupId to which the managed private endpoint is created.
+            provisioningState:
+              type: string
+              readOnly: true
+            connectionState:
+              type: object
+              properties:
+                status:
+                  type: string
+                description:
+                  type: string
+                actionsRequired:
+                  type: string
+            fqdns:
+              type: array
+              items:
+                type: string
+            isReserved:
+              type: boolean
+              readOnly: true
+tags:
+  - name: ManagedPrivateEndpoints
