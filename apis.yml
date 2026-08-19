@@ -11,7 +11,7 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
-specificationVersion: '0.18'
+specificationVersion: '0.23'
 name: Azure Synapse Analytics
 description: >-
   Azure Synapse Analytics is an enterprise analytics service that accelerates time to insight across data warehouses and
