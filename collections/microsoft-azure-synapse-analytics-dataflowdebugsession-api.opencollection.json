@@ -1,0 +1,134 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications DataFlowDebugSession API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DataFlowDebugSession",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List data flow debug sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/queryDataFlowDebugSessions",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query all active data flow debug sessions."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create a data flow debug session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/createDataFlowDebugSession",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a data flow debug session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Add a data flow to debug session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/addDataFlowToDebugSession",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a data flow into debug session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a data flow debug session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/deleteDataFlowDebugSession",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deletes a data flow debug session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Execute a data flow debug command",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/executeDataFlowDebugCommand",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute a data flow debug command."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

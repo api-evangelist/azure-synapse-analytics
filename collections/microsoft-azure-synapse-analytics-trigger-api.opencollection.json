@@ -1,0 +1,254 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications Trigger API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Trigger",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List triggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists triggers in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ]
+          },
+          "docs": "Gets a trigger."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a trigger."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ]
+          },
+          "docs": "Deletes a trigger."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Subscribe trigger to events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName/subscribeToEvents",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ]
+          },
+          "docs": "Subscribe event trigger to events."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get trigger event subscription status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName/getEventSubscriptionStatus",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ]
+          },
+          "docs": "Get a trigger event subscription status."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Unsubscribe trigger from events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName/unsubscribeFromEvents",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ]
+          },
+          "docs": "Unsubscribe event trigger from events."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Start a trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName/start",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ]
+          },
+          "docs": "Starts a trigger."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Stop a trigger",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/triggers/:triggerName/stop",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "triggerName",
+                "value": "",
+                "type": "path",
+                "description": "The trigger name."
+              }
+            ]
+          },
+          "docs": "Stops a trigger."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,162 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SqlScript API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SqlScript",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List SQL scripts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sqlScripts",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists SQL scripts in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a SQL script",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sqlScripts/:sqlScriptName",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sqlScriptName",
+                "value": "",
+                "type": "path",
+                "description": "The SQL script name."
+              }
+            ]
+          },
+          "docs": "Gets a SQL script."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a SQL script",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sqlScripts/:sqlScriptName",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sqlScriptName",
+                "value": "",
+                "type": "path",
+                "description": "The SQL script name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a SQL script."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a SQL script",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sqlScripts/:sqlScriptName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sqlScriptName",
+                "value": "",
+                "type": "path",
+                "description": "The SQL script name."
+              }
+            ]
+          },
+          "docs": "Deletes a SQL script."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Rename a SQL script",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/sqlScripts/:sqlScriptName/rename",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sqlScriptName",
+                "value": "",
+                "type": "path",
+                "description": "The SQL script name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Renames a SQL script."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

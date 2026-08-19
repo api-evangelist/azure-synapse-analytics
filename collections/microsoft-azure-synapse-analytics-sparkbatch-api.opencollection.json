@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SparkBatch API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SparkBatch",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List Spark batch jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/batches",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "Optional param specifying which index the list should begin from."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Optional param specifying the size of the returned list."
+              },
+              {
+                "name": "detailed",
+                "value": "",
+                "type": "query",
+                "description": "Optional query param specifying whether detailed response is returned beyond plain livy."
+              }
+            ]
+          },
+          "docs": "List all Spark batch jobs running against the Spark pool."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create a Spark batch job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/batches",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "detailed",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create new Spark batch job."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a Spark batch job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/batches/:batchId",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path",
+                "description": "Identifier for the batch job."
+              },
+              {
+                "name": "detailed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets a single Spark batch job."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Cancel a Spark batch job",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/batches/:batchId",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "batchId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancels a running Spark batch job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

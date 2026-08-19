@@ -1,0 +1,1624 @@
+{
+  "item": [
+    {
+      "id": "7b372925-9c98-4e78-a53a-af5d164021ae",
+      "name": "BigDataPools",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "feab0417-bef7-4ca0-b303-0cacbd9f71dd",
+          "name": "Azure Synapse Analytics List Spark pools by workspace",
+          "request": {
+            "name": "Azure Synapse Analytics List Spark pools by workspace",
+            "description": {
+              "content": "List all Big Data pools within a workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Synapse",
+                "workspaces",
+                ":workspaceName",
+                "bigDataPools"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2021-06-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName",
+                  "description": "The workspace name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57d1e032-1d39-436b-b407-33c7b8265fab",
+              "name": "Successfully retrieved the list of Spark pools.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"string\",\n        \"autoScale\": {\n          \"minNodeCount\": 884,\n          \"enabled\": true,\n          \"maxNodeCount\": 165\n        },\n        \"creationDate\": \"1964-10-22T04:57:36.540Z\",\n        \"autoPause\": {\n          \"delayInMinutes\": 1019,\n          \"enabled\": false\n        },\n        \"isComputeIsolationEnabled\": true,\n        \"sessionLevelPackagesEnabled\": false,\n        \"cacheSize\": 6440,\n        \"dynamicExecutorAllocation\": {\n          \"enabled\": true,\n          \"minExecutors\": 2057,\n          \"maxExecutors\": 2265\n        },\n        \"sparkEventsFolder\": \"string\",\n        \"nodeCount\": 1198,\n        \"customLibraries\": [\n          {\n            \"name\": \"string\",\n            \"path\": \"string\",\n            \"containerName\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"path\": \"string\",\n            \"containerName\": \"string\",\n            \"type\": \"string\"\n          }\n        ],\n        \"sparkConfigProperties\": {\n          \"time\": \"1987-03-29T21:30:03.105Z\",\n          \"content\": \"string\",\n          \"filename\": \"string\",\n          \"configurationType\": \"Artifact\"\n        },\n        \"sparkVersion\": \"string\",\n        \"defaultSparkLogFolder\": \"string\",\n        \"nodeSize\": \"XXXLarge\",\n        \"nodeSizeFamily\": \"HardwareAcceleratedFPGA\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"location\": \"string\",\n      \"tags\": {\n        \"key_0\": \"string\"\n      },\n      \"properties\": {\n        \"provisioningState\": \"string\",\n        \"autoScale\": {\n          \"minNodeCount\": 3419,\n          \"enabled\": false,\n          \"maxNodeCount\": 5775\n        },\n        \"creationDate\": \"1982-05-19T23:56:39.763Z\",\n        \"autoPause\": {\n          \"delayInMinutes\": 4790,\n          \"enabled\": true\n        },\n        \"isComputeIsolationEnabled\": false,\n        \"sessionLevelPackagesEnabled\": true,\n        \"cacheSize\": 8365,\n        \"dynamicExecutorAllocation\": {\n          \"enabled\": false,\n          \"minExecutors\": 8877,\n          \"maxExecutors\": 4499\n        },\n        \"sparkEventsFolder\": \"string\",\n        \"nodeCount\": 4404,\n        \"customLibraries\": [\n          {\n            \"name\": \"string\",\n            \"path\": \"string\",\n            \"containerName\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"path\": \"string\",\n            \"containerName\": \"string\",\n            \"type\": \"string\"\n          }\n        ],\n        \"sparkConfigProperties\": {\n          \"time\": \"1977-10-11T05:28:03.760Z\",\n          \"content\": \"string\",\n          \"filename\": \"string\",\n          \"configurationType\": \"Artifact\"\n        },\n        \"sparkVersion\": \"string\",\n        \"defaultSparkLogFolder\": \"string\",\n        \"nodeSize\": \"Medium\",\n        \"nodeSizeFamily\": \"None\"\n      }\n    }\n  ],\n  \"nextLink\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e135758a-2106-4d07-b198-ce3fdadf0667",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15fe3a36-f87e-4ec1-861d-b2c353dcd572",
+          "name": "Azure Synapse Analytics Get a Spark pool",
+          "request": {
+            "name": "Azure Synapse Analytics Get a Spark pool",
+            "description": {
+              "content": "Get a Big Data pool.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Synapse",
+                "workspaces",
+                ":workspaceName",
+                "bigDataPools",
+                ":bigDataPoolName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2021-06-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName",
+                  "description": "The workspace name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bigDataPoolName",
+                  "description": "(Required) Big Data pool name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29c775da-b87f-4240-a885-019b03d3b930",
+              "name": "Successfully retrieved the Spark pool.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"string\",\n    \"autoScale\": {\n      \"minNodeCount\": 5825,\n      \"enabled\": true,\n      \"maxNodeCount\": 795\n    },\n    \"creationDate\": \"1976-05-21T21:35:06.889Z\",\n    \"autoPause\": {\n      \"delayInMinutes\": 4468,\n      \"enabled\": false\n    },\n    \"isComputeIsolationEnabled\": true,\n    \"sessionLevelPackagesEnabled\": false,\n    \"cacheSize\": 484,\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": true,\n      \"minExecutors\": 5518,\n      \"maxExecutors\": 5195\n    },\n    \"sparkEventsFolder\": \"string\",\n    \"nodeCount\": 3028,\n    \"customLibraries\": [\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"time\": \"2002-08-27T17:47:19.593Z\",\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"configurationType\": \"Artifact\"\n    },\n    \"sparkVersion\": \"string\",\n    \"defaultSparkLogFolder\": \"string\",\n    \"nodeSize\": \"None\",\n    \"nodeSizeFamily\": \"HardwareAcceleratedFPGA\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae74e347-7048-4629-bb94-f10b1c627993",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ce181cb-39d8-490e-8af4-0f42256bbcf7",
+          "name": "Azure Synapse Analytics Create or update a Spark pool",
+          "request": {
+            "name": "Azure Synapse Analytics Create or update a Spark pool",
+            "description": {
+              "content": "Create a new Big Data pool or update an existing one.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Synapse",
+                "workspaces",
+                ":workspaceName",
+                "bigDataPools",
+                ":bigDataPoolName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2021-06-01",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "force",
+                  "value": "false",
+                  "description": "Whether to stop any running jobs in the Big Data pool."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName",
+                  "description": "The workspace name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bigDataPoolName",
+                  "description": "(Required) Big Data pool name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\"\n  },\n  \"properties\": {\n    \"autoScale\": {\n      \"minNodeCount\": \"<integer>\",\n      \"enabled\": \"<boolean>\",\n      \"maxNodeCount\": \"<integer>\"\n    },\n    \"autoPause\": {\n      \"delayInMinutes\": \"<integer>\",\n      \"enabled\": \"<boolean>\"\n    },\n    \"isComputeIsolationEnabled\": \"<boolean>\",\n    \"sessionLevelPackagesEnabled\": \"<boolean>\",\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": \"<boolean>\",\n      \"minExecutors\": \"<integer>\",\n      \"maxExecutors\": \"<integer>\"\n    },\n    \"sparkEventsFolder\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"customLibraries\": [\n      {\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"containerName\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"path\": \"<string>\",\n        \"containerName\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"content\": \"<string>\",\n      \"filename\": \"<string>\",\n      \"configurationType\": \"<string>\"\n    },\n    \"sparkVersion\": \"<string>\",\n    \"defaultSparkLogFolder\": \"<string>\",\n    \"nodeSize\": \"<string>\",\n    \"nodeSizeFamily\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d9c3a109-629f-470b-99de-199ebff53f01",
+              "name": "Successfully updated the Spark pool.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    },
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"autoScale\": {\n      \"minNodeCount\": 2162,\n      \"enabled\": true,\n      \"maxNodeCount\": 7303\n    },\n    \"autoPause\": {\n      \"delayInMinutes\": 8591,\n      \"enabled\": true\n    },\n    \"isComputeIsolationEnabled\": false,\n    \"sessionLevelPackagesEnabled\": false,\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": true,\n      \"minExecutors\": 2602,\n      \"maxExecutors\": 9598\n    },\n    \"sparkEventsFolder\": \"string\",\n    \"nodeCount\": 5761,\n    \"customLibraries\": [\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"configurationType\": \"Artifact\"\n    },\n    \"sparkVersion\": \"string\",\n    \"defaultSparkLogFolder\": \"string\",\n    \"nodeSize\": \"Small\",\n    \"nodeSizeFamily\": \"HardwareAcceleratedGPU\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"string\",\n    \"autoScale\": {\n      \"minNodeCount\": 5825,\n      \"enabled\": true,\n      \"maxNodeCount\": 795\n    },\n    \"creationDate\": \"1976-05-21T21:35:06.889Z\",\n    \"autoPause\": {\n      \"delayInMinutes\": 4468,\n      \"enabled\": false\n    },\n    \"isComputeIsolationEnabled\": true,\n    \"sessionLevelPackagesEnabled\": false,\n    \"cacheSize\": 484,\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": true,\n      \"minExecutors\": 5518,\n      \"maxExecutors\": 5195\n    },\n    \"sparkEventsFolder\": \"string\",\n    \"nodeCount\": 3028,\n    \"customLibraries\": [\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"time\": \"2002-08-27T17:47:19.593Z\",\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"configurationType\": \"Artifact\"\n    },\n    \"sparkVersion\": \"string\",\n    \"defaultSparkLogFolder\": \"string\",\n    \"nodeSize\": \"None\",\n    \"nodeSizeFamily\": \"HardwareAcceleratedFPGA\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4ce8387-a929-49ef-8280-83399b690f17",
+              "name": "Spark pool creation accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    },
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"autoScale\": {\n      \"minNodeCount\": 2162,\n      \"enabled\": true,\n      \"maxNodeCount\": 7303\n    },\n    \"autoPause\": {\n      \"delayInMinutes\": 8591,\n      \"enabled\": true\n    },\n    \"isComputeIsolationEnabled\": false,\n    \"sessionLevelPackagesEnabled\": false,\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": true,\n      \"minExecutors\": 2602,\n      \"maxExecutors\": 9598\n    },\n    \"sparkEventsFolder\": \"string\",\n    \"nodeCount\": 5761,\n    \"customLibraries\": [\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"configurationType\": \"Artifact\"\n    },\n    \"sparkVersion\": \"string\",\n    \"defaultSparkLogFolder\": \"string\",\n    \"nodeSize\": \"Small\",\n    \"nodeSizeFamily\": \"HardwareAcceleratedGPU\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "48392fea-9feb-476c-9a72-7326609f6124",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    },
+                    {
+                      "key": "force",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"location\": \"<string>\",\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"properties\": {\n    \"autoScale\": {\n      \"minNodeCount\": 2162,\n      \"enabled\": true,\n      \"maxNodeCount\": 7303\n    },\n    \"autoPause\": {\n      \"delayInMinutes\": 8591,\n      \"enabled\": true\n    },\n    \"isComputeIsolationEnabled\": false,\n    \"sessionLevelPackagesEnabled\": false,\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": true,\n      \"minExecutors\": 2602,\n      \"maxExecutors\": 9598\n    },\n    \"sparkEventsFolder\": \"string\",\n    \"nodeCount\": 5761,\n    \"customLibraries\": [\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"configurationType\": \"Artifact\"\n    },\n    \"sparkVersion\": \"string\",\n    \"defaultSparkLogFolder\": \"string\",\n    \"nodeSize\": \"Small\",\n    \"nodeSizeFamily\": \"HardwareAcceleratedGPU\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db82b977-f772-4879-b38c-58d9cab09ec4",
+          "name": "Azure Synapse Analytics Update a Spark pool",
+          "request": {
+            "name": "Azure Synapse Analytics Update a Spark pool",
+            "description": {
+              "content": "Patch a Big Data pool.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Synapse",
+                "workspaces",
+                ":workspaceName",
+                "bigDataPools",
+                ":bigDataPoolName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2021-06-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName",
+                  "description": "The workspace name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bigDataPoolName",
+                  "description": "(Required) Big Data pool name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ff66afe-3e9b-41b9-986f-cf3fcba9fd2e",
+              "name": "Successfully updated the Spark pool.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"string\",\n    \"autoScale\": {\n      \"minNodeCount\": 5825,\n      \"enabled\": true,\n      \"maxNodeCount\": 795\n    },\n    \"creationDate\": \"1976-05-21T21:35:06.889Z\",\n    \"autoPause\": {\n      \"delayInMinutes\": 4468,\n      \"enabled\": false\n    },\n    \"isComputeIsolationEnabled\": true,\n    \"sessionLevelPackagesEnabled\": false,\n    \"cacheSize\": 484,\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": true,\n      \"minExecutors\": 5518,\n      \"maxExecutors\": 5195\n    },\n    \"sparkEventsFolder\": \"string\",\n    \"nodeCount\": 3028,\n    \"customLibraries\": [\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"time\": \"2002-08-27T17:47:19.593Z\",\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"configurationType\": \"Artifact\"\n    },\n    \"sparkVersion\": \"string\",\n    \"defaultSparkLogFolder\": \"string\",\n    \"nodeSize\": \"None\",\n    \"nodeSizeFamily\": \"HardwareAcceleratedFPGA\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb81216e-153b-434b-b7e5-4696b0fd99e3",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tags\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a0b70fc-a850-4817-8828-81d6daa5c074",
+          "name": "Azure Synapse Analytics Delete a Spark pool",
+          "request": {
+            "name": "Azure Synapse Analytics Delete a Spark pool",
+            "description": {
+              "content": "Delete a Big Data pool from the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscriptions",
+                ":subscriptionId",
+                "resourceGroups",
+                ":resourceGroupName",
+                "providers",
+                "Microsoft.Synapse",
+                "workspaces",
+                ":workspaceName",
+                "bigDataPools",
+                ":bigDataPoolName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2021-06-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "resourceGroupName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName",
+                  "description": "The workspace name."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "bigDataPoolName",
+                  "description": "(Required) Big Data pool name."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b795e1d-09cc-448d-a1e1-71c004b59466",
+              "name": "Successfully deleted the Spark pool.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"location\": \"string\",\n  \"tags\": {\n    \"key_0\": \"string\"\n  },\n  \"properties\": {\n    \"provisioningState\": \"string\",\n    \"autoScale\": {\n      \"minNodeCount\": 5825,\n      \"enabled\": true,\n      \"maxNodeCount\": 795\n    },\n    \"creationDate\": \"1976-05-21T21:35:06.889Z\",\n    \"autoPause\": {\n      \"delayInMinutes\": 4468,\n      \"enabled\": false\n    },\n    \"isComputeIsolationEnabled\": true,\n    \"sessionLevelPackagesEnabled\": false,\n    \"cacheSize\": 484,\n    \"dynamicExecutorAllocation\": {\n      \"enabled\": true,\n      \"minExecutors\": 5518,\n      \"maxExecutors\": 5195\n    },\n    \"sparkEventsFolder\": \"string\",\n    \"nodeCount\": 3028,\n    \"customLibraries\": [\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"name\": \"string\",\n        \"path\": \"string\",\n        \"containerName\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"sparkConfigProperties\": {\n      \"time\": \"2002-08-27T17:47:19.593Z\",\n      \"content\": \"string\",\n      \"filename\": \"string\",\n      \"configurationType\": \"Artifact\"\n    },\n    \"sparkVersion\": \"string\",\n    \"defaultSparkLogFolder\": \"string\",\n    \"nodeSize\": \"None\",\n    \"nodeSizeFamily\": \"HardwareAcceleratedFPGA\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "61394446-d3e3-4f85-a7a1-f0ef9bd0d528",
+              "name": "Spark pool deletion accepted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "27abe308-7b6c-4215-aaa2-8417457f3b84",
+              "name": "Spark pool not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "39cf6d0b-9a7c-4418-9b89-f2c41eea5a15",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscriptions",
+                    ":subscriptionId",
+                    "resourceGroups",
+                    ":resourceGroupName",
+                    "providers",
+                    "Microsoft.Synapse",
+                    "workspaces",
+                    ":workspaceName",
+                    "bigDataPools",
+                    ":bigDataPoolName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2021-06-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "resourceGroupName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName",
+                      "description": "The workspace name."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "bigDataPoolName",
+                      "description": "(Required) Big Data pool name."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The workspace name.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myworkspace",
+      "key": "workspaceName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "af109b23-2403-4e56-9ac8-3e65b612601d",
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications BigDataPools API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}

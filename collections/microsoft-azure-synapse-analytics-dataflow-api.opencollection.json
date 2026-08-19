@@ -1,0 +1,162 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications DataFlow API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DataFlow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List data flows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/dataflows",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists data flows in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a data flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/dataflows/:dataFlowName",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dataFlowName",
+                "value": "",
+                "type": "path",
+                "description": "The data flow name."
+              }
+            ]
+          },
+          "docs": "Gets a data flow."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a data flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/dataflows/:dataFlowName",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dataFlowName",
+                "value": "",
+                "type": "path",
+                "description": "The data flow name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a data flow."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a data flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/dataflows/:dataFlowName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dataFlowName",
+                "value": "",
+                "type": "path",
+                "description": "The data flow name."
+              }
+            ]
+          },
+          "docs": "Deletes a data flow."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Rename a data flow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/dataflows/:dataFlowName/rename",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dataFlowName",
+                "value": "",
+                "type": "path",
+                "description": "The data flow name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Renames a data flow."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,208 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications Pipeline API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pipeline",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List pipelines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/pipelines",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists pipelines in the workspace."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a pipeline",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/pipelines/:pipelineName",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipelineName",
+                "value": "",
+                "type": "path",
+                "description": "The pipeline name."
+              }
+            ]
+          },
+          "docs": "Gets a pipeline."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create or update a pipeline",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/pipelines/:pipelineName",
+            "headers": [
+              {
+                "name": "If-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipelineName",
+                "value": "",
+                "type": "path",
+                "description": "The pipeline name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates or updates a pipeline."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Delete a pipeline",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/pipelines/:pipelineName",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipelineName",
+                "value": "",
+                "type": "path",
+                "description": "The pipeline name."
+              }
+            ]
+          },
+          "docs": "Deletes a pipeline."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Rename a pipeline",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/pipelines/:pipelineName/rename",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipelineName",
+                "value": "",
+                "type": "path",
+                "description": "The pipeline name."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Renames a pipeline."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create a pipeline run",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/pipelines/:pipelineName/createRun",
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipelineName",
+                "value": "",
+                "type": "path",
+                "description": "The pipeline name."
+              },
+              {
+                "name": "referencePipelineRunId",
+                "value": "",
+                "type": "query",
+                "description": "The pipeline run identifier. If specified, the new run will be grouped with the specified run."
+              },
+              {
+                "name": "isRecovery",
+                "value": "",
+                "type": "query",
+                "description": "Recovery mode flag. If true, the specified referenced pipeline run will be used for recovery."
+              },
+              {
+                "name": "startActivityName",
+                "value": "",
+                "type": "query",
+                "description": "In recovery mode, the rerun will start from this activity."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a run of a pipeline."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

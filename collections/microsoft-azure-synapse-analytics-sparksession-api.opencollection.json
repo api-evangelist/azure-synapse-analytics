@@ -1,0 +1,224 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SparkSession API",
+    "version": "2020-12-01"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+      "credentials": {
+        "clientId": "{{clientId}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SparkSession",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List Spark sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/sessions",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "detailed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List all Spark sessions running against the Spark pool."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create a Spark session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/sessions",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "detailed",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create new Spark session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Get a Spark session",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "detailed",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Gets a single Spark session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Cancel a Spark session",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/sessions/:sessionId",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancels a running Spark session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics List Spark session statements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/sessions/:sessionId/statements",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a list of statements within a Spark session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Create a Spark statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/sessions/:sessionId/statements",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a statement within a Spark session."
+        },
+        {
+          "info": {
+            "name": "Azure Synapse Analytics Cancel a Spark statement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{workspaceName}.dev.azuresynapse.net/livyApi/versions/:sparkPoolName/sessions/:sessionId/statements/:statementId/cancel",
+            "params": [
+              {
+                "name": "sparkPoolName",
+                "value": "",
+                "type": "path",
+                "description": "Name of the Spark pool."
+              },
+              {
+                "name": "sessionId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "statementId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Kill a statement within a session."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

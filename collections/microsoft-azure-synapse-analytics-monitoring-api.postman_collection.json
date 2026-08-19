@@ -1,0 +1,436 @@
+{
+  "item": [
+    {
+      "id": "ddaf67f3-c577-4f3d-9d43-0ac2a42e6ac0",
+      "name": "Monitoring",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "806af961-1036-4fb9-bd0f-103ef4acdf18",
+          "name": "Azure Synapse Analytics Get Spark job list",
+          "request": {
+            "name": "Azure Synapse Analytics Get Spark job list",
+            "description": {
+              "content": "Get list of Spark applications for the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "monitoring",
+                "workloadTypes",
+                "spark",
+                "Applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8212ec37-41ff-4d48-bfb6-b830dff57fe3",
+              "name": "Successfully retrieved the Spark job list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitoring",
+                    "workloadTypes",
+                    "spark",
+                    "Applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"nJobs\": 210,\n  \"sparkJobs\": [\n    {\n      \"state\": \"string\",\n      \"name\": \"string\",\n      \"submitter\": \"string\",\n      \"compute\": \"string\",\n      \"sparkApplicationId\": \"string\",\n      \"livyId\": \"string\",\n      \"timing\": [\n        \"string\",\n        \"string\"\n      ],\n      \"sparkPoolName\": \"string\",\n      \"submitTime\": \"2024-07-25T07:47:03.591Z\",\n      \"endTime\": \"1983-12-01T22:11:41.444Z\",\n      \"queuedDuration\": \"string\",\n      \"runningDuration\": \"string\",\n      \"totalDuration\": \"string\",\n      \"jobType\": \"string\",\n      \"pipeline\": [\n        {\n          \"runId\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"runId\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"state\": \"string\",\n      \"name\": \"string\",\n      \"submitter\": \"string\",\n      \"compute\": \"string\",\n      \"sparkApplicationId\": \"string\",\n      \"livyId\": \"string\",\n      \"timing\": [\n        \"string\",\n        \"string\"\n      ],\n      \"sparkPoolName\": \"string\",\n      \"submitTime\": \"2015-12-09T00:51:17.533Z\",\n      \"endTime\": \"1957-06-10T23:46:41.322Z\",\n      \"queuedDuration\": \"string\",\n      \"runningDuration\": \"string\",\n      \"totalDuration\": \"string\",\n      \"jobType\": \"string\",\n      \"pipeline\": [\n        {\n          \"runId\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"runId\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b793cd4c-1bc6-4d0c-9eb5-bcea089d34bc",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitoring",
+                    "workloadTypes",
+                    "spark",
+                    "Applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0363c14d-f179-4e67-9159-a2616f1db09c",
+          "name": "Azure Synapse Analytics Get SQL job query string",
+          "request": {
+            "name": "Azure Synapse Analytics Get SQL job query string",
+            "description": {
+              "content": "Get SQL OD/DW Query for the workspace.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "monitoring",
+                "workloadTypes",
+                "sql",
+                "querystring"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api-version",
+                  "value": "2020-12-01",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "The filter to apply on the operation."
+                },
+                {
+                  "disabled": false,
+                  "key": "$orderby",
+                  "value": "<string>",
+                  "description": "The order by operation."
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<string>",
+                  "description": "The number of items to skip."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The workspace name.",
+                  "type": "any",
+                  "value": "{{workspaceName}}",
+                  "key": "workspaceName"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10ca3b90-24b4-4ad3-a947-d61643ddcbd9",
+              "name": "Successfully retrieved the SQL query string.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitoring",
+                    "workloadTypes",
+                    "sql",
+                    "querystring"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"query\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d65284a-689f-4d07-9205-30e90ffc3b96",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "monitoring",
+                    "workloadTypes",
+                    "sql",
+                    "querystring"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api-version",
+                      "value": "2020-12-01"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "$orderby",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The workspace name.",
+                      "type": "any",
+                      "value": "{{workspaceName}}",
+                      "key": "workspaceName"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The workspace name.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "myworkspace",
+      "key": "workspaceName"
+    },
+    {
+      "type": "string",
+      "value": "https://{{workspaceName}}.dev.azuresynapse.net",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "user_impersonation"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://login.microsoftonline.com/common/oauth2/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "implicit"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "979be7a3-6017-4239-b4bf-d2f2cc926813",
+    "name": "Azure Synapse Analytics - Access Control AzureADOnlyAuthentications Monitoring API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.\n\nContact Support:\n Name: Microsoft Azure Support",
+      "type": "text/plain"
+    }
+  }
+}
