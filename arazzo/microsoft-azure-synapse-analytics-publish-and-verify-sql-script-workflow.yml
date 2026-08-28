@@ -11,8 +11,8 @@ info:
     description.
   version: 1.0.0
 sourceDescriptions:
-- name: sqlScriptApi
-  url: ../openapi/azure-synapse-analytics-sql-script-openapi.yml
+- name: sqlscriptApi
+  url: ../openapi/microsoft-azure-synapse-analytics-sqlscript-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: publish-and-verify-sql-script

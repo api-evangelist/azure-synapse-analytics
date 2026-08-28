@@ -12,7 +12,7 @@ info:
   version: 1.0.0
 sourceDescriptions:
 - name: notebookApi
-  url: ../openapi/azure-synapse-analytics-notebook-openapi.yml
+  url: ../openapi/microsoft-azure-synapse-analytics-notebook-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: publish-and-verify-notebook

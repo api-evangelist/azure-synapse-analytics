@@ -12,14 +12,14 @@ info:
     OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: linkedServiceApi
-  url: ../openapi/azure-synapse-analytics-linked-service-openapi.yml
-  type: openapi
 - name: datasetApi
-  url: ../openapi/azure-synapse-analytics-dataset-openapi.yml
+  url: ../openapi/microsoft-azure-synapse-analytics-dataset-api-openapi.yml
+  type: openapi
+- name: linkedserviceApi
+  url: ../openapi/microsoft-azure-synapse-analytics-linkedservice-api-openapi.yml
   type: openapi
 - name: pipelineApi
-  url: ../openapi/azure-synapse-analytics-pipeline-openapi.yml
+  url: ../openapi/microsoft-azure-synapse-analytics-pipeline-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: build-data-integration-pipeline

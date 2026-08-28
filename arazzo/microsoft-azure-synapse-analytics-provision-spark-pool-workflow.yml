@@ -11,8 +11,8 @@ info:
     opening the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: sparkPoolsApi
-  url: ../openapi/azure-synapse-analytics-spark-pools-openapi.yml
+- name: bigdatapoolsApi
+  url: ../openapi/microsoft-azure-synapse-analytics-bigdatapools-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: provision-spark-pool

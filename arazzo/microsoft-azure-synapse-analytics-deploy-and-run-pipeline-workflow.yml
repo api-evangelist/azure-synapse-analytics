@@ -13,7 +13,7 @@ info:
   version: 1.0.0
 sourceDescriptions:
 - name: pipelineApi
-  url: ../openapi/azure-synapse-analytics-pipeline-openapi.yml
+  url: ../openapi/microsoft-azure-synapse-analytics-pipeline-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: deploy-and-run-pipeline

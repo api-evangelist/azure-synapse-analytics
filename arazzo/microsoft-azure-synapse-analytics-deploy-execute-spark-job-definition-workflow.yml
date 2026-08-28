@@ -11,11 +11,11 @@ info:
     the underlying OpenAPI description.
   version: 1.0.0
 sourceDescriptions:
-- name: sparkJobDefinitionApi
-  url: ../openapi/azure-synapse-analytics-spark-job-definition-openapi.yml
+- name: sparkbatchApi
+  url: ../openapi/microsoft-azure-synapse-analytics-sparkbatch-api-openapi.yml
   type: openapi
-- name: sparkJobApi
-  url: ../openapi/azure-synapse-analytics-spark-job-openapi.yml
+- name: sparkjobdefinitionApi
+  url: ../openapi/microsoft-azure-synapse-analytics-sparkjobdefinition-api-openapi.yml
   type: openapi
 workflows:
 - workflowId: deploy-execute-spark-job-definition
