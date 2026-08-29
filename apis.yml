@@ -1,3 +1,15 @@
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
@@ -3460,6 +3472,9 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/rest/api/synapse/data-plane/link-connection
 common:
+  - type: CapabilityMap
+    url: capabilities/microsoft-azure-synapse-analytics-capability-edges.yml
+    name: Azure Synapse Analytics Business Capability Map
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-synapse-analytics-agentic-access.yml
   - type: DomainSecurity
