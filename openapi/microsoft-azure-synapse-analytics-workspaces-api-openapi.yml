@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications Workspaces API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
-  version: '2020-12-01'
+  title: Azure Synapse Analytics - Workspace Workspaces API
+  description: Manage Synapse workspaces including creation, configuration, and lifecycle management of analytics environments through Azure Resource Manager.
+  version: '2021-06-01'
   contact:
     name: Microsoft Azure Support
     url: https://azure.microsoft.com/en-us/support/
@@ -10,12 +10,8 @@ info:
     name: Microsoft
     url: https://azure.microsoft.com/en-us/support/legal/
 servers:
-- url: https://{workspaceName}.dev.azuresynapse.net
-  description: Synapse Data Plane
-  variables:
-    workspaceName:
-      description: The workspace name.
-      default: myworkspace
+- url: https://management.azure.com
+  description: Azure Resource Manager
 security:
 - azure_auth:
   - user_impersonation
@@ -191,65 +187,39 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
-  parameters:
-    SubscriptionIdParameter:
-      name: subscriptionId
-      in: path
-      required: true
-      description: The ID of the target subscription.
-      schema:
-        type: string
-    ApiVersionParameter:
-      name: api-version
-      in: query
-      required: true
-      description: The API version to use for this operation.
-      schema:
-        type: string
-        default: '2021-06-01'
-    ResourceGroupNameParameter:
-      name: resourceGroupName
-      in: path
-      required: true
-      description: The name of the resource group.
-      schema:
-        type: string
-    WorkspaceNameParameter:
-      name: workspaceName
-      in: path
-      required: true
-      description: The name of the workspace.
-      schema:
-        type: string
   schemas:
-    Workspace:
+    ManagedIdentity:
       type: object
-      description: A workspace resource.
+      description: The workspace managed identity.
       properties:
-        id:
+        principalId:
           type: string
-          description: Fully qualified resource ID.
+          description: The principal ID of the workspace managed identity.
           readOnly: true
-        name:
+        tenantId:
           type: string
-          description: The name of the resource.
+          description: The tenant ID of the workspace managed identity.
           readOnly: true
         type:
           type: string
-          description: The type of the resource.
-          readOnly: true
-        location:
-          type: string
-          description: The geo-location where the resource lives.
-        tags:
+          description: The type of managed identity.
+          enum:
+          - None
+          - SystemAssigned
+          - SystemAssigned,UserAssigned
+    ErrorResponse:
+      type: object
+      description: Error response from the Azure Synapse service.
+      properties:
+        error:
           type: object
-          additionalProperties:
-            type: string
-          description: Resource tags.
-        identity:
-          $ref: '#/components/schemas/ManagedIdentity'
-        properties:
-          $ref: '#/components/schemas/WorkspaceProperties'
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Error message.
     WorkspacePatchInfo:
       type: object
       description: Workspace patch details.
@@ -294,18 +264,6 @@ components:
               enum:
               - Enabled
               - Disabled
-    WorkspaceInfoListResult:
-      type: object
-      description: List of workspaces.
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Workspace'
-          description: List of workspaces.
-        nextLink:
-          type: string
-          description: Link to the next page of results.
     DataLakeStorageAccountDetails:
       type: object
       description: Details of the default data lake storage account.
@@ -322,38 +280,18 @@ components:
         createManagedPrivateEndpoint:
           type: boolean
           description: Create managed private endpoint to the storage account.
-    ManagedIdentity:
+    WorkspaceInfoListResult:
       type: object
-      description: The workspace managed identity.
+      description: List of workspaces.
       properties:
-        principalId:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/Workspace'
+          description: List of workspaces.
+        nextLink:
           type: string
-          description: The principal ID of the workspace managed identity.
-          readOnly: true
-        tenantId:
-          type: string
-          description: The tenant ID of the workspace managed identity.
-          readOnly: true
-        type:
-          type: string
-          description: The type of managed identity.
-          enum:
-          - None
-          - SystemAssigned
-          - SystemAssigned,UserAssigned
-    ErrorResponse:
-      type: object
-      description: Error response from the Azure Synapse service.
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Error message.
+          description: Link to the next page of results.
     WorkspaceProperties:
       type: object
       description: Workspace properties.
@@ -427,6 +365,64 @@ components:
           type: string
           description: The workspace unique identifier.
           readOnly: true
+    Workspace:
+      type: object
+      description: A workspace resource.
+      properties:
+        id:
+          type: string
+          description: Fully qualified resource ID.
+          readOnly: true
+        name:
+          type: string
+          description: The name of the resource.
+          readOnly: true
+        type:
+          type: string
+          description: The type of the resource.
+          readOnly: true
+        location:
+          type: string
+          description: The geo-location where the resource lives.
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+          description: Resource tags.
+        identity:
+          $ref: '#/components/schemas/ManagedIdentity'
+        properties:
+          $ref: '#/components/schemas/WorkspaceProperties'
+  parameters:
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The ID of the target subscription.
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
+        default: '2021-06-01'
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      description: The name of the workspace.
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
   securitySchemes:
     azure_auth:
       type: oauth2

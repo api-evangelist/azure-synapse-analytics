@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications WorkspaceManagedIdentity API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
-  version: '2020-12-01'
+  title: Azure Synapse Analytics - Workspace Workspace Managed Identity API
+  description: Manage Synapse workspaces including creation, configuration, and lifecycle management of analytics environments through Azure Resource Manager.
+  version: '2021-06-01'
   contact:
     name: Microsoft Azure Support
     url: https://azure.microsoft.com/en-us/support/
@@ -10,12 +10,8 @@ info:
     name: Microsoft
     url: https://azure.microsoft.com/en-us/support/legal/
 servers:
-- url: https://{workspaceName}.dev.azuresynapse.net
-  description: Synapse Data Plane
-  variables:
-    workspaceName:
-      description: The workspace name.
-      default: myworkspace
+- url: https://management.azure.com
+  description: Azure Resource Manager
 security:
 - azure_auth:
   - user_impersonation
@@ -85,6 +81,19 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
+    ErrorResponse:
+      type: object
+      description: Error response from the Azure Synapse service.
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Error message.
     ManagedIdentitySqlControlSettingsModel:
       type: object
       description: SQL control settings for the workspace managed identity.
@@ -120,19 +129,6 @@ components:
                   - Disabling
                   - Disabled
                   - Unknown
-    ErrorResponse:
-      type: object
-      description: Error response from the Azure Synapse service.
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Error message.
   parameters:
     SubscriptionIdParameter:
       name: subscriptionId
@@ -149,18 +145,18 @@ components:
       schema:
         type: string
         default: '2021-06-01'
-    ResourceGroupNameParameter:
-      name: resourceGroupName
-      in: path
-      required: true
-      description: The name of the resource group.
-      schema:
-        type: string
     WorkspaceNameParameter:
       name: workspaceName
       in: path
       required: true
       description: The name of the workspace.
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
       schema:
         type: string
   securitySchemes:

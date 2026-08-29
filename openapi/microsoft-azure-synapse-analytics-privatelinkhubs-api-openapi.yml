@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications PrivateLinkHubs API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
-  version: '2020-12-01'
+  title: Azure Synapse Analytics Private Link Hubs API
+  description: Manage private link hubs that enable connecting to Synapse Studio through Azure Private Link. Provides centralized private connectivity for workspace management operations.
+  version: '2021-06-01'
   contact:
     name: Microsoft Azure Support
     url: https://azure.microsoft.com/en-us/support/
@@ -10,12 +10,8 @@ info:
     name: Microsoft
     url: https://azure.microsoft.com/en-us/support/legal/
 servers:
-- url: https://{workspaceName}.dev.azuresynapse.net
-  description: Synapse Data Plane
-  variables:
-    workspaceName:
-      description: The workspace name.
-      default: myworkspace
+- url: https://management.azure.com
+  description: Azure Resource Manager
 security:
 - azure_auth:
   - user_impersonation
@@ -212,13 +208,16 @@ components:
             $ref: '#/components/schemas/PrivateLinkHub'
         nextLink:
           type: string
-    PrivateLinkHubPatchInfo:
+    ErrorResponse:
       type: object
       properties:
-        tags:
+        error:
           type: object
-          additionalProperties:
-            type: string
+          properties:
+            code:
+              type: string
+            message:
+              type: string
     PrivateLinkHub:
       type: object
       properties:
@@ -251,16 +250,13 @@ components:
                 properties:
                   id:
                     type: string
-    ErrorResponse:
+    PrivateLinkHubPatchInfo:
       type: object
       properties:
-        error:
+        tags:
           type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
+          additionalProperties:
+            type: string
   parameters:
     SubscriptionIdParameter:
       name: subscriptionId

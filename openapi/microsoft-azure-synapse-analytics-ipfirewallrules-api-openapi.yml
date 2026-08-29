@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications IpFirewallRules API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
-  version: '2020-12-01'
+  title: Azure Synapse Analytics - Firewall Rules Ip Firewall Rules API
+  description: Manage IP firewall rules for Synapse workspaces to control network access. Supports creating, updating, and deleting server-level IP firewall rules for workspace security.
+  version: '2021-06-01'
   contact:
     name: Microsoft Azure Support
     url: https://azure.microsoft.com/en-us/support/
@@ -10,12 +10,8 @@ info:
     name: Microsoft
     url: https://azure.microsoft.com/en-us/support/legal/
 servers:
-- url: https://{workspaceName}.dev.azuresynapse.net
-  description: Synapse Data Plane
-  variables:
-    workspaceName:
-      description: The workspace name.
-      default: myworkspace
+- url: https://management.azure.com
+  description: Azure Resource Manager
 security:
 - azure_auth:
   - user_impersonation
@@ -188,33 +184,29 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
-  parameters:
-    SubscriptionIdParameter:
-      name: subscriptionId
-      in: path
-      required: true
-      schema:
-        type: string
-    ApiVersionParameter:
-      name: api-version
-      in: query
-      required: true
-      schema:
-        type: string
-        default: '2021-06-01'
-    ResourceGroupNameParameter:
-      name: resourceGroupName
-      in: path
-      required: true
-      schema:
-        type: string
-    WorkspaceNameParameter:
-      name: workspaceName
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    ReplaceAllIpFirewallRulesRequest:
+      type: object
+      properties:
+        ipFirewallRules:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              startIpAddress:
+                type: string
+              endIpAddress:
+                type: string
     ReplaceAllFirewallRulesOperationResponse:
       type: object
       properties:
@@ -250,18 +242,6 @@ components:
             startIpAddress:
               type: string
               description: The start IP address of the firewall rule (IPv4 format).
-    ReplaceAllIpFirewallRulesRequest:
-      type: object
-      properties:
-        ipFirewallRules:
-          type: object
-          additionalProperties:
-            type: object
-            properties:
-              startIpAddress:
-                type: string
-              endIpAddress:
-                type: string
     IpFirewallRuleInfoListResult:
       type: object
       properties:
@@ -271,16 +251,32 @@ components:
             $ref: '#/components/schemas/IpFirewallRuleInfo'
         nextLink:
           type: string
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
+  parameters:
+    SubscriptionIdParameter:
+      name: subscriptionId
+      in: path
+      required: true
+      schema:
+        type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2021-06-01'
+    WorkspaceNameParameter:
+      name: workspaceName
+      in: path
+      required: true
+      schema:
+        type: string
+    ResourceGroupNameParameter:
+      name: resourceGroupName
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     azure_auth:
       type: oauth2

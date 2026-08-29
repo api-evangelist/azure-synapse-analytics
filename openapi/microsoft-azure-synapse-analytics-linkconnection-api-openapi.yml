@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications LinkConnection API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
-  version: '2020-12-01'
+  title: Azure Synapse Analytics Link Connection API
+  description: Manage Synapse Link connections for continuous data replication from operational databases. Supports configuring and monitoring real-time data synchronization from sources like Azure Cosmos DB and Azure SQL.
+  version: 2023-04-18-preview
   contact:
     name: Microsoft Azure Support
     url: https://azure.microsoft.com/en-us/support/
@@ -14,7 +14,6 @@ servers:
   description: Synapse Data Plane
   variables:
     workspaceName:
-      description: The workspace name.
       default: myworkspace
 security:
 - azure_auth:
@@ -201,16 +200,32 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    ErrorResponse:
+    LinkTableListResponse:
       type: object
       properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
+        value:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              source:
+                type: object
+                properties:
+                  tableName:
+                    type: string
+                  schemaName:
+                    type: string
+              target:
+                type: object
+                properties:
+                  tableName:
+                    type: string
+                  schemaName:
+                    type: string
+                  distributionOptions:
+                    type: object
     LinkConnectionDetailedStatus:
       type: object
       properties:
@@ -234,15 +249,6 @@ components:
           type: string
         error:
           type: object
-    LinkConnectionListResponse:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/LinkConnectionResource'
-        nextLink:
-          type: string
     LinkConnectionResource:
       type: object
       properties:
@@ -295,32 +301,25 @@ components:
                   type: integer
                 computeType:
                   type: string
-    LinkTableListResponse:
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    LinkConnectionListResponse:
       type: object
       properties:
         value:
           type: array
           items:
-            type: object
-            properties:
-              id:
-                type: string
-              source:
-                type: object
-                properties:
-                  tableName:
-                    type: string
-                  schemaName:
-                    type: string
-              target:
-                type: object
-                properties:
-                  tableName:
-                    type: string
-                  schemaName:
-                    type: string
-                  distributionOptions:
-                    type: object
+            $ref: '#/components/schemas/LinkConnectionResource'
+        nextLink:
+          type: string
   parameters:
     ApiVersionParameter:
       name: api-version

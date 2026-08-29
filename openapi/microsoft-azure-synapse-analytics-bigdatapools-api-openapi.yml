@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications BigDataPools API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
-  version: '2020-12-01'
+  title: Azure Synapse Analytics - Spark Pools Big Data Pools API
+  description: Manage Apache Spark pools for big data processing including pool creation, auto-scaling configuration, and Spark runtime version management.
+  version: '2021-06-01'
   contact:
     name: Microsoft Azure Support
     url: https://azure.microsoft.com/en-us/support/
@@ -10,12 +10,8 @@ info:
     name: Microsoft
     url: https://azure.microsoft.com/en-us/support/legal/
 servers:
-- url: https://{workspaceName}.dev.azuresynapse.net
-  description: Synapse Data Plane
-  variables:
-    workspaceName:
-      description: The workspace name.
-      default: myworkspace
+- url: https://management.azure.com
+  description: Azure Resource Manager
 security:
 - azure_auth:
   - user_impersonation
@@ -174,6 +170,41 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
+    AutoScaleProperties:
+      type: object
+      description: Auto-scale properties of a Big Data pool.
+      properties:
+        minNodeCount:
+          type: integer
+          description: The minimum number of nodes.
+        enabled:
+          type: boolean
+          description: Whether auto-scaling is enabled.
+        maxNodeCount:
+          type: integer
+          description: The maximum number of nodes.
+    LibraryInfo:
+      type: object
+      description: Library information.
+      properties:
+        name:
+          type: string
+        path:
+          type: string
+        containerName:
+          type: string
+        type:
+          type: string
+    BigDataPoolResourceInfoListResult:
+      type: object
+      description: Collection of Big Data pool resources.
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/BigDataPoolResourceInfo'
+        nextLink:
+          type: string
     BigDataPoolResourceInfo:
       type: object
       description: A Big Data pool resource.
@@ -196,29 +227,47 @@ components:
             type: string
         properties:
           $ref: '#/components/schemas/BigDataPoolResourceProperties'
-    AutoScaleProperties:
+    AutoPauseProperties:
       type: object
-      description: Auto-scale properties of a Big Data pool.
+      description: Auto-pause properties of a Big Data pool.
       properties:
-        minNodeCount:
+        delayInMinutes:
           type: integer
-          description: The minimum number of nodes.
+          description: Number of minutes of idle time before auto-pause.
         enabled:
           type: boolean
-          description: Whether auto-scaling is enabled.
-        maxNodeCount:
-          type: integer
-          description: The maximum number of nodes.
-    BigDataPoolResourceInfoListResult:
+          description: Whether auto-pausing is enabled.
+    ErrorResponse:
       type: object
-      description: Collection of Big Data pool resources.
       properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/BigDataPoolResourceInfo'
-        nextLink:
-          type: string
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    DynamicExecutorAllocation:
+      type: object
+      description: Dynamic executor allocation.
+      properties:
+        enabled:
+          type: boolean
+          description: Whether dynamic executor allocation is enabled.
+        minExecutors:
+          type: integer
+          description: Minimum number of executors.
+        maxExecutors:
+          type: integer
+          description: Maximum number of executors.
+    BigDataPoolPatchInfo:
+      type: object
+      description: Properties for updating a Big Data pool.
+      properties:
+        tags:
+          type: object
+          additionalProperties:
+            type: string
     SparkConfigProperties:
       type: object
       description: Spark configuration file properties.
@@ -238,18 +287,6 @@ components:
           enum:
           - File
           - Artifact
-    LibraryInfo:
-      type: object
-      description: Library information.
-      properties:
-        name:
-          type: string
-        path:
-          type: string
-        containerName:
-          type: string
-        type:
-          type: string
     BigDataPoolResourceProperties:
       type: object
       description: Properties of a Big Data pool.
@@ -314,47 +351,6 @@ components:
           - MemoryOptimized
           - HardwareAcceleratedFPGA
           - HardwareAcceleratedGPU
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-    AutoPauseProperties:
-      type: object
-      description: Auto-pause properties of a Big Data pool.
-      properties:
-        delayInMinutes:
-          type: integer
-          description: Number of minutes of idle time before auto-pause.
-        enabled:
-          type: boolean
-          description: Whether auto-pausing is enabled.
-    BigDataPoolPatchInfo:
-      type: object
-      description: Properties for updating a Big Data pool.
-      properties:
-        tags:
-          type: object
-          additionalProperties:
-            type: string
-    DynamicExecutorAllocation:
-      type: object
-      description: Dynamic executor allocation.
-      properties:
-        enabled:
-          type: boolean
-          description: Whether dynamic executor allocation is enabled.
-        minExecutors:
-          type: integer
-          description: Minimum number of executors.
-        maxExecutors:
-          type: integer
-          description: Maximum number of executors.
   parameters:
     SubscriptionIdParameter:
       name: subscriptionId
@@ -369,14 +365,14 @@ components:
       schema:
         type: string
         default: '2021-06-01'
-    ResourceGroupNameParameter:
-      name: resourceGroupName
+    WorkspaceNameParameter:
+      name: workspaceName
       in: path
       required: true
       schema:
         type: string
-    WorkspaceNameParameter:
-      name: workspaceName
+    ResourceGroupNameParameter:
+      name: resourceGroupName
       in: path
       required: true
       schema:

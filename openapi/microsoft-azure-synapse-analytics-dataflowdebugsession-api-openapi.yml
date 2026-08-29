@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications DataFlowDebugSession API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  title: Azure Synapse Analytics Data Flow Debug Session API
+  description: Manage data flow debug sessions for interactive testing and debugging of data flow transformations. Enables previewing data and validating transformation logic before deployment.
   version: '2020-12-01'
   contact:
     name: Microsoft Azure Support
@@ -14,7 +14,6 @@ servers:
   description: Synapse Data Plane
   variables:
     workspaceName:
-      description: The workspace name.
       default: myworkspace
 security:
 - azure_auth:
@@ -158,47 +157,11 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    DataFlowDebugCommandResponse:
+    AddDataFlowToDebugSessionResponse:
       type: object
       properties:
-        status:
+        jobVersion:
           type: string
-        data:
-          type: string
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-    DataFlowDebugCommandRequest:
-      type: object
-      properties:
-        sessionId:
-          type: string
-        command:
-          type: string
-          enum:
-          - executePreviewQuery
-          - executeStatisticsQuery
-          - executeExpressionQuery
-        commandPayload:
-          type: object
-          properties:
-            streamName:
-              type: string
-            rowLimits:
-              type: integer
-            columns:
-              type: array
-              items:
-                type: string
-            expression:
-              type: string
     DeleteDataFlowDebugSessionRequest:
       type: object
       properties:
@@ -220,13 +183,40 @@ components:
               type: string
             properties:
               type: object
-    CreateDataFlowDebugSessionResponse:
+    ErrorResponse:
       type: object
       properties:
-        status:
-          type: string
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    DataFlowDebugPackage:
+      type: object
+      properties:
         sessionId:
           type: string
+        dataFlow:
+          type: object
+          properties:
+            name:
+              type: string
+            properties:
+              type: object
+        datasets:
+          type: array
+          items:
+            type: object
+        linkedServices:
+          type: array
+          items:
+            type: object
+        staging:
+          type: object
+        debugSettings:
+          type: object
     QueryDataFlowDebugSessionsResponse:
       type: object
       properties:
@@ -255,35 +245,44 @@ components:
                 type: string
         nextLink:
           type: string
-    AddDataFlowToDebugSessionResponse:
-      type: object
-      properties:
-        jobVersion:
-          type: string
-    DataFlowDebugPackage:
+    DataFlowDebugCommandRequest:
       type: object
       properties:
         sessionId:
           type: string
-        dataFlow:
+        command:
+          type: string
+          enum:
+          - executePreviewQuery
+          - executeStatisticsQuery
+          - executeExpressionQuery
+        commandPayload:
           type: object
           properties:
-            name:
+            streamName:
               type: string
-            properties:
-              type: object
-        datasets:
-          type: array
-          items:
-            type: object
-        linkedServices:
-          type: array
-          items:
-            type: object
-        staging:
-          type: object
-        debugSettings:
-          type: object
+            rowLimits:
+              type: integer
+            columns:
+              type: array
+              items:
+                type: string
+            expression:
+              type: string
+    DataFlowDebugCommandResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: string
+    CreateDataFlowDebugSessionResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        sessionId:
+          type: string
   parameters:
     ApiVersionParameter:
       name: api-version

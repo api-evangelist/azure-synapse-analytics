@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications SparkSession API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
-  version: '2020-12-01'
+  title: Azure Synapse Analytics - Spark Job Spark Session API
+  description: Submit and manage Apache Spark batch jobs and interactive sessions. Provides operations for monitoring job status, retrieving logs, and cancelling running applications.
+  version: 2019-11-01-preview
   contact:
     name: Microsoft Azure Support
     url: https://azure.microsoft.com/en-us/support/
@@ -233,67 +233,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    SparkStatementOptions:
-      type: object
-      properties:
-        code:
-          type: string
-          description: The code to execute.
-        kind:
-          type: string
-          description: The language of the code.
-          enum:
-          - spark
-          - pyspark
-          - dotnetspark
-          - sql
-    SparkStatementCollection:
-      type: object
-      properties:
-        total:
-          type: integer
-        statements:
-          type: array
-          items:
-            $ref: '#/components/schemas/SparkStatement'
-    SparkStatementCancellationResult:
-      type: object
-      properties:
-        msg:
-          type: string
-          description: The cancellation message.
-    SparkSessionCollection:
-      type: object
-      properties:
-        from:
-          type: integer
-        total:
-          type: integer
-        sessions:
-          type: array
-          items:
-            $ref: '#/components/schemas/SparkSession'
-    SparkSessionOptions:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-        driverMemory:
-          type: string
-        driverCores:
-          type: integer
-        executorMemory:
-          type: string
-        executorCores:
-          type: integer
-        executorCount:
-          type: integer
-        conf:
-          type: object
-          additionalProperties:
-            type: string
     ErrorResponse:
       type: object
       properties:
@@ -322,6 +261,21 @@ components:
               type: integer
             data:
               type: object
+    SparkStatementCancellationResult:
+      type: object
+      properties:
+        msg:
+          type: string
+          description: The cancellation message.
+    SparkStatementCollection:
+      type: object
+      properties:
+        total:
+          type: integer
+        statements:
+          type: array
+          items:
+            $ref: '#/components/schemas/SparkStatement'
     SparkSession:
       type: object
       properties:
@@ -352,6 +306,52 @@ components:
           type: array
           items:
             type: string
+    SparkSessionOptions:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+        driverMemory:
+          type: string
+        driverCores:
+          type: integer
+        executorMemory:
+          type: string
+        executorCores:
+          type: integer
+        executorCount:
+          type: integer
+        conf:
+          type: object
+          additionalProperties:
+            type: string
+    SparkSessionCollection:
+      type: object
+      properties:
+        from:
+          type: integer
+        total:
+          type: integer
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SparkSession'
+    SparkStatementOptions:
+      type: object
+      properties:
+        code:
+          type: string
+          description: The code to execute.
+        kind:
+          type: string
+          description: The language of the code.
+          enum:
+          - spark
+          - pyspark
+          - dotnetspark
+          - sql
   parameters:
     SparkPoolNameParameter:
       name: sparkPoolName

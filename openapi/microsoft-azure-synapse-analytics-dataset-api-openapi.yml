@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications Dataset API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  title: Azure Synapse Analytics Dataset API
+  description: Create and manage datasets that represent data structures within linked data stores. Datasets define the schema and location of data used in pipelines and data flows.
   version: '2020-12-01'
   contact:
     name: Microsoft Azure Support
@@ -14,7 +14,6 @@ servers:
   description: Synapse Data Plane
   variables:
     workspaceName:
-      description: The workspace name.
       default: myworkspace
 security:
 - azure_auth:
@@ -158,6 +157,30 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
+    LinkedServiceReference:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - LinkedServiceReference
+        referenceName:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+    ArtifactRenameRequest:
+      type: object
+      properties:
+        newName:
+          type: string
     DatasetListResponse:
       type: object
       properties:
@@ -166,11 +189,6 @@ components:
           items:
             $ref: '#/components/schemas/DatasetResource'
         nextLink:
-          type: string
-    ArtifactRenameRequest:
-      type: object
-      properties:
-        newName:
           type: string
     DatasetResource:
       type: object
@@ -233,25 +251,6 @@ components:
                 type: string
               type:
                 type: string
-    LinkedServiceReference:
-      type: object
-      properties:
-        type:
-          type: string
-          enum:
-          - LinkedServiceReference
-        referenceName:
-          type: string
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-            message:
-              type: string
   parameters:
     ApiVersionParameter:
       name: api-version

@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Azure Synapse Analytics - Access Control AzureADOnlyAuthentications Notebook API
-  description: Manage role assignments, role definitions, and access control for Synapse workspace resources. Supports Synapse role-based access control for fine-grained permissions.
+  title: Azure Synapse Analytics Notebook API
+  description: Create, update, list, and delete notebooks within a Synapse workspace. Notebooks support interactive data exploration using Python, Scala, SQL, and .NET languages.
   version: '2020-12-01'
   contact:
     name: Microsoft Azure Support
@@ -180,58 +180,6 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    NotebookCell:
-      type: object
-      description: Notebook cell definition.
-      properties:
-        cell_type:
-          type: string
-          description: The cell type.
-        source:
-          type: array
-          items:
-            type: string
-          description: Contents of the cell.
-        metadata:
-          type: object
-          description: Cell metadata.
-        outputs:
-          type: array
-          items:
-            type: object
-          description: Cell outputs.
-    ArtifactRenameRequest:
-      type: object
-      properties:
-        newName:
-          type: string
-    NotebookResource:
-      type: object
-      description: Notebook resource.
-      properties:
-        id:
-          type: string
-          readOnly: true
-        name:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          readOnly: true
-        etag:
-          type: string
-          readOnly: true
-        properties:
-          $ref: '#/components/schemas/Notebook'
-    NotebookListResponse:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/NotebookResource'
-        nextLink:
-          type: string
     ErrorResponse:
       type: object
       properties:
@@ -242,6 +190,11 @@ components:
               type: string
             message:
               type: string
+    ArtifactRenameRequest:
+      type: object
+      properties:
+        newName:
+          type: string
     Notebook:
       type: object
       description: Notebook definition.
@@ -298,14 +251,54 @@ components:
           properties:
             name:
               type: string
+    NotebookListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotebookResource'
+        nextLink:
+          type: string
+    NotebookResource:
+      type: object
+      description: Notebook resource.
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        type:
+          type: string
+          readOnly: true
+        etag:
+          type: string
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/Notebook'
+    NotebookCell:
+      type: object
+      description: Notebook cell definition.
+      properties:
+        cell_type:
+          type: string
+          description: The cell type.
+        source:
+          type: array
+          items:
+            type: string
+          description: Contents of the cell.
+        metadata:
+          type: object
+          description: Cell metadata.
+        outputs:
+          type: array
+          items:
+            type: object
+          description: Cell outputs.
   parameters:
-    ApiVersionParameter:
-      name: api-version
-      in: query
-      required: true
-      schema:
-        type: string
-        default: '2020-12-01'
     NotebookNameParameter:
       name: notebookName
       in: path
@@ -313,6 +306,13 @@ components:
       description: The notebook name.
       schema:
         type: string
+    ApiVersionParameter:
+      name: api-version
+      in: query
+      required: true
+      schema:
+        type: string
+        default: '2020-12-01'
   securitySchemes:
     azure_auth:
       type: oauth2
