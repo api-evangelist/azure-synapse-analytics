@@ -1,5 +1,5 @@
 ---
-title: "ADF\Synapse Analytics - Replace Columns names using Rule based mapping in Mapping data flows"
+title: "ADF\\Synapse Analytics - Replace Columns names using Rule based mapping in Mapping data flows"
 url: "https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/adf-synapse-analytics-replace-columns-names-using-rule-based/ba-p/4039551"
 date: "2024-02-23"
 author: "Subashri_Vasu"

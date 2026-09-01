@@ -1,5 +1,5 @@
 ---
-title: "Interpreting Script activity output json with Azure Data Factory\Synapse analytics"
+title: "Interpreting Script activity output json with Azure Data Factory\\Synapse analytics"
 url: "https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/interpreting-script-activity-output-json-with-azure-data-factory/ba-p/4030594"
 date: "2024-02-01"
 author: "Subashri_Vasu"
