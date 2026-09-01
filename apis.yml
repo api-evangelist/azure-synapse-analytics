@@ -341,7 +341,7 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/
   baseURL: https://management.azure.com
   tags:
-  - DataFlow
+  - Dataflows
   tags_raw:
   - DataFlow
   properties:
@@ -636,7 +636,7 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/
   baseURL: https://management.azure.com
   tags:
-  - GitIntegration
+  - Git Integration
   tags_raw:
   - GitIntegration
   properties:
@@ -2102,7 +2102,7 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/
   baseURL: https://management.azure.com
   tags:
-  - RoleAssignments
+  - Role Assignments
   tags_raw:
   - RoleAssignments
   properties:
@@ -2692,7 +2692,7 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/synapse/
   baseURL: https://management.azure.com
   tags:
-  - SqlPools
+  - SQL Pools
   tags_raw:
   - SqlPools
   properties:
